@@ -1,0 +1,3652 @@
+{
+    "items": [
+        {
+            "category": "143",
+            "categoryname": "(Other)"
+        },
+        {
+            "category": "318",
+            "categoryname": "12V"
+        },
+        {
+            "category": "628",
+            "categoryname": "1950"
+        },
+        {
+            "category": "797",
+            "categoryname": "1954"
+        },
+        {
+            "category": "561",
+            "categoryname": "1955"
+        },
+        {
+            "category": "560",
+            "categoryname": "1956"
+        },
+        {
+            "category": "559",
+            "categoryname": "1957"
+        },
+        {
+            "category": "558",
+            "categoryname": "1958"
+        },
+        {
+            "category": "557",
+            "categoryname": "1959"
+        },
+        {
+            "category": "556",
+            "categoryname": "1960"
+        },
+        {
+            "category": "555",
+            "categoryname": "1961"
+        },
+        {
+            "category": "554",
+            "categoryname": "1962"
+        },
+        {
+            "category": "553",
+            "categoryname": "1963"
+        },
+        {
+            "category": "551",
+            "categoryname": "1964"
+        },
+        {
+            "category": "340",
+            "categoryname": "1965"
+        },
+        {
+            "category": "341",
+            "categoryname": "1966"
+        },
+        {
+            "category": "342",
+            "categoryname": "1967"
+        },
+        {
+            "category": "343",
+            "categoryname": "1968"
+        },
+        {
+            "category": "344",
+            "categoryname": "1969"
+        },
+        {
+            "category": "345",
+            "categoryname": "1970"
+        },
+        {
+            "category": "346",
+            "categoryname": "1971"
+        },
+        {
+            "category": "347",
+            "categoryname": "1972"
+        },
+        {
+            "category": "348",
+            "categoryname": "1973"
+        },
+        {
+            "category": "349",
+            "categoryname": "1974"
+        },
+        {
+            "category": "350",
+            "categoryname": "1975"
+        },
+        {
+            "category": "351",
+            "categoryname": "1976"
+        },
+        {
+            "category": "352",
+            "categoryname": "1977"
+        },
+        {
+            "category": "353",
+            "categoryname": "1978"
+        },
+        {
+            "category": "354",
+            "categoryname": "1979"
+        },
+        {
+            "category": "355",
+            "categoryname": "1980"
+        },
+        {
+            "category": "356",
+            "categoryname": "1981"
+        },
+        {
+            "category": "357",
+            "categoryname": "1982"
+        },
+        {
+            "category": "358",
+            "categoryname": "1983"
+        },
+        {
+            "category": "359",
+            "categoryname": "1984"
+        },
+        {
+            "category": "360",
+            "categoryname": "1985"
+        },
+        {
+            "category": "361",
+            "categoryname": "1986"
+        },
+        {
+            "category": "362",
+            "categoryname": "1987"
+        },
+        {
+            "category": "363",
+            "categoryname": "1988"
+        },
+        {
+            "category": "364",
+            "categoryname": "1989"
+        },
+        {
+            "category": "365",
+            "categoryname": "1990"
+        },
+        {
+            "category": "366",
+            "categoryname": "1991"
+        },
+        {
+            "category": "367",
+            "categoryname": "1992"
+        },
+        {
+            "category": "368",
+            "categoryname": "1993"
+        },
+        {
+            "category": "369",
+            "categoryname": "1994"
+        },
+        {
+            "category": "370",
+            "categoryname": "1995"
+        },
+        {
+            "category": "371",
+            "categoryname": "1996"
+        },
+        {
+            "category": "372",
+            "categoryname": "1997"
+        },
+        {
+            "category": "373",
+            "categoryname": "1998"
+        },
+        {
+            "category": "374",
+            "categoryname": "1999"
+        },
+        {
+            "category": "375",
+            "categoryname": "2000"
+        },
+        {
+            "category": "377",
+            "categoryname": "2001"
+        },
+        {
+            "category": "378",
+            "categoryname": "2002"
+        },
+        {
+            "category": "491",
+            "categoryname": "2003"
+        },
+        {
+            "category": "515",
+            "categoryname": "2004"
+        },
+        {
+            "category": "544",
+            "categoryname": "2005"
+        },
+        {
+            "category": "565",
+            "categoryname": "2006"
+        },
+        {
+            "category": "581",
+            "categoryname": "2007"
+        },
+        {
+            "category": "601",
+            "categoryname": "2008"
+        },
+        {
+            "category": "647",
+            "categoryname": "2009"
+        },
+        {
+            "category": "743",
+            "categoryname": "2010"
+        },
+        {
+            "category": "756",
+            "categoryname": "2011"
+        },
+        {
+            "category": "767",
+            "categoryname": "2012"
+        },
+        {
+            "category": "786",
+            "categoryname": "2013"
+        },
+        {
+            "category": "805",
+            "categoryname": "2014"
+        },
+        {
+            "category": "826",
+            "categoryname": "2015"
+        },
+        {
+            "category": "869",
+            "categoryname": "2016"
+        },
+        {
+            "category": "901",
+            "categoryname": "2017"
+        },
+        {
+            "category": "930",
+            "categoryname": "2018"
+        },
+        {
+            "category": "1028",
+            "categoryname": "2019"
+        },
+        {
+            "category": "1066",
+            "categoryname": "2020"
+        },
+        {
+            "category": "516",
+            "categoryname": "4 Juniors"
+        },
+        {
+            "category": "316",
+            "categoryname": "4.5V"
+        },
+        {
+            "category": "315",
+            "categoryname": "9V"
+        },
+        {
+            "category": "1007",
+            "categoryname": "Accessory Pack"
+        },
+        {
+            "category": "990",
+            "categoryname": "Accessory, Human Tool"
+        },
+        {
+            "category": "173",
+            "categoryname": "Action Wheelers"
+        },
+        {
+            "category": "766",
+            "categoryname": "Activity Book"
+        },
+        {
+            "category": "714",
+            "categoryname": "Advent"
+        },
+        {
+            "category": "715",
+            "categoryname": "Advent Sub-Set"
+        },
+        {
+            "category": "902",
+            "categoryname": "Adventure Time"
+        },
+        {
+            "category": "53",
+            "categoryname": "Adventurers"
+        },
+        {
+            "category": "1056",
+            "categoryname": "AFOL Designer Program"
+        },
+        {
+            "category": "609",
+            "categoryname": "Agents"
+        },
+        {
+            "category": "711",
+            "categoryname": "Agori"
+        },
+        {
+            "category": "93",
+            "categoryname": "Aircraft"
+        },
+        {
+            "category": "1012",
+            "categoryname": "Aircraft, Decorated"
+        },
+        {
+            "category": "969",
+            "categoryname": "Airjitzu Flyers"
+        },
+        {
+            "category": "325",
+            "categoryname": "Airport"
+        },
+        {
+            "category": "762",
+            "categoryname": "Alien Conquest"
+        },
+        {
+            "category": "170",
+            "categoryname": "Alpha Team"
+        },
+        {
+            "category": "86",
+            "categoryname": "Animal, Accessory"
+        },
+        {
+            "category": "146",
+            "categoryname": "Animal, Air"
+        },
+        {
+            "category": "148",
+            "categoryname": "Animal, Body Part"
+        },
+        {
+            "category": "184",
+            "categoryname": "Animal, Dinosaur"
+        },
+        {
+            "category": "147",
+            "categoryname": "Animal, Land"
+        },
+        {
+            "category": "145",
+            "categoryname": "Animal, Water"
+        },
+        {
+            "category": "1050",
+            "categoryname": "Animals Series 1"
+        },
+        {
+            "category": "1051",
+            "categoryname": "Animals Series 2"
+        },
+        {
+            "category": "1052",
+            "categoryname": "Animals Series 3"
+        },
+        {
+            "category": "1053",
+            "categoryname": "Animals Series 4"
+        },
+        {
+            "category": "1054",
+            "categoryname": "Animals Series 5"
+        },
+        {
+            "category": "1055",
+            "categoryname": "Animals Series 6"
+        },
+        {
+            "category": "854",
+            "categoryname": "Ant-Man"
+        },
+        {
+            "category": "1074",
+            "categoryname": "Ant-Man and the Wasp"
+        },
+        {
+            "category": "1",
+            "categoryname": "Antenna"
+        },
+        {
+            "category": "973",
+            "categoryname": "Aquaman"
+        },
+        {
+            "category": "260",
+            "categoryname": "Aquanauts"
+        },
+        {
+            "category": "261",
+            "categoryname": "Aquaraiders I"
+        },
+        {
+            "category": "580",
+            "categoryname": "Aquaraiders II"
+        },
+        {
+            "category": "262",
+            "categoryname": "Aquasharks"
+        },
+        {
+            "category": "54",
+            "categoryname": "Aquazone"
+        },
+        {
+            "category": "629",
+            "categoryname": "Architecture"
+        },
+        {
+            "category": "480",
+            "categoryname": "Arctic"
+        },
+        {
+            "category": "322",
+            "categoryname": "Arctic Technic"
+        },
+        {
+            "category": "45",
+            "categoryname": "Arm"
+        },
+        {
+            "category": "733",
+            "categoryname": "Atlantis"
+        },
+        {
+            "category": "574",
+            "categoryname": "Avatar"
+        },
+        {
+            "category": "830",
+            "categoryname": "Avengers"
+        },
+        {
+            "category": "844",
+            "categoryname": "Avengers Age of Ultron"
+        },
+        {
+            "category": "828",
+            "categoryname": "Avengers Assemble"
+        },
+        {
+            "category": "1032",
+            "categoryname": "Avengers Endgame"
+        },
+        {
+            "category": "954",
+            "categoryname": "Avengers Infinity War"
+        },
+        {
+            "category": "293",
+            "categoryname": "Baby"
+        },
+        {
+            "category": "918",
+            "categoryname": "Back to the Future"
+        },
+        {
+            "category": "498",
+            "categoryname": "Backpacks & Lunchboxes"
+        },
+        {
+            "category": "978",
+            "categoryname": "Ball"
+        },
+        {
+            "category": "46",
+            "categoryname": "Bar"
+        },
+        {
+            "category": "649",
+            "categoryname": "Barraki"
+        },
+        {
+            "category": "887",
+            "categoryname": "Baseball"
+        },
+        {
+            "category": "2",
+            "categoryname": "Baseplate"
+        },
+        {
+            "category": "243",
+            "categoryname": "Baseplate, Raised"
+        },
+        {
+            "category": "130",
+            "categoryname": "Baseplate, Road"
+        },
+        {
+            "category": "155",
+            "categoryname": "Basic"
+        },
+        {
+            "category": "680",
+            "categoryname": "Basic Model"
+        },
+        {
+            "category": "611",
+            "categoryname": "Basic Set"
+        },
+        {
+            "category": "474",
+            "categoryname": "Basketball"
+        },
+        {
+            "category": "895",
+            "categoryname": "Batman Classic TV Series"
+        },
+        {
+            "category": "570",
+            "categoryname": "Batman I"
+        },
+        {
+            "category": "769",
+            "categoryname": "Batman II"
+        },
+        {
+            "category": "865",
+            "categoryname": "Batman III"
+        },
+        {
+            "category": "725",
+            "categoryname": "Battle Vehicles"
+        },
+        {
+            "category": "464",
+            "categoryname": "Bead"
+        },
+        {
+            "category": "648",
+            "categoryname": "Bedding"
+        },
+        {
+            "category": "48",
+            "categoryname": "Belville"
+        },
+        {
+            "category": "412",
+            "categoryname": "Belville, Figure Accessory"
+        },
+        {
+            "category": "731",
+            "categoryname": "Ben 10"
+        },
+        {
+            "category": "1020",
+            "categoryname": "BigFig Series 1"
+        },
+        {
+            "category": "1071",
+            "categoryname": "BigFig Series 2"
+        },
+        {
+            "category": "273",
+            "categoryname": "Bionicle"
+        },
+        {
+            "category": "235",
+            "categoryname": "Bionicle, Kanohi Mask"
+        },
+        {
+            "category": "1000",
+            "categoryname": "Birthday"
+        },
+        {
+            "category": "289",
+            "categoryname": "Black Falcons"
+        },
+        {
+            "category": "278",
+            "categoryname": "Black Knights"
+        },
+        {
+            "category": "929",
+            "categoryname": "Black Panther"
+        },
+        {
+            "category": "1079",
+            "categoryname": "Black Widow"
+        },
+        {
+            "category": "300",
+            "categoryname": "Blacktron I"
+        },
+        {
+            "category": "301",
+            "categoryname": "Blacktron II"
+        },
+        {
+            "category": "3",
+            "categoryname": "Boat"
+        },
+        {
+            "category": "299",
+            "categoryname": "Bob The Builder"
+        },
+        {
+            "category": "650",
+            "categoryname": "Bohrok"
+        },
+        {
+            "category": "651",
+            "categoryname": "Bohrok Va"
+        },
+        {
+            "category": "652",
+            "categoryname": "Bohrok-Kal"
+        },
+        {
+            "category": "921",
+            "categoryname": "BOOST"
+        },
+        {
+            "category": "968",
+            "categoryname": "Booster Pack"
+        },
+        {
+            "category": "4",
+            "categoryname": "Bracket"
+        },
+        {
+            "category": "5",
+            "categoryname": "Brick"
+        },
+        {
+            "category": "1103",
+            "categoryname": "Brick Sketches"
+        },
+        {
+            "category": "6",
+            "categoryname": "Brick, Arch"
+        },
+        {
+            "category": "966",
+            "categoryname": "Brick, Arch, Decorated"
+        },
+        {
+            "category": "118",
+            "categoryname": "Brick, Decorated"
+        },
+        {
+            "category": "7",
+            "categoryname": "Brick, Modified"
+        },
+        {
+            "category": "535",
+            "categoryname": "Brick, Modified, Decorated"
+        },
+        {
+            "category": "534",
+            "categoryname": "Brick, Promotional"
+        },
+        {
+            "category": "8",
+            "categoryname": "Brick, Round"
+        },
+        {
+            "category": "736",
+            "categoryname": "Brick, Round, Decorated"
+        },
+        {
+            "category": "903",
+            "categoryname": "BrickHeadz"
+        },
+        {
+            "category": "859",
+            "categoryname": "Buildable Figures"
+        },
+        {
+            "category": "425",
+            "categoryname": "Building"
+        },
+        {
+            "category": "927",
+            "categoryname": "Building Bigger Thinking"
+        },
+        {
+            "category": "988",
+            "categoryname": "Building Event"
+        },
+        {
+            "category": "745",
+            "categoryname": "Building Event Instructions"
+        },
+        {
+            "category": "388",
+            "categoryname": "Building Set with People"
+        },
+        {
+            "category": "478",
+            "categoryname": "Bulk Bricks"
+        },
+        {
+            "category": "875",
+            "categoryname": "Captain America Civil War"
+        },
+        {
+            "category": "1015",
+            "categoryname": "Captain Marvel"
+        },
+        {
+            "category": "997",
+            "categoryname": "Card"
+        },
+        {
+            "category": "564",
+            "categoryname": "Card, Collector Card"
+        },
+        {
+            "category": "333",
+            "categoryname": "Card, Game Card"
+        },
+        {
+            "category": "996",
+            "categoryname": "Card, Greeting Card"
+        },
+        {
+            "category": "472",
+            "categoryname": "Card, Postcard"
+        },
+        {
+            "category": "380",
+            "categoryname": "Card, Trading Card"
+        },
+        {
+            "category": "1060",
+            "categoryname": "Cardboard Sleeve"
+        },
+        {
+            "category": "618",
+            "categoryname": "Cargo"
+        },
+        {
+            "category": "748",
+            "categoryname": "Cars"
+        },
+        {
+            "category": "9",
+            "categoryname": "Castle"
+        },
+        {
+            "category": "991",
+            "categoryname": "Chain"
+        },
+        {
+            "category": "696",
+            "categoryname": "Chamber of Secrets"
+        },
+        {
+            "category": "955",
+            "categoryname": "Chinese New Year"
+        },
+        {
+            "category": "391",
+            "categoryname": "Christmas"
+        },
+        {
+            "category": "624",
+            "categoryname": "Circus"
+        },
+        {
+            "category": "919",
+            "categoryname": "Cities of Wonders"
+        },
+        {
+            "category": "518",
+            "categoryname": "City"
+        },
+        {
+            "category": "423",
+            "categoryname": "Classic"
+        },
+        {
+            "category": "590",
+            "categoryname": "Classic Basic"
+        },
+        {
+            "category": "489",
+            "categoryname": "Classic Castle"
+        },
+        {
+            "category": "314",
+            "categoryname": "Classic Space"
+        },
+        {
+            "category": "627",
+            "categoryname": "Classic Town"
+        },
+        {
+            "category": "490",
+            "categoryname": "Clikits"
+        },
+        {
+            "category": "575",
+            "categoryname": "Clikits, Icon"
+        },
+        {
+            "category": "1059",
+            "categoryname": "Clikits, Icon Accent"
+        },
+        {
+            "category": "336",
+            "categoryname": "Clock"
+        },
+        {
+            "category": "162",
+            "categoryname": "Cloth"
+        },
+        {
+            "category": "543",
+            "categoryname": "Clothing"
+        },
+        {
+            "category": "1111",
+            "categoryname": "Clothing Accessories"
+        },
+        {
+            "category": "610",
+            "categoryname": "Coast Guard"
+        },
+        {
+            "category": "479",
+            "categoryname": "Cockpit"
+        },
+        {
+            "category": "746",
+            "categoryname": "Collectible Minifigures"
+        },
+        {
+            "category": "552",
+            "categoryname": "Coloring Book"
+        },
+        {
+            "category": "331",
+            "categoryname": "Comic Book"
+        },
+        {
+            "category": "382",
+            "categoryname": "Competition"
+        },
+        {
+            "category": "21",
+            "categoryname": "Cone"
+        },
+        {
+            "category": "974",
+            "categoryname": "Cone, Decorated"
+        },
+        {
+            "category": "596",
+            "categoryname": "Construction"
+        },
+        {
+            "category": "10",
+            "categoryname": "Container"
+        },
+        {
+            "category": "643",
+            "categoryname": "Container, Decorated"
+        },
+        {
+            "category": "633",
+            "categoryname": "Control Lab"
+        },
+        {
+            "category": "73",
+            "categoryname": "Conveyor"
+        },
+        {
+            "category": "275",
+            "categoryname": "Cowboys"
+        },
+        {
+            "category": "74",
+            "categoryname": "Crane"
+        },
+        {
+            "category": "171",
+            "categoryname": "Creator"
+        },
+        {
+            "category": "726",
+            "categoryname": "Creature"
+        },
+        {
+            "category": "279",
+            "categoryname": "Crusaders"
+        },
+        {
+            "category": "576",
+            "categoryname": "Curriculum Activity Book"
+        },
+        {
+            "category": "11",
+            "categoryname": "Cylinder"
+        },
+        {
+            "category": "926",
+            "categoryname": "Cylinder, Decorated"
+        },
+        {
+            "category": "280",
+            "categoryname": "Dark Forest"
+        },
+        {
+            "category": "898",
+            "categoryname": "Dawn of Justice"
+        },
+        {
+            "category": "951",
+            "categoryname": "Day of the Departed"
+        },
+        {
+            "category": "893",
+            "categoryname": "DC Super Hero Girls"
+        },
+        {
+            "category": "1075",
+            "categoryname": "DC Super Heroes"
+        },
+        {
+            "category": "1008",
+            "categoryname": "Decoration"
+        },
+        {
+            "category": "855",
+            "categoryname": "Deep Sea Explorers"
+        },
+        {
+            "category": "247",
+            "categoryname": "Desert"
+        },
+        {
+            "category": "486",
+            "categoryname": "Designer Sets"
+        },
+        {
+            "category": "879",
+            "categoryname": "DFB Series"
+        },
+        {
+            "category": "860",
+            "categoryname": "Dimensions"
+        },
+        {
+            "category": "862",
+            "categoryname": "Dimensions Wave 1"
+        },
+        {
+            "category": "864",
+            "categoryname": "Dimensions Wave 2"
+        },
+        {
+            "category": "872",
+            "categoryname": "Dimensions Wave 3"
+        },
+        {
+            "category": "877",
+            "categoryname": "Dimensions Wave 4"
+        },
+        {
+            "category": "880",
+            "categoryname": "Dimensions Wave 5"
+        },
+        {
+            "category": "884",
+            "categoryname": "Dimensions Wave 6"
+        },
+        {
+            "category": "891",
+            "categoryname": "Dimensions Wave 7"
+        },
+        {
+            "category": "905",
+            "categoryname": "Dimensions Wave 8"
+        },
+        {
+            "category": "924",
+            "categoryname": "Dimensions Wave 9"
+        },
+        {
+            "category": "617",
+            "categoryname": "Dino"
+        },
+        {
+            "category": "567",
+            "categoryname": "Dino 2010"
+        },
+        {
+            "category": "563",
+            "categoryname": "Dino Attack"
+        },
+        {
+            "category": "249",
+            "categoryname": "Dino Island"
+        },
+        {
+            "category": "183",
+            "categoryname": "Dinosaurs"
+        },
+        {
+            "category": "482",
+            "categoryname": "Discovery"
+        },
+        {
+            "category": "116",
+            "categoryname": "Dish"
+        },
+        {
+            "category": "779",
+            "categoryname": "Dish, Decorated"
+        },
+        {
+            "category": "878",
+            "categoryname": "Disney"
+        },
+        {
+            "category": "773",
+            "categoryname": "Disney Princess"
+        },
+        {
+            "category": "1035",
+            "categoryname": "Disney Series 2"
+        },
+        {
+            "category": "798",
+            "categoryname": "Disney&#39;s Planes"
+        },
+        {
+            "category": "722",
+            "categoryname": "Disney's Baby Mickey"
+        },
+        {
+            "category": "149",
+            "categoryname": "Disney's Mickey Mouse"
+        },
+        {
+            "category": "326",
+            "categoryname": "Divers"
+        },
+        {
+            "category": "853",
+            "categoryname": "Doc McStuffins"
+        },
+        {
+            "category": "886",
+            "categoryname": "Doctor Strange"
+        },
+        {
+            "category": "863",
+            "categoryname": "Doctor Who"
+        },
+        {
+            "category": "587",
+            "categoryname": "Dolls"
+        },
+        {
+            "category": "12",
+            "categoryname": "Door"
+        },
+        {
+            "category": "540",
+            "categoryname": "Door Frame"
+        },
+        {
+            "category": "642",
+            "categoryname": "Door, Decorated"
+        },
+        {
+            "category": "523",
+            "categoryname": "Dora the Explorer"
+        },
+        {
+            "category": "1076",
+            "categoryname": "Dots"
+        },
+        {
+            "category": "281",
+            "categoryname": "Dragon Knights"
+        },
+        {
+            "category": "964",
+            "categoryname": "Dragon Masters"
+        },
+        {
+            "category": "720",
+            "categoryname": "Drome Racers"
+        },
+        {
+            "category": "167",
+            "categoryname": "Duplo"
+        },
+        {
+            "category": "640",
+            "categoryname": "Duplo, Aircraft"
+        },
+        {
+            "category": "420",
+            "categoryname": "Duplo, Animal"
+        },
+        {
+            "category": "846",
+            "categoryname": "Duplo, Baseplate"
+        },
+        {
+            "category": "639",
+            "categoryname": "Duplo, Boat"
+        },
+        {
+            "category": "417",
+            "categoryname": "Duplo, Brick"
+        },
+        {
+            "category": "440",
+            "categoryname": "Duplo, Brick, Decorated"
+        },
+        {
+            "category": "506",
+            "categoryname": "Duplo, Brick, Promotional"
+        },
+        {
+            "category": "845",
+            "categoryname": "Duplo, Cloth"
+        },
+        {
+            "category": "707",
+            "categoryname": "Duplo, Doll"
+        },
+        {
+            "category": "585",
+            "categoryname": "Duplo, Figure Wear & Utensil"
+        },
+        {
+            "category": "1038",
+            "categoryname": "Duplo, Food & Drink"
+        },
+        {
+            "category": "641",
+            "categoryname": "Duplo, Furniture"
+        },
+        {
+            "category": "1037",
+            "categoryname": "Duplo, Plant"
+        },
+        {
+            "category": "487",
+            "categoryname": "Duplo, Plate"
+        },
+        {
+            "category": "538",
+            "categoryname": "Duplo, Tile, Decorated"
+        },
+        {
+            "category": "524",
+            "categoryname": "Duplo, Toolo"
+        },
+        {
+            "category": "612",
+            "categoryname": "Duplo, Town"
+        },
+        {
+            "category": "441",
+            "categoryname": "Duplo, Train"
+        },
+        {
+            "category": "488",
+            "categoryname": "Duplo, Vehicle"
+        },
+        {
+            "category": "392",
+            "categoryname": "Easter"
+        },
+        {
+            "category": "166",
+            "categoryname": "Educational & Dacta"
+        },
+        {
+            "category": "408",
+            "categoryname": "eLAB"
+        },
+        {
+            "category": "119",
+            "categoryname": "Electric"
+        },
+        {
+            "category": "411",
+            "categoryname": "Electric, Battery Box"
+        },
+        {
+            "category": "123",
+            "categoryname": "Electric, Light & Sound"
+        },
+        {
+            "category": "121",
+            "categoryname": "Electric, Motor"
+        },
+        {
+            "category": "463",
+            "categoryname": "Electric, Programmable"
+        },
+        {
+            "category": "122",
+            "categoryname": "Electric, Train"
+        },
+        {
+            "category": "735",
+            "categoryname": "Electric, Wire & Connector"
+        },
+        {
+            "category": "646",
+            "categoryname": "Electronics"
+        },
+        {
+            "category": "843",
+            "categoryname": "Elves"
+        },
+        {
+            "category": "994",
+            "categoryname": "Energy Effect"
+        },
+        {
+            "category": "1006",
+            "categoryname": "Envelope, Letter, and Stamp"
+        },
+        {
+            "category": "800",
+            "categoryname": "EV3"
+        },
+        {
+            "category": "568",
+            "categoryname": "Exo-Force"
+        },
+        {
+            "category": "1068",
+            "categoryname": "Expert"
+        },
+        {
+            "category": "387",
+            "categoryname": "Expert Builder"
+        },
+        {
+            "category": "437",
+            "categoryname": "Explore"
+        },
+        {
+            "category": "509",
+            "categoryname": "Explore Being Me"
+        },
+        {
+            "category": "508",
+            "categoryname": "Explore Imagination"
+        },
+        {
+            "category": "510",
+            "categoryname": "Explore Logic"
+        },
+        {
+            "category": "511",
+            "categoryname": "Explore Together"
+        },
+        {
+            "category": "1108",
+            "categoryname": "Explorer"
+        },
+        {
+            "category": "302",
+            "categoryname": "Exploriens"
+        },
+        {
+            "category": "328",
+            "categoryname": "Extreme Team"
+        },
+        {
+            "category": "153",
+            "categoryname": "Fabuland"
+        },
+        {
+            "category": "566",
+            "categoryname": "Factory"
+        },
+        {
+            "category": "1101",
+            "categoryname": "Fairground Collection"
+        },
+        {
+            "category": "266",
+            "categoryname": "Fairy-Tale"
+        },
+        {
+            "category": "972",
+            "categoryname": "Fantastic Beasts"
+        },
+        {
+            "category": "593",
+            "categoryname": "Fantasy Era"
+        },
+        {
+            "category": "685",
+            "categoryname": "Farm"
+        },
+        {
+            "category": "1078",
+            "categoryname": "Felt"
+        },
+        {
+            "category": "13",
+            "categoryname": "Fence"
+        },
+        {
+            "category": "620",
+            "categoryname": "Ferrari"
+        },
+        {
+            "category": "185",
+            "categoryname": "Ferries"
+        },
+        {
+            "category": "319",
+            "categoryname": "Fire"
+        },
+        {
+            "category": "545",
+            "categoryname": "FIRST LEGO League"
+        },
+        {
+            "category": "76",
+            "categoryname": "Flag"
+        },
+        {
+            "category": "738",
+            "categoryname": "Flag, Decorated"
+        },
+        {
+            "category": "234",
+            "categoryname": "Foam"
+        },
+        {
+            "category": "175",
+            "categoryname": "Food & Drink"
+        },
+        {
+            "category": "288",
+            "categoryname": "Forestmen"
+        },
+        {
+            "category": "1041",
+            "categoryname": "FORMA"
+        },
+        {
+            "category": "78",
+            "categoryname": "Freestyle"
+        },
+        {
+            "category": "771",
+            "categoryname": "Friends"
+        },
+        {
+            "category": "282",
+            "categoryname": "Fright Knights"
+        },
+        {
+            "category": "840",
+            "categoryname": "Frozen"
+        },
+        {
+            "category": "1062",
+            "categoryname": "Frozen II"
+        },
+        {
+            "category": "822",
+            "categoryname": "Fusion"
+        },
+        {
+            "category": "303",
+            "categoryname": "Futuron"
+        },
+        {
+            "category": "791",
+            "categoryname": "Galaxy Squad"
+        },
+        {
+            "category": "444",
+            "categoryname": "Galidor"
+        },
+        {
+            "category": "252",
+            "categoryname": "Game"
+        },
+        {
+            "category": "79",
+            "categoryname": "Garage"
+        },
+        {
+            "category": "1099",
+            "categoryname": "Garage, TEST"
+        },
+        {
+            "category": "597",
+            "categoryname": "Gas Station"
+        },
+        {
+            "category": "421",
+            "categoryname": "Gears"
+        },
+        {
+            "category": "870",
+            "categoryname": "Ghostbusters"
+        },
+        {
+            "category": "81",
+            "categoryname": "Glass"
+        },
+        {
+            "category": "132",
+            "categoryname": "Glass, Decorated"
+        },
+        {
+            "category": "690",
+            "categoryname": "Glatorian"
+        },
+        {
+            "category": "724",
+            "categoryname": "Glatorian Legends"
+        },
+        {
+            "category": "683",
+            "categoryname": "Glued Model"
+        },
+        {
+            "category": "698",
+            "categoryname": "Goblet of Fire"
+        },
+        {
+            "category": "704",
+            "categoryname": "Golden Land"
+        },
+        {
+            "category": "1002",
+            "categoryname": "Graduation"
+        },
+        {
+            "category": "987",
+            "categoryname": "Grand Opening"
+        },
+        {
+            "category": "501",
+            "categoryname": "Gravity Games"
+        },
+        {
+            "category": "816",
+            "categoryname": "Guardians of the Galaxy"
+        },
+        {
+            "category": "906",
+            "categoryname": "Guardians of the Galaxy Vol.2"
+        },
+        {
+            "category": "1004",
+            "categoryname": "Guide Book"
+        },
+        {
+            "category": "1107",
+            "categoryname": "Half-Blood Prince"
+        },
+        {
+            "category": "393",
+            "categoryname": "Halloween"
+        },
+        {
+            "category": "588",
+            "categoryname": "Harbor"
+        },
+        {
+            "category": "227",
+            "categoryname": "Harry Potter"
+        },
+        {
+            "category": "749",
+            "categoryname": "Hero Factory"
+        },
+        {
+            "category": "750",
+            "categoryname": "Heroes"
+        },
+        {
+            "category": "763",
+            "categoryname": "Heroica"
+        },
+        {
+            "category": "1042",
+            "categoryname": "Hidden Side"
+        },
+        {
+            "category": "22",
+            "categoryname": "Hinge"
+        },
+        {
+            "category": "83",
+            "categoryname": "Hinge, Decorated"
+        },
+        {
+            "category": "424",
+            "categoryname": "HO 1:87 Vehicles"
+        },
+        {
+            "category": "226",
+            "categoryname": "Hobby Sets"
+        },
+        {
+            "category": "476",
+            "categoryname": "Hockey"
+        },
+        {
+            "category": "390",
+            "categoryname": "Holiday & Event"
+        },
+        {
+            "category": "85",
+            "categoryname": "Homemaker"
+        },
+        {
+            "category": "112",
+            "categoryname": "Hook"
+        },
+        {
+            "category": "87",
+            "categoryname": "Hose"
+        },
+        {
+            "category": "530",
+            "categoryname": "Hose, Pneumatic 4mm D."
+        },
+        {
+            "category": "522",
+            "categoryname": "Hose, Ribbed 7mm D."
+        },
+        {
+            "category": "528",
+            "categoryname": "Hose, Rigid 3mm D."
+        },
+        {
+            "category": "529",
+            "categoryname": "Hose, Soft 3mm D."
+        },
+        {
+            "category": "527",
+            "categoryname": "Hose, Soft Axle"
+        },
+        {
+            "category": "327",
+            "categoryname": "Hospital"
+        },
+        {
+            "category": "398",
+            "categoryname": "Human Furniture"
+        },
+        {
+            "category": "525",
+            "categoryname": "Human Toiletries"
+        },
+        {
+            "category": "963",
+            "categoryname": "Hunted"
+        },
+        {
+            "category": "263",
+            "categoryname": "Hydronauts"
+        },
+        {
+            "category": "304",
+            "categoryname": "Ice Planet 2002"
+        },
+        {
+            "category": "317",
+            "categoryname": "Idea Book"
+        },
+        {
+            "category": "272",
+            "categoryname": "Imperial Armada"
+        },
+        {
+            "category": "269",
+            "categoryname": "Imperial Guards"
+        },
+        {
+            "category": "270",
+            "categoryname": "Imperial Soldiers"
+        },
+        {
+            "category": "958",
+            "categoryname": "Incredibles 2"
+        },
+        {
+            "category": "605",
+            "categoryname": "Indiana Jones"
+        },
+        {
+            "category": "274",
+            "categoryname": "Indians"
+        },
+        {
+            "category": "332",
+            "categoryname": "Informational Book"
+        },
+        {
+            "category": "305",
+            "categoryname": "Insectoids"
+        },
+        {
+            "category": "497",
+            "categoryname": "Inventor"
+        },
+        {
+            "category": "1091",
+            "categoryname": "Iron Man"
+        },
+        {
+            "category": "829",
+            "categoryname": "Iron Man 3"
+        },
+        {
+            "category": "449",
+            "categoryname": "Island Xtreme Stunts"
+        },
+        {
+            "category": "271",
+            "categoryname": "Islanders"
+        },
+        {
+            "category": "178",
+            "categoryname": "Jack Stone"
+        },
+        {
+            "category": "852",
+            "categoryname": "Jake and the Never Land Pirates"
+        },
+        {
+            "category": "276",
+            "categoryname": "Jewelry"
+        },
+        {
+            "category": "429",
+            "categoryname": "Jumbo Bricks"
+        },
+        {
+            "category": "248",
+            "categoryname": "Jungle"
+        },
+        {
+            "category": "809",
+            "categoryname": "Juniors"
+        },
+        {
+            "category": "256",
+            "categoryname": "Jurassic Park III"
+        },
+        {
+            "category": "850",
+            "categoryname": "Jurassic World"
+        },
+        {
+            "category": "832",
+            "categoryname": "Justice League"
+        },
+        {
+            "category": "334",
+            "categoryname": "Key Chain"
+        },
+        {
+            "category": "700",
+            "categoryname": "Kingdom of the Crystal Skull"
+        },
+        {
+            "category": "744",
+            "categoryname": "Kingdoms"
+        },
+        {
+            "category": "283",
+            "categoryname": "Knights Kingdom I"
+        },
+        {
+            "category": "536",
+            "categoryname": "Knights Kingdom II"
+        },
+        {
+            "category": "90",
+            "categoryname": "Ladder & Bridge"
+        },
+        {
+            "category": "723",
+            "categoryname": "Lamborghini"
+        },
+        {
+            "category": "569",
+            "categoryname": "Large Figure Part"
+        },
+        {
+            "category": "703",
+            "categoryname": "Last Crusade"
+        },
+        {
+            "category": "496",
+            "categoryname": "Launch Command"
+        },
+        {
+            "category": "405",
+            "categoryname": "Learning"
+        },
+        {
+            "category": "254",
+            "categoryname": "Learning Book"
+        },
+        {
+            "category": "1013",
+            "categoryname": "Legacy"
+        },
+        {
+            "category": "1036",
+            "categoryname": "Legend of Isla Nublar"
+        },
+        {
+            "category": "267",
+            "categoryname": "Legends"
+        },
+        {
+            "category": "787",
+            "categoryname": "Legends of Chima"
+        },
+        {
+            "category": "922",
+            "categoryname": "Legends of Tomorrow"
+        },
+        {
+            "category": "976",
+            "categoryname": "LEGO Brand"
+        },
+        {
+            "category": "625",
+            "categoryname": "LEGO Brand Store"
+        },
+        {
+            "category": "977",
+            "categoryname": "LEGO Club"
+        },
+        {
+            "category": "981",
+            "categoryname": "LEGO Employee Gift"
+        },
+        {
+            "category": "1011",
+            "categoryname": "LEGO Facilities"
+        },
+        {
+            "category": "982",
+            "categoryname": "LEGO House"
+        },
+        {
+            "category": "817",
+            "categoryname": "LEGO Ideas &#40;CUUSOO&#41;"
+        },
+        {
+            "category": "979",
+            "categoryname": "LEGO Inside Tour"
+        },
+        {
+            "category": "1065",
+            "categoryname": "LEGO Originals"
+        },
+        {
+            "category": "277",
+            "categoryname": "Legoland"
+        },
+        {
+            "category": "572",
+            "categoryname": "Legoland Parks"
+        },
+        {
+            "category": "24",
+            "categoryname": "Lever"
+        },
+        {
+            "category": "172",
+            "categoryname": "Life On Mars"
+        },
+        {
+            "category": "291",
+            "categoryname": "Lion Knights"
+        },
+        {
+            "category": "292",
+            "categoryname": "Little Forest Friends"
+        },
+        {
+            "category": "507",
+            "categoryname": "Little Robots"
+        },
+        {
+            "category": "1112",
+            "categoryname": "Luggage & Luggage Accessories"
+        },
+        {
+            "category": "306",
+            "categoryname": "M:Tron"
+        },
+        {
+            "category": "462",
+            "categoryname": "Magazine"
+        },
+        {
+            "category": "1086",
+            "categoryname": "Magazine, Bionicle"
+        },
+        {
+            "category": "1021",
+            "categoryname": "Magazine, City"
+        },
+        {
+            "category": "1087",
+            "categoryname": "Magazine, Disney Princess"
+        },
+        {
+            "category": "1085",
+            "categoryname": "Magazine, Elves"
+        },
+        {
+            "category": "1109",
+            "categoryname": "Magazine, Explorer"
+        },
+        {
+            "category": "1022",
+            "categoryname": "Magazine, Friends"
+        },
+        {
+            "category": "1083",
+            "categoryname": "Magazine, Hidden Side"
+        },
+        {
+            "category": "1084",
+            "categoryname": "Magazine, Jurassic World"
+        },
+        {
+            "category": "1026",
+            "categoryname": "Magazine, Legends of Chima"
+        },
+        {
+            "category": "1023",
+            "categoryname": "Magazine, Nexo Knights"
+        },
+        {
+            "category": "1024",
+            "categoryname": "Magazine, Ninjago"
+        },
+        {
+            "category": "1025",
+            "categoryname": "Magazine, Star Wars"
+        },
+        {
+            "category": "1063",
+            "categoryname": "Magazine, Super Heroes"
+        },
+        {
+            "category": "1088",
+            "categoryname": "Magazine, The LEGO Movie 2"
+        },
+        {
+            "category": "14",
+            "categoryname": "Magnet"
+        },
+        {
+            "category": "897",
+            "categoryname": "Man of Steel"
+        },
+        {
+            "category": "592",
+            "categoryname": "Mars Mission"
+        },
+        {
+            "category": "764",
+            "categoryname": "Master Builder Academy"
+        },
+        {
+            "category": "1106",
+            "categoryname": "Master of the Mountain"
+        },
+        {
+            "category": "839",
+            "categoryname": "Masters"
+        },
+        {
+            "category": "653",
+            "categoryname": "Matoran of Light"
+        },
+        {
+            "category": "654",
+            "categoryname": "Matoran of Mahri Nui"
+        },
+        {
+            "category": "655",
+            "categoryname": "Matoran of Mata Nui"
+        },
+        {
+            "category": "656",
+            "categoryname": "Matoran of Metru Nui"
+        },
+        {
+            "category": "657",
+            "categoryname": "Matoran of Voya Nui"
+        },
+        {
+            "category": "513",
+            "categoryname": "Media Audio & Video"
+        },
+        {
+            "category": "1082",
+            "categoryname": "Micro Doll, Body Part"
+        },
+        {
+            "category": "874",
+            "categoryname": "Mighty Micros"
+        },
+        {
+            "category": "867",
+            "categoryname": "Miles From Tomorrowland"
+        },
+        {
+            "category": "59",
+            "categoryname": "Mindstorms"
+        },
+        {
+            "category": "801",
+            "categoryname": "Minecraft"
+        },
+        {
+            "category": "1096",
+            "categoryname": "Minecraft Dungeons"
+        },
+        {
+            "category": "481",
+            "categoryname": "Mini"
+        },
+        {
+            "category": "911",
+            "categoryname": "Mini Doll, Body Part"
+        },
+        {
+            "category": "912",
+            "categoryname": "Mini Doll, Body Wear"
+        },
+        {
+            "category": "913",
+            "categoryname": "Mini Doll, Hair"
+        },
+        {
+            "category": "914",
+            "categoryname": "Mini Doll, Head"
+        },
+        {
+            "category": "915",
+            "categoryname": "Mini Doll, Headgear"
+        },
+        {
+            "category": "916",
+            "categoryname": "Mini Doll, Legs Assembly"
+        },
+        {
+            "category": "917",
+            "categoryname": "Mini Doll, Torso Assembly"
+        },
+        {
+            "category": "20",
+            "categoryname": "Minifigure, Body Part"
+        },
+        {
+            "category": "142",
+            "categoryname": "Minifigure, Body Wear"
+        },
+        {
+            "category": "847",
+            "categoryname": "Minifigure, Hair"
+        },
+        {
+            "category": "238",
+            "categoryname": "Minifigure, Head"
+        },
+        {
+            "category": "606",
+            "categoryname": "Minifigure, Head, Modified"
+        },
+        {
+            "category": "16",
+            "categoryname": "Minifigure, Headgear"
+        },
+        {
+            "category": "636",
+            "categoryname": "Minifigure, Headgear Accessory"
+        },
+        {
+            "category": "484",
+            "categoryname": "Minifigure, Legs Assembly"
+        },
+        {
+            "category": "1098",
+            "categoryname": "Minifigure, Legs Assembly, Decor."
+        },
+        {
+            "category": "418",
+            "categoryname": "Minifigure, Shield"
+        },
+        {
+            "category": "150",
+            "categoryname": "Minifigure, Torso"
+        },
+        {
+            "category": "485",
+            "categoryname": "Minifigure, Torso Assembly"
+        },
+        {
+            "category": "1097",
+            "categoryname": "Minifigure, Torso Assembly, Decor."
+        },
+        {
+            "category": "18",
+            "categoryname": "Minifigure, Utensil"
+        },
+        {
+            "category": "943",
+            "categoryname": "Minifigure, Utensil, Decorated"
+        },
+        {
+            "category": "19",
+            "categoryname": "Minifigure, Weapon"
+        },
+        {
+            "category": "1070",
+            "categoryname": "Minions The Rise Of Gru"
+        },
+        {
+            "category": "394",
+            "categoryname": "Minitalia"
+        },
+        {
+            "category": "1110",
+            "categoryname": "Miscellaneous Licensed"
+        },
+        {
+            "category": "550",
+            "categoryname": "Mission Deep Freeze"
+        },
+        {
+            "category": "549",
+            "categoryname": "Mission Deep Sea"
+        },
+        {
+            "category": "658",
+            "categoryname": "Mistika"
+        },
+        {
+            "category": "1040",
+            "categoryname": "Mix"
+        },
+        {
+            "category": "808",
+            "categoryname": "Mixels"
+        },
+        {
+            "category": "819",
+            "categoryname": "Mixels Series 1"
+        },
+        {
+            "category": "820",
+            "categoryname": "Mixels Series 2"
+        },
+        {
+            "category": "821",
+            "categoryname": "Mixels Series 3"
+        },
+        {
+            "category": "837",
+            "categoryname": "Mixels Series 4"
+        },
+        {
+            "category": "851",
+            "categoryname": "Mixels Series 5"
+        },
+        {
+            "category": "861",
+            "categoryname": "Mixels Series 6"
+        },
+        {
+            "category": "873",
+            "categoryname": "Mixels Series 7"
+        },
+        {
+            "category": "882",
+            "categoryname": "Mixels Series 8"
+        },
+        {
+            "category": "889",
+            "categoryname": "Mixels Series 9"
+        },
+        {
+            "category": "894",
+            "categoryname": "Moana"
+        },
+        {
+            "category": "682",
+            "categoryname": "Model"
+        },
+        {
+            "category": "432",
+            "categoryname": "Model Maker"
+        },
+        {
+            "category": "60",
+            "categoryname": "Model Team"
+        },
+        {
+            "category": "710",
+            "categoryname": "Modular Buildings"
+        },
+        {
+            "category": "727",
+            "categoryname": "Modulex"
+        },
+        {
+            "category": "729",
+            "categoryname": "Modulex, Brick"
+        },
+        {
+            "category": "728",
+            "categoryname": "Modulex, Tile, Decorated"
+        },
+        {
+            "category": "730",
+            "categoryname": "Modulex, Window"
+        },
+        {
+            "category": "604",
+            "categoryname": "Money and Coin Bank"
+        },
+        {
+            "category": "1100",
+            "categoryname": "Monkie Kid"
+        },
+        {
+            "category": "237",
+            "categoryname": "Monorail"
+        },
+        {
+            "category": "781",
+            "categoryname": "Monster Fighters"
+        },
+        {
+            "category": "986",
+            "categoryname": "Monthly Model"
+        },
+        {
+            "category": "433",
+            "categoryname": "Mosaic"
+        },
+        {
+            "category": "504",
+            "categoryname": "Motor, Non-Electric"
+        },
+        {
+            "category": "802",
+            "categoryname": "Muji"
+        },
+        {
+            "category": "467",
+            "categoryname": "My Own Creation"
+        },
+        {
+            "category": "694",
+            "categoryname": "My Own Train"
+        },
+        {
+            "category": "868",
+            "categoryname": "Nexo Knights"
+        },
+        {
+            "category": "284",
+            "categoryname": "Ninja"
+        },
+        {
+            "category": "759",
+            "categoryname": "Ninjago"
+        },
+        {
+            "category": "630",
+            "categoryname": "NXT"
+        },
+        {
+            "category": "383",
+            "categoryname": "Off-Road"
+        },
+        {
+            "category": "1113",
+            "categoryname": "Office Supplies"
+        },
+        {
+            "category": "699",
+            "categoryname": "Order of the Phoenix"
+        },
+        {
+            "category": "475",
+            "categoryname": "Orient Expedition"
+        },
+        {
+            "category": "495",
+            "categoryname": "Outback"
+        },
+        {
+            "category": "975",
+            "categoryname": "Overwatch"
+        },
+        {
+            "category": "91",
+            "categoryname": "Panel"
+        },
+        {
+            "category": "461",
+            "categoryname": "Panel, Decorated"
+        },
+        {
+            "category": "246",
+            "categoryname": "Paper"
+        },
+        {
+            "category": "1018",
+            "categoryname": "Paper, Certificate"
+        },
+        {
+            "category": "1104",
+            "categoryname": "Paper, Flyer"
+        },
+        {
+            "category": "1003",
+            "categoryname": "Paper, Forms & Surveys"
+        },
+        {
+            "category": "71",
+            "categoryname": "Paradisa"
+        },
+        {
+            "category": "995",
+            "categoryname": "Party Supplies"
+        },
+        {
+            "category": "445",
+            "categoryname": "Patch & Pin"
+        },
+        {
+            "category": "241",
+            "categoryname": "Pen"
+        },
+        {
+            "category": "659",
+            "categoryname": "Phantoka"
+        },
+        {
+            "category": "757",
+            "categoryname": "Pharaoh's Quest"
+        },
+        {
+            "category": "521",
+            "categoryname": "Photo Frame & Holder"
+        },
+        {
+            "category": "660",
+            "categoryname": "Piraka"
+        },
+        {
+            "category": "61",
+            "categoryname": "Pirates"
+        },
+        {
+            "category": "688",
+            "categoryname": "Pirates I"
+        },
+        {
+            "category": "687",
+            "categoryname": "Pirates II"
+        },
+        {
+            "category": "841",
+            "categoryname": "Pirates III"
+        },
+        {
+            "category": "761",
+            "categoryname": "Pirates of the Caribbean"
+        },
+        {
+            "category": "1081",
+            "categoryname": "Placeholder"
+        },
+        {
+            "category": "772",
+            "categoryname": "Planet Series 1"
+        },
+        {
+            "category": "783",
+            "categoryname": "Planet Series 2"
+        },
+        {
+            "category": "793",
+            "categoryname": "Planet Series 3"
+        },
+        {
+            "category": "794",
+            "categoryname": "Planet Series 4"
+        },
+        {
+            "category": "25",
+            "categoryname": "Plant"
+        },
+        {
+            "category": "95",
+            "categoryname": "Plant, Tree"
+        },
+        {
+            "category": "161",
+            "categoryname": "Plastic"
+        },
+        {
+            "category": "26",
+            "categoryname": "Plate"
+        },
+        {
+            "category": "885",
+            "categoryname": "Plate, Decorated"
+        },
+        {
+            "category": "27",
+            "categoryname": "Plate, Modified"
+        },
+        {
+            "category": "890",
+            "categoryname": "Plate, Modified, Decorated"
+        },
+        {
+            "category": "28",
+            "categoryname": "Plate, Round"
+        },
+        {
+            "category": "1090",
+            "categoryname": "Plate, Round, Decorated"
+        },
+        {
+            "category": "586",
+            "categoryname": "Play Wear & Weaponry"
+        },
+        {
+            "category": "613",
+            "categoryname": "Playhouse"
+        },
+        {
+            "category": "998",
+            "categoryname": "Playmat"
+        },
+        {
+            "category": "661",
+            "categoryname": "Playsets"
+        },
+        {
+            "category": "159",
+            "categoryname": "Pneumatic"
+        },
+        {
+            "category": "323",
+            "categoryname": "Police"
+        },
+        {
+            "category": "949",
+            "categoryname": "Possession"
+        },
+        {
+            "category": "251",
+            "categoryname": "Post Office"
+        },
+        {
+            "category": "503",
+            "categoryname": "Poster"
+        },
+        {
+            "category": "721",
+            "categoryname": "Power Functions"
+        },
+        {
+            "category": "689",
+            "categoryname": "Power Miners"
+        },
+        {
+            "category": "691",
+            "categoryname": "Power Racers"
+        },
+        {
+            "category": "1016",
+            "categoryname": "Powered Up"
+        },
+        {
+            "category": "925",
+            "categoryname": "Powerpuff Girls"
+        },
+        {
+            "category": "1077",
+            "categoryname": "Prime Empire"
+        },
+        {
+            "category": "294",
+            "categoryname": "Primo"
+        },
+        {
+            "category": "734",
+            "categoryname": "Prince of Persia"
+        },
+        {
+            "category": "614",
+            "categoryname": "Princess Castle"
+        },
+        {
+            "category": "697",
+            "categoryname": "Prisoner of Azkaban"
+        },
+        {
+            "category": "992",
+            "categoryname": "Projectile Launcher"
+        },
+        {
+            "category": "983",
+            "categoryname": "Promotional"
+        },
+        {
+            "category": "30",
+            "categoryname": "Propeller"
+        },
+        {
+            "category": "838",
+            "categoryname": "Protectors"
+        },
+        {
+            "category": "443",
+            "categoryname": "Puzzle"
+        },
+        {
+            "category": "594",
+            "categoryname": "Puzzle Book"
+        },
+        {
+            "category": "537",
+            "categoryname": "Quatro"
+        },
+        {
+            "category": "598",
+            "categoryname": "Race"
+        },
+        {
+            "category": "179",
+            "categoryname": "Racers"
+        },
+        {
+            "category": "158",
+            "categoryname": "Radio Control"
+        },
+        {
+            "category": "662",
+            "categoryname": "Rahaga"
+        },
+        {
+            "category": "663",
+            "categoryname": "Rahi"
+        },
+        {
+            "category": "664",
+            "categoryname": "Rahkshi"
+        },
+        {
+            "category": "701",
+            "categoryname": "Raiders of the Lost Ark"
+        },
+        {
+            "category": "324",
+            "categoryname": "Rattles"
+        },
+        {
+            "category": "577",
+            "categoryname": "RC Train"
+        },
+        {
+            "category": "631",
+            "categoryname": "RCX"
+        },
+        {
+            "category": "947",
+            "categoryname": "Rebooted"
+        },
+        {
+            "category": "686",
+            "categoryname": "Recreation"
+        },
+        {
+            "category": "329",
+            "categoryname": "Res-Q"
+        },
+        {
+            "category": "539",
+            "categoryname": "Retail Display"
+        },
+        {
+            "category": "848",
+            "categoryname": "Retail Display Case"
+        },
+        {
+            "category": "526",
+            "categoryname": "Retail Display Flag"
+        },
+        {
+            "category": "225",
+            "categoryname": "Riding Cycle"
+        },
+        {
+            "category": "989",
+            "categoryname": "Ring"
+        },
+        {
+            "category": "945",
+            "categoryname": "Rise of the Snakes"
+        },
+        {
+            "category": "98",
+            "categoryname": "Road Sign"
+        },
+        {
+            "category": "1048",
+            "categoryname": "Road Sign, Decorated"
+        },
+        {
+            "category": "307",
+            "categoryname": "RoboForce"
+        },
+        {
+            "category": "384",
+            "categoryname": "RoboRiders"
+        },
+        {
+            "category": "619",
+            "categoryname": "Robot"
+        },
+        {
+            "category": "99",
+            "categoryname": "Rock"
+        },
+        {
+            "category": "62",
+            "categoryname": "Rock Raiders"
+        },
+        {
+            "category": "379",
+            "categoryname": "Roof"
+        },
+        {
+            "category": "285",
+            "categoryname": "Royal Knights"
+        },
+        {
+            "category": "229",
+            "categoryname": "Rubber Band & Belt"
+        },
+        {
+            "category": "589",
+            "categoryname": "Safari"
+        },
+        {
+            "category": "395",
+            "categoryname": "Samsonite"
+        },
+        {
+            "category": "102",
+            "categoryname": "Scala"
+        },
+        {
+            "category": "413",
+            "categoryname": "Scala, Figure Accessory"
+        },
+        {
+            "category": "447",
+            "categoryname": "School Supplies"
+        },
+        {
+            "category": "856",
+            "categoryname": "Scooby-Doo"
+        },
+        {
+            "category": "169",
+            "categoryname": "Sculptures"
+        },
+        {
+            "category": "1046",
+            "categoryname": "Secrets of the Forbidden Spinjitzu"
+        },
+        {
+            "category": "753",
+            "categoryname": "Series  1 Minifigures"
+        },
+        {
+            "category": "754",
+            "categoryname": "Series  2 Minifigures"
+        },
+        {
+            "category": "758",
+            "categoryname": "Series  3 Minifigures"
+        },
+        {
+            "category": "760",
+            "categoryname": "Series  4 Minifigures"
+        },
+        {
+            "category": "765",
+            "categoryname": "Series  5 Minifigures"
+        },
+        {
+            "category": "770",
+            "categoryname": "Series  6 Minifigures"
+        },
+        {
+            "category": "774",
+            "categoryname": "Series  7 Minifigures"
+        },
+        {
+            "category": "784",
+            "categoryname": "Series  8 Minifigures"
+        },
+        {
+            "category": "792",
+            "categoryname": "Series  9 Minifigures"
+        },
+        {
+            "category": "796",
+            "categoryname": "Series 10 Minifigures"
+        },
+        {
+            "category": "799",
+            "categoryname": "Series 11 Minifigures"
+        },
+        {
+            "category": "823",
+            "categoryname": "Series 12 Minifigures"
+        },
+        {
+            "category": "833",
+            "categoryname": "Series 13 Minifigures"
+        },
+        {
+            "category": "857",
+            "categoryname": "Series 14 Minifigures"
+        },
+        {
+            "category": "871",
+            "categoryname": "Series 15 Minifigures"
+        },
+        {
+            "category": "883",
+            "categoryname": "Series 16 Minifigures"
+        },
+        {
+            "category": "907",
+            "categoryname": "Series 17 Minifigures"
+        },
+        {
+            "category": "959",
+            "categoryname": "Series 18 Minifigures"
+        },
+        {
+            "category": "1058",
+            "categoryname": "Series 19 Minifigures"
+        },
+        {
+            "category": "1089",
+            "categoryname": "Series 20 Minifigures"
+        },
+        {
+            "category": "803",
+            "categoryname": "Serious Play"
+        },
+        {
+            "category": "63",
+            "categoryname": "Service Packs"
+        },
+        {
+            "category": "950",
+            "categoryname": "Skybound"
+        },
+        {
+            "category": "999",
+            "categoryname": "Slide"
+        },
+        {
+            "category": "31",
+            "categoryname": "Slope"
+        },
+        {
+            "category": "438",
+            "categoryname": "Slope, Curved"
+        },
+        {
+            "category": "775",
+            "categoryname": "Slope, Curved, Decorated"
+        },
+        {
+            "category": "33",
+            "categoryname": "Slope, Decorated"
+        },
+        {
+            "category": "32",
+            "categoryname": "Slope, Inverted"
+        },
+        {
+            "category": "776",
+            "categoryname": "Slope, Inverted, Decorated"
+        },
+        {
+            "category": "1005",
+            "categoryname": "Smoking Supplies"
+        },
+        {
+            "category": "224",
+            "categoryname": "Soccer"
+        },
+        {
+            "category": "836",
+            "categoryname": "Sofia the First"
+        },
+        {
+            "category": "439",
+            "categoryname": "Soft Bricks"
+        },
+        {
+            "category": "180",
+            "categoryname": "Software"
+        },
+        {
+            "category": "953",
+            "categoryname": "Sons of Garmadon"
+        },
+        {
+            "category": "695",
+            "categoryname": "Sorcerer's Stone"
+        },
+        {
+            "category": "34",
+            "categoryname": "Space"
+        },
+        {
+            "category": "308",
+            "categoryname": "Space Police I"
+        },
+        {
+            "category": "309",
+            "categoryname": "Space Police II"
+        },
+        {
+            "category": "713",
+            "categoryname": "Space Police III"
+        },
+        {
+            "category": "330",
+            "categoryname": "Space Port"
+        },
+        {
+            "category": "961",
+            "categoryname": "Special Assembly"
+        },
+        {
+            "category": "632",
+            "categoryname": "Special Element Sets"
+        },
+        {
+            "category": "842",
+            "categoryname": "Speed Champions"
+        },
+        {
+            "category": "608",
+            "categoryname": "Speed Racer"
+        },
+        {
+            "category": "386",
+            "categoryname": "Speed Slammers"
+        },
+        {
+            "category": "469",
+            "categoryname": "Spider-Man"
+        },
+        {
+            "category": "705",
+            "categoryname": "Spider-Man 1"
+        },
+        {
+            "category": "706",
+            "categoryname": "Spider-Man 2"
+        },
+        {
+            "category": "1033",
+            "categoryname": "Spider-Man Far From Home"
+        },
+        {
+            "category": "956",
+            "categoryname": "Spider-Man Homecoming"
+        },
+        {
+            "category": "1045",
+            "categoryname": "SPIKE Prime"
+        },
+        {
+            "category": "1014",
+            "categoryname": "Spinjitzu"
+        },
+        {
+            "category": "967",
+            "categoryname": "Spinjitzu Masters"
+        },
+        {
+            "category": "1047",
+            "categoryname": "Spinjitzu Slam"
+        },
+        {
+            "category": "970",
+            "categoryname": "Spinners"
+        },
+        {
+            "category": "573",
+            "categoryname": "SpongeBob SquarePants"
+        },
+        {
+            "category": "473",
+            "categoryname": "Sports"
+        },
+        {
+            "category": "993",
+            "categoryname": "Spring"
+        },
+        {
+            "category": "436",
+            "categoryname": "Spybotics"
+        },
+        {
+            "category": "310",
+            "categoryname": "Spyrius"
+        },
+        {
+            "category": "103",
+            "categoryname": "Stairs"
+        },
+        {
+            "category": "65",
+            "categoryname": "Star Wars"
+        },
+        {
+            "category": "1029",
+            "categoryname": "Star Wars Battlefront"
+        },
+        {
+            "category": "257",
+            "categoryname": "Star Wars Episode 1"
+        },
+        {
+            "category": "381",
+            "categoryname": "Star Wars Episode 2"
+        },
+        {
+            "category": "547",
+            "categoryname": "Star Wars Episode 3"
+        },
+        {
+            "category": "258",
+            "categoryname": "Star Wars Episode 4/5/6"
+        },
+        {
+            "category": "858",
+            "categoryname": "Star Wars Episode 7"
+        },
+        {
+            "category": "923",
+            "categoryname": "Star Wars Episode 8"
+        },
+        {
+            "category": "1057",
+            "categoryname": "Star Wars Episode 9"
+        },
+        {
+            "category": "1105",
+            "categoryname": "Star Wars Galaxy&#39;s Edge"
+        },
+        {
+            "category": "834",
+            "categoryname": "Star Wars Legends"
+        },
+        {
+            "category": "806",
+            "categoryname": "Star Wars Microfighters Series 1"
+        },
+        {
+            "category": "835",
+            "categoryname": "Star Wars Microfighters Series 2"
+        },
+        {
+            "category": "866",
+            "categoryname": "Star Wars Microfighters Series 3"
+        },
+        {
+            "category": "900",
+            "categoryname": "Star Wars Microfighters Series 4"
+        },
+        {
+            "category": "928",
+            "categoryname": "Star Wars Microfighters Series 5"
+        },
+        {
+            "category": "1009",
+            "categoryname": "Star Wars Microfighters Series 6"
+        },
+        {
+            "category": "1067",
+            "categoryname": "Star Wars Microfighters Series 7"
+        },
+        {
+            "category": "814",
+            "categoryname": "Star Wars Old Republic"
+        },
+        {
+            "category": "607",
+            "categoryname": "Star Wars Other"
+        },
+        {
+            "category": "818",
+            "categoryname": "Star Wars Rebels"
+        },
+        {
+            "category": "1031",
+            "categoryname": "Star Wars Resistance"
+        },
+        {
+            "category": "888",
+            "categoryname": "Star Wars Rogue One"
+        },
+        {
+            "category": "960",
+            "categoryname": "Star Wars Solo"
+        },
+        {
+            "category": "635",
+            "categoryname": "Star Wars The Clone Wars"
+        },
+        {
+            "category": "908",
+            "categoryname": "Star Wars The Freemaker Adventures"
+        },
+        {
+            "category": "1061",
+            "categoryname": "Star Wars The Mandalorian"
+        },
+        {
+            "category": "813",
+            "categoryname": "Star Wars Yoda Chronicles"
+        },
+        {
+            "category": "742",
+            "categoryname": "Stars"
+        },
+        {
+            "category": "1102",
+            "categoryname": "Sticker Book"
+        },
+        {
+            "category": "582",
+            "categoryname": "Sticker Over Assembly"
+        },
+        {
+            "category": "160",
+            "categoryname": "Sticker Sheet"
+        },
+        {
+            "category": "1017",
+            "categoryname": "Sticker, Collectible Sticker"
+        },
+        {
+            "category": "264",
+            "categoryname": "Stingrays"
+        },
+        {
+            "category": "399",
+            "categoryname": "Storage"
+        },
+        {
+            "category": "1092",
+            "categoryname": "Storage, Sorting Tray"
+        },
+        {
+            "category": "505",
+            "categoryname": "Story Book"
+        },
+        {
+            "category": "1043",
+            "categoryname": "Stranger Things"
+        },
+        {
+            "category": "231",
+            "categoryname": "String"
+        },
+        {
+            "category": "88",
+            "categoryname": "String Reel / Winch"
+        },
+        {
+            "category": "174",
+            "categoryname": "Studios"
+        },
+        {
+            "category": "768",
+            "categoryname": "Super Heroes"
+        },
+        {
+            "category": "1080",
+            "categoryname": "Super Heroes Other"
+        },
+        {
+            "category": "1095",
+            "categoryname": "Super Mario"
+        },
+        {
+            "category": "831",
+            "categoryname": "Superman"
+        },
+        {
+            "category": "397",
+            "categoryname": "Supplemental"
+        },
+        {
+            "category": "105",
+            "categoryname": "Support"
+        },
+        {
+            "category": "106",
+            "categoryname": "Tail"
+        },
+        {
+            "category": "741",
+            "categoryname": "Tail, Decorated"
+        },
+        {
+            "category": "962",
+            "categoryname": "Tangled"
+        },
+        {
+            "category": "107",
+            "categoryname": "Tap"
+        },
+        {
+            "category": "785",
+            "categoryname": "Team GB"
+        },
+        {
+            "category": "36",
+            "categoryname": "Technic"
+        },
+        {
+            "category": "134",
+            "categoryname": "Technic, Axle"
+        },
+        {
+            "category": "135",
+            "categoryname": "Technic, Brick"
+        },
+        {
+            "category": "133",
+            "categoryname": "Technic, Connector"
+        },
+        {
+            "category": "638",
+            "categoryname": "Technic, Disk"
+        },
+        {
+            "category": "242",
+            "categoryname": "Technic, Figure Accessory"
+        },
+        {
+            "category": "483",
+            "categoryname": "Technic, Flex Cable"
+        },
+        {
+            "category": "136",
+            "categoryname": "Technic, Gear"
+        },
+        {
+            "category": "137",
+            "categoryname": "Technic, Liftarm"
+        },
+        {
+            "category": "777",
+            "categoryname": "Technic, Liftarm, Decorated"
+        },
+        {
+            "category": "138",
+            "categoryname": "Technic, Link"
+        },
+        {
+            "category": "154",
+            "categoryname": "Technic, Panel"
+        },
+        {
+            "category": "740",
+            "categoryname": "Technic, Panel, Decorated"
+        },
+        {
+            "category": "139",
+            "categoryname": "Technic, Pin"
+        },
+        {
+            "category": "140",
+            "categoryname": "Technic, Plate"
+        },
+        {
+            "category": "542",
+            "categoryname": "Technic, Shock Absorber"
+        },
+        {
+            "category": "141",
+            "categoryname": "Technic, Steering"
+        },
+        {
+            "category": "790",
+            "categoryname": "Teenage Mutant Ninja Turtles"
+        },
+        {
+            "category": "702",
+            "categoryname": "Temple of Doom"
+        },
+        {
+            "category": "824",
+            "categoryname": "Thanksgiving"
+        },
+        {
+            "category": "876",
+            "categoryname": "The Angry Birds Movie"
+        },
+        {
+            "category": "1073",
+            "categoryname": "The Avengers"
+        },
+        {
+            "category": "825",
+            "categoryname": "The Battle of the Five Armies"
+        },
+        {
+            "category": "896",
+            "categoryname": "The Dark Knight Trilogy"
+        },
+        {
+            "category": "946",
+            "categoryname": "The Final Battle"
+        },
+        {
+            "category": "944",
+            "categoryname": "The Golden Weapons"
+        },
+        {
+            "category": "952",
+            "categoryname": "The Hands of Time"
+        },
+        {
+            "category": "788",
+            "categoryname": "The Hobbit"
+        },
+        {
+            "category": "789",
+            "categoryname": "The Hobbit and the Lord of the Rings"
+        },
+        {
+            "category": "957",
+            "categoryname": "The Incredibles"
+        },
+        {
+            "category": "892",
+            "categoryname": "The LEGO Batman Movie"
+        },
+        {
+            "category": "804",
+            "categoryname": "The LEGO Movie"
+        },
+        {
+            "category": "971",
+            "categoryname": "The LEGO Movie 2"
+        },
+        {
+            "category": "920",
+            "categoryname": "The LEGO Ninjago Movie"
+        },
+        {
+            "category": "795",
+            "categoryname": "The Lone Ranger"
+        },
+        {
+            "category": "782",
+            "categoryname": "The Lord of the Rings"
+        },
+        {
+            "category": "807",
+            "categoryname": "The Simpsons"
+        },
+        {
+            "category": "849",
+            "categoryname": "The Simpsons Series 2"
+        },
+        {
+            "category": "562",
+            "categoryname": "Thomas & Friends"
+        },
+        {
+            "category": "909",
+            "categoryname": "Thor Ragnarok"
+        },
+        {
+            "category": "385",
+            "categoryname": "Throwbot / Slizer"
+        },
+        {
+            "category": "514",
+            "categoryname": "Throwing Disk"
+        },
+        {
+            "category": "37",
+            "categoryname": "Tile"
+        },
+        {
+            "category": "39",
+            "categoryname": "Tile, Decorated"
+        },
+        {
+            "category": "38",
+            "categoryname": "Tile, Modified"
+        },
+        {
+            "category": "778",
+            "categoryname": "Tile, Modified, Decorated"
+        },
+        {
+            "category": "1039",
+            "categoryname": "Tile, Promotional"
+        },
+        {
+            "category": "117",
+            "categoryname": "Tile, Round"
+        },
+        {
+            "category": "812",
+            "categoryname": "Tile, Round, Decorated"
+        },
+        {
+            "category": "1072",
+            "categoryname": "Tim Burton&#39;s Batman"
+        },
+        {
+            "category": "157",
+            "categoryname": "Time Cruisers"
+        },
+        {
+            "category": "571",
+            "categoryname": "Tiny Turbos"
+        },
+        {
+            "category": "111",
+            "categoryname": "Tire & Tread"
+        },
+        {
+            "category": "665",
+            "categoryname": "Titans"
+        },
+        {
+            "category": "668",
+            "categoryname": "Toa"
+        },
+        {
+            "category": "669",
+            "categoryname": "Toa Hagah"
+        },
+        {
+            "category": "670",
+            "categoryname": "Toa Hordika"
+        },
+        {
+            "category": "671",
+            "categoryname": "Toa Inika"
+        },
+        {
+            "category": "672",
+            "categoryname": "Toa Mahri"
+        },
+        {
+            "category": "673",
+            "categoryname": "Toa Metru"
+        },
+        {
+            "category": "674",
+            "categoryname": "Toa Nuva"
+        },
+        {
+            "category": "675",
+            "categoryname": "Tohunga"
+        },
+        {
+            "category": "296",
+            "categoryname": "Toolo"
+        },
+        {
+            "category": "948",
+            "categoryname": "Tournament of Elements"
+        },
+        {
+            "category": "67",
+            "categoryname": "Town"
+        },
+        {
+            "category": "626",
+            "categoryname": "Town Jr."
+        },
+        {
+            "category": "600",
+            "categoryname": "Town Plan"
+        },
+        {
+            "category": "732",
+            "categoryname": "Toy Story"
+        },
+        {
+            "category": "1049",
+            "categoryname": "Toy Story 3"
+        },
+        {
+            "category": "1034",
+            "categoryname": "Toy Story 4"
+        },
+        {
+            "category": "645",
+            "categoryname": "Toy, Early"
+        },
+        {
+            "category": "679",
+            "categoryname": "Toy, Fast Food"
+        },
+        {
+            "category": "512",
+            "categoryname": "Toy, Plush"
+        },
+        {
+            "category": "1064",
+            "categoryname": "Toy, Wooden"
+        },
+        {
+            "category": "450",
+            "categoryname": "Track System"
+        },
+        {
+            "category": "1030",
+            "categoryname": "Trading Card Album"
+        },
+        {
+            "category": "599",
+            "categoryname": "Traffic"
+        },
+        {
+            "category": "124",
+            "categoryname": "Train"
+        },
+        {
+            "category": "128",
+            "categoryname": "Train, Track"
+        },
+        {
+            "category": "1069",
+            "categoryname": "Trolls World Tour"
+        },
+        {
+            "category": "676",
+            "categoryname": "Turaga"
+        },
+        {
+            "category": "40",
+            "categoryname": "Turntable"
+        },
+        {
+            "category": "311",
+            "categoryname": "UFO"
+        },
+        {
+            "category": "259",
+            "categoryname": "Ultimate Collector Series"
+        },
+        {
+            "category": "811",
+            "categoryname": "Ultimate Spider-Man"
+        },
+        {
+            "category": "815",
+            "categoryname": "Ultra Agents"
+        },
+        {
+            "category": "965",
+            "categoryname": "Unikitty!"
+        },
+        {
+            "category": "312",
+            "categoryname": "Unitron"
+        },
+        {
+            "category": "422",
+            "categoryname": "Universal Building Set"
+        },
+        {
+            "category": "755",
+            "categoryname": "Universe"
+        },
+        {
+            "category": "677",
+            "categoryname": "Vahki"
+        },
+        {
+            "category": "810",
+            "categoryname": "Valentine&#39;s Day"
+        },
+        {
+            "category": "290",
+            "categoryname": "Value Packs"
+        },
+        {
+            "category": "72",
+            "categoryname": "Vehicle"
+        },
+        {
+            "category": "131",
+            "categoryname": "Vehicle, Base"
+        },
+        {
+            "category": "77",
+            "categoryname": "Vehicle, Mudguard"
+        },
+        {
+            "category": "780",
+            "categoryname": "Vehicle, Mudguard, Decorated"
+        },
+        {
+            "category": "752",
+            "categoryname": "Vehicles"
+        },
+        {
+            "category": "712",
+            "categoryname": "Video Game"
+        },
+        {
+            "category": "548",
+            "categoryname": "Vikings"
+        },
+        {
+            "category": "751",
+            "categoryname": "Villains"
+        },
+        {
+            "category": "678",
+            "categoryname": "Visorak"
+        },
+        {
+            "category": "881",
+            "categoryname": "Volcano Explorers"
+        },
+        {
+            "category": "667",
+            "categoryname": "Warriors"
+        },
+        {
+            "category": "517",
+            "categoryname": "Watch"
+        },
+        {
+            "category": "1001",
+            "categoryname": "Wedding"
+        },
+        {
+            "category": "42",
+            "categoryname": "Wedge"
+        },
+        {
+            "category": "578",
+            "categoryname": "Wedge, Decorated"
+        },
+        {
+            "category": "583",
+            "categoryname": "Wedge, Plate"
+        },
+        {
+            "category": "1093",
+            "categoryname": "Wedge, Plate, Decorated"
+        },
+        {
+            "category": "634",
+            "categoryname": "WeDo"
+        },
+        {
+            "category": "69",
+            "categoryname": "Western"
+        },
+        {
+            "category": "43",
+            "categoryname": "Wheel"
+        },
+        {
+            "category": "532",
+            "categoryname": "Wheel & Tire Assembly"
+        },
+        {
+            "category": "1027",
+            "categoryname": "Wheel, Accessory"
+        },
+        {
+            "category": "899",
+            "categoryname": "Whisker Haven Tales"
+        },
+        {
+            "category": "693",
+            "categoryname": "Williams F1"
+        },
+        {
+            "category": "113",
+            "categoryname": "Window"
+        },
+        {
+            "category": "84",
+            "categoryname": "Window, Decorated"
+        },
+        {
+            "category": "115",
+            "categoryname": "Windscreen"
+        },
+        {
+            "category": "579",
+            "categoryname": "Windscreen, Decorated"
+        },
+        {
+            "category": "114",
+            "categoryname": "Wing"
+        },
+        {
+            "category": "298",
+            "categoryname": "Winnie The Pooh"
+        },
+        {
+            "category": "286",
+            "categoryname": "Wolfpack"
+        },
+        {
+            "category": "910",
+            "categoryname": "Wonder Woman"
+        },
+        {
+            "category": "1094",
+            "categoryname": "Wonder Woman 1984"
+        },
+        {
+            "category": "637",
+            "categoryname": "Wooden Box Set"
+        },
+        {
+            "category": "502",
+            "categoryname": "World City"
+        },
+        {
+            "category": "747",
+            "categoryname": "World Racers"
+        },
+        {
+            "category": "1019",
+            "categoryname": "Wrecker"
+        },
+        {
+            "category": "827",
+            "categoryname": "X-Men"
+        },
+        {
+            "category": "623",
+            "categoryname": "X-Pod"
+        },
+        {
+            "category": "622",
+            "categoryname": "Xalax"
+        },
+        {
+            "category": "1044",
+            "categoryname": "xtra"
+        },
+        {
+            "category": "152",
+            "categoryname": "Znap"
+        },
+        {
+            "category": "389",
+            "categoryname": "Zoo"
+        },
+        {
+            "category": "719",
+            "categoryname": "Zooters"
+        }
+    ]
+}

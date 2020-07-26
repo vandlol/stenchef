@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATALOG>
+   <ITEM>
+      <ITEMTYPE>S</ITEMTYPE>
+      <ITEMTYPENAME>Set</ITEMTYPENAME>
+   </ITEM>
+   <ITEM>
+      <ITEMTYPE>P</ITEMTYPE>
+      <ITEMTYPENAME>Part</ITEMTYPENAME>
+   </ITEM>
+   <ITEM>
+      <ITEMTYPE>M</ITEMTYPE>
+      <ITEMTYPENAME>Minifig</ITEMTYPENAME>
+   </ITEM>
+   <ITEM>
+      <ITEMTYPE>B</ITEMTYPE>
+      <ITEMTYPENAME>Book</ITEMTYPENAME>
+   </ITEM>
+   <ITEM>
+      <ITEMTYPE>G</ITEMTYPE>
+      <ITEMTYPENAME>Gear</ITEMTYPENAME>
+   </ITEM>
+   <ITEM>
+      <ITEMTYPE>C</ITEMTYPE>
+      <ITEMTYPENAME>Catalog</ITEMTYPENAME>
+   </ITEM>
+   <ITEM>
+      <ITEMTYPE>I</ITEMTYPE>
+      <ITEMTYPENAME>Instruction</ITEMTYPENAME>
+   </ITEM>
+   <ITEM>
+      <ITEMTYPE>O</ITEMTYPE>
+      <ITEMTYPENAME>Original Box</ITEMTYPENAME>
+   </ITEM>
+   <ITEM>
+      <ITEMTYPE>U</ITEMTYPE>
+      <ITEMTYPENAME>Unsorted Lot</ITEMTYPENAME>
+   </ITEM>
+</CATALOG>
