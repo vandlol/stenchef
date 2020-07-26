@@ -1,0 +1,10 @@
+{
+    "folder": {
+    "download": "download",
+    "map": "map",
+    "catalog": "catalog"
+    },
+    "sorting": {
+        "old_new_separation": true
+    }
+}
