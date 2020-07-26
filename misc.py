@@ -13,3 +13,19 @@ def gen_id():
     id = ''.join(
         [random.choice(string.ascii_letters.upper() + string.digits) for n in range(4)])
     return(id)
+
+
+def verify_id():
+    pass
+
+
+def verify_year():
+    pass
+
+
+def verify_string():
+    pass
+
+
+def verify_int_or_float():
+    pass
