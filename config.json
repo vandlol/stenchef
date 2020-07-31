@@ -1,10 +1,11 @@
 {
     "folder": {
-    "download": "download",
-    "map": "map",
-    "catalog": "catalog"
+        "download": "download",
+        "map": "map",
+        "catalog": "catalog"
     },
     "sorting": {
         "old_new_separation": true
-    }
+    },
+    "id_length": 4
 }
