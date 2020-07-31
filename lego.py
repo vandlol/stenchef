@@ -6,5 +6,6 @@ import importers
 import item_classes
 import container
 
-importers.ImportMap().all()
-importers.ImportCatalog().all()
+pass
+# importers.ImportMap().all()
+# importers.ImportCatalog().all()
