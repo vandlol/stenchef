@@ -2,6 +2,7 @@ from log import logger as l
 import misc
 import item_classes
 import template as t
+import random
 
 import sys
 from pprint import pprint as pp
@@ -12,7 +13,7 @@ class Container:
         self.config = misc.read_config()
         self.mandatory_properties = ["containertype"]
         self.numerical_properties = [
-            "containerimx", "containerdimy", "containerdimz", "containeremptyweight"]
+            "containerdimx", "containerdimy", "containerdimz", "containeremptyweight"]
         self.id_properties = ["containerparent",
                               "containerid", "containerconstraints"]
         self.string_properties = ["containertype", "containername"]
@@ -31,7 +32,7 @@ class Container:
                 self.container["containerid"] = misc.gen_id(
                     id_length=self.config["id_length"])
 
-        self.container["containercontent"] = dict()
+        self.container["containercontent"] = list()
         item_classes.Containers(self.container).save()
         l.info("Created Container with containerid: {}".format(
             self.container["containerid"]))
@@ -111,9 +112,27 @@ class Container:
             for item in list(item_classes.Containers.find()):
                 ret_list.append(item.__dict__)
         else:
+            pp(search)
             for item in list(item_classes.Containers.find(search)):
                 ret_list.append(item.__dict__)
         return(ret_list)
+
+    def find(self, search):
+        if not isinstance(search, dict):
+            search = {"containerid": search}
+        item = item_classes.Containers.find_one(search).__dict__
+        return(item)
+
+    def find_cursor(self, search):
+        if not isinstance(search, dict):
+            search = {"containerid": search}
+        item = item_classes.Containers.find_one(search)
+        return(item)
+
+    def list_content(self, containerid):
+        search = {"containerid": containerid}
+        item = item_classes.Containers.find_one(search).__dict__
+        return(item['containercontent'])
 
     def delete(self, containerid):
         if not containerid:
@@ -128,10 +147,14 @@ class Container:
         l.error("Could not find Container with containerid: {}".format(containerid))
         return(False)
 
+    def random(self):
+        random_container = random.choice(self.list_items())
+        return(random_container['containerid'])
+
 
 test_container = {
     "containertype": "container",
-    "containerimx": 9,
+    "containerdimx": 9,
     "containerdimy": 5,
     "containerdimz": 3,
     "containeremptyweight": 15,
@@ -139,6 +162,7 @@ test_container = {
     "containername": "con1",
     "containeryearadded": 1995,
     "containerconstraints": None,
+    "description": "rischtisch dolla container"
 }
 
 test_container2 = {
@@ -151,7 +175,7 @@ test_container2 = {
 
 test_template = {
     'containertype': "box",
-    'containerimx': 12,
+    'containerdimx': 12,
     'containerdimy': 13,
     'containerdimz': 4,
     'containeremptyweight': 30,
@@ -159,6 +183,7 @@ test_template = {
 }
 
 # pp(t.Template().list_items())
+# pp(Container().new(test_container))
 # pp(Container().from_template("LIGA", test_container))
 # pp(Container().from_template("LIHA", test_container2))
 # pp(Container().list_items())
