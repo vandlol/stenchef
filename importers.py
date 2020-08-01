@@ -3,6 +3,8 @@ import misc
 import item_classes
 from glob import glob as glob
 
+from pprint import pprint as pp
+
 
 class ImportMap:
     config = misc.read_config()
@@ -63,8 +65,12 @@ class ImportCatalog:
             "{}/".format(self.config["folder"]["catalog"]), "")))
         with open(file, 'r') as fh:
             catalog_file_json = json.load(fh)
-
+        # TODO Include Color Codes into import
         for item in catalog_file_json["items"]:
+            codes = item_classes.Codes.find({"itemid": item['itemid']})
+            item['itemcolors'] = list()
+            for code in codes:
+                item['itemcolors'].append(code.__dict__['color'])
             item_classes.Catalog(item).save()
 
     def all(self):
@@ -72,3 +78,7 @@ class ImportCatalog:
         files = glob("{}/*.json".format(self.config["folder"]["catalog"]))
         for file in files:
             self.single(file)
+
+
+ImportMap().all()
+ImportCatalog().all()

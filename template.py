@@ -11,7 +11,7 @@ class Template:
         self.config = misc.read_config()
         self.mandatory_properties = ["containertype"]
         self.numerical_properties = [
-            "containerimx", "containerdimy", "containerdimz", "containeremptyweight"]
+            "containerdimx", "containerdimy", "containerdimz", "containeremptyweight"]
         self.string_properties = ["containertype",
                                   "containername", "templatename"]
 
