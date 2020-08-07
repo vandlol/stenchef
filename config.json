@@ -7,5 +7,8 @@
     "sorting": {
         "old_new_separation": true
     },
+    "storage": {
+        "remove_empty_entries": true
+    },
     "id_length": 4
 }
