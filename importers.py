@@ -59,6 +59,7 @@ class ImportCatalog:
         pass
 
     def single(self, file):
+        # TODO add logging
         if not file:
             return(None)
         print("Importing Catalog: {}".format(file.replace(
@@ -68,9 +69,11 @@ class ImportCatalog:
         # TODO Include Color Codes into import
         for item in catalog_file_json["items"]:
             codes = item_classes.Codes.find({"itemid": item['itemid']})
-            item['itemcolors'] = list()
             for code in codes:
-                item['itemcolors'].append(code.__dict__['color'])
+                for condition in ["used", "new"]:
+                    uuid = misc.gen_uuid()
+                    item_classes.Itemidentifier({"itemuuid": uuid, "itemcolor": code.__dict__[
+                                                'color'], "itemid": item['itemid'], "itemcondition": condition}).save()
             item_classes.Catalog(item).save()
 
     def all(self):
@@ -80,5 +83,5 @@ class ImportCatalog:
             self.single(file)
 
 
-ImportMap().all()
-ImportCatalog().all()
+# ImportMap().all()
+# ImportCatalog().all()
