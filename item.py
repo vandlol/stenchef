@@ -11,7 +11,7 @@ from pprint import pprint as pp
 
 class Item:
     def __init__(self):
-        config = misc.read_config()
+        self.config = misc.read_config()
         pass
 
     def get_uuid(self, itemid, color, condition):
@@ -57,17 +57,21 @@ class Item:
     def store(self, itemid, color, condition, count, containerid=None):
         uuid = self.get_uuid(itemid, color, condition)
         action = "store"
-        container = self.edit(action, uuid, count, containerid)
-        # TODO logging
-        return(container)
+        containerid, ret_count = self.edit(action, uuid, count, containerid)
+        l.info("{} Items of Catalog Item {} in Color {} with condition {} have been stored into Container {}".format(
+            count, itemid, color, condition,  containerid))
+        return(uuid)
 
     def pick(self, itemid, color, condition, count, containerid=None):
-        # TODO maybe have a "item available" check?
         uuid = self.get_uuid(itemid, color, condition)
         action = "pick"
-        container = self.edit(action, uuid, count, containerid)
-        # TODO logging
-        return(container)
+        containerid, ret_count = self.edit(action, uuid, count, containerid)
+        l.info("{} Items of Catalog Item {} in Color {} with condition {} have been picked from Container {}".format(
+            count, itemid, color, condition,  containerid))
+        if ret_count == 0:
+            if self.config["storage"]["remove_empty_entries"]:
+                self.remove(containerid, uuid, 0)
+        return(uuid)
 
     def edit(self, action, uuid, count, containerid):
         if not action == "pick" and not action == "store":
@@ -81,7 +85,7 @@ class Item:
         if not containerid:
             # TODO add handling for more than one container
             found = 0
-            containerid = self.find(uuid)[0]
+            containerid = self.find(uuid)
             if not containerid:
                 if action == "pick":
                     l.error(
@@ -89,40 +93,55 @@ class Item:
                     sys.exit(60)
                 containerid = c.Container().random()
             else:
-                containerid = containerid.get("containerid")
+                containerid = containerid[0].get("containerid")
                 found += 1
         if not misc.verify_id(containerid):
             l.error("Given containerid is not valid.")
             sys.exit(59)
         container = c.Container().find_cursor(containerid)
-
+        ret_count = 0
         if action == "store":
             if found:
                 for item in container.containercontent:
                     if item.get("itemuuid") == uuid:
                         item["count"] += count
+                        ret_count = item["count"]
                         break
                 container.save()
-                return(container.containerid)
             else:
                 container.containercontent.append(
                     {"itemuuid": uuid, "count": count})
+                ret_count = count
                 container.save()
-                return(container.containerid)
 
         elif action == "pick":
-            pass
-        return("how did you even get here?")
+            for item in container.containercontent:
+                if item.get("itemuuid") == uuid:
+                    if item["count"] < count:
+                        l.error(
+                            "Container does not contain enough items to satisfy request.")
+                        sys.exit(61)
+                    item["count"] -= count
+                    ret_count = item["count"]
+                    break
+            container.save()
 
-    def remove(self, containerid, item):
-        pass
+        return(containerid, ret_count)
+
+    def remove(self, containerid, uuid, count):
+        container = c.Container().find_cursor(containerid)
+        container.containercontent.remove(
+            {'itemuuid': uuid, 'count': count})
+        l.info("Item {} was removed from container {}.".format(uuid, containerid))
+        container.save()
+        return(container.containerid)
 
 
 # random_containerid = c.Container().random()
 # pp(c.Container().find(random_containerid))
 # pp(Item().get("3011"))
 # pp(Item().find("3011", color="Red"))
-# pp(Item().edit("p", "QR7G", "3011", "Red", 4))
+# pp(Item().store("3011", "Light Bluish Gray", "used", 15))
 
-
-pp(Item().edit("store", "644896f6-370f-4028-88fb-5073b6b3ccb5", 5, None))
+pp(Item().pick("3011", "Light Bluish Gray", "used", 15))
+# pp(Item().edit("store", "644896f6-370f-4028-88fb-5073b6b3ccb5", 5, None))
