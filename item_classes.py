@@ -28,3 +28,7 @@ class Itemtypes(Thingy):
 
 class Catalog(Thingy):
     pass
+
+
+class Itemidentifier(Thingy):
+    pass

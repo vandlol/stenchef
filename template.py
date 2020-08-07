@@ -115,3 +115,16 @@ class Template:
         l.error(
             "Could not find Container Template with templateid: {}".format(templateid))
         return(False)
+
+
+test_template = {
+    'containertype': "box",
+    'containerdimx': 12,
+    'containerdimy': 13,
+    'containerdimz': 4,
+    'containeremptyweight': 30,
+    'templatename': "box1"
+}
+
+# pp(Template().list_items())
+# pp(Template().new(test_template))

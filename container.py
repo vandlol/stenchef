@@ -112,7 +112,6 @@ class Container:
             for item in list(item_classes.Containers.find()):
                 ret_list.append(item.__dict__)
         else:
-            pp(search)
             for item in list(item_classes.Containers.find(search)):
                 ret_list.append(item.__dict__)
         return(ret_list)
@@ -165,6 +164,7 @@ test_container = {
     "description": "rischtisch dolla container"
 }
 
+
 test_container2 = {
     "containerparent": None,
     "containername": "con1",
@@ -173,21 +173,12 @@ test_container2 = {
     "containerconstraints": None,
 }
 
-test_template = {
-    'containertype': "box",
-    'containerdimx': 12,
-    'containerdimy': 13,
-    'containerdimz': 4,
-    'containeremptyweight': 30,
-    'templatename': "box1"
-}
 
-# pp(t.Template().list_items())
 # pp(Container().new(test_container))
 # pp(Container().from_template("LIGA", test_container))
-# pp(Container().from_template("LIHA", test_container2))
+# pp(Container().from_template("EYHM", test_container2))
 # pp(Container().list_items())
 # pp(Container().delete('QR7G'))
-# pp(t.Template().new(test_template))
+
 
 # Container().new(test)
