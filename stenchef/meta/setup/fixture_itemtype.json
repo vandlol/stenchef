@@ -1,0 +1,65 @@
+[
+    {
+        "fields": {
+            "itemtypename": "Set"
+        },
+        "model": "meta.itemtype",
+        "pk": "S"
+    },
+    {
+        "fields": {
+            "itemtypename": "Part"
+        },
+        "model": "meta.itemtype",
+        "pk": "P"
+    },
+    {
+        "fields": {
+            "itemtypename": "Minifig"
+        },
+        "model": "meta.itemtype",
+        "pk": "M"
+    },
+    {
+        "fields": {
+            "itemtypename": "Book"
+        },
+        "model": "meta.itemtype",
+        "pk": "B"
+    },
+    {
+        "fields": {
+            "itemtypename": "Gear"
+        },
+        "model": "meta.itemtype",
+        "pk": "G"
+    },
+    {
+        "fields": {
+            "itemtypename": "Catalog"
+        },
+        "model": "meta.itemtype",
+        "pk": "C"
+    },
+    {
+        "fields": {
+            "itemtypename": "Instruction"
+        },
+        "model": "meta.itemtype",
+        "pk": "I"
+    },
+    {
+        "fields": {
+            "itemtypename": "Original Box"
+        },
+        "model": "meta.itemtype",
+        "pk": "O"
+    },
+    {
+        "fields": {
+            "itemtypename": "Unsorted Lot"
+        },
+        "model": "meta.itemtype",
+        "pk": "U"
+    }
+]

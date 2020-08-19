@@ -1,0 +1,6386 @@
+[
+    {
+        "fields": {
+            "categoryname": "(Other)"
+        },
+        "model": "meta.category",
+        "pk": "143"
+    },
+    {
+        "fields": {
+            "categoryname": "12V"
+        },
+        "model": "meta.category",
+        "pk": "318"
+    },
+    {
+        "fields": {
+            "categoryname": "1950"
+        },
+        "model": "meta.category",
+        "pk": "628"
+    },
+    {
+        "fields": {
+            "categoryname": "1954"
+        },
+        "model": "meta.category",
+        "pk": "797"
+    },
+    {
+        "fields": {
+            "categoryname": "1955"
+        },
+        "model": "meta.category",
+        "pk": "561"
+    },
+    {
+        "fields": {
+            "categoryname": "1956"
+        },
+        "model": "meta.category",
+        "pk": "560"
+    },
+    {
+        "fields": {
+            "categoryname": "1957"
+        },
+        "model": "meta.category",
+        "pk": "559"
+    },
+    {
+        "fields": {
+            "categoryname": "1958"
+        },
+        "model": "meta.category",
+        "pk": "558"
+    },
+    {
+        "fields": {
+            "categoryname": "1959"
+        },
+        "model": "meta.category",
+        "pk": "557"
+    },
+    {
+        "fields": {
+            "categoryname": "1960"
+        },
+        "model": "meta.category",
+        "pk": "556"
+    },
+    {
+        "fields": {
+            "categoryname": "1961"
+        },
+        "model": "meta.category",
+        "pk": "555"
+    },
+    {
+        "fields": {
+            "categoryname": "1962"
+        },
+        "model": "meta.category",
+        "pk": "554"
+    },
+    {
+        "fields": {
+            "categoryname": "1963"
+        },
+        "model": "meta.category",
+        "pk": "553"
+    },
+    {
+        "fields": {
+            "categoryname": "1964"
+        },
+        "model": "meta.category",
+        "pk": "551"
+    },
+    {
+        "fields": {
+            "categoryname": "1965"
+        },
+        "model": "meta.category",
+        "pk": "340"
+    },
+    {
+        "fields": {
+            "categoryname": "1966"
+        },
+        "model": "meta.category",
+        "pk": "341"
+    },
+    {
+        "fields": {
+            "categoryname": "1967"
+        },
+        "model": "meta.category",
+        "pk": "342"
+    },
+    {
+        "fields": {
+            "categoryname": "1968"
+        },
+        "model": "meta.category",
+        "pk": "343"
+    },
+    {
+        "fields": {
+            "categoryname": "1969"
+        },
+        "model": "meta.category",
+        "pk": "344"
+    },
+    {
+        "fields": {
+            "categoryname": "1970"
+        },
+        "model": "meta.category",
+        "pk": "345"
+    },
+    {
+        "fields": {
+            "categoryname": "1971"
+        },
+        "model": "meta.category",
+        "pk": "346"
+    },
+    {
+        "fields": {
+            "categoryname": "1972"
+        },
+        "model": "meta.category",
+        "pk": "347"
+    },
+    {
+        "fields": {
+            "categoryname": "1973"
+        },
+        "model": "meta.category",
+        "pk": "348"
+    },
+    {
+        "fields": {
+            "categoryname": "1974"
+        },
+        "model": "meta.category",
+        "pk": "349"
+    },
+    {
+        "fields": {
+            "categoryname": "1975"
+        },
+        "model": "meta.category",
+        "pk": "350"
+    },
+    {
+        "fields": {
+            "categoryname": "1976"
+        },
+        "model": "meta.category",
+        "pk": "351"
+    },
+    {
+        "fields": {
+            "categoryname": "1977"
+        },
+        "model": "meta.category",
+        "pk": "352"
+    },
+    {
+        "fields": {
+            "categoryname": "1978"
+        },
+        "model": "meta.category",
+        "pk": "353"
+    },
+    {
+        "fields": {
+            "categoryname": "1979"
+        },
+        "model": "meta.category",
+        "pk": "354"
+    },
+    {
+        "fields": {
+            "categoryname": "1980"
+        },
+        "model": "meta.category",
+        "pk": "355"
+    },
+    {
+        "fields": {
+            "categoryname": "1981"
+        },
+        "model": "meta.category",
+        "pk": "356"
+    },
+    {
+        "fields": {
+            "categoryname": "1982"
+        },
+        "model": "meta.category",
+        "pk": "357"
+    },
+    {
+        "fields": {
+            "categoryname": "1983"
+        },
+        "model": "meta.category",
+        "pk": "358"
+    },
+    {
+        "fields": {
+            "categoryname": "1984"
+        },
+        "model": "meta.category",
+        "pk": "359"
+    },
+    {
+        "fields": {
+            "categoryname": "1985"
+        },
+        "model": "meta.category",
+        "pk": "360"
+    },
+    {
+        "fields": {
+            "categoryname": "1986"
+        },
+        "model": "meta.category",
+        "pk": "361"
+    },
+    {
+        "fields": {
+            "categoryname": "1987"
+        },
+        "model": "meta.category",
+        "pk": "362"
+    },
+    {
+        "fields": {
+            "categoryname": "1988"
+        },
+        "model": "meta.category",
+        "pk": "363"
+    },
+    {
+        "fields": {
+            "categoryname": "1989"
+        },
+        "model": "meta.category",
+        "pk": "364"
+    },
+    {
+        "fields": {
+            "categoryname": "1990"
+        },
+        "model": "meta.category",
+        "pk": "365"
+    },
+    {
+        "fields": {
+            "categoryname": "1991"
+        },
+        "model": "meta.category",
+        "pk": "366"
+    },
+    {
+        "fields": {
+            "categoryname": "1992"
+        },
+        "model": "meta.category",
+        "pk": "367"
+    },
+    {
+        "fields": {
+            "categoryname": "1993"
+        },
+        "model": "meta.category",
+        "pk": "368"
+    },
+    {
+        "fields": {
+            "categoryname": "1994"
+        },
+        "model": "meta.category",
+        "pk": "369"
+    },
+    {
+        "fields": {
+            "categoryname": "1995"
+        },
+        "model": "meta.category",
+        "pk": "370"
+    },
+    {
+        "fields": {
+            "categoryname": "1996"
+        },
+        "model": "meta.category",
+        "pk": "371"
+    },
+    {
+        "fields": {
+            "categoryname": "1997"
+        },
+        "model": "meta.category",
+        "pk": "372"
+    },
+    {
+        "fields": {
+            "categoryname": "1998"
+        },
+        "model": "meta.category",
+        "pk": "373"
+    },
+    {
+        "fields": {
+            "categoryname": "1999"
+        },
+        "model": "meta.category",
+        "pk": "374"
+    },
+    {
+        "fields": {
+            "categoryname": "2000"
+        },
+        "model": "meta.category",
+        "pk": "375"
+    },
+    {
+        "fields": {
+            "categoryname": "2001"
+        },
+        "model": "meta.category",
+        "pk": "377"
+    },
+    {
+        "fields": {
+            "categoryname": "2002"
+        },
+        "model": "meta.category",
+        "pk": "378"
+    },
+    {
+        "fields": {
+            "categoryname": "2003"
+        },
+        "model": "meta.category",
+        "pk": "491"
+    },
+    {
+        "fields": {
+            "categoryname": "2004"
+        },
+        "model": "meta.category",
+        "pk": "515"
+    },
+    {
+        "fields": {
+            "categoryname": "2005"
+        },
+        "model": "meta.category",
+        "pk": "544"
+    },
+    {
+        "fields": {
+            "categoryname": "2006"
+        },
+        "model": "meta.category",
+        "pk": "565"
+    },
+    {
+        "fields": {
+            "categoryname": "2007"
+        },
+        "model": "meta.category",
+        "pk": "581"
+    },
+    {
+        "fields": {
+            "categoryname": "2008"
+        },
+        "model": "meta.category",
+        "pk": "601"
+    },
+    {
+        "fields": {
+            "categoryname": "2009"
+        },
+        "model": "meta.category",
+        "pk": "647"
+    },
+    {
+        "fields": {
+            "categoryname": "2010"
+        },
+        "model": "meta.category",
+        "pk": "743"
+    },
+    {
+        "fields": {
+            "categoryname": "2011"
+        },
+        "model": "meta.category",
+        "pk": "756"
+    },
+    {
+        "fields": {
+            "categoryname": "2012"
+        },
+        "model": "meta.category",
+        "pk": "767"
+    },
+    {
+        "fields": {
+            "categoryname": "2013"
+        },
+        "model": "meta.category",
+        "pk": "786"
+    },
+    {
+        "fields": {
+            "categoryname": "2014"
+        },
+        "model": "meta.category",
+        "pk": "805"
+    },
+    {
+        "fields": {
+            "categoryname": "2015"
+        },
+        "model": "meta.category",
+        "pk": "826"
+    },
+    {
+        "fields": {
+            "categoryname": "2016"
+        },
+        "model": "meta.category",
+        "pk": "869"
+    },
+    {
+        "fields": {
+            "categoryname": "2017"
+        },
+        "model": "meta.category",
+        "pk": "901"
+    },
+    {
+        "fields": {
+            "categoryname": "2018"
+        },
+        "model": "meta.category",
+        "pk": "930"
+    },
+    {
+        "fields": {
+            "categoryname": "2019"
+        },
+        "model": "meta.category",
+        "pk": "1028"
+    },
+    {
+        "fields": {
+            "categoryname": "2020"
+        },
+        "model": "meta.category",
+        "pk": "1066"
+    },
+    {
+        "fields": {
+            "categoryname": "4 Juniors"
+        },
+        "model": "meta.category",
+        "pk": "516"
+    },
+    {
+        "fields": {
+            "categoryname": "4.5V"
+        },
+        "model": "meta.category",
+        "pk": "316"
+    },
+    {
+        "fields": {
+            "categoryname": "9V"
+        },
+        "model": "meta.category",
+        "pk": "315"
+    },
+    {
+        "fields": {
+            "categoryname": "Accessory Pack"
+        },
+        "model": "meta.category",
+        "pk": "1007"
+    },
+    {
+        "fields": {
+            "categoryname": "Accessory, Human Tool"
+        },
+        "model": "meta.category",
+        "pk": "990"
+    },
+    {
+        "fields": {
+            "categoryname": "Action Wheelers"
+        },
+        "model": "meta.category",
+        "pk": "173"
+    },
+    {
+        "fields": {
+            "categoryname": "Activity Book"
+        },
+        "model": "meta.category",
+        "pk": "766"
+    },
+    {
+        "fields": {
+            "categoryname": "Advent"
+        },
+        "model": "meta.category",
+        "pk": "714"
+    },
+    {
+        "fields": {
+            "categoryname": "Advent Sub-Set"
+        },
+        "model": "meta.category",
+        "pk": "715"
+    },
+    {
+        "fields": {
+            "categoryname": "Adventure Time"
+        },
+        "model": "meta.category",
+        "pk": "902"
+    },
+    {
+        "fields": {
+            "categoryname": "Adventurers"
+        },
+        "model": "meta.category",
+        "pk": "53"
+    },
+    {
+        "fields": {
+            "categoryname": "AFOL Designer Program"
+        },
+        "model": "meta.category",
+        "pk": "1056"
+    },
+    {
+        "fields": {
+            "categoryname": "Agents"
+        },
+        "model": "meta.category",
+        "pk": "609"
+    },
+    {
+        "fields": {
+            "categoryname": "Agori"
+        },
+        "model": "meta.category",
+        "pk": "711"
+    },
+    {
+        "fields": {
+            "categoryname": "Aircraft"
+        },
+        "model": "meta.category",
+        "pk": "93"
+    },
+    {
+        "fields": {
+            "categoryname": "Aircraft, Decorated"
+        },
+        "model": "meta.category",
+        "pk": "1012"
+    },
+    {
+        "fields": {
+            "categoryname": "Airjitzu Flyers"
+        },
+        "model": "meta.category",
+        "pk": "969"
+    },
+    {
+        "fields": {
+            "categoryname": "Airport"
+        },
+        "model": "meta.category",
+        "pk": "325"
+    },
+    {
+        "fields": {
+            "categoryname": "Alien Conquest"
+        },
+        "model": "meta.category",
+        "pk": "762"
+    },
+    {
+        "fields": {
+            "categoryname": "Alpha Team"
+        },
+        "model": "meta.category",
+        "pk": "170"
+    },
+    {
+        "fields": {
+            "categoryname": "Animal, Accessory"
+        },
+        "model": "meta.category",
+        "pk": "86"
+    },
+    {
+        "fields": {
+            "categoryname": "Animal, Air"
+        },
+        "model": "meta.category",
+        "pk": "146"
+    },
+    {
+        "fields": {
+            "categoryname": "Animal, Body Part"
+        },
+        "model": "meta.category",
+        "pk": "148"
+    },
+    {
+        "fields": {
+            "categoryname": "Animal, Dinosaur"
+        },
+        "model": "meta.category",
+        "pk": "184"
+    },
+    {
+        "fields": {
+            "categoryname": "Animal, Land"
+        },
+        "model": "meta.category",
+        "pk": "147"
+    },
+    {
+        "fields": {
+            "categoryname": "Animal, Water"
+        },
+        "model": "meta.category",
+        "pk": "145"
+    },
+    {
+        "fields": {
+            "categoryname": "Animals Series 1"
+        },
+        "model": "meta.category",
+        "pk": "1050"
+    },
+    {
+        "fields": {
+            "categoryname": "Animals Series 2"
+        },
+        "model": "meta.category",
+        "pk": "1051"
+    },
+    {
+        "fields": {
+            "categoryname": "Animals Series 3"
+        },
+        "model": "meta.category",
+        "pk": "1052"
+    },
+    {
+        "fields": {
+            "categoryname": "Animals Series 4"
+        },
+        "model": "meta.category",
+        "pk": "1053"
+    },
+    {
+        "fields": {
+            "categoryname": "Animals Series 5"
+        },
+        "model": "meta.category",
+        "pk": "1054"
+    },
+    {
+        "fields": {
+            "categoryname": "Animals Series 6"
+        },
+        "model": "meta.category",
+        "pk": "1055"
+    },
+    {
+        "fields": {
+            "categoryname": "Ant-Man"
+        },
+        "model": "meta.category",
+        "pk": "854"
+    },
+    {
+        "fields": {
+            "categoryname": "Ant-Man and the Wasp"
+        },
+        "model": "meta.category",
+        "pk": "1074"
+    },
+    {
+        "fields": {
+            "categoryname": "Antenna"
+        },
+        "model": "meta.category",
+        "pk": "1"
+    },
+    {
+        "fields": {
+            "categoryname": "Aquaman"
+        },
+        "model": "meta.category",
+        "pk": "973"
+    },
+    {
+        "fields": {
+            "categoryname": "Aquanauts"
+        },
+        "model": "meta.category",
+        "pk": "260"
+    },
+    {
+        "fields": {
+            "categoryname": "Aquaraiders I"
+        },
+        "model": "meta.category",
+        "pk": "261"
+    },
+    {
+        "fields": {
+            "categoryname": "Aquaraiders II"
+        },
+        "model": "meta.category",
+        "pk": "580"
+    },
+    {
+        "fields": {
+            "categoryname": "Aquasharks"
+        },
+        "model": "meta.category",
+        "pk": "262"
+    },
+    {
+        "fields": {
+            "categoryname": "Aquazone"
+        },
+        "model": "meta.category",
+        "pk": "54"
+    },
+    {
+        "fields": {
+            "categoryname": "Architecture"
+        },
+        "model": "meta.category",
+        "pk": "629"
+    },
+    {
+        "fields": {
+            "categoryname": "Arctic"
+        },
+        "model": "meta.category",
+        "pk": "480"
+    },
+    {
+        "fields": {
+            "categoryname": "Arctic Technic"
+        },
+        "model": "meta.category",
+        "pk": "322"
+    },
+    {
+        "fields": {
+            "categoryname": "Arm"
+        },
+        "model": "meta.category",
+        "pk": "45"
+    },
+    {
+        "fields": {
+            "categoryname": "Atlantis"
+        },
+        "model": "meta.category",
+        "pk": "733"
+    },
+    {
+        "fields": {
+            "categoryname": "Avatar"
+        },
+        "model": "meta.category",
+        "pk": "574"
+    },
+    {
+        "fields": {
+            "categoryname": "Avengers"
+        },
+        "model": "meta.category",
+        "pk": "830"
+    },
+    {
+        "fields": {
+            "categoryname": "Avengers Age of Ultron"
+        },
+        "model": "meta.category",
+        "pk": "844"
+    },
+    {
+        "fields": {
+            "categoryname": "Avengers Assemble"
+        },
+        "model": "meta.category",
+        "pk": "828"
+    },
+    {
+        "fields": {
+            "categoryname": "Avengers Endgame"
+        },
+        "model": "meta.category",
+        "pk": "1032"
+    },
+    {
+        "fields": {
+            "categoryname": "Avengers Infinity War"
+        },
+        "model": "meta.category",
+        "pk": "954"
+    },
+    {
+        "fields": {
+            "categoryname": "Baby"
+        },
+        "model": "meta.category",
+        "pk": "293"
+    },
+    {
+        "fields": {
+            "categoryname": "Back to the Future"
+        },
+        "model": "meta.category",
+        "pk": "918"
+    },
+    {
+        "fields": {
+            "categoryname": "Backpacks & Lunchboxes"
+        },
+        "model": "meta.category",
+        "pk": "498"
+    },
+    {
+        "fields": {
+            "categoryname": "Ball"
+        },
+        "model": "meta.category",
+        "pk": "978"
+    },
+    {
+        "fields": {
+            "categoryname": "Bar"
+        },
+        "model": "meta.category",
+        "pk": "46"
+    },
+    {
+        "fields": {
+            "categoryname": "Barraki"
+        },
+        "model": "meta.category",
+        "pk": "649"
+    },
+    {
+        "fields": {
+            "categoryname": "Baseball"
+        },
+        "model": "meta.category",
+        "pk": "887"
+    },
+    {
+        "fields": {
+            "categoryname": "Baseplate"
+        },
+        "model": "meta.category",
+        "pk": "2"
+    },
+    {
+        "fields": {
+            "categoryname": "Baseplate, Raised"
+        },
+        "model": "meta.category",
+        "pk": "243"
+    },
+    {
+        "fields": {
+            "categoryname": "Baseplate, Road"
+        },
+        "model": "meta.category",
+        "pk": "130"
+    },
+    {
+        "fields": {
+            "categoryname": "Basic"
+        },
+        "model": "meta.category",
+        "pk": "155"
+    },
+    {
+        "fields": {
+            "categoryname": "Basic Model"
+        },
+        "model": "meta.category",
+        "pk": "680"
+    },
+    {
+        "fields": {
+            "categoryname": "Basic Set"
+        },
+        "model": "meta.category",
+        "pk": "611"
+    },
+    {
+        "fields": {
+            "categoryname": "Basketball"
+        },
+        "model": "meta.category",
+        "pk": "474"
+    },
+    {
+        "fields": {
+            "categoryname": "Batman Classic TV Series"
+        },
+        "model": "meta.category",
+        "pk": "895"
+    },
+    {
+        "fields": {
+            "categoryname": "Batman I"
+        },
+        "model": "meta.category",
+        "pk": "570"
+    },
+    {
+        "fields": {
+            "categoryname": "Batman II"
+        },
+        "model": "meta.category",
+        "pk": "769"
+    },
+    {
+        "fields": {
+            "categoryname": "Batman III"
+        },
+        "model": "meta.category",
+        "pk": "865"
+    },
+    {
+        "fields": {
+            "categoryname": "Battle Vehicles"
+        },
+        "model": "meta.category",
+        "pk": "725"
+    },
+    {
+        "fields": {
+            "categoryname": "Bead"
+        },
+        "model": "meta.category",
+        "pk": "464"
+    },
+    {
+        "fields": {
+            "categoryname": "Bedding"
+        },
+        "model": "meta.category",
+        "pk": "648"
+    },
+    {
+        "fields": {
+            "categoryname": "Belville"
+        },
+        "model": "meta.category",
+        "pk": "48"
+    },
+    {
+        "fields": {
+            "categoryname": "Belville, Figure Accessory"
+        },
+        "model": "meta.category",
+        "pk": "412"
+    },
+    {
+        "fields": {
+            "categoryname": "Ben 10"
+        },
+        "model": "meta.category",
+        "pk": "731"
+    },
+    {
+        "fields": {
+            "categoryname": "BigFig Series 1"
+        },
+        "model": "meta.category",
+        "pk": "1020"
+    },
+    {
+        "fields": {
+            "categoryname": "BigFig Series 2"
+        },
+        "model": "meta.category",
+        "pk": "1071"
+    },
+    {
+        "fields": {
+            "categoryname": "Bionicle"
+        },
+        "model": "meta.category",
+        "pk": "273"
+    },
+    {
+        "fields": {
+            "categoryname": "Bionicle, Kanohi Mask"
+        },
+        "model": "meta.category",
+        "pk": "235"
+    },
+    {
+        "fields": {
+            "categoryname": "Birthday"
+        },
+        "model": "meta.category",
+        "pk": "1000"
+    },
+    {
+        "fields": {
+            "categoryname": "Black Falcons"
+        },
+        "model": "meta.category",
+        "pk": "289"
+    },
+    {
+        "fields": {
+            "categoryname": "Black Knights"
+        },
+        "model": "meta.category",
+        "pk": "278"
+    },
+    {
+        "fields": {
+            "categoryname": "Black Panther"
+        },
+        "model": "meta.category",
+        "pk": "929"
+    },
+    {
+        "fields": {
+            "categoryname": "Black Widow"
+        },
+        "model": "meta.category",
+        "pk": "1079"
+    },
+    {
+        "fields": {
+            "categoryname": "Blacktron I"
+        },
+        "model": "meta.category",
+        "pk": "300"
+    },
+    {
+        "fields": {
+            "categoryname": "Blacktron II"
+        },
+        "model": "meta.category",
+        "pk": "301"
+    },
+    {
+        "fields": {
+            "categoryname": "Boat"
+        },
+        "model": "meta.category",
+        "pk": "3"
+    },
+    {
+        "fields": {
+            "categoryname": "Bob The Builder"
+        },
+        "model": "meta.category",
+        "pk": "299"
+    },
+    {
+        "fields": {
+            "categoryname": "Bohrok"
+        },
+        "model": "meta.category",
+        "pk": "650"
+    },
+    {
+        "fields": {
+            "categoryname": "Bohrok Va"
+        },
+        "model": "meta.category",
+        "pk": "651"
+    },
+    {
+        "fields": {
+            "categoryname": "Bohrok-Kal"
+        },
+        "model": "meta.category",
+        "pk": "652"
+    },
+    {
+        "fields": {
+            "categoryname": "BOOST"
+        },
+        "model": "meta.category",
+        "pk": "921"
+    },
+    {
+        "fields": {
+            "categoryname": "Booster Pack"
+        },
+        "model": "meta.category",
+        "pk": "968"
+    },
+    {
+        "fields": {
+            "categoryname": "Bracket"
+        },
+        "model": "meta.category",
+        "pk": "4"
+    },
+    {
+        "fields": {
+            "categoryname": "Brick"
+        },
+        "model": "meta.category",
+        "pk": "5"
+    },
+    {
+        "fields": {
+            "categoryname": "Brick Sketches"
+        },
+        "model": "meta.category",
+        "pk": "1103"
+    },
+    {
+        "fields": {
+            "categoryname": "Brick, Arch"
+        },
+        "model": "meta.category",
+        "pk": "6"
+    },
+    {
+        "fields": {
+            "categoryname": "Brick, Arch, Decorated"
+        },
+        "model": "meta.category",
+        "pk": "966"
+    },
+    {
+        "fields": {
+            "categoryname": "Brick, Decorated"
+        },
+        "model": "meta.category",
+        "pk": "118"
+    },
+    {
+        "fields": {
+            "categoryname": "Brick, Modified"
+        },
+        "model": "meta.category",
+        "pk": "7"
+    },
+    {
+        "fields": {
+            "categoryname": "Brick, Modified, Decorated"
+        },
+        "model": "meta.category",
+        "pk": "535"
+    },
+    {
+        "fields": {
+            "categoryname": "Brick, Promotional"
+        },
+        "model": "meta.category",
+        "pk": "534"
+    },
+    {
+        "fields": {
+            "categoryname": "Brick, Round"
+        },
+        "model": "meta.category",
+        "pk": "8"
+    },
+    {
+        "fields": {
+            "categoryname": "Brick, Round, Decorated"
+        },
+        "model": "meta.category",
+        "pk": "736"
+    },
+    {
+        "fields": {
+            "categoryname": "BrickHeadz"
+        },
+        "model": "meta.category",
+        "pk": "903"
+    },
+    {
+        "fields": {
+            "categoryname": "Buildable Figures"
+        },
+        "model": "meta.category",
+        "pk": "859"
+    },
+    {
+        "fields": {
+            "categoryname": "Building"
+        },
+        "model": "meta.category",
+        "pk": "425"
+    },
+    {
+        "fields": {
+            "categoryname": "Building Bigger Thinking"
+        },
+        "model": "meta.category",
+        "pk": "927"
+    },
+    {
+        "fields": {
+            "categoryname": "Building Event"
+        },
+        "model": "meta.category",
+        "pk": "988"
+    },
+    {
+        "fields": {
+            "categoryname": "Building Event Instructions"
+        },
+        "model": "meta.category",
+        "pk": "745"
+    },
+    {
+        "fields": {
+            "categoryname": "Building Set with People"
+        },
+        "model": "meta.category",
+        "pk": "388"
+    },
+    {
+        "fields": {
+            "categoryname": "Bulk Bricks"
+        },
+        "model": "meta.category",
+        "pk": "478"
+    },
+    {
+        "fields": {
+            "categoryname": "Captain America Civil War"
+        },
+        "model": "meta.category",
+        "pk": "875"
+    },
+    {
+        "fields": {
+            "categoryname": "Captain Marvel"
+        },
+        "model": "meta.category",
+        "pk": "1015"
+    },
+    {
+        "fields": {
+            "categoryname": "Card"
+        },
+        "model": "meta.category",
+        "pk": "997"
+    },
+    {
+        "fields": {
+            "categoryname": "Card, Collector Card"
+        },
+        "model": "meta.category",
+        "pk": "564"
+    },
+    {
+        "fields": {
+            "categoryname": "Card, Game Card"
+        },
+        "model": "meta.category",
+        "pk": "333"
+    },
+    {
+        "fields": {
+            "categoryname": "Card, Greeting Card"
+        },
+        "model": "meta.category",
+        "pk": "996"
+    },
+    {
+        "fields": {
+            "categoryname": "Card, Postcard"
+        },
+        "model": "meta.category",
+        "pk": "472"
+    },
+    {
+        "fields": {
+            "categoryname": "Card, Trading Card"
+        },
+        "model": "meta.category",
+        "pk": "380"
+    },
+    {
+        "fields": {
+            "categoryname": "Cardboard Sleeve"
+        },
+        "model": "meta.category",
+        "pk": "1060"
+    },
+    {
+        "fields": {
+            "categoryname": "Cargo"
+        },
+        "model": "meta.category",
+        "pk": "618"
+    },
+    {
+        "fields": {
+            "categoryname": "Cars"
+        },
+        "model": "meta.category",
+        "pk": "748"
+    },
+    {
+        "fields": {
+            "categoryname": "Castle"
+        },
+        "model": "meta.category",
+        "pk": "9"
+    },
+    {
+        "fields": {
+            "categoryname": "Chain"
+        },
+        "model": "meta.category",
+        "pk": "991"
+    },
+    {
+        "fields": {
+            "categoryname": "Chamber of Secrets"
+        },
+        "model": "meta.category",
+        "pk": "696"
+    },
+    {
+        "fields": {
+            "categoryname": "Chinese New Year"
+        },
+        "model": "meta.category",
+        "pk": "955"
+    },
+    {
+        "fields": {
+            "categoryname": "Christmas"
+        },
+        "model": "meta.category",
+        "pk": "391"
+    },
+    {
+        "fields": {
+            "categoryname": "Circus"
+        },
+        "model": "meta.category",
+        "pk": "624"
+    },
+    {
+        "fields": {
+            "categoryname": "Cities of Wonders"
+        },
+        "model": "meta.category",
+        "pk": "919"
+    },
+    {
+        "fields": {
+            "categoryname": "City"
+        },
+        "model": "meta.category",
+        "pk": "518"
+    },
+    {
+        "fields": {
+            "categoryname": "Classic"
+        },
+        "model": "meta.category",
+        "pk": "423"
+    },
+    {
+        "fields": {
+            "categoryname": "Classic Basic"
+        },
+        "model": "meta.category",
+        "pk": "590"
+    },
+    {
+        "fields": {
+            "categoryname": "Classic Castle"
+        },
+        "model": "meta.category",
+        "pk": "489"
+    },
+    {
+        "fields": {
+            "categoryname": "Classic Space"
+        },
+        "model": "meta.category",
+        "pk": "314"
+    },
+    {
+        "fields": {
+            "categoryname": "Classic Town"
+        },
+        "model": "meta.category",
+        "pk": "627"
+    },
+    {
+        "fields": {
+            "categoryname": "Clikits"
+        },
+        "model": "meta.category",
+        "pk": "490"
+    },
+    {
+        "fields": {
+            "categoryname": "Clikits, Icon"
+        },
+        "model": "meta.category",
+        "pk": "575"
+    },
+    {
+        "fields": {
+            "categoryname": "Clikits, Icon Accent"
+        },
+        "model": "meta.category",
+        "pk": "1059"
+    },
+    {
+        "fields": {
+            "categoryname": "Clock"
+        },
+        "model": "meta.category",
+        "pk": "336"
+    },
+    {
+        "fields": {
+            "categoryname": "Cloth"
+        },
+        "model": "meta.category",
+        "pk": "162"
+    },
+    {
+        "fields": {
+            "categoryname": "Clothing"
+        },
+        "model": "meta.category",
+        "pk": "543"
+    },
+    {
+        "fields": {
+            "categoryname": "Clothing Accessories"
+        },
+        "model": "meta.category",
+        "pk": "1111"
+    },
+    {
+        "fields": {
+            "categoryname": "Coast Guard"
+        },
+        "model": "meta.category",
+        "pk": "610"
+    },
+    {
+        "fields": {
+            "categoryname": "Cockpit"
+        },
+        "model": "meta.category",
+        "pk": "479"
+    },
+    {
+        "fields": {
+            "categoryname": "Collectible Minifigures"
+        },
+        "model": "meta.category",
+        "pk": "746"
+    },
+    {
+        "fields": {
+            "categoryname": "Coloring Book"
+        },
+        "model": "meta.category",
+        "pk": "552"
+    },
+    {
+        "fields": {
+            "categoryname": "Comic Book"
+        },
+        "model": "meta.category",
+        "pk": "331"
+    },
+    {
+        "fields": {
+            "categoryname": "Competition"
+        },
+        "model": "meta.category",
+        "pk": "382"
+    },
+    {
+        "fields": {
+            "categoryname": "Cone"
+        },
+        "model": "meta.category",
+        "pk": "21"
+    },
+    {
+        "fields": {
+            "categoryname": "Cone, Decorated"
+        },
+        "model": "meta.category",
+        "pk": "974"
+    },
+    {
+        "fields": {
+            "categoryname": "Construction"
+        },
+        "model": "meta.category",
+        "pk": "596"
+    },
+    {
+        "fields": {
+            "categoryname": "Container"
+        },
+        "model": "meta.category",
+        "pk": "10"
+    },
+    {
+        "fields": {
+            "categoryname": "Container, Decorated"
+        },
+        "model": "meta.category",
+        "pk": "643"
+    },
+    {
+        "fields": {
+            "categoryname": "Control Lab"
+        },
+        "model": "meta.category",
+        "pk": "633"
+    },
+    {
+        "fields": {
+            "categoryname": "Conveyor"
+        },
+        "model": "meta.category",
+        "pk": "73"
+    },
+    {
+        "fields": {
+            "categoryname": "Cowboys"
+        },
+        "model": "meta.category",
+        "pk": "275"
+    },
+    {
+        "fields": {
+            "categoryname": "Crane"
+        },
+        "model": "meta.category",
+        "pk": "74"
+    },
+    {
+        "fields": {
+            "categoryname": "Creator"
+        },
+        "model": "meta.category",
+        "pk": "171"
+    },
+    {
+        "fields": {
+            "categoryname": "Creature"
+        },
+        "model": "meta.category",
+        "pk": "726"
+    },
+    {
+        "fields": {
+            "categoryname": "Crusaders"
+        },
+        "model": "meta.category",
+        "pk": "279"
+    },
+    {
+        "fields": {
+            "categoryname": "Curriculum Activity Book"
+        },
+        "model": "meta.category",
+        "pk": "576"
+    },
+    {
+        "fields": {
+            "categoryname": "Cylinder"
+        },
+        "model": "meta.category",
+        "pk": "11"
+    },
+    {
+        "fields": {
+            "categoryname": "Cylinder, Decorated"
+        },
+        "model": "meta.category",
+        "pk": "926"
+    },
+    {
+        "fields": {
+            "categoryname": "Dark Forest"
+        },
+        "model": "meta.category",
+        "pk": "280"
+    },
+    {
+        "fields": {
+            "categoryname": "Dawn of Justice"
+        },
+        "model": "meta.category",
+        "pk": "898"
+    },
+    {
+        "fields": {
+            "categoryname": "Day of the Departed"
+        },
+        "model": "meta.category",
+        "pk": "951"
+    },
+    {
+        "fields": {
+            "categoryname": "DC Super Hero Girls"
+        },
+        "model": "meta.category",
+        "pk": "893"
+    },
+    {
+        "fields": {
+            "categoryname": "DC Super Heroes"
+        },
+        "model": "meta.category",
+        "pk": "1075"
+    },
+    {
+        "fields": {
+            "categoryname": "Decoration"
+        },
+        "model": "meta.category",
+        "pk": "1008"
+    },
+    {
+        "fields": {
+            "categoryname": "Deep Sea Explorers"
+        },
+        "model": "meta.category",
+        "pk": "855"
+    },
+    {
+        "fields": {
+            "categoryname": "Desert"
+        },
+        "model": "meta.category",
+        "pk": "247"
+    },
+    {
+        "fields": {
+            "categoryname": "Designer Sets"
+        },
+        "model": "meta.category",
+        "pk": "486"
+    },
+    {
+        "fields": {
+            "categoryname": "DFB Series"
+        },
+        "model": "meta.category",
+        "pk": "879"
+    },
+    {
+        "fields": {
+            "categoryname": "Dimensions"
+        },
+        "model": "meta.category",
+        "pk": "860"
+    },
+    {
+        "fields": {
+            "categoryname": "Dimensions Wave 1"
+        },
+        "model": "meta.category",
+        "pk": "862"
+    },
+    {
+        "fields": {
+            "categoryname": "Dimensions Wave 2"
+        },
+        "model": "meta.category",
+        "pk": "864"
+    },
+    {
+        "fields": {
+            "categoryname": "Dimensions Wave 3"
+        },
+        "model": "meta.category",
+        "pk": "872"
+    },
+    {
+        "fields": {
+            "categoryname": "Dimensions Wave 4"
+        },
+        "model": "meta.category",
+        "pk": "877"
+    },
+    {
+        "fields": {
+            "categoryname": "Dimensions Wave 5"
+        },
+        "model": "meta.category",
+        "pk": "880"
+    },
+    {
+        "fields": {
+            "categoryname": "Dimensions Wave 6"
+        },
+        "model": "meta.category",
+        "pk": "884"
+    },
+    {
+        "fields": {
+            "categoryname": "Dimensions Wave 7"
+        },
+        "model": "meta.category",
+        "pk": "891"
+    },
+    {
+        "fields": {
+            "categoryname": "Dimensions Wave 8"
+        },
+        "model": "meta.category",
+        "pk": "905"
+    },
+    {
+        "fields": {
+            "categoryname": "Dimensions Wave 9"
+        },
+        "model": "meta.category",
+        "pk": "924"
+    },
+    {
+        "fields": {
+            "categoryname": "Dino"
+        },
+        "model": "meta.category",
+        "pk": "617"
+    },
+    {
+        "fields": {
+            "categoryname": "Dino 2010"
+        },
+        "model": "meta.category",
+        "pk": "567"
+    },
+    {
+        "fields": {
+            "categoryname": "Dino Attack"
+        },
+        "model": "meta.category",
+        "pk": "563"
+    },
+    {
+        "fields": {
+            "categoryname": "Dino Island"
+        },
+        "model": "meta.category",
+        "pk": "249"
+    },
+    {
+        "fields": {
+            "categoryname": "Dinosaurs"
+        },
+        "model": "meta.category",
+        "pk": "183"
+    },
+    {
+        "fields": {
+            "categoryname": "Discovery"
+        },
+        "model": "meta.category",
+        "pk": "482"
+    },
+    {
+        "fields": {
+            "categoryname": "Dish"
+        },
+        "model": "meta.category",
+        "pk": "116"
+    },
+    {
+        "fields": {
+            "categoryname": "Dish, Decorated"
+        },
+        "model": "meta.category",
+        "pk": "779"
+    },
+    {
+        "fields": {
+            "categoryname": "Disney"
+        },
+        "model": "meta.category",
+        "pk": "878"
+    },
+    {
+        "fields": {
+            "categoryname": "Disney Princess"
+        },
+        "model": "meta.category",
+        "pk": "773"
+    },
+    {
+        "fields": {
+            "categoryname": "Disney Series 2"
+        },
+        "model": "meta.category",
+        "pk": "1035"
+    },
+    {
+        "fields": {
+            "categoryname": "Disney&#39;s Planes"
+        },
+        "model": "meta.category",
+        "pk": "798"
+    },
+    {
+        "fields": {
+            "categoryname": "Disney's Baby Mickey"
+        },
+        "model": "meta.category",
+        "pk": "722"
+    },
+    {
+        "fields": {
+            "categoryname": "Disney's Mickey Mouse"
+        },
+        "model": "meta.category",
+        "pk": "149"
+    },
+    {
+        "fields": {
+            "categoryname": "Divers"
+        },
+        "model": "meta.category",
+        "pk": "326"
+    },
+    {
+        "fields": {
+            "categoryname": "Doc McStuffins"
+        },
+        "model": "meta.category",
+        "pk": "853"
+    },
+    {
+        "fields": {
+            "categoryname": "Doctor Strange"
+        },
+        "model": "meta.category",
+        "pk": "886"
+    },
+    {
+        "fields": {
+            "categoryname": "Doctor Who"
+        },
+        "model": "meta.category",
+        "pk": "863"
+    },
+    {
+        "fields": {
+            "categoryname": "Dolls"
+        },
+        "model": "meta.category",
+        "pk": "587"
+    },
+    {
+        "fields": {
+            "categoryname": "Door"
+        },
+        "model": "meta.category",
+        "pk": "12"
+    },
+    {
+        "fields": {
+            "categoryname": "Door Frame"
+        },
+        "model": "meta.category",
+        "pk": "540"
+    },
+    {
+        "fields": {
+            "categoryname": "Door, Decorated"
+        },
+        "model": "meta.category",
+        "pk": "642"
+    },
+    {
+        "fields": {
+            "categoryname": "Dora the Explorer"
+        },
+        "model": "meta.category",
+        "pk": "523"
+    },
+    {
+        "fields": {
+            "categoryname": "Dots"
+        },
+        "model": "meta.category",
+        "pk": "1076"
+    },
+    {
+        "fields": {
+            "categoryname": "Dragon Knights"
+        },
+        "model": "meta.category",
+        "pk": "281"
+    },
+    {
+        "fields": {
+            "categoryname": "Dragon Masters"
+        },
+        "model": "meta.category",
+        "pk": "964"
+    },
+    {
+        "fields": {
+            "categoryname": "Drome Racers"
+        },
+        "model": "meta.category",
+        "pk": "720"
+    },
+    {
+        "fields": {
+            "categoryname": "Duplo"
+        },
+        "model": "meta.category",
+        "pk": "167"
+    },
+    {
+        "fields": {
+            "categoryname": "Duplo, Aircraft"
+        },
+        "model": "meta.category",
+        "pk": "640"
+    },
+    {
+        "fields": {
+            "categoryname": "Duplo, Animal"
+        },
+        "model": "meta.category",
+        "pk": "420"
+    },
+    {
+        "fields": {
+            "categoryname": "Duplo, Baseplate"
+        },
+        "model": "meta.category",
+        "pk": "846"
+    },
+    {
+        "fields": {
+            "categoryname": "Duplo, Boat"
+        },
+        "model": "meta.category",
+        "pk": "639"
+    },
+    {
+        "fields": {
+            "categoryname": "Duplo, Brick"
+        },
+        "model": "meta.category",
+        "pk": "417"
+    },
+    {
+        "fields": {
+            "categoryname": "Duplo, Brick, Decorated"
+        },
+        "model": "meta.category",
+        "pk": "440"
+    },
+    {
+        "fields": {
+            "categoryname": "Duplo, Brick, Promotional"
+        },
+        "model": "meta.category",
+        "pk": "506"
+    },
+    {
+        "fields": {
+            "categoryname": "Duplo, Cloth"
+        },
+        "model": "meta.category",
+        "pk": "845"
+    },
+    {
+        "fields": {
+            "categoryname": "Duplo, Doll"
+        },
+        "model": "meta.category",
+        "pk": "707"
+    },
+    {
+        "fields": {
+            "categoryname": "Duplo, Figure Wear & Utensil"
+        },
+        "model": "meta.category",
+        "pk": "585"
+    },
+    {
+        "fields": {
+            "categoryname": "Duplo, Food & Drink"
+        },
+        "model": "meta.category",
+        "pk": "1038"
+    },
+    {
+        "fields": {
+            "categoryname": "Duplo, Furniture"
+        },
+        "model": "meta.category",
+        "pk": "641"
+    },
+    {
+        "fields": {
+            "categoryname": "Duplo, Plant"
+        },
+        "model": "meta.category",
+        "pk": "1037"
+    },
+    {
+        "fields": {
+            "categoryname": "Duplo, Plate"
+        },
+        "model": "meta.category",
+        "pk": "487"
+    },
+    {
+        "fields": {
+            "categoryname": "Duplo, Tile, Decorated"
+        },
+        "model": "meta.category",
+        "pk": "538"
+    },
+    {
+        "fields": {
+            "categoryname": "Duplo, Toolo"
+        },
+        "model": "meta.category",
+        "pk": "524"
+    },
+    {
+        "fields": {
+            "categoryname": "Duplo, Town"
+        },
+        "model": "meta.category",
+        "pk": "612"
+    },
+    {
+        "fields": {
+            "categoryname": "Duplo, Train"
+        },
+        "model": "meta.category",
+        "pk": "441"
+    },
+    {
+        "fields": {
+            "categoryname": "Duplo, Vehicle"
+        },
+        "model": "meta.category",
+        "pk": "488"
+    },
+    {
+        "fields": {
+            "categoryname": "Easter"
+        },
+        "model": "meta.category",
+        "pk": "392"
+    },
+    {
+        "fields": {
+            "categoryname": "Educational & Dacta"
+        },
+        "model": "meta.category",
+        "pk": "166"
+    },
+    {
+        "fields": {
+            "categoryname": "eLAB"
+        },
+        "model": "meta.category",
+        "pk": "408"
+    },
+    {
+        "fields": {
+            "categoryname": "Electric"
+        },
+        "model": "meta.category",
+        "pk": "119"
+    },
+    {
+        "fields": {
+            "categoryname": "Electric, Battery Box"
+        },
+        "model": "meta.category",
+        "pk": "411"
+    },
+    {
+        "fields": {
+            "categoryname": "Electric, Light & Sound"
+        },
+        "model": "meta.category",
+        "pk": "123"
+    },
+    {
+        "fields": {
+            "categoryname": "Electric, Motor"
+        },
+        "model": "meta.category",
+        "pk": "121"
+    },
+    {
+        "fields": {
+            "categoryname": "Electric, Programmable"
+        },
+        "model": "meta.category",
+        "pk": "463"
+    },
+    {
+        "fields": {
+            "categoryname": "Electric, Train"
+        },
+        "model": "meta.category",
+        "pk": "122"
+    },
+    {
+        "fields": {
+            "categoryname": "Electric, Wire & Connector"
+        },
+        "model": "meta.category",
+        "pk": "735"
+    },
+    {
+        "fields": {
+            "categoryname": "Electronics"
+        },
+        "model": "meta.category",
+        "pk": "646"
+    },
+    {
+        "fields": {
+            "categoryname": "Elves"
+        },
+        "model": "meta.category",
+        "pk": "843"
+    },
+    {
+        "fields": {
+            "categoryname": "Energy Effect"
+        },
+        "model": "meta.category",
+        "pk": "994"
+    },
+    {
+        "fields": {
+            "categoryname": "Envelope, Letter, and Stamp"
+        },
+        "model": "meta.category",
+        "pk": "1006"
+    },
+    {
+        "fields": {
+            "categoryname": "EV3"
+        },
+        "model": "meta.category",
+        "pk": "800"
+    },
+    {
+        "fields": {
+            "categoryname": "Exo-Force"
+        },
+        "model": "meta.category",
+        "pk": "568"
+    },
+    {
+        "fields": {
+            "categoryname": "Expert"
+        },
+        "model": "meta.category",
+        "pk": "1068"
+    },
+    {
+        "fields": {
+            "categoryname": "Expert Builder"
+        },
+        "model": "meta.category",
+        "pk": "387"
+    },
+    {
+        "fields": {
+            "categoryname": "Explore"
+        },
+        "model": "meta.category",
+        "pk": "437"
+    },
+    {
+        "fields": {
+            "categoryname": "Explore Being Me"
+        },
+        "model": "meta.category",
+        "pk": "509"
+    },
+    {
+        "fields": {
+            "categoryname": "Explore Imagination"
+        },
+        "model": "meta.category",
+        "pk": "508"
+    },
+    {
+        "fields": {
+            "categoryname": "Explore Logic"
+        },
+        "model": "meta.category",
+        "pk": "510"
+    },
+    {
+        "fields": {
+            "categoryname": "Explore Together"
+        },
+        "model": "meta.category",
+        "pk": "511"
+    },
+    {
+        "fields": {
+            "categoryname": "Explorer"
+        },
+        "model": "meta.category",
+        "pk": "1108"
+    },
+    {
+        "fields": {
+            "categoryname": "Exploriens"
+        },
+        "model": "meta.category",
+        "pk": "302"
+    },
+    {
+        "fields": {
+            "categoryname": "Extreme Team"
+        },
+        "model": "meta.category",
+        "pk": "328"
+    },
+    {
+        "fields": {
+            "categoryname": "Fabuland"
+        },
+        "model": "meta.category",
+        "pk": "153"
+    },
+    {
+        "fields": {
+            "categoryname": "Factory"
+        },
+        "model": "meta.category",
+        "pk": "566"
+    },
+    {
+        "fields": {
+            "categoryname": "Fairground Collection"
+        },
+        "model": "meta.category",
+        "pk": "1101"
+    },
+    {
+        "fields": {
+            "categoryname": "Fairy-Tale"
+        },
+        "model": "meta.category",
+        "pk": "266"
+    },
+    {
+        "fields": {
+            "categoryname": "Fantastic Beasts"
+        },
+        "model": "meta.category",
+        "pk": "972"
+    },
+    {
+        "fields": {
+            "categoryname": "Fantasy Era"
+        },
+        "model": "meta.category",
+        "pk": "593"
+    },
+    {
+        "fields": {
+            "categoryname": "Farm"
+        },
+        "model": "meta.category",
+        "pk": "685"
+    },
+    {
+        "fields": {
+            "categoryname": "Felt"
+        },
+        "model": "meta.category",
+        "pk": "1078"
+    },
+    {
+        "fields": {
+            "categoryname": "Fence"
+        },
+        "model": "meta.category",
+        "pk": "13"
+    },
+    {
+        "fields": {
+            "categoryname": "Ferrari"
+        },
+        "model": "meta.category",
+        "pk": "620"
+    },
+    {
+        "fields": {
+            "categoryname": "Ferries"
+        },
+        "model": "meta.category",
+        "pk": "185"
+    },
+    {
+        "fields": {
+            "categoryname": "Fire"
+        },
+        "model": "meta.category",
+        "pk": "319"
+    },
+    {
+        "fields": {
+            "categoryname": "FIRST LEGO League"
+        },
+        "model": "meta.category",
+        "pk": "545"
+    },
+    {
+        "fields": {
+            "categoryname": "Flag"
+        },
+        "model": "meta.category",
+        "pk": "76"
+    },
+    {
+        "fields": {
+            "categoryname": "Flag, Decorated"
+        },
+        "model": "meta.category",
+        "pk": "738"
+    },
+    {
+        "fields": {
+            "categoryname": "Foam"
+        },
+        "model": "meta.category",
+        "pk": "234"
+    },
+    {
+        "fields": {
+            "categoryname": "Food & Drink"
+        },
+        "model": "meta.category",
+        "pk": "175"
+    },
+    {
+        "fields": {
+            "categoryname": "Forestmen"
+        },
+        "model": "meta.category",
+        "pk": "288"
+    },
+    {
+        "fields": {
+            "categoryname": "FORMA"
+        },
+        "model": "meta.category",
+        "pk": "1041"
+    },
+    {
+        "fields": {
+            "categoryname": "Freestyle"
+        },
+        "model": "meta.category",
+        "pk": "78"
+    },
+    {
+        "fields": {
+            "categoryname": "Friends"
+        },
+        "model": "meta.category",
+        "pk": "771"
+    },
+    {
+        "fields": {
+            "categoryname": "Fright Knights"
+        },
+        "model": "meta.category",
+        "pk": "282"
+    },
+    {
+        "fields": {
+            "categoryname": "Frozen"
+        },
+        "model": "meta.category",
+        "pk": "840"
+    },
+    {
+        "fields": {
+            "categoryname": "Frozen II"
+        },
+        "model": "meta.category",
+        "pk": "1062"
+    },
+    {
+        "fields": {
+            "categoryname": "Fusion"
+        },
+        "model": "meta.category",
+        "pk": "822"
+    },
+    {
+        "fields": {
+            "categoryname": "Futuron"
+        },
+        "model": "meta.category",
+        "pk": "303"
+    },
+    {
+        "fields": {
+            "categoryname": "Galaxy Squad"
+        },
+        "model": "meta.category",
+        "pk": "791"
+    },
+    {
+        "fields": {
+            "categoryname": "Galidor"
+        },
+        "model": "meta.category",
+        "pk": "444"
+    },
+    {
+        "fields": {
+            "categoryname": "Game"
+        },
+        "model": "meta.category",
+        "pk": "252"
+    },
+    {
+        "fields": {
+            "categoryname": "Garage"
+        },
+        "model": "meta.category",
+        "pk": "79"
+    },
+    {
+        "fields": {
+            "categoryname": "Garage, TEST"
+        },
+        "model": "meta.category",
+        "pk": "1099"
+    },
+    {
+        "fields": {
+            "categoryname": "Gas Station"
+        },
+        "model": "meta.category",
+        "pk": "597"
+    },
+    {
+        "fields": {
+            "categoryname": "Gears"
+        },
+        "model": "meta.category",
+        "pk": "421"
+    },
+    {
+        "fields": {
+            "categoryname": "Ghostbusters"
+        },
+        "model": "meta.category",
+        "pk": "870"
+    },
+    {
+        "fields": {
+            "categoryname": "Glass"
+        },
+        "model": "meta.category",
+        "pk": "81"
+    },
+    {
+        "fields": {
+            "categoryname": "Glass, Decorated"
+        },
+        "model": "meta.category",
+        "pk": "132"
+    },
+    {
+        "fields": {
+            "categoryname": "Glatorian"
+        },
+        "model": "meta.category",
+        "pk": "690"
+    },
+    {
+        "fields": {
+            "categoryname": "Glatorian Legends"
+        },
+        "model": "meta.category",
+        "pk": "724"
+    },
+    {
+        "fields": {
+            "categoryname": "Glued Model"
+        },
+        "model": "meta.category",
+        "pk": "683"
+    },
+    {
+        "fields": {
+            "categoryname": "Goblet of Fire"
+        },
+        "model": "meta.category",
+        "pk": "698"
+    },
+    {
+        "fields": {
+            "categoryname": "Golden Land"
+        },
+        "model": "meta.category",
+        "pk": "704"
+    },
+    {
+        "fields": {
+            "categoryname": "Graduation"
+        },
+        "model": "meta.category",
+        "pk": "1002"
+    },
+    {
+        "fields": {
+            "categoryname": "Grand Opening"
+        },
+        "model": "meta.category",
+        "pk": "987"
+    },
+    {
+        "fields": {
+            "categoryname": "Gravity Games"
+        },
+        "model": "meta.category",
+        "pk": "501"
+    },
+    {
+        "fields": {
+            "categoryname": "Guardians of the Galaxy"
+        },
+        "model": "meta.category",
+        "pk": "816"
+    },
+    {
+        "fields": {
+            "categoryname": "Guardians of the Galaxy Vol.2"
+        },
+        "model": "meta.category",
+        "pk": "906"
+    },
+    {
+        "fields": {
+            "categoryname": "Guide Book"
+        },
+        "model": "meta.category",
+        "pk": "1004"
+    },
+    {
+        "fields": {
+            "categoryname": "Half-Blood Prince"
+        },
+        "model": "meta.category",
+        "pk": "1107"
+    },
+    {
+        "fields": {
+            "categoryname": "Halloween"
+        },
+        "model": "meta.category",
+        "pk": "393"
+    },
+    {
+        "fields": {
+            "categoryname": "Harbor"
+        },
+        "model": "meta.category",
+        "pk": "588"
+    },
+    {
+        "fields": {
+            "categoryname": "Harry Potter"
+        },
+        "model": "meta.category",
+        "pk": "227"
+    },
+    {
+        "fields": {
+            "categoryname": "Hero Factory"
+        },
+        "model": "meta.category",
+        "pk": "749"
+    },
+    {
+        "fields": {
+            "categoryname": "Heroes"
+        },
+        "model": "meta.category",
+        "pk": "750"
+    },
+    {
+        "fields": {
+            "categoryname": "Heroica"
+        },
+        "model": "meta.category",
+        "pk": "763"
+    },
+    {
+        "fields": {
+            "categoryname": "Hidden Side"
+        },
+        "model": "meta.category",
+        "pk": "1042"
+    },
+    {
+        "fields": {
+            "categoryname": "Hinge"
+        },
+        "model": "meta.category",
+        "pk": "22"
+    },
+    {
+        "fields": {
+            "categoryname": "Hinge, Decorated"
+        },
+        "model": "meta.category",
+        "pk": "83"
+    },
+    {
+        "fields": {
+            "categoryname": "HO 1:87 Vehicles"
+        },
+        "model": "meta.category",
+        "pk": "424"
+    },
+    {
+        "fields": {
+            "categoryname": "Hobby Sets"
+        },
+        "model": "meta.category",
+        "pk": "226"
+    },
+    {
+        "fields": {
+            "categoryname": "Hockey"
+        },
+        "model": "meta.category",
+        "pk": "476"
+    },
+    {
+        "fields": {
+            "categoryname": "Holiday & Event"
+        },
+        "model": "meta.category",
+        "pk": "390"
+    },
+    {
+        "fields": {
+            "categoryname": "Homemaker"
+        },
+        "model": "meta.category",
+        "pk": "85"
+    },
+    {
+        "fields": {
+            "categoryname": "Hook"
+        },
+        "model": "meta.category",
+        "pk": "112"
+    },
+    {
+        "fields": {
+            "categoryname": "Hose"
+        },
+        "model": "meta.category",
+        "pk": "87"
+    },
+    {
+        "fields": {
+            "categoryname": "Hose, Pneumatic 4mm D."
+        },
+        "model": "meta.category",
+        "pk": "530"
+    },
+    {
+        "fields": {
+            "categoryname": "Hose, Ribbed 7mm D."
+        },
+        "model": "meta.category",
+        "pk": "522"
+    },
+    {
+        "fields": {
+            "categoryname": "Hose, Rigid 3mm D."
+        },
+        "model": "meta.category",
+        "pk": "528"
+    },
+    {
+        "fields": {
+            "categoryname": "Hose, Soft 3mm D."
+        },
+        "model": "meta.category",
+        "pk": "529"
+    },
+    {
+        "fields": {
+            "categoryname": "Hose, Soft Axle"
+        },
+        "model": "meta.category",
+        "pk": "527"
+    },
+    {
+        "fields": {
+            "categoryname": "Hospital"
+        },
+        "model": "meta.category",
+        "pk": "327"
+    },
+    {
+        "fields": {
+            "categoryname": "Human Furniture"
+        },
+        "model": "meta.category",
+        "pk": "398"
+    },
+    {
+        "fields": {
+            "categoryname": "Human Toiletries"
+        },
+        "model": "meta.category",
+        "pk": "525"
+    },
+    {
+        "fields": {
+            "categoryname": "Hunted"
+        },
+        "model": "meta.category",
+        "pk": "963"
+    },
+    {
+        "fields": {
+            "categoryname": "Hydronauts"
+        },
+        "model": "meta.category",
+        "pk": "263"
+    },
+    {
+        "fields": {
+            "categoryname": "Ice Planet 2002"
+        },
+        "model": "meta.category",
+        "pk": "304"
+    },
+    {
+        "fields": {
+            "categoryname": "Idea Book"
+        },
+        "model": "meta.category",
+        "pk": "317"
+    },
+    {
+        "fields": {
+            "categoryname": "Imperial Armada"
+        },
+        "model": "meta.category",
+        "pk": "272"
+    },
+    {
+        "fields": {
+            "categoryname": "Imperial Guards"
+        },
+        "model": "meta.category",
+        "pk": "269"
+    },
+    {
+        "fields": {
+            "categoryname": "Imperial Soldiers"
+        },
+        "model": "meta.category",
+        "pk": "270"
+    },
+    {
+        "fields": {
+            "categoryname": "Incredibles 2"
+        },
+        "model": "meta.category",
+        "pk": "958"
+    },
+    {
+        "fields": {
+            "categoryname": "Indiana Jones"
+        },
+        "model": "meta.category",
+        "pk": "605"
+    },
+    {
+        "fields": {
+            "categoryname": "Indians"
+        },
+        "model": "meta.category",
+        "pk": "274"
+    },
+    {
+        "fields": {
+            "categoryname": "Informational Book"
+        },
+        "model": "meta.category",
+        "pk": "332"
+    },
+    {
+        "fields": {
+            "categoryname": "Insectoids"
+        },
+        "model": "meta.category",
+        "pk": "305"
+    },
+    {
+        "fields": {
+            "categoryname": "Inventor"
+        },
+        "model": "meta.category",
+        "pk": "497"
+    },
+    {
+        "fields": {
+            "categoryname": "Iron Man"
+        },
+        "model": "meta.category",
+        "pk": "1091"
+    },
+    {
+        "fields": {
+            "categoryname": "Iron Man 3"
+        },
+        "model": "meta.category",
+        "pk": "829"
+    },
+    {
+        "fields": {
+            "categoryname": "Island Xtreme Stunts"
+        },
+        "model": "meta.category",
+        "pk": "449"
+    },
+    {
+        "fields": {
+            "categoryname": "Islanders"
+        },
+        "model": "meta.category",
+        "pk": "271"
+    },
+    {
+        "fields": {
+            "categoryname": "Jack Stone"
+        },
+        "model": "meta.category",
+        "pk": "178"
+    },
+    {
+        "fields": {
+            "categoryname": "Jake and the Never Land Pirates"
+        },
+        "model": "meta.category",
+        "pk": "852"
+    },
+    {
+        "fields": {
+            "categoryname": "Jewelry"
+        },
+        "model": "meta.category",
+        "pk": "276"
+    },
+    {
+        "fields": {
+            "categoryname": "Jumbo Bricks"
+        },
+        "model": "meta.category",
+        "pk": "429"
+    },
+    {
+        "fields": {
+            "categoryname": "Jungle"
+        },
+        "model": "meta.category",
+        "pk": "248"
+    },
+    {
+        "fields": {
+            "categoryname": "Juniors"
+        },
+        "model": "meta.category",
+        "pk": "809"
+    },
+    {
+        "fields": {
+            "categoryname": "Jurassic Park III"
+        },
+        "model": "meta.category",
+        "pk": "256"
+    },
+    {
+        "fields": {
+            "categoryname": "Jurassic World"
+        },
+        "model": "meta.category",
+        "pk": "850"
+    },
+    {
+        "fields": {
+            "categoryname": "Justice League"
+        },
+        "model": "meta.category",
+        "pk": "832"
+    },
+    {
+        "fields": {
+            "categoryname": "Key Chain"
+        },
+        "model": "meta.category",
+        "pk": "334"
+    },
+    {
+        "fields": {
+            "categoryname": "Kingdom of the Crystal Skull"
+        },
+        "model": "meta.category",
+        "pk": "700"
+    },
+    {
+        "fields": {
+            "categoryname": "Kingdoms"
+        },
+        "model": "meta.category",
+        "pk": "744"
+    },
+    {
+        "fields": {
+            "categoryname": "Knights Kingdom I"
+        },
+        "model": "meta.category",
+        "pk": "283"
+    },
+    {
+        "fields": {
+            "categoryname": "Knights Kingdom II"
+        },
+        "model": "meta.category",
+        "pk": "536"
+    },
+    {
+        "fields": {
+            "categoryname": "Ladder & Bridge"
+        },
+        "model": "meta.category",
+        "pk": "90"
+    },
+    {
+        "fields": {
+            "categoryname": "Lamborghini"
+        },
+        "model": "meta.category",
+        "pk": "723"
+    },
+    {
+        "fields": {
+            "categoryname": "Large Figure Part"
+        },
+        "model": "meta.category",
+        "pk": "569"
+    },
+    {
+        "fields": {
+            "categoryname": "Last Crusade"
+        },
+        "model": "meta.category",
+        "pk": "703"
+    },
+    {
+        "fields": {
+            "categoryname": "Launch Command"
+        },
+        "model": "meta.category",
+        "pk": "496"
+    },
+    {
+        "fields": {
+            "categoryname": "Learning"
+        },
+        "model": "meta.category",
+        "pk": "405"
+    },
+    {
+        "fields": {
+            "categoryname": "Learning Book"
+        },
+        "model": "meta.category",
+        "pk": "254"
+    },
+    {
+        "fields": {
+            "categoryname": "Legacy"
+        },
+        "model": "meta.category",
+        "pk": "1013"
+    },
+    {
+        "fields": {
+            "categoryname": "Legend of Isla Nublar"
+        },
+        "model": "meta.category",
+        "pk": "1036"
+    },
+    {
+        "fields": {
+            "categoryname": "Legends"
+        },
+        "model": "meta.category",
+        "pk": "267"
+    },
+    {
+        "fields": {
+            "categoryname": "Legends of Chima"
+        },
+        "model": "meta.category",
+        "pk": "787"
+    },
+    {
+        "fields": {
+            "categoryname": "Legends of Tomorrow"
+        },
+        "model": "meta.category",
+        "pk": "922"
+    },
+    {
+        "fields": {
+            "categoryname": "LEGO Brand"
+        },
+        "model": "meta.category",
+        "pk": "976"
+    },
+    {
+        "fields": {
+            "categoryname": "LEGO Brand Store"
+        },
+        "model": "meta.category",
+        "pk": "625"
+    },
+    {
+        "fields": {
+            "categoryname": "LEGO Club"
+        },
+        "model": "meta.category",
+        "pk": "977"
+    },
+    {
+        "fields": {
+            "categoryname": "LEGO Employee Gift"
+        },
+        "model": "meta.category",
+        "pk": "981"
+    },
+    {
+        "fields": {
+            "categoryname": "LEGO Facilities"
+        },
+        "model": "meta.category",
+        "pk": "1011"
+    },
+    {
+        "fields": {
+            "categoryname": "LEGO House"
+        },
+        "model": "meta.category",
+        "pk": "982"
+    },
+    {
+        "fields": {
+            "categoryname": "LEGO Ideas &#40;CUUSOO&#41;"
+        },
+        "model": "meta.category",
+        "pk": "817"
+    },
+    {
+        "fields": {
+            "categoryname": "LEGO Inside Tour"
+        },
+        "model": "meta.category",
+        "pk": "979"
+    },
+    {
+        "fields": {
+            "categoryname": "LEGO Originals"
+        },
+        "model": "meta.category",
+        "pk": "1065"
+    },
+    {
+        "fields": {
+            "categoryname": "Legoland"
+        },
+        "model": "meta.category",
+        "pk": "277"
+    },
+    {
+        "fields": {
+            "categoryname": "Legoland Parks"
+        },
+        "model": "meta.category",
+        "pk": "572"
+    },
+    {
+        "fields": {
+            "categoryname": "Lever"
+        },
+        "model": "meta.category",
+        "pk": "24"
+    },
+    {
+        "fields": {
+            "categoryname": "Life On Mars"
+        },
+        "model": "meta.category",
+        "pk": "172"
+    },
+    {
+        "fields": {
+            "categoryname": "Lion Knights"
+        },
+        "model": "meta.category",
+        "pk": "291"
+    },
+    {
+        "fields": {
+            "categoryname": "Little Forest Friends"
+        },
+        "model": "meta.category",
+        "pk": "292"
+    },
+    {
+        "fields": {
+            "categoryname": "Little Robots"
+        },
+        "model": "meta.category",
+        "pk": "507"
+    },
+    {
+        "fields": {
+            "categoryname": "Luggage & Luggage Accessories"
+        },
+        "model": "meta.category",
+        "pk": "1112"
+    },
+    {
+        "fields": {
+            "categoryname": "M:Tron"
+        },
+        "model": "meta.category",
+        "pk": "306"
+    },
+    {
+        "fields": {
+            "categoryname": "Magazine"
+        },
+        "model": "meta.category",
+        "pk": "462"
+    },
+    {
+        "fields": {
+            "categoryname": "Magazine, Bionicle"
+        },
+        "model": "meta.category",
+        "pk": "1086"
+    },
+    {
+        "fields": {
+            "categoryname": "Magazine, City"
+        },
+        "model": "meta.category",
+        "pk": "1021"
+    },
+    {
+        "fields": {
+            "categoryname": "Magazine, Disney Princess"
+        },
+        "model": "meta.category",
+        "pk": "1087"
+    },
+    {
+        "fields": {
+            "categoryname": "Magazine, Elves"
+        },
+        "model": "meta.category",
+        "pk": "1085"
+    },
+    {
+        "fields": {
+            "categoryname": "Magazine, Explorer"
+        },
+        "model": "meta.category",
+        "pk": "1109"
+    },
+    {
+        "fields": {
+            "categoryname": "Magazine, Friends"
+        },
+        "model": "meta.category",
+        "pk": "1022"
+    },
+    {
+        "fields": {
+            "categoryname": "Magazine, Hidden Side"
+        },
+        "model": "meta.category",
+        "pk": "1083"
+    },
+    {
+        "fields": {
+            "categoryname": "Magazine, Jurassic World"
+        },
+        "model": "meta.category",
+        "pk": "1084"
+    },
+    {
+        "fields": {
+            "categoryname": "Magazine, Legends of Chima"
+        },
+        "model": "meta.category",
+        "pk": "1026"
+    },
+    {
+        "fields": {
+            "categoryname": "Magazine, Nexo Knights"
+        },
+        "model": "meta.category",
+        "pk": "1023"
+    },
+    {
+        "fields": {
+            "categoryname": "Magazine, Ninjago"
+        },
+        "model": "meta.category",
+        "pk": "1024"
+    },
+    {
+        "fields": {
+            "categoryname": "Magazine, Star Wars"
+        },
+        "model": "meta.category",
+        "pk": "1025"
+    },
+    {
+        "fields": {
+            "categoryname": "Magazine, Super Heroes"
+        },
+        "model": "meta.category",
+        "pk": "1063"
+    },
+    {
+        "fields": {
+            "categoryname": "Magazine, The LEGO Movie 2"
+        },
+        "model": "meta.category",
+        "pk": "1088"
+    },
+    {
+        "fields": {
+            "categoryname": "Magnet"
+        },
+        "model": "meta.category",
+        "pk": "14"
+    },
+    {
+        "fields": {
+            "categoryname": "Man of Steel"
+        },
+        "model": "meta.category",
+        "pk": "897"
+    },
+    {
+        "fields": {
+            "categoryname": "Mars Mission"
+        },
+        "model": "meta.category",
+        "pk": "592"
+    },
+    {
+        "fields": {
+            "categoryname": "Master Builder Academy"
+        },
+        "model": "meta.category",
+        "pk": "764"
+    },
+    {
+        "fields": {
+            "categoryname": "Master of the Mountain"
+        },
+        "model": "meta.category",
+        "pk": "1106"
+    },
+    {
+        "fields": {
+            "categoryname": "Masters"
+        },
+        "model": "meta.category",
+        "pk": "839"
+    },
+    {
+        "fields": {
+            "categoryname": "Matoran of Light"
+        },
+        "model": "meta.category",
+        "pk": "653"
+    },
+    {
+        "fields": {
+            "categoryname": "Matoran of Mahri Nui"
+        },
+        "model": "meta.category",
+        "pk": "654"
+    },
+    {
+        "fields": {
+            "categoryname": "Matoran of Mata Nui"
+        },
+        "model": "meta.category",
+        "pk": "655"
+    },
+    {
+        "fields": {
+            "categoryname": "Matoran of Metru Nui"
+        },
+        "model": "meta.category",
+        "pk": "656"
+    },
+    {
+        "fields": {
+            "categoryname": "Matoran of Voya Nui"
+        },
+        "model": "meta.category",
+        "pk": "657"
+    },
+    {
+        "fields": {
+            "categoryname": "Media Audio & Video"
+        },
+        "model": "meta.category",
+        "pk": "513"
+    },
+    {
+        "fields": {
+            "categoryname": "Micro Doll, Body Part"
+        },
+        "model": "meta.category",
+        "pk": "1082"
+    },
+    {
+        "fields": {
+            "categoryname": "Mighty Micros"
+        },
+        "model": "meta.category",
+        "pk": "874"
+    },
+    {
+        "fields": {
+            "categoryname": "Miles From Tomorrowland"
+        },
+        "model": "meta.category",
+        "pk": "867"
+    },
+    {
+        "fields": {
+            "categoryname": "Mindstorms"
+        },
+        "model": "meta.category",
+        "pk": "59"
+    },
+    {
+        "fields": {
+            "categoryname": "Minecraft"
+        },
+        "model": "meta.category",
+        "pk": "801"
+    },
+    {
+        "fields": {
+            "categoryname": "Minecraft Dungeons"
+        },
+        "model": "meta.category",
+        "pk": "1096"
+    },
+    {
+        "fields": {
+            "categoryname": "Mini"
+        },
+        "model": "meta.category",
+        "pk": "481"
+    },
+    {
+        "fields": {
+            "categoryname": "Mini Doll, Body Part"
+        },
+        "model": "meta.category",
+        "pk": "911"
+    },
+    {
+        "fields": {
+            "categoryname": "Mini Doll, Body Wear"
+        },
+        "model": "meta.category",
+        "pk": "912"
+    },
+    {
+        "fields": {
+            "categoryname": "Mini Doll, Hair"
+        },
+        "model": "meta.category",
+        "pk": "913"
+    },
+    {
+        "fields": {
+            "categoryname": "Mini Doll, Head"
+        },
+        "model": "meta.category",
+        "pk": "914"
+    },
+    {
+        "fields": {
+            "categoryname": "Mini Doll, Headgear"
+        },
+        "model": "meta.category",
+        "pk": "915"
+    },
+    {
+        "fields": {
+            "categoryname": "Mini Doll, Legs Assembly"
+        },
+        "model": "meta.category",
+        "pk": "916"
+    },
+    {
+        "fields": {
+            "categoryname": "Mini Doll, Torso Assembly"
+        },
+        "model": "meta.category",
+        "pk": "917"
+    },
+    {
+        "fields": {
+            "categoryname": "Minifigure, Body Part"
+        },
+        "model": "meta.category",
+        "pk": "20"
+    },
+    {
+        "fields": {
+            "categoryname": "Minifigure, Body Wear"
+        },
+        "model": "meta.category",
+        "pk": "142"
+    },
+    {
+        "fields": {
+            "categoryname": "Minifigure, Hair"
+        },
+        "model": "meta.category",
+        "pk": "847"
+    },
+    {
+        "fields": {
+            "categoryname": "Minifigure, Head"
+        },
+        "model": "meta.category",
+        "pk": "238"
+    },
+    {
+        "fields": {
+            "categoryname": "Minifigure, Head, Modified"
+        },
+        "model": "meta.category",
+        "pk": "606"
+    },
+    {
+        "fields": {
+            "categoryname": "Minifigure, Headgear"
+        },
+        "model": "meta.category",
+        "pk": "16"
+    },
+    {
+        "fields": {
+            "categoryname": "Minifigure, Headgear Accessory"
+        },
+        "model": "meta.category",
+        "pk": "636"
+    },
+    {
+        "fields": {
+            "categoryname": "Minifigure, Legs Assembly"
+        },
+        "model": "meta.category",
+        "pk": "484"
+    },
+    {
+        "fields": {
+            "categoryname": "Minifigure, Legs Assembly, Decor."
+        },
+        "model": "meta.category",
+        "pk": "1098"
+    },
+    {
+        "fields": {
+            "categoryname": "Minifigure, Shield"
+        },
+        "model": "meta.category",
+        "pk": "418"
+    },
+    {
+        "fields": {
+            "categoryname": "Minifigure, Torso"
+        },
+        "model": "meta.category",
+        "pk": "150"
+    },
+    {
+        "fields": {
+            "categoryname": "Minifigure, Torso Assembly"
+        },
+        "model": "meta.category",
+        "pk": "485"
+    },
+    {
+        "fields": {
+            "categoryname": "Minifigure, Torso Assembly, Decor."
+        },
+        "model": "meta.category",
+        "pk": "1097"
+    },
+    {
+        "fields": {
+            "categoryname": "Minifigure, Utensil"
+        },
+        "model": "meta.category",
+        "pk": "18"
+    },
+    {
+        "fields": {
+            "categoryname": "Minifigure, Utensil, Decorated"
+        },
+        "model": "meta.category",
+        "pk": "943"
+    },
+    {
+        "fields": {
+            "categoryname": "Minifigure, Weapon"
+        },
+        "model": "meta.category",
+        "pk": "19"
+    },
+    {
+        "fields": {
+            "categoryname": "Minions The Rise Of Gru"
+        },
+        "model": "meta.category",
+        "pk": "1070"
+    },
+    {
+        "fields": {
+            "categoryname": "Minitalia"
+        },
+        "model": "meta.category",
+        "pk": "394"
+    },
+    {
+        "fields": {
+            "categoryname": "Miscellaneous Licensed"
+        },
+        "model": "meta.category",
+        "pk": "1110"
+    },
+    {
+        "fields": {
+            "categoryname": "Mission Deep Freeze"
+        },
+        "model": "meta.category",
+        "pk": "550"
+    },
+    {
+        "fields": {
+            "categoryname": "Mission Deep Sea"
+        },
+        "model": "meta.category",
+        "pk": "549"
+    },
+    {
+        "fields": {
+            "categoryname": "Mistika"
+        },
+        "model": "meta.category",
+        "pk": "658"
+    },
+    {
+        "fields": {
+            "categoryname": "Mix"
+        },
+        "model": "meta.category",
+        "pk": "1040"
+    },
+    {
+        "fields": {
+            "categoryname": "Mixels"
+        },
+        "model": "meta.category",
+        "pk": "808"
+    },
+    {
+        "fields": {
+            "categoryname": "Mixels Series 1"
+        },
+        "model": "meta.category",
+        "pk": "819"
+    },
+    {
+        "fields": {
+            "categoryname": "Mixels Series 2"
+        },
+        "model": "meta.category",
+        "pk": "820"
+    },
+    {
+        "fields": {
+            "categoryname": "Mixels Series 3"
+        },
+        "model": "meta.category",
+        "pk": "821"
+    },
+    {
+        "fields": {
+            "categoryname": "Mixels Series 4"
+        },
+        "model": "meta.category",
+        "pk": "837"
+    },
+    {
+        "fields": {
+            "categoryname": "Mixels Series 5"
+        },
+        "model": "meta.category",
+        "pk": "851"
+    },
+    {
+        "fields": {
+            "categoryname": "Mixels Series 6"
+        },
+        "model": "meta.category",
+        "pk": "861"
+    },
+    {
+        "fields": {
+            "categoryname": "Mixels Series 7"
+        },
+        "model": "meta.category",
+        "pk": "873"
+    },
+    {
+        "fields": {
+            "categoryname": "Mixels Series 8"
+        },
+        "model": "meta.category",
+        "pk": "882"
+    },
+    {
+        "fields": {
+            "categoryname": "Mixels Series 9"
+        },
+        "model": "meta.category",
+        "pk": "889"
+    },
+    {
+        "fields": {
+            "categoryname": "Moana"
+        },
+        "model": "meta.category",
+        "pk": "894"
+    },
+    {
+        "fields": {
+            "categoryname": "Model"
+        },
+        "model": "meta.category",
+        "pk": "682"
+    },
+    {
+        "fields": {
+            "categoryname": "Model Maker"
+        },
+        "model": "meta.category",
+        "pk": "432"
+    },
+    {
+        "fields": {
+            "categoryname": "Model Team"
+        },
+        "model": "meta.category",
+        "pk": "60"
+    },
+    {
+        "fields": {
+            "categoryname": "Modular Buildings"
+        },
+        "model": "meta.category",
+        "pk": "710"
+    },
+    {
+        "fields": {
+            "categoryname": "Modulex"
+        },
+        "model": "meta.category",
+        "pk": "727"
+    },
+    {
+        "fields": {
+            "categoryname": "Modulex, Brick"
+        },
+        "model": "meta.category",
+        "pk": "729"
+    },
+    {
+        "fields": {
+            "categoryname": "Modulex, Tile, Decorated"
+        },
+        "model": "meta.category",
+        "pk": "728"
+    },
+    {
+        "fields": {
+            "categoryname": "Modulex, Window"
+        },
+        "model": "meta.category",
+        "pk": "730"
+    },
+    {
+        "fields": {
+            "categoryname": "Money and Coin Bank"
+        },
+        "model": "meta.category",
+        "pk": "604"
+    },
+    {
+        "fields": {
+            "categoryname": "Monkie Kid"
+        },
+        "model": "meta.category",
+        "pk": "1100"
+    },
+    {
+        "fields": {
+            "categoryname": "Monorail"
+        },
+        "model": "meta.category",
+        "pk": "237"
+    },
+    {
+        "fields": {
+            "categoryname": "Monster Fighters"
+        },
+        "model": "meta.category",
+        "pk": "781"
+    },
+    {
+        "fields": {
+            "categoryname": "Monthly Model"
+        },
+        "model": "meta.category",
+        "pk": "986"
+    },
+    {
+        "fields": {
+            "categoryname": "Mosaic"
+        },
+        "model": "meta.category",
+        "pk": "433"
+    },
+    {
+        "fields": {
+            "categoryname": "Motor, Non-Electric"
+        },
+        "model": "meta.category",
+        "pk": "504"
+    },
+    {
+        "fields": {
+            "categoryname": "Muji"
+        },
+        "model": "meta.category",
+        "pk": "802"
+    },
+    {
+        "fields": {
+            "categoryname": "My Own Creation"
+        },
+        "model": "meta.category",
+        "pk": "467"
+    },
+    {
+        "fields": {
+            "categoryname": "My Own Train"
+        },
+        "model": "meta.category",
+        "pk": "694"
+    },
+    {
+        "fields": {
+            "categoryname": "Nexo Knights"
+        },
+        "model": "meta.category",
+        "pk": "868"
+    },
+    {
+        "fields": {
+            "categoryname": "Ninja"
+        },
+        "model": "meta.category",
+        "pk": "284"
+    },
+    {
+        "fields": {
+            "categoryname": "Ninjago"
+        },
+        "model": "meta.category",
+        "pk": "759"
+    },
+    {
+        "fields": {
+            "categoryname": "NXT"
+        },
+        "model": "meta.category",
+        "pk": "630"
+    },
+    {
+        "fields": {
+            "categoryname": "Off-Road"
+        },
+        "model": "meta.category",
+        "pk": "383"
+    },
+    {
+        "fields": {
+            "categoryname": "Office Supplies"
+        },
+        "model": "meta.category",
+        "pk": "1113"
+    },
+    {
+        "fields": {
+            "categoryname": "Order of the Phoenix"
+        },
+        "model": "meta.category",
+        "pk": "699"
+    },
+    {
+        "fields": {
+            "categoryname": "Orient Expedition"
+        },
+        "model": "meta.category",
+        "pk": "475"
+    },
+    {
+        "fields": {
+            "categoryname": "Outback"
+        },
+        "model": "meta.category",
+        "pk": "495"
+    },
+    {
+        "fields": {
+            "categoryname": "Overwatch"
+        },
+        "model": "meta.category",
+        "pk": "975"
+    },
+    {
+        "fields": {
+            "categoryname": "Panel"
+        },
+        "model": "meta.category",
+        "pk": "91"
+    },
+    {
+        "fields": {
+            "categoryname": "Panel, Decorated"
+        },
+        "model": "meta.category",
+        "pk": "461"
+    },
+    {
+        "fields": {
+            "categoryname": "Paper"
+        },
+        "model": "meta.category",
+        "pk": "246"
+    },
+    {
+        "fields": {
+            "categoryname": "Paper, Certificate"
+        },
+        "model": "meta.category",
+        "pk": "1018"
+    },
+    {
+        "fields": {
+            "categoryname": "Paper, Flyer"
+        },
+        "model": "meta.category",
+        "pk": "1104"
+    },
+    {
+        "fields": {
+            "categoryname": "Paper, Forms & Surveys"
+        },
+        "model": "meta.category",
+        "pk": "1003"
+    },
+    {
+        "fields": {
+            "categoryname": "Paradisa"
+        },
+        "model": "meta.category",
+        "pk": "71"
+    },
+    {
+        "fields": {
+            "categoryname": "Party Supplies"
+        },
+        "model": "meta.category",
+        "pk": "995"
+    },
+    {
+        "fields": {
+            "categoryname": "Patch & Pin"
+        },
+        "model": "meta.category",
+        "pk": "445"
+    },
+    {
+        "fields": {
+            "categoryname": "Pen"
+        },
+        "model": "meta.category",
+        "pk": "241"
+    },
+    {
+        "fields": {
+            "categoryname": "Phantoka"
+        },
+        "model": "meta.category",
+        "pk": "659"
+    },
+    {
+        "fields": {
+            "categoryname": "Pharaoh's Quest"
+        },
+        "model": "meta.category",
+        "pk": "757"
+    },
+    {
+        "fields": {
+            "categoryname": "Photo Frame & Holder"
+        },
+        "model": "meta.category",
+        "pk": "521"
+    },
+    {
+        "fields": {
+            "categoryname": "Piraka"
+        },
+        "model": "meta.category",
+        "pk": "660"
+    },
+    {
+        "fields": {
+            "categoryname": "Pirates"
+        },
+        "model": "meta.category",
+        "pk": "61"
+    },
+    {
+        "fields": {
+            "categoryname": "Pirates I"
+        },
+        "model": "meta.category",
+        "pk": "688"
+    },
+    {
+        "fields": {
+            "categoryname": "Pirates II"
+        },
+        "model": "meta.category",
+        "pk": "687"
+    },
+    {
+        "fields": {
+            "categoryname": "Pirates III"
+        },
+        "model": "meta.category",
+        "pk": "841"
+    },
+    {
+        "fields": {
+            "categoryname": "Pirates of the Caribbean"
+        },
+        "model": "meta.category",
+        "pk": "761"
+    },
+    {
+        "fields": {
+            "categoryname": "Placeholder"
+        },
+        "model": "meta.category",
+        "pk": "1081"
+    },
+    {
+        "fields": {
+            "categoryname": "Planet Series 1"
+        },
+        "model": "meta.category",
+        "pk": "772"
+    },
+    {
+        "fields": {
+            "categoryname": "Planet Series 2"
+        },
+        "model": "meta.category",
+        "pk": "783"
+    },
+    {
+        "fields": {
+            "categoryname": "Planet Series 3"
+        },
+        "model": "meta.category",
+        "pk": "793"
+    },
+    {
+        "fields": {
+            "categoryname": "Planet Series 4"
+        },
+        "model": "meta.category",
+        "pk": "794"
+    },
+    {
+        "fields": {
+            "categoryname": "Plant"
+        },
+        "model": "meta.category",
+        "pk": "25"
+    },
+    {
+        "fields": {
+            "categoryname": "Plant, Tree"
+        },
+        "model": "meta.category",
+        "pk": "95"
+    },
+    {
+        "fields": {
+            "categoryname": "Plastic"
+        },
+        "model": "meta.category",
+        "pk": "161"
+    },
+    {
+        "fields": {
+            "categoryname": "Plate"
+        },
+        "model": "meta.category",
+        "pk": "26"
+    },
+    {
+        "fields": {
+            "categoryname": "Plate, Decorated"
+        },
+        "model": "meta.category",
+        "pk": "885"
+    },
+    {
+        "fields": {
+            "categoryname": "Plate, Modified"
+        },
+        "model": "meta.category",
+        "pk": "27"
+    },
+    {
+        "fields": {
+            "categoryname": "Plate, Modified, Decorated"
+        },
+        "model": "meta.category",
+        "pk": "890"
+    },
+    {
+        "fields": {
+            "categoryname": "Plate, Round"
+        },
+        "model": "meta.category",
+        "pk": "28"
+    },
+    {
+        "fields": {
+            "categoryname": "Plate, Round, Decorated"
+        },
+        "model": "meta.category",
+        "pk": "1090"
+    },
+    {
+        "fields": {
+            "categoryname": "Play Wear & Weaponry"
+        },
+        "model": "meta.category",
+        "pk": "586"
+    },
+    {
+        "fields": {
+            "categoryname": "Playhouse"
+        },
+        "model": "meta.category",
+        "pk": "613"
+    },
+    {
+        "fields": {
+            "categoryname": "Playmat"
+        },
+        "model": "meta.category",
+        "pk": "998"
+    },
+    {
+        "fields": {
+            "categoryname": "Playsets"
+        },
+        "model": "meta.category",
+        "pk": "661"
+    },
+    {
+        "fields": {
+            "categoryname": "Pneumatic"
+        },
+        "model": "meta.category",
+        "pk": "159"
+    },
+    {
+        "fields": {
+            "categoryname": "Police"
+        },
+        "model": "meta.category",
+        "pk": "323"
+    },
+    {
+        "fields": {
+            "categoryname": "Possession"
+        },
+        "model": "meta.category",
+        "pk": "949"
+    },
+    {
+        "fields": {
+            "categoryname": "Post Office"
+        },
+        "model": "meta.category",
+        "pk": "251"
+    },
+    {
+        "fields": {
+            "categoryname": "Poster"
+        },
+        "model": "meta.category",
+        "pk": "503"
+    },
+    {
+        "fields": {
+            "categoryname": "Power Functions"
+        },
+        "model": "meta.category",
+        "pk": "721"
+    },
+    {
+        "fields": {
+            "categoryname": "Power Miners"
+        },
+        "model": "meta.category",
+        "pk": "689"
+    },
+    {
+        "fields": {
+            "categoryname": "Power Racers"
+        },
+        "model": "meta.category",
+        "pk": "691"
+    },
+    {
+        "fields": {
+            "categoryname": "Powered Up"
+        },
+        "model": "meta.category",
+        "pk": "1016"
+    },
+    {
+        "fields": {
+            "categoryname": "Powerpuff Girls"
+        },
+        "model": "meta.category",
+        "pk": "925"
+    },
+    {
+        "fields": {
+            "categoryname": "Prime Empire"
+        },
+        "model": "meta.category",
+        "pk": "1077"
+    },
+    {
+        "fields": {
+            "categoryname": "Primo"
+        },
+        "model": "meta.category",
+        "pk": "294"
+    },
+    {
+        "fields": {
+            "categoryname": "Prince of Persia"
+        },
+        "model": "meta.category",
+        "pk": "734"
+    },
+    {
+        "fields": {
+            "categoryname": "Princess Castle"
+        },
+        "model": "meta.category",
+        "pk": "614"
+    },
+    {
+        "fields": {
+            "categoryname": "Prisoner of Azkaban"
+        },
+        "model": "meta.category",
+        "pk": "697"
+    },
+    {
+        "fields": {
+            "categoryname": "Projectile Launcher"
+        },
+        "model": "meta.category",
+        "pk": "992"
+    },
+    {
+        "fields": {
+            "categoryname": "Promotional"
+        },
+        "model": "meta.category",
+        "pk": "983"
+    },
+    {
+        "fields": {
+            "categoryname": "Propeller"
+        },
+        "model": "meta.category",
+        "pk": "30"
+    },
+    {
+        "fields": {
+            "categoryname": "Protectors"
+        },
+        "model": "meta.category",
+        "pk": "838"
+    },
+    {
+        "fields": {
+            "categoryname": "Puzzle"
+        },
+        "model": "meta.category",
+        "pk": "443"
+    },
+    {
+        "fields": {
+            "categoryname": "Puzzle Book"
+        },
+        "model": "meta.category",
+        "pk": "594"
+    },
+    {
+        "fields": {
+            "categoryname": "Quatro"
+        },
+        "model": "meta.category",
+        "pk": "537"
+    },
+    {
+        "fields": {
+            "categoryname": "Race"
+        },
+        "model": "meta.category",
+        "pk": "598"
+    },
+    {
+        "fields": {
+            "categoryname": "Racers"
+        },
+        "model": "meta.category",
+        "pk": "179"
+    },
+    {
+        "fields": {
+            "categoryname": "Radio Control"
+        },
+        "model": "meta.category",
+        "pk": "158"
+    },
+    {
+        "fields": {
+            "categoryname": "Rahaga"
+        },
+        "model": "meta.category",
+        "pk": "662"
+    },
+    {
+        "fields": {
+            "categoryname": "Rahi"
+        },
+        "model": "meta.category",
+        "pk": "663"
+    },
+    {
+        "fields": {
+            "categoryname": "Rahkshi"
+        },
+        "model": "meta.category",
+        "pk": "664"
+    },
+    {
+        "fields": {
+            "categoryname": "Raiders of the Lost Ark"
+        },
+        "model": "meta.category",
+        "pk": "701"
+    },
+    {
+        "fields": {
+            "categoryname": "Rattles"
+        },
+        "model": "meta.category",
+        "pk": "324"
+    },
+    {
+        "fields": {
+            "categoryname": "RC Train"
+        },
+        "model": "meta.category",
+        "pk": "577"
+    },
+    {
+        "fields": {
+            "categoryname": "RCX"
+        },
+        "model": "meta.category",
+        "pk": "631"
+    },
+    {
+        "fields": {
+            "categoryname": "Rebooted"
+        },
+        "model": "meta.category",
+        "pk": "947"
+    },
+    {
+        "fields": {
+            "categoryname": "Recreation"
+        },
+        "model": "meta.category",
+        "pk": "686"
+    },
+    {
+        "fields": {
+            "categoryname": "Res-Q"
+        },
+        "model": "meta.category",
+        "pk": "329"
+    },
+    {
+        "fields": {
+            "categoryname": "Retail Display"
+        },
+        "model": "meta.category",
+        "pk": "539"
+    },
+    {
+        "fields": {
+            "categoryname": "Retail Display Case"
+        },
+        "model": "meta.category",
+        "pk": "848"
+    },
+    {
+        "fields": {
+            "categoryname": "Retail Display Flag"
+        },
+        "model": "meta.category",
+        "pk": "526"
+    },
+    {
+        "fields": {
+            "categoryname": "Riding Cycle"
+        },
+        "model": "meta.category",
+        "pk": "225"
+    },
+    {
+        "fields": {
+            "categoryname": "Ring"
+        },
+        "model": "meta.category",
+        "pk": "989"
+    },
+    {
+        "fields": {
+            "categoryname": "Rise of the Snakes"
+        },
+        "model": "meta.category",
+        "pk": "945"
+    },
+    {
+        "fields": {
+            "categoryname": "Road Sign"
+        },
+        "model": "meta.category",
+        "pk": "98"
+    },
+    {
+        "fields": {
+            "categoryname": "Road Sign, Decorated"
+        },
+        "model": "meta.category",
+        "pk": "1048"
+    },
+    {
+        "fields": {
+            "categoryname": "RoboForce"
+        },
+        "model": "meta.category",
+        "pk": "307"
+    },
+    {
+        "fields": {
+            "categoryname": "RoboRiders"
+        },
+        "model": "meta.category",
+        "pk": "384"
+    },
+    {
+        "fields": {
+            "categoryname": "Robot"
+        },
+        "model": "meta.category",
+        "pk": "619"
+    },
+    {
+        "fields": {
+            "categoryname": "Rock"
+        },
+        "model": "meta.category",
+        "pk": "99"
+    },
+    {
+        "fields": {
+            "categoryname": "Rock Raiders"
+        },
+        "model": "meta.category",
+        "pk": "62"
+    },
+    {
+        "fields": {
+            "categoryname": "Roof"
+        },
+        "model": "meta.category",
+        "pk": "379"
+    },
+    {
+        "fields": {
+            "categoryname": "Royal Knights"
+        },
+        "model": "meta.category",
+        "pk": "285"
+    },
+    {
+        "fields": {
+            "categoryname": "Rubber Band & Belt"
+        },
+        "model": "meta.category",
+        "pk": "229"
+    },
+    {
+        "fields": {
+            "categoryname": "Safari"
+        },
+        "model": "meta.category",
+        "pk": "589"
+    },
+    {
+        "fields": {
+            "categoryname": "Samsonite"
+        },
+        "model": "meta.category",
+        "pk": "395"
+    },
+    {
+        "fields": {
+            "categoryname": "Scala"
+        },
+        "model": "meta.category",
+        "pk": "102"
+    },
+    {
+        "fields": {
+            "categoryname": "Scala, Figure Accessory"
+        },
+        "model": "meta.category",
+        "pk": "413"
+    },
+    {
+        "fields": {
+            "categoryname": "School Supplies"
+        },
+        "model": "meta.category",
+        "pk": "447"
+    },
+    {
+        "fields": {
+            "categoryname": "Scooby-Doo"
+        },
+        "model": "meta.category",
+        "pk": "856"
+    },
+    {
+        "fields": {
+            "categoryname": "Sculptures"
+        },
+        "model": "meta.category",
+        "pk": "169"
+    },
+    {
+        "fields": {
+            "categoryname": "Secrets of the Forbidden Spinjitzu"
+        },
+        "model": "meta.category",
+        "pk": "1046"
+    },
+    {
+        "fields": {
+            "categoryname": "Series  1 Minifigures"
+        },
+        "model": "meta.category",
+        "pk": "753"
+    },
+    {
+        "fields": {
+            "categoryname": "Series  2 Minifigures"
+        },
+        "model": "meta.category",
+        "pk": "754"
+    },
+    {
+        "fields": {
+            "categoryname": "Series  3 Minifigures"
+        },
+        "model": "meta.category",
+        "pk": "758"
+    },
+    {
+        "fields": {
+            "categoryname": "Series  4 Minifigures"
+        },
+        "model": "meta.category",
+        "pk": "760"
+    },
+    {
+        "fields": {
+            "categoryname": "Series  5 Minifigures"
+        },
+        "model": "meta.category",
+        "pk": "765"
+    },
+    {
+        "fields": {
+            "categoryname": "Series  6 Minifigures"
+        },
+        "model": "meta.category",
+        "pk": "770"
+    },
+    {
+        "fields": {
+            "categoryname": "Series  7 Minifigures"
+        },
+        "model": "meta.category",
+        "pk": "774"
+    },
+    {
+        "fields": {
+            "categoryname": "Series  8 Minifigures"
+        },
+        "model": "meta.category",
+        "pk": "784"
+    },
+    {
+        "fields": {
+            "categoryname": "Series  9 Minifigures"
+        },
+        "model": "meta.category",
+        "pk": "792"
+    },
+    {
+        "fields": {
+            "categoryname": "Series 10 Minifigures"
+        },
+        "model": "meta.category",
+        "pk": "796"
+    },
+    {
+        "fields": {
+            "categoryname": "Series 11 Minifigures"
+        },
+        "model": "meta.category",
+        "pk": "799"
+    },
+    {
+        "fields": {
+            "categoryname": "Series 12 Minifigures"
+        },
+        "model": "meta.category",
+        "pk": "823"
+    },
+    {
+        "fields": {
+            "categoryname": "Series 13 Minifigures"
+        },
+        "model": "meta.category",
+        "pk": "833"
+    },
+    {
+        "fields": {
+            "categoryname": "Series 14 Minifigures"
+        },
+        "model": "meta.category",
+        "pk": "857"
+    },
+    {
+        "fields": {
+            "categoryname": "Series 15 Minifigures"
+        },
+        "model": "meta.category",
+        "pk": "871"
+    },
+    {
+        "fields": {
+            "categoryname": "Series 16 Minifigures"
+        },
+        "model": "meta.category",
+        "pk": "883"
+    },
+    {
+        "fields": {
+            "categoryname": "Series 17 Minifigures"
+        },
+        "model": "meta.category",
+        "pk": "907"
+    },
+    {
+        "fields": {
+            "categoryname": "Series 18 Minifigures"
+        },
+        "model": "meta.category",
+        "pk": "959"
+    },
+    {
+        "fields": {
+            "categoryname": "Series 19 Minifigures"
+        },
+        "model": "meta.category",
+        "pk": "1058"
+    },
+    {
+        "fields": {
+            "categoryname": "Series 20 Minifigures"
+        },
+        "model": "meta.category",
+        "pk": "1089"
+    },
+    {
+        "fields": {
+            "categoryname": "Serious Play"
+        },
+        "model": "meta.category",
+        "pk": "803"
+    },
+    {
+        "fields": {
+            "categoryname": "Service Packs"
+        },
+        "model": "meta.category",
+        "pk": "63"
+    },
+    {
+        "fields": {
+            "categoryname": "Skybound"
+        },
+        "model": "meta.category",
+        "pk": "950"
+    },
+    {
+        "fields": {
+            "categoryname": "Slide"
+        },
+        "model": "meta.category",
+        "pk": "999"
+    },
+    {
+        "fields": {
+            "categoryname": "Slope"
+        },
+        "model": "meta.category",
+        "pk": "31"
+    },
+    {
+        "fields": {
+            "categoryname": "Slope, Curved"
+        },
+        "model": "meta.category",
+        "pk": "438"
+    },
+    {
+        "fields": {
+            "categoryname": "Slope, Curved, Decorated"
+        },
+        "model": "meta.category",
+        "pk": "775"
+    },
+    {
+        "fields": {
+            "categoryname": "Slope, Decorated"
+        },
+        "model": "meta.category",
+        "pk": "33"
+    },
+    {
+        "fields": {
+            "categoryname": "Slope, Inverted"
+        },
+        "model": "meta.category",
+        "pk": "32"
+    },
+    {
+        "fields": {
+            "categoryname": "Slope, Inverted, Decorated"
+        },
+        "model": "meta.category",
+        "pk": "776"
+    },
+    {
+        "fields": {
+            "categoryname": "Smoking Supplies"
+        },
+        "model": "meta.category",
+        "pk": "1005"
+    },
+    {
+        "fields": {
+            "categoryname": "Soccer"
+        },
+        "model": "meta.category",
+        "pk": "224"
+    },
+    {
+        "fields": {
+            "categoryname": "Sofia the First"
+        },
+        "model": "meta.category",
+        "pk": "836"
+    },
+    {
+        "fields": {
+            "categoryname": "Soft Bricks"
+        },
+        "model": "meta.category",
+        "pk": "439"
+    },
+    {
+        "fields": {
+            "categoryname": "Software"
+        },
+        "model": "meta.category",
+        "pk": "180"
+    },
+    {
+        "fields": {
+            "categoryname": "Sons of Garmadon"
+        },
+        "model": "meta.category",
+        "pk": "953"
+    },
+    {
+        "fields": {
+            "categoryname": "Sorcerer's Stone"
+        },
+        "model": "meta.category",
+        "pk": "695"
+    },
+    {
+        "fields": {
+            "categoryname": "Space"
+        },
+        "model": "meta.category",
+        "pk": "34"
+    },
+    {
+        "fields": {
+            "categoryname": "Space Police I"
+        },
+        "model": "meta.category",
+        "pk": "308"
+    },
+    {
+        "fields": {
+            "categoryname": "Space Police II"
+        },
+        "model": "meta.category",
+        "pk": "309"
+    },
+    {
+        "fields": {
+            "categoryname": "Space Police III"
+        },
+        "model": "meta.category",
+        "pk": "713"
+    },
+    {
+        "fields": {
+            "categoryname": "Space Port"
+        },
+        "model": "meta.category",
+        "pk": "330"
+    },
+    {
+        "fields": {
+            "categoryname": "Special Assembly"
+        },
+        "model": "meta.category",
+        "pk": "961"
+    },
+    {
+        "fields": {
+            "categoryname": "Special Element Sets"
+        },
+        "model": "meta.category",
+        "pk": "632"
+    },
+    {
+        "fields": {
+            "categoryname": "Speed Champions"
+        },
+        "model": "meta.category",
+        "pk": "842"
+    },
+    {
+        "fields": {
+            "categoryname": "Speed Racer"
+        },
+        "model": "meta.category",
+        "pk": "608"
+    },
+    {
+        "fields": {
+            "categoryname": "Speed Slammers"
+        },
+        "model": "meta.category",
+        "pk": "386"
+    },
+    {
+        "fields": {
+            "categoryname": "Spider-Man"
+        },
+        "model": "meta.category",
+        "pk": "469"
+    },
+    {
+        "fields": {
+            "categoryname": "Spider-Man 1"
+        },
+        "model": "meta.category",
+        "pk": "705"
+    },
+    {
+        "fields": {
+            "categoryname": "Spider-Man 2"
+        },
+        "model": "meta.category",
+        "pk": "706"
+    },
+    {
+        "fields": {
+            "categoryname": "Spider-Man Far From Home"
+        },
+        "model": "meta.category",
+        "pk": "1033"
+    },
+    {
+        "fields": {
+            "categoryname": "Spider-Man Homecoming"
+        },
+        "model": "meta.category",
+        "pk": "956"
+    },
+    {
+        "fields": {
+            "categoryname": "SPIKE Prime"
+        },
+        "model": "meta.category",
+        "pk": "1045"
+    },
+    {
+        "fields": {
+            "categoryname": "Spinjitzu"
+        },
+        "model": "meta.category",
+        "pk": "1014"
+    },
+    {
+        "fields": {
+            "categoryname": "Spinjitzu Masters"
+        },
+        "model": "meta.category",
+        "pk": "967"
+    },
+    {
+        "fields": {
+            "categoryname": "Spinjitzu Slam"
+        },
+        "model": "meta.category",
+        "pk": "1047"
+    },
+    {
+        "fields": {
+            "categoryname": "Spinners"
+        },
+        "model": "meta.category",
+        "pk": "970"
+    },
+    {
+        "fields": {
+            "categoryname": "SpongeBob SquarePants"
+        },
+        "model": "meta.category",
+        "pk": "573"
+    },
+    {
+        "fields": {
+            "categoryname": "Sports"
+        },
+        "model": "meta.category",
+        "pk": "473"
+    },
+    {
+        "fields": {
+            "categoryname": "Spring"
+        },
+        "model": "meta.category",
+        "pk": "993"
+    },
+    {
+        "fields": {
+            "categoryname": "Spybotics"
+        },
+        "model": "meta.category",
+        "pk": "436"
+    },
+    {
+        "fields": {
+            "categoryname": "Spyrius"
+        },
+        "model": "meta.category",
+        "pk": "310"
+    },
+    {
+        "fields": {
+            "categoryname": "Stairs"
+        },
+        "model": "meta.category",
+        "pk": "103"
+    },
+    {
+        "fields": {
+            "categoryname": "Star Wars"
+        },
+        "model": "meta.category",
+        "pk": "65"
+    },
+    {
+        "fields": {
+            "categoryname": "Star Wars Battlefront"
+        },
+        "model": "meta.category",
+        "pk": "1029"
+    },
+    {
+        "fields": {
+            "categoryname": "Star Wars Episode 1"
+        },
+        "model": "meta.category",
+        "pk": "257"
+    },
+    {
+        "fields": {
+            "categoryname": "Star Wars Episode 2"
+        },
+        "model": "meta.category",
+        "pk": "381"
+    },
+    {
+        "fields": {
+            "categoryname": "Star Wars Episode 3"
+        },
+        "model": "meta.category",
+        "pk": "547"
+    },
+    {
+        "fields": {
+            "categoryname": "Star Wars Episode 4/5/6"
+        },
+        "model": "meta.category",
+        "pk": "258"
+    },
+    {
+        "fields": {
+            "categoryname": "Star Wars Episode 7"
+        },
+        "model": "meta.category",
+        "pk": "858"
+    },
+    {
+        "fields": {
+            "categoryname": "Star Wars Episode 8"
+        },
+        "model": "meta.category",
+        "pk": "923"
+    },
+    {
+        "fields": {
+            "categoryname": "Star Wars Episode 9"
+        },
+        "model": "meta.category",
+        "pk": "1057"
+    },
+    {
+        "fields": {
+            "categoryname": "Star Wars Galaxy&#39;s Edge"
+        },
+        "model": "meta.category",
+        "pk": "1105"
+    },
+    {
+        "fields": {
+            "categoryname": "Star Wars Legends"
+        },
+        "model": "meta.category",
+        "pk": "834"
+    },
+    {
+        "fields": {
+            "categoryname": "Star Wars Microfighters Series 1"
+        },
+        "model": "meta.category",
+        "pk": "806"
+    },
+    {
+        "fields": {
+            "categoryname": "Star Wars Microfighters Series 2"
+        },
+        "model": "meta.category",
+        "pk": "835"
+    },
+    {
+        "fields": {
+            "categoryname": "Star Wars Microfighters Series 3"
+        },
+        "model": "meta.category",
+        "pk": "866"
+    },
+    {
+        "fields": {
+            "categoryname": "Star Wars Microfighters Series 4"
+        },
+        "model": "meta.category",
+        "pk": "900"
+    },
+    {
+        "fields": {
+            "categoryname": "Star Wars Microfighters Series 5"
+        },
+        "model": "meta.category",
+        "pk": "928"
+    },
+    {
+        "fields": {
+            "categoryname": "Star Wars Microfighters Series 6"
+        },
+        "model": "meta.category",
+        "pk": "1009"
+    },
+    {
+        "fields": {
+            "categoryname": "Star Wars Microfighters Series 7"
+        },
+        "model": "meta.category",
+        "pk": "1067"
+    },
+    {
+        "fields": {
+            "categoryname": "Star Wars Old Republic"
+        },
+        "model": "meta.category",
+        "pk": "814"
+    },
+    {
+        "fields": {
+            "categoryname": "Star Wars Other"
+        },
+        "model": "meta.category",
+        "pk": "607"
+    },
+    {
+        "fields": {
+            "categoryname": "Star Wars Rebels"
+        },
+        "model": "meta.category",
+        "pk": "818"
+    },
+    {
+        "fields": {
+            "categoryname": "Star Wars Resistance"
+        },
+        "model": "meta.category",
+        "pk": "1031"
+    },
+    {
+        "fields": {
+            "categoryname": "Star Wars Rogue One"
+        },
+        "model": "meta.category",
+        "pk": "888"
+    },
+    {
+        "fields": {
+            "categoryname": "Star Wars Solo"
+        },
+        "model": "meta.category",
+        "pk": "960"
+    },
+    {
+        "fields": {
+            "categoryname": "Star Wars The Clone Wars"
+        },
+        "model": "meta.category",
+        "pk": "635"
+    },
+    {
+        "fields": {
+            "categoryname": "Star Wars The Freemaker Adventures"
+        },
+        "model": "meta.category",
+        "pk": "908"
+    },
+    {
+        "fields": {
+            "categoryname": "Star Wars The Mandalorian"
+        },
+        "model": "meta.category",
+        "pk": "1061"
+    },
+    {
+        "fields": {
+            "categoryname": "Star Wars Yoda Chronicles"
+        },
+        "model": "meta.category",
+        "pk": "813"
+    },
+    {
+        "fields": {
+            "categoryname": "Stars"
+        },
+        "model": "meta.category",
+        "pk": "742"
+    },
+    {
+        "fields": {
+            "categoryname": "Sticker Book"
+        },
+        "model": "meta.category",
+        "pk": "1102"
+    },
+    {
+        "fields": {
+            "categoryname": "Sticker Over Assembly"
+        },
+        "model": "meta.category",
+        "pk": "582"
+    },
+    {
+        "fields": {
+            "categoryname": "Sticker Sheet"
+        },
+        "model": "meta.category",
+        "pk": "160"
+    },
+    {
+        "fields": {
+            "categoryname": "Sticker, Collectible Sticker"
+        },
+        "model": "meta.category",
+        "pk": "1017"
+    },
+    {
+        "fields": {
+            "categoryname": "Stingrays"
+        },
+        "model": "meta.category",
+        "pk": "264"
+    },
+    {
+        "fields": {
+            "categoryname": "Storage"
+        },
+        "model": "meta.category",
+        "pk": "399"
+    },
+    {
+        "fields": {
+            "categoryname": "Storage, Sorting Tray"
+        },
+        "model": "meta.category",
+        "pk": "1092"
+    },
+    {
+        "fields": {
+            "categoryname": "Story Book"
+        },
+        "model": "meta.category",
+        "pk": "505"
+    },
+    {
+        "fields": {
+            "categoryname": "Stranger Things"
+        },
+        "model": "meta.category",
+        "pk": "1043"
+    },
+    {
+        "fields": {
+            "categoryname": "String"
+        },
+        "model": "meta.category",
+        "pk": "231"
+    },
+    {
+        "fields": {
+            "categoryname": "String Reel / Winch"
+        },
+        "model": "meta.category",
+        "pk": "88"
+    },
+    {
+        "fields": {
+            "categoryname": "Studios"
+        },
+        "model": "meta.category",
+        "pk": "174"
+    },
+    {
+        "fields": {
+            "categoryname": "Super Heroes"
+        },
+        "model": "meta.category",
+        "pk": "768"
+    },
+    {
+        "fields": {
+            "categoryname": "Super Heroes Other"
+        },
+        "model": "meta.category",
+        "pk": "1080"
+    },
+    {
+        "fields": {
+            "categoryname": "Super Mario"
+        },
+        "model": "meta.category",
+        "pk": "1095"
+    },
+    {
+        "fields": {
+            "categoryname": "Superman"
+        },
+        "model": "meta.category",
+        "pk": "831"
+    },
+    {
+        "fields": {
+            "categoryname": "Supplemental"
+        },
+        "model": "meta.category",
+        "pk": "397"
+    },
+    {
+        "fields": {
+            "categoryname": "Support"
+        },
+        "model": "meta.category",
+        "pk": "105"
+    },
+    {
+        "fields": {
+            "categoryname": "Tail"
+        },
+        "model": "meta.category",
+        "pk": "106"
+    },
+    {
+        "fields": {
+            "categoryname": "Tail, Decorated"
+        },
+        "model": "meta.category",
+        "pk": "741"
+    },
+    {
+        "fields": {
+            "categoryname": "Tangled"
+        },
+        "model": "meta.category",
+        "pk": "962"
+    },
+    {
+        "fields": {
+            "categoryname": "Tap"
+        },
+        "model": "meta.category",
+        "pk": "107"
+    },
+    {
+        "fields": {
+            "categoryname": "Team GB"
+        },
+        "model": "meta.category",
+        "pk": "785"
+    },
+    {
+        "fields": {
+            "categoryname": "Technic"
+        },
+        "model": "meta.category",
+        "pk": "36"
+    },
+    {
+        "fields": {
+            "categoryname": "Technic, Axle"
+        },
+        "model": "meta.category",
+        "pk": "134"
+    },
+    {
+        "fields": {
+            "categoryname": "Technic, Brick"
+        },
+        "model": "meta.category",
+        "pk": "135"
+    },
+    {
+        "fields": {
+            "categoryname": "Technic, Connector"
+        },
+        "model": "meta.category",
+        "pk": "133"
+    },
+    {
+        "fields": {
+            "categoryname": "Technic, Disk"
+        },
+        "model": "meta.category",
+        "pk": "638"
+    },
+    {
+        "fields": {
+            "categoryname": "Technic, Figure Accessory"
+        },
+        "model": "meta.category",
+        "pk": "242"
+    },
+    {
+        "fields": {
+            "categoryname": "Technic, Flex Cable"
+        },
+        "model": "meta.category",
+        "pk": "483"
+    },
+    {
+        "fields": {
+            "categoryname": "Technic, Gear"
+        },
+        "model": "meta.category",
+        "pk": "136"
+    },
+    {
+        "fields": {
+            "categoryname": "Technic, Liftarm"
+        },
+        "model": "meta.category",
+        "pk": "137"
+    },
+    {
+        "fields": {
+            "categoryname": "Technic, Liftarm, Decorated"
+        },
+        "model": "meta.category",
+        "pk": "777"
+    },
+    {
+        "fields": {
+            "categoryname": "Technic, Link"
+        },
+        "model": "meta.category",
+        "pk": "138"
+    },
+    {
+        "fields": {
+            "categoryname": "Technic, Panel"
+        },
+        "model": "meta.category",
+        "pk": "154"
+    },
+    {
+        "fields": {
+            "categoryname": "Technic, Panel, Decorated"
+        },
+        "model": "meta.category",
+        "pk": "740"
+    },
+    {
+        "fields": {
+            "categoryname": "Technic, Pin"
+        },
+        "model": "meta.category",
+        "pk": "139"
+    },
+    {
+        "fields": {
+            "categoryname": "Technic, Plate"
+        },
+        "model": "meta.category",
+        "pk": "140"
+    },
+    {
+        "fields": {
+            "categoryname": "Technic, Shock Absorber"
+        },
+        "model": "meta.category",
+        "pk": "542"
+    },
+    {
+        "fields": {
+            "categoryname": "Technic, Steering"
+        },
+        "model": "meta.category",
+        "pk": "141"
+    },
+    {
+        "fields": {
+            "categoryname": "Teenage Mutant Ninja Turtles"
+        },
+        "model": "meta.category",
+        "pk": "790"
+    },
+    {
+        "fields": {
+            "categoryname": "Temple of Doom"
+        },
+        "model": "meta.category",
+        "pk": "702"
+    },
+    {
+        "fields": {
+            "categoryname": "Thanksgiving"
+        },
+        "model": "meta.category",
+        "pk": "824"
+    },
+    {
+        "fields": {
+            "categoryname": "The Angry Birds Movie"
+        },
+        "model": "meta.category",
+        "pk": "876"
+    },
+    {
+        "fields": {
+            "categoryname": "The Avengers"
+        },
+        "model": "meta.category",
+        "pk": "1073"
+    },
+    {
+        "fields": {
+            "categoryname": "The Battle of the Five Armies"
+        },
+        "model": "meta.category",
+        "pk": "825"
+    },
+    {
+        "fields": {
+            "categoryname": "The Dark Knight Trilogy"
+        },
+        "model": "meta.category",
+        "pk": "896"
+    },
+    {
+        "fields": {
+            "categoryname": "The Final Battle"
+        },
+        "model": "meta.category",
+        "pk": "946"
+    },
+    {
+        "fields": {
+            "categoryname": "The Golden Weapons"
+        },
+        "model": "meta.category",
+        "pk": "944"
+    },
+    {
+        "fields": {
+            "categoryname": "The Hands of Time"
+        },
+        "model": "meta.category",
+        "pk": "952"
+    },
+    {
+        "fields": {
+            "categoryname": "The Hobbit"
+        },
+        "model": "meta.category",
+        "pk": "788"
+    },
+    {
+        "fields": {
+            "categoryname": "The Hobbit and the Lord of the Rings"
+        },
+        "model": "meta.category",
+        "pk": "789"
+    },
+    {
+        "fields": {
+            "categoryname": "The Incredibles"
+        },
+        "model": "meta.category",
+        "pk": "957"
+    },
+    {
+        "fields": {
+            "categoryname": "The LEGO Batman Movie"
+        },
+        "model": "meta.category",
+        "pk": "892"
+    },
+    {
+        "fields": {
+            "categoryname": "The LEGO Movie"
+        },
+        "model": "meta.category",
+        "pk": "804"
+    },
+    {
+        "fields": {
+            "categoryname": "The LEGO Movie 2"
+        },
+        "model": "meta.category",
+        "pk": "971"
+    },
+    {
+        "fields": {
+            "categoryname": "The LEGO Ninjago Movie"
+        },
+        "model": "meta.category",
+        "pk": "920"
+    },
+    {
+        "fields": {
+            "categoryname": "The Lone Ranger"
+        },
+        "model": "meta.category",
+        "pk": "795"
+    },
+    {
+        "fields": {
+            "categoryname": "The Lord of the Rings"
+        },
+        "model": "meta.category",
+        "pk": "782"
+    },
+    {
+        "fields": {
+            "categoryname": "The Simpsons"
+        },
+        "model": "meta.category",
+        "pk": "807"
+    },
+    {
+        "fields": {
+            "categoryname": "The Simpsons Series 2"
+        },
+        "model": "meta.category",
+        "pk": "849"
+    },
+    {
+        "fields": {
+            "categoryname": "Thomas & Friends"
+        },
+        "model": "meta.category",
+        "pk": "562"
+    },
+    {
+        "fields": {
+            "categoryname": "Thor Ragnarok"
+        },
+        "model": "meta.category",
+        "pk": "909"
+    },
+    {
+        "fields": {
+            "categoryname": "Throwbot / Slizer"
+        },
+        "model": "meta.category",
+        "pk": "385"
+    },
+    {
+        "fields": {
+            "categoryname": "Throwing Disk"
+        },
+        "model": "meta.category",
+        "pk": "514"
+    },
+    {
+        "fields": {
+            "categoryname": "Tile"
+        },
+        "model": "meta.category",
+        "pk": "37"
+    },
+    {
+        "fields": {
+            "categoryname": "Tile, Decorated"
+        },
+        "model": "meta.category",
+        "pk": "39"
+    },
+    {
+        "fields": {
+            "categoryname": "Tile, Modified"
+        },
+        "model": "meta.category",
+        "pk": "38"
+    },
+    {
+        "fields": {
+            "categoryname": "Tile, Modified, Decorated"
+        },
+        "model": "meta.category",
+        "pk": "778"
+    },
+    {
+        "fields": {
+            "categoryname": "Tile, Promotional"
+        },
+        "model": "meta.category",
+        "pk": "1039"
+    },
+    {
+        "fields": {
+            "categoryname": "Tile, Round"
+        },
+        "model": "meta.category",
+        "pk": "117"
+    },
+    {
+        "fields": {
+            "categoryname": "Tile, Round, Decorated"
+        },
+        "model": "meta.category",
+        "pk": "812"
+    },
+    {
+        "fields": {
+            "categoryname": "Tim Burton&#39;s Batman"
+        },
+        "model": "meta.category",
+        "pk": "1072"
+    },
+    {
+        "fields": {
+            "categoryname": "Time Cruisers"
+        },
+        "model": "meta.category",
+        "pk": "157"
+    },
+    {
+        "fields": {
+            "categoryname": "Tiny Turbos"
+        },
+        "model": "meta.category",
+        "pk": "571"
+    },
+    {
+        "fields": {
+            "categoryname": "Tire & Tread"
+        },
+        "model": "meta.category",
+        "pk": "111"
+    },
+    {
+        "fields": {
+            "categoryname": "Titans"
+        },
+        "model": "meta.category",
+        "pk": "665"
+    },
+    {
+        "fields": {
+            "categoryname": "Toa"
+        },
+        "model": "meta.category",
+        "pk": "668"
+    },
+    {
+        "fields": {
+            "categoryname": "Toa Hagah"
+        },
+        "model": "meta.category",
+        "pk": "669"
+    },
+    {
+        "fields": {
+            "categoryname": "Toa Hordika"
+        },
+        "model": "meta.category",
+        "pk": "670"
+    },
+    {
+        "fields": {
+            "categoryname": "Toa Inika"
+        },
+        "model": "meta.category",
+        "pk": "671"
+    },
+    {
+        "fields": {
+            "categoryname": "Toa Mahri"
+        },
+        "model": "meta.category",
+        "pk": "672"
+    },
+    {
+        "fields": {
+            "categoryname": "Toa Metru"
+        },
+        "model": "meta.category",
+        "pk": "673"
+    },
+    {
+        "fields": {
+            "categoryname": "Toa Nuva"
+        },
+        "model": "meta.category",
+        "pk": "674"
+    },
+    {
+        "fields": {
+            "categoryname": "Tohunga"
+        },
+        "model": "meta.category",
+        "pk": "675"
+    },
+    {
+        "fields": {
+            "categoryname": "Toolo"
+        },
+        "model": "meta.category",
+        "pk": "296"
+    },
+    {
+        "fields": {
+            "categoryname": "Tournament of Elements"
+        },
+        "model": "meta.category",
+        "pk": "948"
+    },
+    {
+        "fields": {
+            "categoryname": "Town"
+        },
+        "model": "meta.category",
+        "pk": "67"
+    },
+    {
+        "fields": {
+            "categoryname": "Town Jr."
+        },
+        "model": "meta.category",
+        "pk": "626"
+    },
+    {
+        "fields": {
+            "categoryname": "Town Plan"
+        },
+        "model": "meta.category",
+        "pk": "600"
+    },
+    {
+        "fields": {
+            "categoryname": "Toy Story"
+        },
+        "model": "meta.category",
+        "pk": "732"
+    },
+    {
+        "fields": {
+            "categoryname": "Toy Story 3"
+        },
+        "model": "meta.category",
+        "pk": "1049"
+    },
+    {
+        "fields": {
+            "categoryname": "Toy Story 4"
+        },
+        "model": "meta.category",
+        "pk": "1034"
+    },
+    {
+        "fields": {
+            "categoryname": "Toy, Early"
+        },
+        "model": "meta.category",
+        "pk": "645"
+    },
+    {
+        "fields": {
+            "categoryname": "Toy, Fast Food"
+        },
+        "model": "meta.category",
+        "pk": "679"
+    },
+    {
+        "fields": {
+            "categoryname": "Toy, Plush"
+        },
+        "model": "meta.category",
+        "pk": "512"
+    },
+    {
+        "fields": {
+            "categoryname": "Toy, Wooden"
+        },
+        "model": "meta.category",
+        "pk": "1064"
+    },
+    {
+        "fields": {
+            "categoryname": "Track System"
+        },
+        "model": "meta.category",
+        "pk": "450"
+    },
+    {
+        "fields": {
+            "categoryname": "Trading Card Album"
+        },
+        "model": "meta.category",
+        "pk": "1030"
+    },
+    {
+        "fields": {
+            "categoryname": "Traffic"
+        },
+        "model": "meta.category",
+        "pk": "599"
+    },
+    {
+        "fields": {
+            "categoryname": "Train"
+        },
+        "model": "meta.category",
+        "pk": "124"
+    },
+    {
+        "fields": {
+            "categoryname": "Train, Track"
+        },
+        "model": "meta.category",
+        "pk": "128"
+    },
+    {
+        "fields": {
+            "categoryname": "Trolls World Tour"
+        },
+        "model": "meta.category",
+        "pk": "1069"
+    },
+    {
+        "fields": {
+            "categoryname": "Turaga"
+        },
+        "model": "meta.category",
+        "pk": "676"
+    },
+    {
+        "fields": {
+            "categoryname": "Turntable"
+        },
+        "model": "meta.category",
+        "pk": "40"
+    },
+    {
+        "fields": {
+            "categoryname": "UFO"
+        },
+        "model": "meta.category",
+        "pk": "311"
+    },
+    {
+        "fields": {
+            "categoryname": "Ultimate Collector Series"
+        },
+        "model": "meta.category",
+        "pk": "259"
+    },
+    {
+        "fields": {
+            "categoryname": "Ultimate Spider-Man"
+        },
+        "model": "meta.category",
+        "pk": "811"
+    },
+    {
+        "fields": {
+            "categoryname": "Ultra Agents"
+        },
+        "model": "meta.category",
+        "pk": "815"
+    },
+    {
+        "fields": {
+            "categoryname": "Unikitty!"
+        },
+        "model": "meta.category",
+        "pk": "965"
+    },
+    {
+        "fields": {
+            "categoryname": "Unitron"
+        },
+        "model": "meta.category",
+        "pk": "312"
+    },
+    {
+        "fields": {
+            "categoryname": "Universal Building Set"
+        },
+        "model": "meta.category",
+        "pk": "422"
+    },
+    {
+        "fields": {
+            "categoryname": "Universe"
+        },
+        "model": "meta.category",
+        "pk": "755"
+    },
+    {
+        "fields": {
+            "categoryname": "Vahki"
+        },
+        "model": "meta.category",
+        "pk": "677"
+    },
+    {
+        "fields": {
+            "categoryname": "Valentine&#39;s Day"
+        },
+        "model": "meta.category",
+        "pk": "810"
+    },
+    {
+        "fields": {
+            "categoryname": "Value Packs"
+        },
+        "model": "meta.category",
+        "pk": "290"
+    },
+    {
+        "fields": {
+            "categoryname": "Vehicle"
+        },
+        "model": "meta.category",
+        "pk": "72"
+    },
+    {
+        "fields": {
+            "categoryname": "Vehicle, Base"
+        },
+        "model": "meta.category",
+        "pk": "131"
+    },
+    {
+        "fields": {
+            "categoryname": "Vehicle, Mudguard"
+        },
+        "model": "meta.category",
+        "pk": "77"
+    },
+    {
+        "fields": {
+            "categoryname": "Vehicle, Mudguard, Decorated"
+        },
+        "model": "meta.category",
+        "pk": "780"
+    },
+    {
+        "fields": {
+            "categoryname": "Vehicles"
+        },
+        "model": "meta.category",
+        "pk": "752"
+    },
+    {
+        "fields": {
+            "categoryname": "Video Game"
+        },
+        "model": "meta.category",
+        "pk": "712"
+    },
+    {
+        "fields": {
+            "categoryname": "Vikings"
+        },
+        "model": "meta.category",
+        "pk": "548"
+    },
+    {
+        "fields": {
+            "categoryname": "Villains"
+        },
+        "model": "meta.category",
+        "pk": "751"
+    },
+    {
+        "fields": {
+            "categoryname": "Visorak"
+        },
+        "model": "meta.category",
+        "pk": "678"
+    },
+    {
+        "fields": {
+            "categoryname": "Volcano Explorers"
+        },
+        "model": "meta.category",
+        "pk": "881"
+    },
+    {
+        "fields": {
+            "categoryname": "Warriors"
+        },
+        "model": "meta.category",
+        "pk": "667"
+    },
+    {
+        "fields": {
+            "categoryname": "Watch"
+        },
+        "model": "meta.category",
+        "pk": "517"
+    },
+    {
+        "fields": {
+            "categoryname": "Wedding"
+        },
+        "model": "meta.category",
+        "pk": "1001"
+    },
+    {
+        "fields": {
+            "categoryname": "Wedge"
+        },
+        "model": "meta.category",
+        "pk": "42"
+    },
+    {
+        "fields": {
+            "categoryname": "Wedge, Decorated"
+        },
+        "model": "meta.category",
+        "pk": "578"
+    },
+    {
+        "fields": {
+            "categoryname": "Wedge, Plate"
+        },
+        "model": "meta.category",
+        "pk": "583"
+    },
+    {
+        "fields": {
+            "categoryname": "Wedge, Plate, Decorated"
+        },
+        "model": "meta.category",
+        "pk": "1093"
+    },
+    {
+        "fields": {
+            "categoryname": "WeDo"
+        },
+        "model": "meta.category",
+        "pk": "634"
+    },
+    {
+        "fields": {
+            "categoryname": "Western"
+        },
+        "model": "meta.category",
+        "pk": "69"
+    },
+    {
+        "fields": {
+            "categoryname": "Wheel"
+        },
+        "model": "meta.category",
+        "pk": "43"
+    },
+    {
+        "fields": {
+            "categoryname": "Wheel & Tire Assembly"
+        },
+        "model": "meta.category",
+        "pk": "532"
+    },
+    {
+        "fields": {
+            "categoryname": "Wheel, Accessory"
+        },
+        "model": "meta.category",
+        "pk": "1027"
+    },
+    {
+        "fields": {
+            "categoryname": "Whisker Haven Tales"
+        },
+        "model": "meta.category",
+        "pk": "899"
+    },
+    {
+        "fields": {
+            "categoryname": "Williams F1"
+        },
+        "model": "meta.category",
+        "pk": "693"
+    },
+    {
+        "fields": {
+            "categoryname": "Window"
+        },
+        "model": "meta.category",
+        "pk": "113"
+    },
+    {
+        "fields": {
+            "categoryname": "Window, Decorated"
+        },
+        "model": "meta.category",
+        "pk": "84"
+    },
+    {
+        "fields": {
+            "categoryname": "Windscreen"
+        },
+        "model": "meta.category",
+        "pk": "115"
+    },
+    {
+        "fields": {
+            "categoryname": "Windscreen, Decorated"
+        },
+        "model": "meta.category",
+        "pk": "579"
+    },
+    {
+        "fields": {
+            "categoryname": "Wing"
+        },
+        "model": "meta.category",
+        "pk": "114"
+    },
+    {
+        "fields": {
+            "categoryname": "Winnie The Pooh"
+        },
+        "model": "meta.category",
+        "pk": "298"
+    },
+    {
+        "fields": {
+            "categoryname": "Wolfpack"
+        },
+        "model": "meta.category",
+        "pk": "286"
+    },
+    {
+        "fields": {
+            "categoryname": "Wonder Woman"
+        },
+        "model": "meta.category",
+        "pk": "910"
+    },
+    {
+        "fields": {
+            "categoryname": "Wonder Woman 1984"
+        },
+        "model": "meta.category",
+        "pk": "1094"
+    },
+    {
+        "fields": {
+            "categoryname": "Wooden Box Set"
+        },
+        "model": "meta.category",
+        "pk": "637"
+    },
+    {
+        "fields": {
+            "categoryname": "World City"
+        },
+        "model": "meta.category",
+        "pk": "502"
+    },
+    {
+        "fields": {
+            "categoryname": "World Racers"
+        },
+        "model": "meta.category",
+        "pk": "747"
+    },
+    {
+        "fields": {
+            "categoryname": "Wrecker"
+        },
+        "model": "meta.category",
+        "pk": "1019"
+    },
+    {
+        "fields": {
+            "categoryname": "X-Men"
+        },
+        "model": "meta.category",
+        "pk": "827"
+    },
+    {
+        "fields": {
+            "categoryname": "X-Pod"
+        },
+        "model": "meta.category",
+        "pk": "623"
+    },
+    {
+        "fields": {
+            "categoryname": "Xalax"
+        },
+        "model": "meta.category",
+        "pk": "622"
+    },
+    {
+        "fields": {
+            "categoryname": "xtra"
+        },
+        "model": "meta.category",
+        "pk": "1044"
+    },
+    {
+        "fields": {
+            "categoryname": "Znap"
+        },
+        "model": "meta.category",
+        "pk": "152"
+    },
+    {
+        "fields": {
+            "categoryname": "Zoo"
+        },
+        "model": "meta.category",
+        "pk": "389"
+    },
+    {
+        "fields": {
+            "categoryname": "Zooters"
+        },
+        "model": "meta.category",
+        "pk": "719"
+    }
+]

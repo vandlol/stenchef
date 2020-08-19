@@ -1,0 +1,44 @@
+[
+    {
+        "fields": {
+            "name": "Used"
+        },
+        "model": "meta.condition",
+        "pk": "U"
+    },
+    {
+        "fields": {
+            "name": "New"
+        },
+        "model": "meta.condition",
+        "pk": "N"
+    },
+    {
+        "fields": {
+            "name": "Complete"
+        },
+        "model": "meta.condition",
+        "pk": "C"
+    },
+    {
+        "fields": {
+            "name": "Incomplete"
+        },
+        "model": "meta.condition",
+        "pk": "I"
+    },
+    {
+        "fields": {
+            "name": "Sealed"
+        },
+        "model": "meta.condition",
+        "pk": "S"
+    },
+    {
+        "fields": {
+            "name": "N/A"
+        },
+        "model": "meta.condition",
+        "pk": "X"
+    }
+]
