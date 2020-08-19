@@ -66,7 +66,6 @@ class ImportCatalog:
             "{}/".format(self.config["folder"]["catalog"]), "")))
         with open(file, 'r') as fh:
             catalog_file_json = json.load(fh)
-        # TODO Include Color Codes into import
         for item in catalog_file_json["items"]:
             codes = item_classes.Codes.find({"itemid": item['itemid']})
             for code in codes:
