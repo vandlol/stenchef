@@ -1,9 +1,7 @@
 from glob import glob as glob
 import json
 import xmltodict
-import misc
 
-config = misc.read_config()
 folder_download = "download/"
 folder_setup = "setup/"
 
