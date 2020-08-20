@@ -2,8 +2,8 @@ from django.db import models
 
 
 class Color(models.Model):
-    color = models.CharField(primary_key=True, max_length=16)
-    colorname = models.CharField(max_length=100)
+    color = models.CharField(max_length=16)
+    colorname = models.CharField(primary_key=True, max_length=100)
     colorrgb = models.CharField(max_length=6)
     colortype = models.CharField(max_length=16)
     coloryearfrom = models.PositiveIntegerField(default=0, blank=True)
@@ -34,13 +34,13 @@ class Itemtype(models.Model):
 
 
 class Code(models.Model):
-    name = models.CharField(primary_key=True, max_length=16)
+    code = models.CharField(primary_key=True, max_length=16)
     color = models.ForeignKey(Color, on_delete=models.CASCADE)
     itemid = models.ForeignKey('catalog.Item', on_delete=models.CASCADE)
     itemtype = models.ForeignKey(Itemtype, on_delete=models.CASCADE)
 
     def __str__(self):
-        return(self.name)
+        return(self.code)
 
 
 class Condition(models.Model):

@@ -35,7 +35,11 @@ for file in xml_files:
     model = "{}.{}".format(filetype, modelclass)
 
     if filename_clean == "code":
-        continue
+        c_key = "CODES"
+        pk = "codename"
+
+    if filename_clean == "color":
+        pk = "colorname"
 
     with open(file, 'r') as fh:
         file_dict = xmltodict.parse(fh.read())
