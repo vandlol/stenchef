@@ -16,3 +16,5 @@ contribute.
   `python manage.py createsuperuser`
 - start the server
   `python manage.py runserver`
+optional step: - import fixtures (takes a long time)
+ `python manage.py loaddata meta/setup/*.json catalog/setup/*.json`
