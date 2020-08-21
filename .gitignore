@@ -1,7 +1,8 @@
-*.list
 __pycache__/
+.venv
 .vscode/
-data/
-test.py
-django_secretkey.txt
+*.list
 backup/
+data/
+django_secretkey.txt
+test.py
