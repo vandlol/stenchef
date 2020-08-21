@@ -17,3 +17,8 @@ contribute.
   `python manage.py createsuperuser`
 - start the server
   `python manage.py runserver`
+- initiate and build css (tailwind)
+  `python manage.py tailwind install`
+  `python manage.py tailwind build`
+- (optional) watch for css changes - background process
+  `python manage.py tailwind start &`

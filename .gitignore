@@ -9,3 +9,5 @@ test.py
 bricklink.json
 imported_list.txt
 fixtures/
+stenchef/warehouse/static_src/**
+stenchef/warehouse/static/css/**

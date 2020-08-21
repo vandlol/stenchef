@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "catalog.apps.CatalogConfig",
     "meta.apps.MetaConfig",
     "user.apps.UserConfig",
+    "tailwind",
     "crispy_forms",
     "easy_select2",
     "dal",
@@ -126,3 +127,5 @@ FIXTURE_DIRS = "fixtures"
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 ORGS_SLUGFIELD = "django_extensions.db.fields.AutoSlugField"
 LOGIN_REDIRECT_URL = "warehouse:home"
+
+TAILWIND_APP_NAME = "warehouse"
