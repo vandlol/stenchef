@@ -1,0 +1,9 @@
+Django==3.0.5
+django-crispy-forms==1.9.2
+django-currentuser==0.5.1
+djongo==1.3.3
+# mongo-thingy will be removed with "the big cleanup"
+Mongo-Thingy==0.12.0
+# older version of sqlparse is required for djongo
+sqlparse==0.2.4
+xmltodict==0.12.0
