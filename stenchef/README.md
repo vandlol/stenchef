@@ -16,5 +16,10 @@ contribute.
   `python manage.py createsuperuser`
 - start the server
   `python manage.py runserver`
-optional step: - import fixtures (takes a long time)
- `python manage.py loaddata meta/setup/*.json catalog/setup/*.json`
+- initiate and build css (tailwind)
+  `python manage.py tailwind install`
+  `python manage.py tailwind build`
+- (optional) watch for css changes - background process
+  `python manage.py tailwind start &`
+- (optional) import fixtures (takes a long time)
+  `python manage.py loaddata meta/setup/*.json catalog/setup/*.json`

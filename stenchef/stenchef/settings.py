@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'meta.apps.MetaConfig',
     'user.apps.UserConfig',
     'crispy_forms',
+    'tailwind',
 ]
 
 MIDDLEWARE = [
@@ -125,3 +126,4 @@ USE_TZ = True
 STATIC_URL = '/static/'
 FIXTURE_DIRS = ('meta/setup', 'catalog/setup')
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+TAILWIND_APP_NAME = 'warehouse'
