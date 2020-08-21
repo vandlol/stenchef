@@ -8,7 +8,7 @@ contribute.
 - install mongodb
 - start mongodb
   `../start_mongodb.sh`
-- install everython from the requirements.txt via your preferred mechanism
+- install everything from the requirements.txt via your preferred mechanism
   (e.g. `pip install -r requirements.txt`)
 - fill the database with basics
   `python manage.py migrate`
