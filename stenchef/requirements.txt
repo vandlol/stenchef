@@ -1,0 +1,10 @@
+asgiref==3.2.10
+Django==3.0.5
+djongo==1.3.3
+Mongo-Thingy==0.12.0
+pymongo==3.11.0
+pytz==2020.1
+six==1.15.0
+sqlparse==0.2.4
+Thingy==0.8.5
+xmltodict==0.12.0
