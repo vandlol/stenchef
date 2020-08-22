@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'meta.apps.MetaConfig',
     'user.apps.UserConfig',
     'crispy_forms',
+    'organizations',
 ]
 
 MIDDLEWARE = [
@@ -86,6 +87,8 @@ DATABASES = {'default': {'ENGINE': 'djongo',
                          'ENFORCE_SCHEMA': False}}
 
 
+# TODO Caching?
+
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
@@ -125,3 +128,4 @@ USE_TZ = True
 STATIC_URL = '/static/'
 FIXTURE_DIRS = ('meta/setup', 'catalog/setup')
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+ORGS_SLUGFIELD = 'django_extensions.db.fields.AutoSlugField'
