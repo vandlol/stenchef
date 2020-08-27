@@ -126,6 +126,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-FIXTURE_DIRS = ('meta/setup', 'catalog/setup')
+FIXTURE_DIRS = ('fixtures')
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 ORGS_SLUGFIELD = 'django_extensions.db.fields.AutoSlugField'

@@ -15,7 +15,7 @@ class Containertype(models.Model):
         primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=100)
     owner = models.ForeignKey(
-        dmodels.User, default=get_current_authenticated_user, on_delete=models.CASCADE)
+        dmodels.User, default=get_current_authenticated_user, on_delete=models.CASCADE, editable=False)
 
     def __str__(self):
         return(self.name)
@@ -34,12 +34,10 @@ class Container(models.Model):
     containeremptyweight = models.PositiveIntegerField(default=0)
     date_added = models.DateTimeField(default=timezone.now)
     owner = models.ForeignKey(
-        dmodels.User, on_delete=models.CASCADE, default=get_current_authenticated_user)
+        dmodels.User, on_delete=models.CASCADE, default=get_current_authenticated_user, editable=False)
     parent = models.ForeignKey(
         "self", on_delete=models.CASCADE, blank=True, default=None)
     description = models.TextField(blank=True)
-    # TODO
-    # content = models.ForeignKey(Part)
     # constraints = TODO
 
     def __str__(self):
@@ -49,11 +47,12 @@ class Container(models.Model):
 class StoredItem(models.Model):
     storedid = models.UUIDField(
         primary_key=True, default=uuid.uuid4, editable=False)
-    itemid = models.ForeignKey(
-        'catalog.ItemIdentifier', on_delete=models.CASCADE)
+    itemcode = models.ForeignKey(
+        'meta.Code', on_delete=models.CASCADE)
     container = models.ForeignKey(Container, on_delete=models.CASCADE)
     owner = models.ForeignKey(
-        dmodels.User, on_delete=models.CASCADE, default=get_current_authenticated_user)
+        dmodels.User, on_delete=models.CASCADE, default=get_current_authenticated_user, editable=False)
+    condition = models.ForeignKey("meta.Condition", on_delete=models.CASCADE)
     count = models.PositiveIntegerField(default=1)
 
     def __str__(self):
