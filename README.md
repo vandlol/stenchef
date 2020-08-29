@@ -1,5 +1,20 @@
-# lego_warehouse
-## Caution!
-This is a __Work in Progress__ Project and its subject to __heavy changes__ in the near future, please hit me up if you would like to contribute.
+# Stenchef
+
+Currently under heavy development. Please contact me if you'd like to
+contribute.
 
 Moved Fixtures to https://github.com/vandlol/stenchef_fixtures to kepp this repo a bit lower footprint.
+
+## setup dev environment
+
+- install mongodb
+- start mongodb
+  `../start_mongodb.sh`
+- install everything from the requirements.txt via your preferred mechanism
+  (e.g. `pip install -r requirements.txt`)
+- fill the database with basics
+  `python manage.py migrate`
+- create a superuser
+  `python manage.py createsuperuser`
+- start the server
+  `python manage.py runserver`
