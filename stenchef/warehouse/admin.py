@@ -6,6 +6,7 @@ from .models import (
     MOC,
     MOCContent,
     BLInventoryItem,
+    Purchase,
 )
 
 
@@ -15,5 +16,6 @@ from .models import (
 @admin.register(MOC)
 @admin.register(MOCContent)
 @admin.register(BLInventoryItem)
+@admin.register(Purchase)
 class AuthorAdmin(admin.ModelAdmin):
     pass
