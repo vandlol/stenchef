@@ -172,4 +172,4 @@ class Purchase(models.Model):
 
     def clean(self):
         if self.name == None and self.item_id is None:
-            raise ValidationError(_("Fields uploaded_file and link required."))
+            raise ValidationError("Field name or item are required.")
