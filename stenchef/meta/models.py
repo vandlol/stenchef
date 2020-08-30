@@ -2,8 +2,8 @@ from django.db import models
 
 
 class Color(models.Model):
-    color = models.CharField(max_length=16)
-    colorname = models.CharField(primary_key=True, max_length=100)
+    color = models.CharField(primary_key=True, max_length=16)
+    colorname = models.CharField(max_length=100)
     colorrgb = models.CharField(max_length=6)
     colortype = models.CharField(max_length=16)
     coloryearfrom = models.PositiveIntegerField(default=0, blank=True)

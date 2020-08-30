@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import Item, ItemIdentifier
+from .models import Item, SetContent
 
 
 @admin.register(Item)
-@admin.register(ItemIdentifier)
+@admin.register(SetContent)
 class AuthorAdmin(admin.ModelAdmin):
     pass
