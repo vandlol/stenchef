@@ -6,6 +6,7 @@ from django.utils import timezone
 import django.contrib.auth.models as dmodels
 from django_currentuser.middleware import get_current_authenticated_user
 from .fields import IntegerRangeField
+from django.core.exceptions import ValidationError
 
 
 class Containertype(models.Model):
@@ -84,8 +85,10 @@ class MOC(models.Model):
         editable=False,
     )
     description = models.TextField(blank=True)
-    pictures = models.ImageField(default="default.jpg", upload_to="moc_pics")
-    # TODO instructions upload field, pdf only?
+    pictures = models.ImageField(upload_to="moc_pics", blank=True, default=None)
+    instruction = models.FileField(
+        upload_to="instructions/", max_length=254, blank=True, default=None
+    )
     private = models.BooleanField(default=True)
 
 
@@ -93,6 +96,12 @@ class MOCContent(models.Model):
     contentid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     itemid = models.ForeignKey(
         "catalog.Item", on_delete=models.CASCADE, limit_choices_to={"itemtype": "P"}
+    )
+    owner = models.ForeignKey(
+        dmodels.User,
+        on_delete=models.CASCADE,
+        default=get_current_authenticated_user,
+        editable=False,
     )
     color = models.ForeignKey("meta.Color", on_delete=models.CASCADE)
     mocid = models.ForeignKey(MOC, on_delete=models.CASCADE)
@@ -130,3 +139,37 @@ class BLInventoryItem(models.Model):
     tier_price2 = models.DecimalField(default=1.0000, max_digits=20, decimal_places=4)
     tier_quantity3 = models.PositiveIntegerField(default=0)
     tier_price3 = models.DecimalField(default=1.0000, max_digits=20, decimal_places=4)
+    owner = models.ForeignKey(
+        dmodels.User,
+        on_delete=models.CASCADE,
+        default=get_current_authenticated_user,
+        editable=False,
+    )
+
+
+class Purchase(models.Model):
+    purchaseid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    item_id = models.ForeignKey(
+        "catalog.Item", on_delete=models.CASCADE, blank=True, default=None
+    )
+    name = models.CharField(max_length=256, blank=True, default=None)
+    count = models.PositiveIntegerField(default=1)
+    unit_price = models.DecimalField(default=1.0000, max_digits=20, decimal_places=4)
+    container = models.ForeignKey(
+        Container, on_delete=models.CASCADE, blank=True, default=None
+    )
+    seller = models.CharField(max_length=256, blank=True, default=None)
+    url = models.URLField(max_length=1000, blank=True, default=None)
+    invoice = models.FileField(
+        upload_to="invoice/", max_length=254, blank=True, default=None
+    )
+    owner = models.ForeignKey(
+        dmodels.User,
+        on_delete=models.CASCADE,
+        default=get_current_authenticated_user,
+        editable=False,
+    )
+
+    def clean(self):
+        if self.name == None and self.item_id is None:
+            raise ValidationError(_("Fields uploaded_file and link required."))
