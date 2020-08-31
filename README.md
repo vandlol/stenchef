@@ -3,7 +3,6 @@
 Currently under heavy development. Please contact me if you'd like to
 contribute.
 
-Moved Fixtures to https://github.com/vandlol/stenchef_fixtures to kepp this repo a bit lower footprint.
 
 ## setup dev environment
 
