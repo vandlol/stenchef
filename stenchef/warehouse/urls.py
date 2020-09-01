@@ -5,6 +5,7 @@ from . import views
 app_name = "warehouse"
 
 urlpatterns = [
+    path("", lambda request: redirect("w/", permanent=True)),
     path("warehouse/", lambda request: redirect("w/", permanent=True)),
     path(
         "w/",
