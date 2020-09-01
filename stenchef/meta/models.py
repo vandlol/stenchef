@@ -14,7 +14,7 @@ class Color(models.Model):
     colorcntwanted = models.CharField(max_length=10, blank=True)
 
     def __str__(self):
-        return(self.colorname)
+        return self.colorname
 
 
 class Category(models.Model):
@@ -22,7 +22,7 @@ class Category(models.Model):
     categoryname = models.CharField(max_length=100)
 
     def __str__(self):
-        return(self.categoryname)
+        return self.categoryname
 
 
 class Itemtype(models.Model):
@@ -30,22 +30,23 @@ class Itemtype(models.Model):
     itemtypename = models.CharField(max_length=100)
 
     def __str__(self):
-        return(self.itemtypename)
+        return self.itemtypename
 
 
 class Code(models.Model):
     code = models.CharField(primary_key=True, max_length=16)
     color = models.ForeignKey(Color, on_delete=models.CASCADE)
-    itemid = models.ForeignKey('catalog.Item', on_delete=models.CASCADE)
+    itemid = models.ForeignKey("catalog.Item", on_delete=models.CASCADE)
     itemtype = models.ForeignKey(Itemtype, on_delete=models.CASCADE)
 
     def __str__(self):
-        return(self.code)
+        return self.code
 
 
 class Condition(models.Model):
     condition = models.CharField(primary_key=True, max_length=1)
     name = models.CharField(max_length=100)
+    subcondition = models.BooleanField(default=True)
 
     def __str__(self):
-        return(self.name)
+        return self.name

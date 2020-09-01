@@ -119,7 +119,18 @@ class BLInventoryItem(models.Model):
     color = models.ForeignKey("meta.Color", on_delete=models.CASCADE, default="0")
     count = models.PositiveIntegerField(default=1)
     condition = models.ForeignKey(
-        "meta.Condition", on_delete=models.CASCADE, default="N"
+        "meta.Condition",
+        on_delete=models.CASCADE,
+        default="N",
+        limit_choices_to={"subcondition": False},
+    )
+    completeness = models.ForeignKey(
+        "meta.Condition",
+        on_delete=models.CASCADE,
+        default=None,
+        related_name="+",
+        limit_choices_to={"subcondition": True},
+        blank=True,
     )
     unit_price = models.DecimalField(default=1.0000, max_digits=20, decimal_places=4)
     parent_id = models.ForeignKey(
