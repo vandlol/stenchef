@@ -3,6 +3,7 @@ from django.contrib.auth import views as auth_views
 from django.shortcuts import redirect
 from . import views as user_views
 
+
 app_name = "user"
 
 urlpatterns = [

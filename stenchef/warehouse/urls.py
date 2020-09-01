@@ -11,8 +11,8 @@ urlpatterns = [
         "w/",
         include(
             [
-                path("", views.home, name="home"),
-                path("w/about/", views.about, name="about"),
+                path("", views.HomePageView.as_view(), name="home"),
+                path("about/", views.AboutPageView.as_view(), name="about"),
             ]
         ),
     ),
