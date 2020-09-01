@@ -8,8 +8,12 @@ from django_currentuser.middleware import get_current_authenticated_user
 
 
 class HomePageView(TemplateView):
+    def query_data(self):
+        _query = {'containers': Container.objects.all()}
+        return _query
+
     def get(self, request, **kwargs):
-        return render(request, "warehouse/container.html", context=None)
+        return render(request, "warehouse/container.html", context=self.query_data())
 
 
 # Add this view

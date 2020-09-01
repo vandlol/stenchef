@@ -21,6 +21,7 @@ urlpatterns = [
                 path("", views.HomePageView.as_view(), name="home"),
                 path("about/", views.AboutPageView.as_view(), name="about"),
                 path("container/", include(containers)),
+                #path("categories/", views.categories, name="categories"),
             ]
         ),
     ),
