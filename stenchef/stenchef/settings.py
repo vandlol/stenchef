@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "meta.apps.MetaConfig",
     "user.apps.UserConfig",
     "crispy_forms",
+    "easy_select2",
 ]
 
 MIDDLEWARE = [

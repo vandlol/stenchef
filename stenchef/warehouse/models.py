@@ -7,6 +7,7 @@ import django.contrib.auth.models as dmodels
 from django_currentuser.middleware import get_current_authenticated_user
 from .fields import IntegerRangeField
 from django.core.exceptions import ValidationError
+from django.template.defaultfilters import slugify
 
 
 class Containertype(models.Model):
@@ -27,19 +28,12 @@ class Container(models.Model):
     containerid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=100)
     containertype = models.ForeignKey(Containertype, on_delete=models.CASCADE)
-    slug = models.SlugField(
-        default="".join(
-            [
-                random.choice(string.ascii_letters.upper() + string.digits)
-                for n in range(6)
-            ]
-        )
-    )
+    slug = models.SlugField(editable=False)
     dimx = models.PositiveIntegerField(default=0)
     dimy = models.PositiveIntegerField(default=0)
     dimz = models.PositiveIntegerField(default=0)
     containeremptyweight = models.PositiveIntegerField(default=0)
-    date_added = models.DateTimeField(default=timezone.now)
+    date_added = models.DateTimeField(default=timezone.now, editable=False)
     owner = models.ForeignKey(
         dmodels.User,
         on_delete=models.CASCADE,
@@ -54,6 +48,10 @@ class Container(models.Model):
 
     def __str__(self):
         return self.name
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)
+        super(Container, self).save(*args, **kwargs)
 
 
 class StoredItem(models.Model):
