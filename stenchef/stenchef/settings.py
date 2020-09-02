@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "user.apps.UserConfig",
     "tailwind",
     "crispy_forms",
+    "crispy_tailwind",
     "easy_select2",
     "dal",
     "dal_select2",
@@ -124,7 +125,8 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 FIXTURE_DIRS = "fixtures"
-CRISPY_TEMPLATE_PACK = "bootstrap4"
+CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
+CRISPY_TEMPLATE_PACK = "tailwind"
 ORGS_SLUGFIELD = "django_extensions.db.fields.AutoSlugField"
 LOGIN_REDIRECT_URL = "warehouse:home"
 
