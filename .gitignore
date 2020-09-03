@@ -6,3 +6,6 @@ backup/
 data/
 django_secretkey.txt
 test.py
+bricklink.json
+imported_list.txt
+fixtures/
