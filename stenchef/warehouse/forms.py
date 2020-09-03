@@ -1,11 +1,23 @@
 from django import forms
-from easy_select2 import select2_modelform_meta
 from .models import Container, Containertype
 
 
 class ContainerForm(forms.ModelForm):
-    Meta = select2_modelform_meta(Container)
+    class Meta:
+        model = Container
+        fields = [
+            "name",
+            "dimx",
+            "dimy",
+            "dimz",
+            "containeremptyweight",
+            "parent",
+            "description",
+        ]
 
 
 class ContainerTypeForm(forms.ModelForm):
-    Meta = select2_modelform_meta(Containertype)
+    class Meta:
+        model = Containertype
+        fields = "__all__"
+

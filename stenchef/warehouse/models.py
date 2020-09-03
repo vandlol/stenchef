@@ -27,7 +27,7 @@ class Containertype(models.Model):
 class Container(models.Model):
     containerid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=100)
-    containertype = models.ForeignKey(Containertype, on_delete=models.CASCADE)
+    containertype = models.ForeignKey(Containertype, on_delete=models.CASCADE,)
     slug = models.SlugField(editable=False)
     dimx = models.PositiveIntegerField(default=0)
     dimy = models.PositiveIntegerField(default=0)
@@ -41,7 +41,11 @@ class Container(models.Model):
         editable=False,
     )
     parent = models.ForeignKey(
-        "self", on_delete=models.CASCADE, blank=True, default=None
+        "self",
+        on_delete=models.CASCADE,
+        blank=True,
+        default=None,
+        related_name="children",
     )
     description = models.TextField(blank=True)
     # constraints = TODO

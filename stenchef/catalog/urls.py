@@ -4,6 +4,5 @@ from . import views
 
 app_name = "catalog"
 urlpatterns = [
-    path("catalog/", lambda request: redirect("c/", permanent=True)),
     path("c/", views.home, name="catalog-home"),
 ]

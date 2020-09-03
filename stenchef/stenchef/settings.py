@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     "user.apps.UserConfig",
     "crispy_forms",
     "easy_select2",
+    "dal",
+    "dal_select2",
 ]
 
 MIDDLEWARE = [

@@ -7,7 +7,6 @@ from . import views as user_views
 app_name = "user"
 
 urlpatterns = [
-    path("user/", lambda request: redirect("u/", permanent=True)),
     path(
         "u/",
         include(
