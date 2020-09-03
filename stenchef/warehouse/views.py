@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import CreateView, ListView, TemplateView
-from .forms import ContainerForm, ContainerTypeForm
+from .forms import ContainerForm, ContainerTypeForm#, RawcontainerForm
 from .models import Container, Containertype
 from django.contrib.auth.mixins import LoginRequiredMixin
 from pprint import pprint as pp
@@ -10,6 +10,7 @@ from django_currentuser.middleware import get_current_authenticated_user
 class HomePageView(TemplateView):
     def query_data(self):
         _query = {'containers': Container.objects.all()}
+        print(_query)
         return _query
 
     def get(self, request, **kwargs):

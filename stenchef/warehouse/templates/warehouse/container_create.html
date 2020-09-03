@@ -1,24 +1,24 @@
 {% extends "warehouse/base-tailwind.html" %}
 {# load crispy_forms_tags #}
-{% load tailwind_filters %}
+{# load tailwind_filters #}
 {% block content %}
-<div class="content-section">
+<!--<div class="content-section">
     <form method="POST">
         {% csrf_token %}
         <fieldset class="form-group">
             <legend class="border-bottom mb-4">Create Container</legend>
-            {{ form|crispy }}
+            {#{ form|crispy }#}
         </fieldset>
         <div class="form-group">
             <button class="btn btn-outline-info" type="submit">Post</button>
         </div>
     </form>
-</div>
+</div>-->
 
 <form method="POST" class="w-full max-w-lg">
     {% csrf_token %}
         <legend class="block text-base font-bold text-gray-700 py-1">Create Container</legend>
-        {{ form|crispy }}
+        {{ form }}
     <div class="form-group">
         <button class="btn btn-outline-info" type="submit">Post</button>
     </div>
