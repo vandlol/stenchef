@@ -7,6 +7,7 @@ class ContainerForm(forms.ModelForm):
         model = Container
         fields = [
             "name",
+            "containertype",
             "dimx",
             "dimy",
             "dimz",
