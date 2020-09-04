@@ -1,4 +1,4 @@
-{% extends "warehouse/base.html" %}
+{% extends "warehouse/base-tailwind.html" %}
 {% block content %}
 {% for container in containers %}
     <article class="media content-section">
@@ -9,6 +9,7 @@
             </div>
             <h2><a class="article-title" href="#">{{ container.description }}</a></h2>
             <p class="article-content">{{ container.containertype }}</p>
+            <p class="article-content">{{ container.containerid }}</p>
         </div>
     </article>
 {% endfor %}

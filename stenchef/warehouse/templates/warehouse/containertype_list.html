@@ -1,0 +1,14 @@
+{% extends "warehouse/base-tailwind.html" %}
+{% block content %}
+{% for type in types %}
+    <article class="media content-section">
+        <div class="media-body">
+            <div class="article-metadata">
+                <a class="mr-2" href="#">{{ type.name }}</a>
+            </div>
+            <h2><a class="article-title" href="#">{{ type.description }}</a></h2>
+            <p class="article-content">{{ type.typeid }}</p>
+        </div>
+    </article>
+{% endfor %}
+{% endblock content %}

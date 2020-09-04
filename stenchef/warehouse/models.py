@@ -26,6 +26,7 @@ class Containertype(models.Model):
     hierarchy_order_number = IntegerRangeField(
         min_value=-99999, max_value=99999, default=0
     )
+    description = models.TextField(blank=True)
 
     def __str__(self):
         return self.name
