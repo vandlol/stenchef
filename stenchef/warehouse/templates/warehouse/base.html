@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="text-gray-900 antialiased leading-tight">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +13,7 @@
     <title>Django warehouse</title>
     {% endif %}
 </head>
-<body>
+<body class="min-h-screen bg-gray-100">
     <header class="site-header">
         <nav class="flex items-center justify-between flex-wrap bg-teal-500 p-6">
             <div class="flex items-center flex-shrink-0 text-white mr-6">
@@ -44,8 +44,8 @@
             </div>
         </nav>
     </header>
-    <main role="main" class="container">
-        <div class="flex col-auto grid-flow-row">
+    <main role="main" class="container mx-auto">
+        <div class="flex grid-flow-row m-2">
             {% block content %}{% endblock %}
         </div>
     </main>

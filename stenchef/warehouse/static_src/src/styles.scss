@@ -1,4 +1,7 @@
 @tailwind base;
+
+@import "../../static_src/components/base.css";
+
 @tailwind components;
 
 @import "../../static_src/components/buttons.css";

@@ -1,9 +1,10 @@
 {% extends "warehouse/base.html" %}
 {% block content %}
-<div class="bg-gray-200 min-h-screen p-8 items-center justify-center">
+<div class="min-h-screen">
+<h2 class="my-1">Containers</h2>
 {% for container in containers %}
-  <div class="bg-white border rounded-lg overflow-hidde p-1">
-    <h4>{{ container }}</h4>
+  <div class="bg-white border rounded-lg overflow-hidden p-2">
+    <h3>{{ container }}</h3>
     <!--<img :src="property.imageUrl" :alt="property.imageAlt">
     <div class="p-6">
       <div class="text-gray-600 text-xs uppercase font-semibold tracking-wide">

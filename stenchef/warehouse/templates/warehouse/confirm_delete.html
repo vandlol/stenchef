@@ -1,7 +1,7 @@
 {% extends "warehouse/base.html" %}
 {% load tailwind_filters %}
 {% block content %}
-    <div class="">
+    <div class="flex items-center justify-center">
         <form method="POST">
             {% csrf_token %}
             <fieldset class="">
@@ -9,8 +9,8 @@
                 <h2>Are you sure you want to delete the {{ title }} "{{ object.name }}"</h2>
             </fieldset>
             <div class="pt-2 pb-2">
-                <button class="shadow bg-red-600 hover:bg-red-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit">Yes, delete</button>
-                <a class="btn-lesser" href="javascript:history.back()">Cancel</a>
+                <button class="btn btn-critical" type="submit">Yes, delete</button>
+                <a class="btn btn-lesser" href="javascript:history.back()">Cancel</a>
             </div>
         </form>
     </div>
