@@ -22,3 +22,7 @@ contribute.
   `python manage.py tailwind build`
 - (optional) watch for css changes - background process
   `python manage.py tailwind start &`
+
+## add npm/tailwind modules
+
+- go to `stenchef/stenchef/warehouse/static_src`; run npm there
