@@ -31,7 +31,13 @@ class ContainerCreateView(LoginRequiredMixin, CreateView):
     model = Container
     form_class = ContainerForm
     success_url = "/w"
-    template_name = "warehouse/container_create.html"
+    template_name = "warehouse/form_create.html"
+    title = "Container"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)  # get the default context data
+        context["title"] = self.title
+        return context
 
 
 class ContainerListView(LoginRequiredMixin, ListView):
@@ -51,12 +57,19 @@ class ContainerListView(LoginRequiredMixin, ListView):
 class ContainerDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Container
     success_url = "/"
+    template_name = "warehouse/confirm_delete.html"
+    title = "Container"
 
     def test_func(self):
         container = self.get_object()
         if self.request.user == container.owner:
             return True
         return False
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)  # get the default context data
+        context["title"] = self.title
+        return context
 
 
 class ContainerUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
@@ -75,8 +88,8 @@ class ContainerUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
 
 class ContainerDetailView(LoginRequiredMixin, CreateView):
-    model = Containertype
-    form_class = ContainerTypeForm
+    model = Container
+    form_class = ContainerForm
     success_url = "/w"
     template_name = "warehouse/container_type_create.html"
 
@@ -85,18 +98,30 @@ class ContainerTypeCreateView(LoginRequiredMixin, CreateView):
     model = Containertype
     form_class = ContainerTypeForm
     success_url = "/w"
-    template_name = "warehouse/container_type_create.html"
+    template_name = "warehouse/form_create.html"
+    title = "Containertype"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)  # get the default context data
+        context["title"] = self.title
+        return context
 
 
 class ContainerTypeDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Containertype
     success_url = "/"
+    template_name = "warehouse/confirm_delete.html"
 
     def test_func(self):
         containertype = self.get_object()
         if self.request.user == containertype.owner:
             return True
         return False
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)  # get the default context data
+        context["title"] = self.title
+        return context
 
 
 class ContainerTypeUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
