@@ -14,45 +14,38 @@
     <title>Django warehouse</title>
     {% endif %}
 </head>
-<body class="bg-gray-100 antialiased text-gray-900 m-2">
+<body>
     <header class="site-header">
-        <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
-            <div class="container">
-                <a class="navbar-brand mr-4" href="{% url 'warehouse:home' %}">Django warehouse</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
-                    aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+        <nav class="flex items-center justify-between flex-wrap bg-teal-500 p-6">
+            <div class="flex items-center flex-shrink-0 text-white mr-6">
+                <svg class="fill-current h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"/></svg>
+                <span class="font-semibold text-xl tracking-tight">Tailwind CSS</span>
+            </div>
+            <div class="block lg:hidden">
+                <button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+                <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarToggle">
-                    <div class="navbar-nav mr-auto">
-                        <a class="nav-item nav-link" href="{% url 'warehouse:home' %}">Home</a>
-                        <a class="nav-item nav-link" href="{% url 'warehouse:about' %}">About</a>
-                    </div>
-                    <!-- Navbar Right Side -->
-                    <div class="navbar-nav">
-                        <a class="nav-item nav-link" href="{% url 'user:login' %}">Login</a>
-                        <a class="nav-item nav-link" href="{% url 'user:register' %}">Register</a>
-                    </div>
+            </div>
+            <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+                <div class="text-sm lg:flex-grow">
+                <a href="{% url 'warehouse:home' %}" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+                    Warehouse
+                </a>
+                <a href="{% url 'warehouse:about' %}" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+                    about
+                </a>
+
+                </div>
+                <div>
+                    <a href="{% url 'user:login' %}" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Login</a>
+                </div>
+                <div>
+                    <a href="{% url 'user:register' %}" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Register</a>
                 </div>
             </div>
         </nav>
     </header>
     <main role="main" class="container">
-        <div class="row">
-            <div class="flex items-center justify-between px-4 py-3 ">
-                <div class="content-section">
-                    <h3>Our Sidebar</h3>
-                    <p class='text-muted'>You can put any information here you'd like.
-                    <ul class="list-group">
-                        <li class="list-group-item list-group-item-light">Latest Posts</li>
-                        <li class="list-group-item list-group-item-light">Announcements</li>
-                        <li class="list-group-item list-group-item-light">Calendars</li>
-                        <li class="list-group-item list-group-item-light">etc</li>
-                    </ul>
-                    </p>
-                </div>
-            </div>
-        </div>
         <div class="flex col-auto grid-flow-row">
             {% block content %}{% endblock %}
         </div>
@@ -65,9 +58,6 @@
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
         integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
 </body>
 
