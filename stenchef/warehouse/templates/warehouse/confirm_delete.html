@@ -1,15 +1,16 @@
 {% extends "warehouse/base-tailwind.html" %}
+{% load tailwind_filters %}
 {% block content %}
-    <div class="content-section">
+    <div class="">
         <form method="POST">
             {% csrf_token %}
-            <fieldset class="form-group">
+            <fieldset class="">
                 <legend class="border-bottom mb-4">Delete {{ title }}</legend>
                 <h2>Are you sure you want to delete the {{ title }} "{{ object.name }}"</h2>
             </fieldset>
-            <div class="form-group">
-                <button class="btn btn-outline-danger" type="submit">Yes, Delete</button>
-                <a href="#">Cancel</a>
+            <div class="pt-2 pb-2">
+                <button class="shadow bg-red-600 hover:bg-red-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit">Yes, delete</button>
+                <a class="shadow bg-gray-600 hover:bg-gray-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" href="history:back">Cancel</a>
             </div>
         </form>
     </div>
