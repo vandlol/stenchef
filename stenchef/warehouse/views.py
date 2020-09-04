@@ -1,15 +1,21 @@
 from django.shortcuts import render
-from django.views.generic import CreateView, ListView, TemplateView
-from .forms import ContainerForm, ContainerTypeForm#, RawcontainerForm
-from .models import Container, Containertype
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import (
+    CreateView,
+    ListView,
+    TemplateView,
+    DeleteView,
+    UpdateView,
+)
+from .forms import ContainerForm, ContainerTypeForm, StoreItemForm
+from .models import Container, Containertype, StoredItem
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from pprint import pprint as pp
 from django_currentuser.middleware import get_current_authenticated_user
 
 
 class HomePageView(TemplateView):
     def query_data(self):
-        _query = {'containers': Container.objects.all()}
+        _query = {"containers": Container.objects.all()}  # pylint: disable=no-member
         print(_query)
         return _query
 
@@ -17,7 +23,6 @@ class HomePageView(TemplateView):
         return render(request, "warehouse/container.html", context=self.query_data())
 
 
-# Add this view
 class AboutPageView(TemplateView):
     template_name = "warehouse/about.html"
 
@@ -36,15 +41,102 @@ class ContainerListView(LoginRequiredMixin, ListView):
     template_name = "warehouse/container_list.html"
 
     def get_queryset(self):
-        containers = Container.objects.filter(
+        containers = Container.objects.filter(  # pylint: disable=no-member
             owner=get_current_authenticated_user().id
         ).all()
 
         return containers
 
 
+class ContainerDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = Container
+    success_url = "/"
+
+    def test_func(self):
+        container = self.get_object()
+        if self.request.user == container.owner:
+            return True
+        return False
+
+
+class ContainerUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = Container
+    fields = ["name", "containertype"]
+
+    def form_valid(self, form):
+        form.instance.owner = self.request.user
+        return super().form_valid(form)
+
+    def test_func(self):
+        container = self.get_object()
+        if self.request.user == container.owner:
+            return True
+        return False
+
+
+class ContainerDetailView(LoginRequiredMixin, CreateView):
+    model = Containertype
+    form_class = ContainerTypeForm
+    success_url = "/w"
+    template_name = "warehouse/container_type_create.html"
+
+
 class ContainerTypeCreateView(LoginRequiredMixin, CreateView):
     model = Containertype
     form_class = ContainerTypeForm
+    success_url = "/w"
+    template_name = "warehouse/container_type_create.html"
+
+
+class ContainerTypeDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = Containertype
+    success_url = "/"
+
+    def test_func(self):
+        containertype = self.get_object()
+        if self.request.user == containertype.owner:
+            return True
+        return False
+
+
+class ContainerTypeUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = Containertype
+    fields = ["name", "containertype"]
+
+    def form_valid(self, form):
+        form.instance.owner = self.request.user
+        return super().form_valid(form)
+
+    def test_func(self):
+        containertype = self.get_object()
+        if self.request.user == containertype.owner:
+            return True
+        return False
+
+
+class ContainerTypeListView(LoginRequiredMixin, ListView):
+    model = Containertype
+    form_class = ContainerTypeForm
+    context_object_name = "containers"
+    template_name = "warehouse/container_list.html"
+
+    def get_queryset(self):
+        containertypes = Containertype.objects.filter(  # pylint: disable=no-member
+            owner=get_current_authenticated_user().id
+        ).all()
+
+        return containertypes
+
+
+class StoreItemView(LoginRequiredMixin, CreateView):
+    model = StoredItem
+    form_class = StoreItemForm
+    success_url = "/w"
+    template_name = "warehouse/container_type_create.html"
+
+
+class StoredItemDetailView(LoginRequiredMixin, CreateView):
+    model = StoredItem
+    form_class = StoreItemForm
     success_url = "/w"
     template_name = "warehouse/container_type_create.html"

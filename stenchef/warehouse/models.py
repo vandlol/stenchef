@@ -19,6 +19,13 @@ class Containertype(models.Model):
         on_delete=models.CASCADE,
         editable=False,
     )
+    dimx = models.PositiveIntegerField(default=0)
+    dimy = models.PositiveIntegerField(default=0)
+    dimz = models.PositiveIntegerField(default=0)
+    containeremptyweight = models.PositiveIntegerField(default=0)
+    hierarchy_order_number = IntegerRangeField(
+        min_value=-99999, max_value=99999, default=0
+    )
 
     def __str__(self):
         return self.name
@@ -29,10 +36,6 @@ class Container(models.Model):
     name = models.CharField(max_length=100)
     containertype = models.ForeignKey(Containertype, on_delete=models.CASCADE,)
     slug = models.SlugField(editable=False)
-    dimx = models.PositiveIntegerField(default=0)
-    dimy = models.PositiveIntegerField(default=0)
-    dimz = models.PositiveIntegerField(default=0)
-    containeremptyweight = models.PositiveIntegerField(default=0)
     date_added = models.DateTimeField(default=timezone.now, editable=False)
     owner = models.ForeignKey(
         dmodels.User,
