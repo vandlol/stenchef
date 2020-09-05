@@ -8,25 +8,50 @@ from django_currentuser.middleware import get_current_authenticated_user
 from .fields import IntegerRangeField
 from django.core.exceptions import ValidationError
 from django.template.defaultfilters import slugify
+from rgbfield.fields import RGBColorField
 
 
 class Containertype(models.Model):
     typeid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    name = models.CharField(max_length=100)
+    name = models.CharField(
+        max_length=100,
+        help_text="Give your Containertype a Name. 100 Characters maximum.",
+    )
     owner = models.ForeignKey(
         dmodels.User,
         default=get_current_authenticated_user,
         on_delete=models.CASCADE,
         editable=False,
     )
-    dimx = models.PositiveIntegerField(default=0)
-    dimy = models.PositiveIntegerField(default=0)
-    dimz = models.PositiveIntegerField(default=0)
-    containeremptyweight = models.PositiveIntegerField(default=0)
-    hierarchy_order_number = IntegerRangeField(
-        min_value=-99999, max_value=99999, default=0
+    dimx = models.PositiveIntegerField(
+        default=0,
+        help_text="Size of your Container in X Dimension. Will be ignored if set to 0.",
     )
-    description = models.TextField(blank=True)
+    dimy = models.PositiveIntegerField(
+        default=0,
+        help_text="Size of your Container in X Dimension. Will be ignored if set to 0.",
+    )
+    dimz = models.PositiveIntegerField(
+        default=0,
+        help_text="Size of your Container in X Dimension. Will be ignored if set to 0.",
+    )
+    containeremptyweight = models.PositiveIntegerField(
+        default=0,
+        help_text="Weight of your Container if empty. Will be ignored if set to 0.",
+    )
+    hierarchy_order_number = IntegerRangeField(
+        min_value=-99999,
+        max_value=99999,
+        default=0,
+        help_text="Hierarchy works like this: Containers can also fit into Containers with a bigger number. Keep gaps between numbers. Containers of equal numbers will not fit in each other (except 0). (Min -99999, Max 99999) Will be ignored if set to 0.",
+    )
+    description = models.TextField(
+        blank=True, help_text="Write something helpful about this Type of Container",
+    )
+    color = RGBColorField(
+        default="#fff",
+        help_text="Every Container you Create from this type will be colored like this. https://www.w3schools.com/colors/colors_picker.asp Pick a Color and Copy the #Value.",
+    )
 
     def __str__(self):
         return self.name
@@ -34,7 +59,9 @@ class Containertype(models.Model):
 
 class Container(models.Model):
     containerid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    name = models.CharField(max_length=100)
+    name = models.CharField(
+        max_length=100, help_text="Give your Container a Name. 100 Characters maximum."
+    )
     containertype = models.ForeignKey(Containertype, on_delete=models.CASCADE,)
     slug = models.SlugField(editable=False)
     date_added = models.DateTimeField(default=timezone.now, editable=False)
@@ -64,7 +91,9 @@ class Container(models.Model):
 
 class StoredItem(models.Model):
     storedid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    itemid = models.ForeignKey("catalog.Item", on_delete=models.CASCADE)
+    itemid = models.ForeignKey(
+        "catalog.Item", on_delete=models.CASCADE, related_name="item"
+    )
     color = models.ForeignKey("meta.Color", on_delete=models.CASCADE)
     container = models.ForeignKey(Container, on_delete=models.CASCADE)
     owner = models.ForeignKey(

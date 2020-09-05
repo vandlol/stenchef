@@ -11,6 +11,8 @@ from .models import Container, Containertype, StoredItem
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from pprint import pprint as pp
 from django_currentuser.middleware import get_current_authenticated_user
+from dal import autocomplete
+from catalog.models import Item
 
 
 class HomePageView(TemplateView):
@@ -178,15 +180,15 @@ class ContainerTypeListView(LoginRequiredMixin, ListView):
         return containertypes
 
 
-class StoreItemView(LoginRequiredMixin, CreateView):
-    model = StoredItem
+class ItemStoreCreateView(LoginRequiredMixin, CreateView):
+    # model = StoredItem
     form_class = StoreItemForm
     success_url = "/w"
-    template_name = "warehouse/container_type_create.html"
+    template_name = "warehouse/form_create.html"
+    title = "Stored Item"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)  # get the default context data
+        context["title"] = self.title
+        return context
 
-class StoredItemDetailView(LoginRequiredMixin, CreateView):
-    model = StoredItem
-    form_class = StoreItemForm
-    success_url = "/w"
-    template_name = "warehouse/container_type_create.html"

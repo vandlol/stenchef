@@ -46,9 +46,11 @@ INSTALLED_APPS = [
     "tailwind",
     "crispy_forms",
     "crispy_tailwind",
+    "django_select2",
     "easy_select2",
     "dal",
     "dal_select2",
+    "dal_queryset_sequence",
 ]
 
 MIDDLEWARE = [
@@ -91,7 +93,19 @@ DATABASES = {
 }
 
 
-# TODO Caching?
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/1",
+        "OPTIONS": {"CLIENT_CLASS": "django_redis.client.DefaultClient",},
+    },
+    "select2": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/2",
+        "OPTIONS": {"CLIENT_CLASS": "django_redis.client.DefaultClient",},
+    },
+}
+SELECT2_CACHE_BACKEND = "select2"
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
