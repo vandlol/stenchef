@@ -168,7 +168,6 @@ class ContainerTypeUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateVie
 
 class ContainerTypeListView(LoginRequiredMixin, ListView):
     model = Containertype
-    form_class = ContainerTypeForm
     context_object_name = "containers"
     template_name = "warehouse/containertype_list.html"
 
@@ -182,7 +181,7 @@ class ContainerTypeListView(LoginRequiredMixin, ListView):
 
 class ItemAutocomplete(autocomplete.Select2QuerySetView):
     def get_queryset(self):
-        qs = Item.objects.all()
+        qs = Item.objects.all()  # pylint: disable=no-member
         if self.q:
             qs = qs.filter(itemid__istartswith=self.q)
         return qs

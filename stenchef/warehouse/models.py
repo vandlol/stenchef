@@ -48,7 +48,8 @@ class Containertype(models.Model):
     description = models.TextField(
         blank=True, help_text="Write something helpful about this Type of Container",
     )
-    color = RGBColorField(
+    color = models.CharField(
+        max_length=7,
         default="#fff",
         help_text="Every Container you Create from this type will be colored like this. https://www.w3schools.com/colors/colors_picker.asp Pick a Color and Copy the #Value.",
     )
