@@ -1,13 +1,11 @@
 {% extends "warehouse/base.html" %}
-{% load tailwind_filters %}
-{% load crispy_forms_tags %}
 {% block content %}
 <div class="content-section">
     <form method="POST">
         {% csrf_token %}
         <fieldset class="form-group">
             <legend class="border-bottom mb-4">Create {{ title }}</legend>
-            {{ form|crispy }}
+            {{ form.as_p }}
             {{form.media}}
         </fieldset>
         <div class="form-group">
