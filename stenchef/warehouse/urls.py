@@ -1,8 +1,6 @@
 from django.urls import path, include
 from django.shortcuts import redirect
 from . import views
-from dal import autocomplete
-from .models import StoredItem
 
 app_name = "warehouse"
 
@@ -40,11 +38,7 @@ item = [
     path("edit/<str:name>", views.ContainerUpdateView.as_view(), name="iedit"),
     # path("pick/<uuid:pk>/<int:", views.ContainerDeleteView.as_view(), name="idelete"),
     path("list/", views.ContainerListView.as_view(), name="ilist",),
-    path(
-        "autocomplete/",
-        autocomplete.Select2QuerySetView.as_view(model=StoredItem),
-        name="iauto",
-    ),
+    path("autocomplete/", views.ItemAutocomplete.as_view(), name="iauto",),
 ]
 
 urlpatterns = [

@@ -180,8 +180,16 @@ class ContainerTypeListView(LoginRequiredMixin, ListView):
         return containertypes
 
 
+class ItemAutocomplete(autocomplete.Select2QuerySetView):
+    def get_queryset(self):
+        qs = Item.objects.all()
+        if self.q:
+            qs = qs.filter(itemid__istartswith=self.q)
+        return qs
+
+
 class ItemStoreCreateView(LoginRequiredMixin, CreateView):
-    # model = StoredItem
+    model = StoredItem
     form_class = StoreItemForm
     success_url = "/w"
     template_name = "warehouse/form_create.html"
