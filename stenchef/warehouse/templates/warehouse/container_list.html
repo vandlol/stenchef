@@ -1,16 +1,15 @@
 {% extends "warehouse/base.html" %}
 {% block content %}
-{% for container in containers %}
-    <article class="media content-section">
-        <div class="media-body">
-            <div class="article-metadata">
-                <a class="mr-2" href="#">{{ container.name }}</a>
-                <small class="text-muted">{{ container.date_added|date:"F d, Y" }}</small>
-            </div>
-            <h2><a class="article-title" href="#">{{ container.description }}</a></h2>
-            <p class="article-content">{{ container.containertype }}</p>
-            <p class="article-content">{{ container.containerid }}</p>
+<ul>
+    {% for container in containers %}
+    <li>
+        <a class="mr-2" href="">{{ container.name }}</a>
+        <small class="text-muted">{{ container.date_added|date:"F d, Y" }}</small>
         </div>
-    </article>
-{% endfor %}
+        <h2><a class="article-title" href="#">{{ container.description }}</a></h2>
+        <p class="article-content">{{ container.containertype }}{{ container.hierarchy_order_number }}</p>
+        <p class="article-content">{{ container.containerid }} color: {{ container.containertype.color }}</p>
+    </li>
+    {% endfor %}
+</ul>
 {% endblock content %}
