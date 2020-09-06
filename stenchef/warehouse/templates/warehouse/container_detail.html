@@ -1,0 +1,100 @@
+{% extends "warehouse/base.html" %}
+{% block content %}
+<h2 class="my-2">Container {{ container.name }}</h2>
+<section class="flex flex-col flex-no-wrap shadow-md bg-white px-8 py-4">
+        <p class="flex justify-between items-center">
+            {% comment %} <span class="font-light text-gray-600 text-sm">cr < u m < bs < <a class="text-blue-500" href="{% url 'warehouse:cdetail' container.parent.slug %}">{{ container.parent }}</a></span> {% endcomment %}
+            {% if container.parent %}
+                <span class="font-light text-gray-600 text-sm">
+                {% for parent in parents %}
+                <a class="text-blue-500" href="{% url 'warehouse:cdetail' parent|slugify %}">{{ parent }}</a> <
+                {% endfor %}
+                <a class="text-blue-500" href="{% url 'warehouse:cdetail' container.containerid %}">{{ container.name }}</a>
+                </span>
+            {% else %}
+                <span class="font-light text-gray-600 text-sm"><a class="text-blue-500" href="{% url 'warehouse:cdetail' container.containerid %}">{{ container.name }}</a></span>
+            {% endif %}
+            <span class="font-light text-gray-600 text-sm">{{ container.description }} description/longtext?</span>
+            <a class="px-3 py-1 bg-gray-600 text-gray-100 text-sm font-bold rounded hover:bg-gray-500">[icon] {{ container.containertype }}</a>
+        </p>
+        <!--  {{ container.containerid }}
+            {{ container.name }}
+            {{ container.containertype }}
+            {{ container.slug }}
+            {{ container.date_added }}
+            {{ container.parent }}
+            {{ container.description }} -->
+
+        <ul class="flex justify-between items-stretch flex-col">
+            <li class="flex flex-row py-2"><p class="pr-2 w-1/6">Containers in here:</p>
+                <ul class="flex flex-col">
+                    {% for child in children %}
+                    <li><h3 class="font-semibold inline">{{ child.name }}</h3> - child.type</li>
+                    {% endfor %}
+                </ul>
+            </li>
+            <h2 class="pr-2 w-1/6">Items in here:</h2>
+            <li class="py-2 flex flex-row">
+                <ul class="flex flex-wrap">
+                    <div class="flex flex-wrap">
+                        {% for item in items %}
+                        <li class="pb-2  border-t-1 border-gray-400"><div class="border-b-8 pr-1 mr-2" style="border-color: #{{ item.color.colorrgb }}">
+                            <h3 class="font-semibold">{{ item.itemid }}</h3>
+                            <ul>
+                            <li><h4>{{ item.itemid.itemname | truncatechars:30}}</h4></li>
+                            <li title="{{ item.color.colorrgb }}">Color: {{ item.color }}</li>
+                            <li>Condition: {{ item.condition }}</li>
+                            <li>Count: {{ item.count }}</li>
+                            </ul>
+                            <!--<div class="w-12 h-1 rounded mt-2 mb-4" style="background-color: #{{ item.color.colorrgb }};"></div>-->
+                        </div></li>
+                        {% endfor %}
+                    </div>
+                </ul>
+            </li>
+        </ul>
+            <!--<div class="bg-white border rounded-lg overflow-hidden xl:w-1/6 md:w-1/4 px-4 py-2 m-2" >
+                <li>
+                <h4 class="border-b-1 border-gray-500 border-solid"><div class="icon baseline icon-folder"></div>{{ container.name }}</h4>
+                <ul>
+                    <li class="pl-4 text-gray-600 text-xs uppercase font-semibold tracking-wide">
+                    dinge &bull; teile
+                    </li>
+                    <li class="pl-4 mt-1 text-sm">
+                    lorem ipsum 900
+                    <span class="text-gray-600 text-sm"> / von 10</span>
+                    </li>
+                    <li class="pl-4 mt-4 text-sm">
+                    <span class="text-teal-600 font-semibold">attribut wat</span>
+                    <span class="text-gray-600 text-sm"> (kleine details)</span>
+                    </li>
+                </ul>
+                </li>
+            </div>
+            -->
+
+</section>
+{% endblock content %}
+
+<!-- 
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg viewBox="0 0 722.14282 618.04224" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
+<title>brick icon to show color</title>
+<g transform="translate(-306.26351,190.84496)">
+<g fill="#7f00ff">
+<g fill="#{{ item.color.colorrgb }}" transform="matrix(5.34921,0,0,5.34921,-1332.0035,-1857.9695)">
+<path d="m-180.9753,535.70752h73.94383v73.94382h-73.94383z" fill="#{{ item.color.colorrgb }}" fill-rule="evenodd" transform="matrix(.87274,-.48819,.87274,.48819,0,0)"/>
+<path d="m-637.27216,431.13074h36.35996v74.47839h-36.35996z" fill="#{{ item.color.colorrgb }}" fill-rule="evenodd" transform="matrix(0,-1,.87274,-.48819,0,0)"/>
+<path d="m-219.51965-425.40167h36.35996v74.47839h-36.35996z" fill="#{{ item.color.colorrgb }}" fill-rule="evenodd" transform="matrix(0,-1,-.87274,-.48819,0,0)"/>
+<path d="m40.71429-106.42757c0,8.08703-6.55583,14.64286-14.64286,14.64286s-14.64286-6.55583-14.64286-14.64286 6.55583-14.64285 14.64286-14.64285 14.64286,6.55583 14.64286,14.64285z" fill="#fff" fill-rule="evenodd" transform="matrix(1.2439,0,0,-.69582,305.94032,273.71926)"/>
+<path d="m40.71429-106.42757c0,8.08703-6.55583,14.64286-14.64286,14.64286s-14.64286-6.55583-14.64286-14.64286 6.55583-14.64285 14.64286-14.64285 14.64286,6.55583 14.64286,14.64285z" fill="#{{ item.color.colorrgb }}" fill-rule="evenodd" transform="matrix(1.2439,0,0,-.69582,305.94032,266.40121)"/>
+<path d="m40.71429-106.42757a14.64286,14.64286 0 1,1 -29.28572,0 14.64286,14.64286 0 1,1 29.28572,0z" fill="#fff" fill-rule="evenodd" transform="matrix(1.2439,0,0,-.69582,339.9046,291.47069)"/>
+<path d="m40.71429-106.42757a14.64286,14.64286 0 1,1 -29.28572,0 14.64286,14.64286 0 1,1 29.28572,0z" fill="#{{ item.color.colorrgb }}" fill-rule="evenodd" transform="matrix(1.2439,0,0,-.69582,339.9046,284.15264)"/>
+<path d="m40.71429-106.42757c0,8.08703-6.55583,14.64286-14.64286,14.64286s-14.64286-6.55583-14.64286-14.64286 6.55583-14.64285 14.64286-14.64285 14.64286,6.55583 14.64286,14.64285z" fill="#fff" fill-rule="evenodd" transform="matrix(1.2439,0,0,-.69582,374.90461,273.71925)"/>
+<path d="m40.71429-106.42757c0,8.08703-6.55583,14.64286-14.64286,14.64286s-14.64286-6.55583-14.64286-14.64286 6.55583-14.64285 14.64286-14.64285 14.64286,6.55583 14.64286,14.64285z" fill="#{{ item.color.colorrgb }}" fill-rule="evenodd" transform="matrix(1.2439,0,0,-.69582,374.90461,266.40121)"/>
+<path d="m40.71429-106.42757a14.64286,14.64286 0 1,1 -29.28572,0 14.64286,14.64286 0 1,1 29.28572,0z" fill="#fff" fill-rule="evenodd" transform="matrix(1.2439,0,0,-.69582,339.9046,255.11072)"/>
+<path d="m40.71429-106.42757a14.64286,14.64286 0 1,1 -29.28572,0 14.64286,14.64286 0 1,1 29.28572,0z" fill="#{{ item.color.colorrgb }}" fill-rule="evenodd" transform="matrix(1.2439,0,0,-.69582,339.9046,247.79268)"/>
+</g>
+</g>
+</g>
+</svg>-->

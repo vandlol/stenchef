@@ -5,6 +5,7 @@ from django.views.generic import (
     TemplateView,
     DeleteView,
     UpdateView,
+    DetailView,
 )
 from .forms import ContainerForm, ContainerTypeForm, StoreItemForm
 from .models import Container, Containertype, StoredItem
@@ -97,11 +98,34 @@ class ContainerUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         return context
 
 
-class ContainerDetailView(LoginRequiredMixin, CreateView):
+class ContainerDetailView(LoginRequiredMixin, DetailView):
     model = Container
-    form_class = ContainerForm
     success_url = "/w"
-    template_name = "warehouse/container_type_create.html"
+    template_name = "warehouse/container_detail.html"
+
+    def test_func(self):
+        container = self.get_object()
+        if self.request.user == container.owner:
+            return True
+        return False
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["container"] = self.get_object()
+        context["items"] = StoredItem.objects.filter(  # pylint: disable=no-member
+            container__pk=context["container"].containerid
+        )
+        context["children"] = context["container"].children.all()
+        context["parents"] = list()
+        if hasattr(context["container"], "parent"):
+            cparent = context["container"].parent
+            context["parents"].append(context["container"].parent.name)
+            while True:
+                if not hasattr(cparent, "parent"):
+                    break
+                cparent = cparent.parent
+                context["parents"].append(cparent.name)
+        return context
 
 
 class ContainerTypeCreateView(LoginRequiredMixin, CreateView):
