@@ -19,6 +19,7 @@ containertype = [
 
 container = [
     path("create/", views.ContainerCreateView.as_view(), name="ccreate",),
+    path("create/<uuid:parent>", views.ContainerCreateView.as_view(), name="ccreate",),
     path("delete/<uuid:pk>", views.ContainerDeleteView.as_view(), name="cdelete"),
     path("delete/<slug:slug>", views.ContainerDeleteView.as_view(), name="cdelete"),
     path("delete/<str:name>", views.ContainerDeleteView.as_view(), name="cdelete"),

@@ -1,21 +1,24 @@
 {% extends "warehouse/base.html" %}
 {% block content %}
-<h2 class="my-2">Container {{ container.name }}</h2>
+<h2 class="my-2 text-4xl block font-bold">Container <em class="italic">{{ container.name }}</em></h2>
+
+<div class="flex flex-col border-indigo-400 border-dotted">
+<div><p class="float-right">foo</p></div>
+<p>bar
+</div>
+
 <section class="flex flex-col flex-no-wrap shadow-md bg-white px-8 py-4">
         <p class="flex justify-between items-center">
-            {% comment %} <span class="font-light text-gray-600 text-sm">cr < u m < bs < <a class="text-blue-500" href="{% url 'warehouse:cdetail' container.parent.slug %}">{{ container.parent }}</a></span> {% endcomment %}
             {% if container.parent %}
                 <span class="font-light text-gray-600 text-sm">
                 {% for parent in parents %}
-                <a class="text-blue-500" href="{% url 'warehouse:cdetail' parent|slugify %}">{{ parent }}</a> <
+                <a class="text-blue-500" href="{% url 'warehouse:cdetail' parent|slugify %}">{{ parent }}</a>
                 {% endfor %}
                 <a class="text-blue-500" href="{% url 'warehouse:cdetail' container.containerid %}">{{ container.name }}</a>
                 </span>
             {% else %}
                 <span class="font-light text-gray-600 text-sm"><a class="text-blue-500" href="{% url 'warehouse:cdetail' container.containerid %}">{{ container.name }}</a></span>
             {% endif %}
-            <span class="font-light text-gray-600 text-sm">{{ container.description }} description/longtext?</span>
-            <a class="px-3 py-1 bg-gray-600 text-gray-100 text-sm font-bold rounded hover:bg-gray-500">[icon] {{ container.containertype }}</a>
         </p>
         <!--  {{ container.containerid }}
             {{ container.name }}
@@ -25,14 +28,17 @@
             {{ container.parent }}
             {{ container.description }} -->
 
+        
+        <div class="flex justify-between flex-row">
+            <h3 class="px-3 py-1 bg-gray-600 text-center text-gray-100 text-sm font-bold rounded">Containers</h3>
+            <ul class="flex flex-col">
+            {% for child in children %}
+            <li><a class="px-3 py-1 bg-gray-600 text-center text-gray-100 text-sm font-bold rounded" href="{% url 'warehouse:cdetail' child.containerid %}">{{ child.name }}</a></li>
+            {% endfor %}
+            </ul>
+        </div>
+
         <ul class="flex justify-between items-stretch flex-col">
-            <li class="flex flex-row py-2"><p class="pr-2 w-1/6">Containers in here:</p>
-                <ul class="flex flex-col">
-                    {% for child in children %}
-                    <li><h3 class="font-semibold inline">{{ child.name }}</h3> - child.type</li>
-                    {% endfor %}
-                </ul>
-            </li>
             <h2 class="pr-2 w-1/6">Items in here:</h2>
             <li class="py-2 flex flex-row">
                 <ul class="flex flex-wrap">
@@ -53,6 +59,9 @@
                 </ul>
             </li>
         </ul>
+
+
+<a class="px-3 py-1 bg-gray-600 text-center text-gray-100 text-sm font-bold rounded" href="{% url 'warehouse:ccreate' container.containerid %}">Create new Child</a>
             <!--<div class="bg-white border rounded-lg overflow-hidden xl:w-1/6 md:w-1/4 px-4 py-2 m-2" >
                 <li>
                 <h4 class="border-b-1 border-gray-500 border-solid"><div class="icon baseline icon-folder"></div>{{ container.name }}</h4>

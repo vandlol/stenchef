@@ -40,6 +40,12 @@ class ContainerCreateView(LoginRequiredMixin, CreateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)  # get the default context data
         context["title"] = self.title
+        if self.kwargs:
+            if self.kwargs.get("parent"):
+                context["form"] = ContainerForm(
+                    initial={"parent": self.kwargs["parent"]}
+                )
+
         return context
 
 
@@ -116,15 +122,16 @@ class ContainerDetailView(LoginRequiredMixin, DetailView):
             container__pk=context["container"].containerid
         )
         context["children"] = context["container"].children.all()
-        context["parents"] = list()
+        parents = list()
         if hasattr(context["container"], "parent"):
             cparent = context["container"].parent
-            context["parents"].append(context["container"].parent.name)
+            parents.insert(0, context["container"].parent.name)
             while True:
                 if not hasattr(cparent, "parent"):
                     break
                 cparent = cparent.parent
-                context["parents"].append(cparent.name)
+                parents.insert(0, cparent.name)
+            context["parents"] = parents
         return context
 
 
