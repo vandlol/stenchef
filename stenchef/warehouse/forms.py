@@ -2,6 +2,7 @@ from django import forms
 from .models import Container, Containertype, StoredItem
 from catalog.models import Item
 from dal import autocomplete
+from pprint import pprint as pp
 
 
 class ContainerForm(forms.ModelForm):

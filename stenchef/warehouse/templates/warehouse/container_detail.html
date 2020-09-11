@@ -1,88 +1,72 @@
 {% extends "warehouse/base.html" %}
 {% block content %}
-<h2 class="my-2 text-4xl block font-bold">Container <em class="italic">{{ container.name }}</em></h2>
+<!--<h2 class="my-2 text-4xl block font-bold">Container <em class="italic">{{ container.name }}</em></h2>-->
 
-<div class="flex flex-col border-indigo-400 border-dotted">
+<!--<div class="flex flex-col border-indigo-400 border-dotted">
 <div><p class="float-right">foo</p></div>
 <p>bar
-</div>
+</div>-->
 
-<section class="flex flex-col flex-no-wrap shadow-md bg-white px-8 py-4">
-        <p class="flex justify-between items-center">
-            {% if container.parent %}
-                <span class="font-light text-gray-600 text-sm">
-                {% for parent in parents %}
-                <a class="text-blue-500" href="{% url 'warehouse:cdetail' parent|slugify %}">{{ parent }}</a>
+
+<section class="text-gray-700 body-font">
+    <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-wrap w-full mb-20">
+            <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
+                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">Container <em class="italic">{{ container.name }}</em></h1>
+                <div class="h-1 w-20 bg-indigo-500 rounded"></div>
+            </div>
+            <div class="lg:w-1/2 w-full leading-relaxed text-base">
+                <ul>
+                    <li>Location: <span class="float-right font-light text-gray-600">
+                    {% if container.parent %}
+                        {% for parent in parents %}
+                        <a class="text-blue-500" href="{% url 'warehouse:cdetail' parent|slugify %}">{{ parent }}</a> &lt;
+                        {% endfor %}
+                        <a class="text-blue-500" href="{% url 'warehouse:cdetail' container.containerid %}">{{ container.name }}</a>
+                    {% else %}
+                        <a class="text-blue-500" href="{% url 'warehouse:cdetail' container.containerid %}">{{ container.name }}</a>
+                    {% endif %}
+                    </span></li>
+                    <li>Type: <span class="float-right">✎<a href="{% url 'warehouse:ctedit' container.containertype|slugify %}">{{ container.containertype }}</a>🖉</span></li>
+                    <li>🐌 Slug: <span class="float-right">{{ container.slug }}</span></li>
+                    <li>Date added: <span class="float-right">{{ container.date_added }}</span></li>
+                    <li>ID: <span class="float-right">{{ container.containerid }}</span></li>
+                    <!--<li>Children:
+                        <ul class="flex flex-row float-right w-4/5 flex-wrap justify-end">
+                            {% for child in children %}
+                            <li class="mx-2"><a class="px-3 py-1 bg-gray-600 text-center text-gray-100 text-sm font-bold rounded" href="{% url 'warehouse:cdetail' child.containerid %}">{{ child.name }}</a></li>
+                            {% endfor %}
+                        </ul></li>-->
+                    <li class="clear-both">Description: <span class="float-right">{{ container.description }} {% lorem 20 w %}</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="flex flex-wrap -m-4">
+        ugly Children
+            <ul class="xl:w-1/6 md:w-1/4 p-4 flex">
+                {% for child in children %}
+                <li class="mx-2"><a class="px-3 py-1 text-center text-gray-800 text-sm  rounded" href="{% url 'warehouse:cdetail' child.containerid %}">{{ child.name }}</a></li>
                 {% endfor %}
-                <a class="text-blue-500" href="{% url 'warehouse:cdetail' container.containerid %}">{{ container.name }}</a>
-                </span>
-            {% else %}
-                <span class="font-light text-gray-600 text-sm"><a class="text-blue-500" href="{% url 'warehouse:cdetail' container.containerid %}">{{ container.name }}</a></span>
-            {% endif %}
-        </p>
-        <!--  {{ container.containerid }}
-            {{ container.name }}
-            {{ container.containertype }}
-            {{ container.slug }}
-            {{ container.date_added }}
-            {{ container.parent }}
-            {{ container.description }} -->
-
-        
-        <div class="flex justify-between flex-row">
-            <h3 class="px-3 py-1 bg-gray-600 text-center text-gray-100 text-sm font-bold rounded">Containers</h3>
-            <ul class="flex flex-col">
-            {% for child in children %}
-            <li><a class="px-3 py-1 bg-gray-600 text-center text-gray-100 text-sm font-bold rounded" href="{% url 'warehouse:cdetail' child.containerid %}">{{ child.name }}</a></li>
-            {% endfor %}
             </ul>
         </div>
-
-        <ul class="flex justify-between items-stretch flex-col">
-            <h2 class="pr-2 w-1/6">Items in here:</h2>
-            <li class="py-2 flex flex-row">
-                <ul class="flex flex-wrap">
-                    <div class="flex flex-wrap">
-                        {% for item in items %}
-                        <li class="pb-2  border-t-1 border-gray-400"><div class="border-b-8 pr-1 mr-2" style="border-color: #{{ item.color.colorrgb }}">
-                            <h3 class="font-semibold">{{ item.itemid }}</h3>
-                            <ul>
-                            <li><h4>{{ item.itemid.itemname | truncatechars:30}}</h4></li>
-                            <li title="{{ item.color.colorrgb }}">Color: {{ item.color }}</li>
-                            <li>Condition: {{ item.condition }}</li>
-                            <li>Count: {{ item.count }}</li>
-                            </ul>
-                            <!--<div class="w-12 h-1 rounded mt-2 mb-4" style="background-color: #{{ item.color.colorrgb }};"></div>-->
-                        </div></li>
-                        {% endfor %}
-                    </div>
-                </ul>
-            </li>
-        </ul>
-
-
-<a class="px-3 py-1 bg-gray-600 text-center text-gray-100 text-sm font-bold rounded" href="{% url 'warehouse:ccreate' container.containerid %}">Create new Child</a>
-            <!--<div class="bg-white border rounded-lg overflow-hidden xl:w-1/6 md:w-1/4 px-4 py-2 m-2" >
-                <li>
-                <h4 class="border-b-1 border-gray-500 border-solid"><div class="icon baseline icon-folder"></div>{{ container.name }}</h4>
-                <ul>
-                    <li class="pl-4 text-gray-600 text-xs uppercase font-semibold tracking-wide">
-                    dinge &bull; teile
-                    </li>
-                    <li class="pl-4 mt-1 text-sm">
-                    lorem ipsum 900
-                    <span class="text-gray-600 text-sm"> / von 10</span>
-                    </li>
-                    <li class="pl-4 mt-4 text-sm">
-                    <span class="text-teal-600 font-semibold">attribut wat</span>
-                    <span class="text-gray-600 text-sm"> (kleine details)</span>
-                    </li>
-                </ul>
-                </li>
+        <div class="flex flex-wrap -m-4">
+            {% for item in items %}
+            <div class="xl:w-1/6 md:w-1/4 p-4">
+                <div class="bg-gray-100 p-6 rounded-lg">
+                    <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">{{ item.itemid.itemname | truncatechars:30}}</h3>
+                    <h2 class="text-xl text-gray-900 font-medium title-font mb-4">{{ item.itemid }}</h2>
+                    <p class="leading-relaxed text-base">
+                        Condition: {{ item.condition }}<br/>
+                        Count: {{ item.count }}
+                    </p>
+                    <div class="h-1 w-20 rounded " style="background-color: #{{ item.color.colorrgb }};"></div>
+                </div>
             </div>
-            -->
-
+            {% endfor %}
+        </div>
+    </div>
 </section>
+
 {% endblock content %}
 
 <!-- 
