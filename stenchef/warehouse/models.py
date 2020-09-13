@@ -110,46 +110,10 @@ class StoredItem(models.Model):
         return str(self.storedid)
 
 
-class MOC(models.Model):
-    mocid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    name = models.CharField(max_length=256)
-    date_added = models.DateTimeField(default=timezone.now)
-    owner = models.ForeignKey(
-        dmodels.User,
-        on_delete=models.CASCADE,
-        default=get_current_authenticated_user,
-        editable=False,
-    )
-    description = models.TextField(blank=True)
-    pictures = models.ImageField(upload_to="moc_pics", blank=True, default=None)
-    instruction = models.FileField(
-        upload_to="instructions/", max_length=254, blank=True, default=None
-    )
-    private = models.BooleanField(default=True)
-
-
-class MOCContent(models.Model):
-    contentid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    itemid = models.ForeignKey(
-        "catalog.Item", on_delete=models.CASCADE, limit_choices_to={"itemtype": "P"}
-    )
-    owner = models.ForeignKey(
-        dmodels.User,
-        on_delete=models.CASCADE,
-        default=get_current_authenticated_user,
-        editable=False,
-    )
-    color = models.ForeignKey("meta.Color", on_delete=models.CASCADE)
-    mocid = models.ForeignKey(MOC, on_delete=models.CASCADE)
-    condition = models.ForeignKey("meta.Condition", on_delete=models.CASCADE)
-    count = models.PositiveIntegerField(default=1)
-
-    def __str__(self):
-        return str(self.contentid)
-
-
 class BLInventoryItem(models.Model):
-    blinvid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    autoid = models.CharField(
+        primary_key=True, max_length=120, default=uuid.uuid4, editable=False,
+    )
     inventory_id = models.PositiveIntegerField(default=None, blank=True)
     item_id = models.ForeignKey("catalog.Item", on_delete=models.CASCADE)
     color = models.ForeignKey("meta.Color", on_delete=models.CASCADE, default="0")
@@ -169,17 +133,12 @@ class BLInventoryItem(models.Model):
         blank=True,
     )
     unit_price = models.DecimalField(default=1.0000, max_digits=20, decimal_places=4)
-    parent_id = models.ForeignKey(
-        "self", on_delete=models.CASCADE, blank=True, default=None
-    )
     description = models.TextField(blank=True)
     remarks = models.TextField(blank=True)
     bulk = models.PositiveIntegerField(default=1, blank=True)
     is_retain = models.BooleanField(default=False)
     is_stock_room = models.BooleanField(default=False)
-    date_created = models.DateTimeField(default=timezone.now)
     sale_rate = IntegerRangeField(min_value=-1000, max_value=99, default=0)
-    models.DecimalField(default=1.0000, max_digits=20, decimal_places=4)
     tier_quantity1 = models.PositiveIntegerField(default=0)
     tier_price1 = models.DecimalField(default=1.0000, max_digits=20, decimal_places=4)
     tier_quantity2 = models.PositiveIntegerField(default=0)
@@ -192,6 +151,9 @@ class BLInventoryItem(models.Model):
         default=get_current_authenticated_user,
         editable=False,
     )
+
+    def __str__(self):
+        return str(self.item_id_id)  # pylint: disable=no-member
 
 
 class Purchase(models.Model):

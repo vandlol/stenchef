@@ -12,7 +12,6 @@ from .models import Container, Containertype, StoredItem
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from pprint import pprint as pp
 from django_currentuser.middleware import get_current_authenticated_user
-from dal import autocomplete
 from catalog.models import Item
 
 
@@ -51,7 +50,6 @@ class ContainerCreateView(LoginRequiredMixin, CreateView):
 
 class ContainerListView(LoginRequiredMixin, ListView):
     model = Container
-    form_class = ContainerForm
     context_object_name = "containers"
     template_name = "warehouse/container_list.html"
 
@@ -208,14 +206,6 @@ class ContainerTypeListView(LoginRequiredMixin, ListView):
         ).all()
 
         return containertypes
-
-
-class ItemAutocomplete(autocomplete.Select2QuerySetView):
-    def get_queryset(self):
-        qs = Item.objects.all()  # pylint: disable=no-member
-        if self.q:
-            qs = qs.filter(itemid__istartswith=self.q)
-        return qs
 
 
 class ItemStoreCreateView(LoginRequiredMixin, CreateView):

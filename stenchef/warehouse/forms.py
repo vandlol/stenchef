@@ -27,5 +27,5 @@ class StoreItemForm(forms.ModelForm):
     class Meta:
         model = StoredItem
         fields = "__all__"
-        widgets = {"itemid": autocomplete.ModelSelect2(url="warehouse:iauto",)}
+        widgets = {"itemid": autocomplete.ModelSelect2(url="catalog:iauto",)}
 

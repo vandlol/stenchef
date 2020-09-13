@@ -54,6 +54,8 @@ def convert(file, cmap=None, filetype="meta", c_key="CATALOG", raw=False):
         file_dict = xmltodict.parse(fh.read())
     for item in file_dict[c_key]["ITEM"]:
         temp = dict()
+        if modelclass == "item":
+            temp["itemuid"] = "{}_{}".format(item["ITEMTYPE"], item["ITEMID"])
         for k, v in item.items():
             k = k.lower()
             k = translate_k(modelclass, k)

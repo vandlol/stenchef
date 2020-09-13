@@ -1,0 +1,19 @@
+{% extends "warehouse/base.html" %}
+{% block content %}
+
+<ul>
+<li><span class="float-right">{{ item.itemuid }}</span></li>
+<li><span class="float-right">{{ item.itemid }}</span></li>
+<li><span class="float-right">{{ item.category }}</span></li>
+<li><span class="float-right">{{ item.itemdimx }}</span></li>
+<li><span class="float-right">{{ item.itemdimy }}</span></li>
+<li><span class="float-right">{{ item.itemdimz }}</span></li>
+<li><span class="float-right">{{ item.itemweight }}</span></li>
+<li><span class="float-right">{{ item.itemname }}</span></li>
+<li><span class="float-right">{{ item.itemtype }}</span></li>
+<li><span class="float-right">{{ item.itemyear }}</span></li>
+</ul>
+
+
+{% endblock content %}
+
