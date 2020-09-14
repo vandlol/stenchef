@@ -18,15 +18,10 @@ from catalog.models import Item
 class HomePageView(TemplateView):
     def query_data(self):
         _query = {"containers": Container.objects.all()}  # pylint: disable=no-member
-        print(_query)
         return _query
 
     def get(self, request, **kwargs):
         return render(request, "warehouse/container.html", context=self.query_data())
-
-
-class AboutPageView(TemplateView):
-    template_name = "warehouse/about.html"
 
 
 class ContainerCreateView(LoginRequiredMixin, CreateView):

@@ -44,7 +44,6 @@ urlpatterns = [
         include(
             [
                 path("", views.HomePageView.as_view(), name="home"),
-                path("about/", views.AboutPageView.as_view(), name="about"),
                 path("container/type/", include(containertype)),
                 path("container/", include(container)),
                 path("item/", include(item)),

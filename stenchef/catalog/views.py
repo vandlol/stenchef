@@ -5,6 +5,7 @@ from django.views.generic import (
     ListView,
     DetailView,
 )
+from django.core.paginator import Paginator
 from dal import autocomplete
 
 
@@ -25,11 +26,8 @@ class ItemListView(ListView):
     model = Item
     context_object_name = "items"
     template_name = "catalog/item_list.html"
-
-    def get_queryset(self):
-        items = Item.objects.all()  # pylint: disable=no-member
-
-        return items
+    paginate_by = 50
+    ordering = ["itemid"]
 
 
 class ItemDetailView(DetailView):

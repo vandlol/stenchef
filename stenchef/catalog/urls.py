@@ -9,15 +9,7 @@ urlpatterns = [
 
 
 item = [
-    # path("store/", views.ItemStoreCreateView.as_view(), name="istore",),
-    # path("delete/<uuid:pk>", views.ContainerDeleteView.as_view(), name="idelete"),
-    # path("delete/<slug:slug>", views.ContainerDeleteView.as_view(), name="idelete"),
-    # path("delete/<str:name>", views.ContainerDeleteView.as_view(), name="idelete"),
-    # path("edit/<uuid:pk>", views.ContainerUpdateView.as_view(), name="iedit"),
-    # path("edit/<slug:slug>", views.ContainerUpdateView.as_view(), name="iedit"),
-    # path("edit/<str:name>", views.ContainerUpdateView.as_view(), name="iedit"),
-    # # path("pick/<uuid:pk>/<int:", views.ContainerDeleteView.as_view(), name="idelete"),
-    # path("list/", views.ContainerListView.as_view(), name="ilist",),
+    path("list/", views.ItemListView.as_view(), name="ilist",),
     path("detail/<str:pk>", views.ItemDetailView.as_view(), name="idetail"),
     path("autocomplete/", views.ItemAutocomplete.as_view(), name="iauto",),
 ]
