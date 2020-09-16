@@ -1,19 +1,67 @@
 {% extends "warehouse/base.html" %}
 {% block content %}
 
-<ul>
-<li><span class="float-right">{{ item.itemuid }}</span></li>
-<li><span class="float-right">{{ item.itemid }}</span></li>
-<li><span class="float-right">{{ item.category }}</span></li>
-<li><span class="float-right">{{ item.itemdimx }}</span></li>
-<li><span class="float-right">{{ item.itemdimy }}</span></li>
-<li><span class="float-right">{{ item.itemdimz }}</span></li>
-<li><span class="float-right">{{ item.itemweight }}</span></li>
-<li><span class="float-right">{{ item.itemname }}</span></li>
-<li><span class="float-right">{{ item.itemtype }}</span></li>
-<li><span class="float-right">{{ item.itemyear }}</span></li>
-</ul>
+<section class="text-gray-700 body-font overflow-hidden">
+  <div class="container px-5 py-24 mx-auto">
+    <div class="lg:w-4/5 mx-auto flex flex-wrap">
+      <img alt="ecommerce" class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src="https://dummyimage.com/400x400">
+      <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0 flex flex-col">
+        <div class="flex flex-row flex-wrap justify-between">
+        <h2 class="text-xl title-font text-gray-500 tracking-widest">{{ item.itemyear }}</h2>
+        <h2 class="text-xl title-font text-gray-500 tracking-widest">{{ item.itemtype }} - {{ item.category }}</h2>
+        </div>
+        <div class="flex flex-row flex-wrap justify-between">
+          <h1 class="text-gray-900 text-3xl title-font font-medium">{{ item.itemid }}</h1>
+          <h1 class="text-gray-900 text-2xl title-font font-medium pt-1">{{ item.itemname|safe }}</h1>
+        </div>
 
+
+        <table class="table-auto mt-4 text-left">
+<tr>
+    <th>Dimension x</th>
+{% if item.itemdimx %}
+    <td>{{ item.itemdimx }}</td>
+{% else %}
+    <td>-</td>
+{% endif %}
+  </tr>
+  <tr>
+    <th>Dimension y</th>
+{% if item.itemdimy %}
+    <td>{{ item.itemdimy }}</td>
+{% else %}
+    <td>-</td>
+{% endif %}
+  </tr>
+  <tr>
+    <th>Dimension z</th>
+{% if item.itemdimz %}
+    <td>{{ item.itemdimz }}</td>
+{% else %}
+    <td>-</td>
+{% endif %}
+  </tr>
+  <tr>
+    <th>Weight</th>
+{% if item.itemweight %}
+    <td>{{ item.itemweight }}</td>
+{% else %}
+    <td>-</td>
+{% endif %}
+  </tr>
+</table>
+        <div class="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5">
+          <div class="flex">
+            <span class="mr-3">Available Colors</span>
+            <button class="border-2 border-gray-300 rounded-full w-6 h-6 focus:outline-none"></button>
+            <button class="border-2 border-gray-300 ml-1 bg-gray-700 rounded-full w-6 h-6 focus:outline-none"></button>
+            <button class="border-2 border-gray-300 ml-1 bg-indigo-500 rounded-full w-6 h-6 focus:outline-none"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 {% endblock content %}
 

@@ -12,7 +12,7 @@
       <tbody>
     {% for item in items %}
         <tr class="infinite-item">
-          <td class="border px-4 py-2">{{ item.itemid }}</td>
+          <td class="border px-4 py-2"><a class="text-blue-500" href="{% url 'catalog:idetail' item.itemuid %}">{{ item.itemid }}</a></td>
           <td class="border px-4 py-2">{{ item.itemname }}</td>
           <td class="border px-4 py-2">{{ item.itemtype}}</td>
         </tr>
@@ -24,7 +24,6 @@
   <div class="loading" style="display: none;">
     <button type="button" class="bg-indigo-600 ..." disabled>
       <svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
-        <!-- ... -->
       </svg>
       Loading
     </button>
