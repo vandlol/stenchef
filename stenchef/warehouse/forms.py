@@ -1,5 +1,5 @@
 from django import forms
-from .models import Container, Containertype, StoredItem
+from .models import Container, Containertype, BLInventoryItem
 from catalog.models import Item
 from dal import autocomplete
 from pprint import pprint as pp
@@ -25,7 +25,7 @@ class ContainerTypeForm(forms.ModelForm):
 
 class StoreItemForm(forms.ModelForm):
     class Meta:
-        model = StoredItem
+        model = BLInventoryItem
         fields = "__all__"
-        widgets = {"itemid": autocomplete.ModelSelect2(url="catalog:iauto",)}
+        widgets = {"item_id": autocomplete.ModelSelect2(url="catalog:iauto",)}
 

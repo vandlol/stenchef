@@ -8,7 +8,7 @@ from django.views.generic import (
     DetailView,
 )
 from .forms import ContainerForm, ContainerTypeForm, StoreItemForm
-from .models import Container, Containertype, StoredItem
+from .models import Container, Containertype, BLInventoryItem
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from pprint import pprint as pp
 from django_currentuser.middleware import get_current_authenticated_user
@@ -47,6 +47,8 @@ class ContainerListView(LoginRequiredMixin, ListView):
     model = Container
     context_object_name = "containers"
     template_name = "warehouse/container_list.html"
+    paginate_by = 50
+    ordering = ["name"]
 
     def get_queryset(self):
         containers = Container.objects.filter(  # pylint: disable=no-member
@@ -111,7 +113,7 @@ class ContainerDetailView(LoginRequiredMixin, DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["container"] = self.get_object()
-        context["items"] = StoredItem.objects.filter(  # pylint: disable=no-member
+        context["items"] = BLInventoryItem.objects.filter(  # pylint: disable=no-member
             container__pk=context["container"].containerid
         )
         context["children"] = context["container"].children.all()
@@ -204,10 +206,10 @@ class ContainerTypeListView(LoginRequiredMixin, ListView):
 
 
 class ItemStoreCreateView(LoginRequiredMixin, CreateView):
-    model = StoredItem
+    model = BLInventoryItem
     form_class = StoreItemForm
     success_url = "/w"
-    template_name = "warehouse/form_create.html"
+    template_name = "warehouse/stored_item_create.html"
     title = "Stored Item"
 
     def get_context_data(self, **kwargs):
@@ -215,3 +217,59 @@ class ItemStoreCreateView(LoginRequiredMixin, CreateView):
         context["title"] = self.title
         return context
 
+
+class ItemStoreUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = BLInventoryItem
+    template_name = "warehouse/form_edit.html"
+    title = "Stored Item"
+    success_url = "/w"
+    fields = [
+        "container",
+        "inventory_id",
+        "color",
+        "count",
+        "condition",
+        "completeness",
+        "unit_price",
+        "description",
+        "bulk",
+        "is_retain",
+        "is_stock_room",
+        "sale_rate",
+        "tier_quantity1",
+        "tier_price1",
+        "tier_quantity2",
+        "tier_price2",
+        "tier_quantity3",
+        "tier_price3",
+    ]
+
+    def form_valid(self, form):
+        form.instance.owner = self.request.user
+        return super().form_valid(form)
+
+    def test_func(self):
+        stored_item = self.get_object()
+        if self.request.user == stored_item.owner:
+            return True
+        return False
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)  # get the default context data
+        context["title"] = self.title
+        return context
+
+
+class ItemStoreListView(LoginRequiredMixin, ListView):
+    model = BLInventoryItem
+    context_object_name = "items"
+    template_name = "warehouse/stored_items_list.html"
+    paginate_by = 50
+    ordering = ["item_id"]
+
+    def get_queryset(self):
+        containers = Container.objects.filter(  # pylint: disable=no-member
+            owner=get_current_authenticated_user().id
+        ).all()
+
+        return containers

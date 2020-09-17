@@ -90,29 +90,14 @@ class Container(models.Model):
         super(Container, self).save(*args, **kwargs)
 
 
-class StoredItem(models.Model):
+class BLInventoryItem(models.Model):
     storedid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    itemid = models.ForeignKey(
-        "catalog.Item", on_delete=models.CASCADE, related_name="item"
-    )
-    color = models.ForeignKey("meta.Color", on_delete=models.CASCADE)
     container = models.ForeignKey(Container, on_delete=models.CASCADE)
     owner = models.ForeignKey(
         dmodels.User,
         on_delete=models.CASCADE,
         default=get_current_authenticated_user,
         editable=False,
-    )
-    condition = models.ForeignKey("meta.Condition", on_delete=models.CASCADE)
-    count = models.PositiveIntegerField(default=1)
-
-    def __str__(self):
-        return str(self.storedid)
-
-
-class BLInventoryItem(models.Model):
-    autoid = models.CharField(
-        primary_key=True, max_length=120, default=uuid.uuid4, editable=False,
     )
     inventory_id = models.PositiveIntegerField(default=None, blank=True)
     item_id = models.ForeignKey("catalog.Item", on_delete=models.CASCADE)
@@ -134,7 +119,6 @@ class BLInventoryItem(models.Model):
     )
     unit_price = models.DecimalField(default=1.0000, max_digits=20, decimal_places=4)
     description = models.TextField(blank=True)
-    remarks = models.TextField(blank=True)
     bulk = models.PositiveIntegerField(default=1, blank=True)
     is_retain = models.BooleanField(default=False)
     is_stock_room = models.BooleanField(default=False)
@@ -145,12 +129,6 @@ class BLInventoryItem(models.Model):
     tier_price2 = models.DecimalField(default=1.0000, max_digits=20, decimal_places=4)
     tier_quantity3 = models.PositiveIntegerField(default=0)
     tier_price3 = models.DecimalField(default=1.0000, max_digits=20, decimal_places=4)
-    owner = models.ForeignKey(
-        dmodels.User,
-        on_delete=models.CASCADE,
-        default=get_current_authenticated_user,
-        editable=False,
-    )
 
     def __str__(self):
         return str(self.item_id_id)  # pylint: disable=no-member

@@ -1,0 +1,36 @@
+{% extends "warehouse/base.html" %}
+{% block content %}
+  <div class="infinite-container">
+    <table class="table-auto">
+      <thead>
+        <tr>
+          <th class="px-4 py-2">ID</th>
+          <th class="px-4 py-2">Name</th>
+          <th class="px-4 py-2">Container</th>
+        </tr>
+      </thead>
+      <tbody>
+    {% for item in items %}
+        <tr class="infinite-item">
+            <td class="border px-4 py-2"><a class="text-blue-500" href="{% url 'catalog:idetail' item.itemuid %}">{{ item.item_id }}</a></td>
+            <td class="border px-4 py-2">{{ item.name }}</td>
+            <td class="border px-4 py-2"><a class="text-blue-500" href="{% url 'warehouse:cdetail' item.container.containerid %}">{{ item.container.name }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+  </div>
+
+  <div class="loading" style="display: none;">
+    <button type="button" class="bg-indigo-600 ..." disabled>
+      <svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
+      </svg>
+      Loading
+    </button>
+  </div>
+
+  {% if page_obj.has_next %}
+    <a class="infinite-more-link" href="?page={{ items.next_page_number }}">More</a>
+  {% endif %}
+
+{% endblock content %}

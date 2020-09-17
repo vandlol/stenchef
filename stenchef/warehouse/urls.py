@@ -31,10 +31,10 @@ item = [
     path("store/", views.ItemStoreCreateView.as_view(), name="istore",),
     path("delete/<uuid:pk>", views.ContainerDeleteView.as_view(), name="idelete"),
     path("delete/<slug:slug>", views.ContainerDeleteView.as_view(), name="idelete"),
-    path("edit/<uuid:pk>", views.ContainerUpdateView.as_view(), name="iedit"),
-    path("edit/<slug:slug>", views.ContainerUpdateView.as_view(), name="iedit"),
+    path("edit/<uuid:pk>", views.ItemStoreUpdateView.as_view(), name="iedit"),
+    path("edit/<slug:slug>", views.ItemStoreUpdateView.as_view(), name="iedit"),
     # path("pick/<uuid:pk>/<int:", views.ContainerDeleteView.as_view(), name="idelete"),
-    path("list/", views.ContainerListView.as_view(), name="ilist",),
+    path("list/", views.ItemStoreListView.as_view(), name="ilist",),
 ]
 
 urlpatterns = [

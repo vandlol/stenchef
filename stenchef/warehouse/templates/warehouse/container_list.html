@@ -1,15 +1,39 @@
 {% extends "warehouse/base.html" %}
 {% block content %}
-<ul>
+<div class="infinite-container">
+    <table class="table-auto">
+      <thead>
+        <tr>
+          <th class="px-4 py-2">ID</th>
+          <th class="px-4 py-2">Type</th>
+          <th class="px-4 py-2">Parent</th>
+        </tr>
+      </thead>
+      <tbody>
     {% for container in containers %}
-    <li>
-        <a class="mr-2" href="">{{ container.name }}</a>
-        <small class="text-muted">{{ container.date_added|date:"F d, Y" }}</small>
-        </div>
-        <h2><a class="article-title" href="#">{{ container.description }}</a></h2>
-        <p class="article-content">{{ container.containertype }}{{ container.hierarchy_order_number }}</p>
-        <p class="article-content">{{ container.containerid }} color: {{ container.containertype.color }}</p>
-    </li>
+        <tr class="infinite-item">
+            <td class="border px-4 py-2"><a class="text-blue-500" href="{% url 'warehouse:cdetail' container.containerid %}">{{ container.name }}</a></td>
+            <td class="border px-4 py-2">{{ container.containertype }}</td>
+            {% if container.parent %}
+            <td class="border px-4 py-2"><a class="text-blue-500" href="{% url 'warehouse:cdetail' container.parent.containerid %}">{{ container.parent.name }}</td>
+            {% else %}
+            <td class="border px-4 py-2">None</td>
+            {% endif %}
+        </tr>
     {% endfor %}
-</ul>
+    </tbody>
+    </table>
+  </div>
+
+  <div class="loading" style="display: none;">
+    <button type="button" class="bg-indigo-600 ..." disabled>
+      <svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
+      </svg>
+      Loading
+    </button>
+  </div>
+
+  {% if page_obj.has_next %}
+    <a class="infinite-more-link" href="?page={{ containers.next_page_number }}">More</a>
+  {% endif %}
 {% endblock content %}
