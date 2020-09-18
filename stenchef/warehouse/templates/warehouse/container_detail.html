@@ -2,12 +2,12 @@
 {% block content %}
 <section class="text-gray-700 body-font">
     <div class="container px-5 py-24 mx-auto">
-        <div class="flex flex-wrap w-full mb-20">
-            <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
-                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">Container <em class="italic">{{ container.name }}</em></h1>
-                <div class="h-1 w-20 bg-indigo-500 rounded"></div>
+        <div class="flex flex-wrap w-full mb-4">
+            <div class="w-full mb-6 lg:w-1/2 lg:mb-0">
+                <h1 class="mb-2 text-2xl font-medium text-gray-900 sm:text-3xl title-font">Container <em class="italic">{{ container.name }}</em></h1>
+                <div class="w-20 h-1 bg-indigo-500 rounded"></div>
             </div>
-            <div class="lg:w-1/2 w-full leading-relaxed text-base">
+            <div class="w-full text-base leading-relaxed lg:w-1/2">
                 <ul>
                     <li>Location: <span class="float-right font-light text-gray-600">
                     {% if container.parent %}
@@ -20,41 +20,86 @@
                     {% endif %}
                     </span></li>
                     <li>Type: <span class="float-right">✎<a href="{% url 'warehouse:ctedit' container.containertype|slugify %}">{{ container.containertype }}</a>🖉</span></li>
-                    <li>🐌 Slug: <span class="float-right">{{ container.slug }}</span></li>
+                    <li>Slug: <span class="float-right">{{ container.slug }}</span></li>
                     <li>Date added: <span class="float-right">{{ container.date_added }}</span></li>
                     <li>ID: <span class="float-right">{{ container.containerid }}</span></li>
                     <!--<li>Children:
-                        <ul class="flex flex-row float-right w-4/5 flex-wrap justify-end">
+                        <ul class="flex flex-row flex-wrap justify-end float-right w-4/5">
                             {% for child in children %}
-                            <li class="mx-2"><a class="px-3 py-1 bg-gray-600 text-center text-gray-100 text-sm font-bold rounded" href="{% url 'warehouse:cdetail' child.containerid %}">{{ child.name }}</a></li>
+                            <li class="mx-2"><a class="px-3 py-1 text-sm font-bold text-center text-gray-100 bg-gray-600 rounded" href="{% url 'warehouse:cdetail' child.containerid %}">{{ child.name }}</a></li>
                             {% endfor %}
                         </ul></li>-->
                     <li class="clear-both">Description: <span class="float-right">{{ container.description }} {% lorem 20 w %}</span></li>
                 </ul>
             </div>
         </div>
-        <div class="flex flex-wrap -m-4">
-        ugly Children
-            <ul class="xl:w-1/6 md:w-1/4 p-4 flex">
-                {% for child in children %}
-                <li class="mx-2"><a class="px-3 py-1 text-center text-gray-800 text-sm  rounded" href="{% url 'warehouse:cdetail' child.containerid %}">{{ child.name }}</a></li>
-                {% endfor %}
-            </ul>
-        </div>
+        <div class=""><h2 class="inline text-2xl font-medium text-gray-900 title-font">Subcontainers</h2><span class="float-right font-light text-gray-600"> add container</span></div>
+
+        <ul class="flex flex-row flex-wrap items-center m-4">
+            {% for child in children %}
+            <!--TODO
+            * oberer teil = bgfarbe von item
+            * content: N items, N children
+            -->
+            <div class="px-4 py-2 m-2 overflow-hidden border rounded-lg xl:w-1/6 md:w-1/4" style="background-image: linear-gradient(#a6{{ rand|add:"12345abcdef"|make_list|random }}1ee 8%, white 8%);"><a href="{% url 'warehouse:cdetail' child.containerid %}">
+            <!-- #fbc2eb 0%, #a6c1ee style="background-image: linear-gradient(to top, #{{ rand|add:"12345abcdef"|make_list|random }}bc2eb 0%, #a6{{ rand|add:"12345abcdef"|make_list|random }}1ee 100%);" -->
+                <li>
+                <h4 class="border-gray-500 border-solid border-b-1"><div class="icon baseline icon-folder"></div>{{ child.name }}</h4>
+                <ul>
+                    <li class="pl-4 text-xs font-semibold tracking-wide text-gray-600 uppercase">
+                    dinge &bull; teile
+                    </li>
+                    <li class="pl-4 mt-1 text-sm">
+                    {{ child.color }}
+                    <span class="text-sm text-gray-600"> / von 10</span>
+                    </li>
+                </ul>
+                </li>
+            </a></div>
+            {% endfor %}
+        </ul>
+
+        <div class=""><h2 class="inline text-2xl font-medium text-gray-900 title-font">Items</h2><span class="float-right font-light text-gray-600"> add Item</span></div>
+
+
+        <ul class="flex flex-row flex-wrap items-center m-4">
+            {% for item in items %}
+            <!--TODO
+            * oberer teil = bgfarbe von item
+            * content: N items, N children
+            -->
+            <div class="px-4 py-2 m-2 overflow-hidden border rounded-lg xl:w-1/6 md:w-1/4" style="background-image: linear-gradient(#a6{{ rand|add:"12345abcdef"|make_list|random }}1ee 8%, white 8%);"><a href="{% url 'catalog:idetail' item.item_id.itemuid %}">
+            <!-- #fbc2eb 0%, #a6c1ee style="background-image: linear-gradient(to top, #{{ rand|add:"12345abcdef"|make_list|random }}bc2eb 0%, #a6{{ rand|add:"12345abcdef"|make_list|random }}1ee 100%);" -->
+                <li>
+                <h4 class="border-gray-500 border-solid border-b-1"><div class="icon baseline icon-folder"></div>{{ item.name }}</h4>
+                <ul>
+                    <li class="pl-4 text-xs font-semibold tracking-wide text-gray-600 uppercase">
+                    dinge &bull; teile
+                    </li>
+                    <li class="pl-4 mt-1 text-sm">
+                    {{ item.color }}
+                    <span class="text-sm text-gray-600"> / von 10</span>
+                    </li>
+                </ul>
+                </li>
+            </a></div>
+            {% endfor %}
+        </ul>
+
         <div class="flex flex-wrap -m-4">
             {% for item in items %}
-            <div class="xl:w-1/6 md:w-1/4 p-4">
-                <div class="bg-gray-100 p-6 rounded-lg">
-                    <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">{{ item.item_id.itemname | truncatechars:30}}</h3>
-                    <h2 class="text-xl text-gray-900 font-medium title-font mb-4"><a href="{% url 'catalog:idetail' item.item_id.itemuid %}">{{ item.item_id }}</a></h2>
+            <div class="p-4 xl:w-1/6 md:w-1/4">
+                <div class="p-6 bg-gray-100 rounded-lg">
+                    <h3 class="text-xs font-medium tracking-widest text-indigo-500 title-font">{{ item.item_id.itemname | truncatechars:30}}</h3>
+                    <h2 class="mb-4 text-xl font-medium text-gray-900 title-font"><a href="{% url 'catalog:idetail' item.item_id.itemuid %}">{{ item.item_id }}</a></h2>
                     <a href="{% url 'warehouse:iedit' item.storedid %}">Edit</a>
-                    
-                    <p class="leading-relaxed text-base">
+
+                    <p class="text-base leading-relaxed">
                         Type: {{ item.item_id.itemtype }}
                         Condition: {{ item.condition }}<br/>
                         Count: {{ item.count }}
                     </p>
-                    <div class="h-1 w-20 rounded " style="background-color: #{{ item.color.colorrgb }};"></div>
+                    <div class="w-20 h-1 rounded " style="background-color: #{{ item.color.colorrgb }};"></div>
                 </div>
             </div>
             {% endfor %}
