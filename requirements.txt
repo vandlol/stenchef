@@ -13,3 +13,4 @@ crispy-tailwind==0.2.0
 django-rgbfield==1.0
 django-querysetsequence==0.13
 django-select2==7.4.2
+django-autocomplete-light==3.5.1
