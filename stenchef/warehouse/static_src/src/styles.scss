@@ -18,10 +18,6 @@
 //     @apply block;
 // }
 
-a {
-    @apply text-blue-600 underline;
-}
-
 @tailwind components;
 
 @import "../../static_src/components/buttons.css";
@@ -44,4 +40,8 @@ a {
 
 .border-l-1 {
     border-left-width: 1px;
+}
+
+.link-default {
+    @apply text-blue-600 underline;
 }
