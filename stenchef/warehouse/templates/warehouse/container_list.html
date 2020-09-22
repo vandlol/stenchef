@@ -1,5 +1,8 @@
 {% extends "warehouse/base.html" %}
 {% block content %}
+<div>
+  <a href="{% url 'warehouse:ccreate' %}" class="inline-block px-4 py-2 mt-4 text-sm leading-none text-white bg-teal-500 border border-white rounded hover:border-transparent hover:bg-teal-600 lg:mt-0">Add new Container</a>
+</div>
 <div class="infinite-container">
     <table class="table-auto">
       <thead>
@@ -11,13 +14,13 @@
       </thead>
       <tbody>
     {% for container in containers %}
-        <tr class="infinite-item">
-            <td class="border px-4 py-2"><a class="text-blue-500" href="{% url 'warehouse:cdetail' container.containerid %}">{{ container.name }}</a></td>
-            <td class="border px-4 py-2">{{ container.containertype }}</td>
+        <tr class="infinite-item{% if forloop.counter|divisibleby:2 %} bg-gray-100{% endif %}">
+            <td class="px-4 py-2 border"><a class="text-blue-500" href="{% url 'warehouse:cdetail' container.containerid %}">{{ container.name }}</a></td>
+            <td class="px-4 py-2 border">{{ container.containertype }}</td>
             {% if container.parent %}
-            <td class="border px-4 py-2"><a class="text-blue-500" href="{% url 'warehouse:cdetail' container.parent.containerid %}">{{ container.parent.name }}</td>
+            <td class="px-4 py-2 border"><a class="text-blue-500" href="{% url 'warehouse:cdetail' container.parent.containerid %}">{{ container.parent.name }}</td>
             {% else %}
-            <td class="border px-4 py-2">None</td>
+            <td class="px-4 py-2 border">None</td>
             {% endif %}
         </tr>
     {% endfor %}

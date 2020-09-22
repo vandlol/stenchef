@@ -1,0 +1,37 @@
+{% extends "warehouse/base.html" %}
+{% block content %}
+<table class="table-auto">
+  <thead>
+    <tr>
+      <th class="px-4 py-2">ID</th>
+      <th class="px-4 py-2">ID</th>
+      <th class="px-4 py-2">Color</th>
+      <th class="px-4 py-2">Quantity</th>
+      <th class="px-4 py-2">Stored</th>
+    </tr>
+  </thead>
+  <tbody>
+{% for item in items %}
+
+    <tr>
+        {% if item.itemtype == "P" %}
+        <td class="px-4 py-2 border"><a href="https://www.bricklink.com/v2/catalog/catalogitem.page?{{ item.itemtype }}={{ item.itemid }}" target="_blank"><img class="object-contain object-center" alt="bricklink-picture" src="https://img.bricklink.com/{{ item.itemtype }}/{{ item.color_id }}/{{ item.itemid }}.jpg"></a></td>
+        {% else %}
+        <td class="px-4 py-2 border"><a href="https://www.bricklink.com/v2/catalog/catalogitem.page?{{ item.itemtype }}={{ item.itemid }}" target="_blank"><img class="object-contain object-center" alt="bricklink-picture" src="https://img.bricklink.com/{{ item.itemtype }}/{{ item.itemid }}.jpg"></a></td>
+        {% endif %}
+        <td class="px-4 py-2 border">{{ item.item_uid }}</td>
+        <td class="px-4 py-2 border">{{ item.color_id }}</td>
+        <td class="px-4 py-2 border">{{ item.quantity }}</td>
+        {% if item.storedcontainer %}
+        <td class="px-4 py-2 border"><a href="{% url 'warehouse:cdetail' item.storedcontainer.containerid %}" target="_blank">{{ item.storedcount }} Items in {{ item.storedcontainer.name }}</a></td>
+        {% else %}
+        <td class="px-4 py-2 border">No</td>
+        {% endif %}
+    </tr>
+
+{% endfor %}
+</tbody>
+</table>
+
+
+{% endblock content %}

@@ -26,6 +26,12 @@ class ContainerTypeForm(forms.ModelForm):
 class StoreItemForm(forms.ModelForm):
     class Meta:
         model = BLInventoryItem
-        fields = "__all__"
-        widgets = {"item_id": autocomplete.ModelSelect2(url="catalog:iauto",)}
-
+        exclude = ["inventory_id"]
+        widgets = {
+            "item_id": autocomplete.ModelSelect2(
+                url="catalog:iauto",
+            ),
+            "container": autocomplete.ModelSelect2(
+                url="warehouse:cauto",
+            ),
+        }
