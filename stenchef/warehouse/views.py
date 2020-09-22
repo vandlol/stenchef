@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.urls import reverse
 from django.views.generic import (
     CreateView,
     ListView,
@@ -6,13 +7,23 @@ from django.views.generic import (
     DeleteView,
     UpdateView,
     DetailView,
+    View,
 )
-from .forms import ContainerForm, ContainerTypeForm, StoreItemForm
+from django.views.generic.edit import ModelFormMixin
+from .forms import (
+    ContainerForm,
+    ContainerTypeForm,
+    StoreItemForm,
+    StoreItemContainerForm,
+)
 from .models import Container, Containertype, BLInventoryItem
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from pprint import pprint as pp
 from django_currentuser.middleware import get_current_authenticated_user
 from catalog.models import Item
+from user.models import Setting
+from dal import autocomplete
+from .bricklink_integration import part_out_set, bl_auth, import_inventory
 
 
 class HomePageView(TemplateView):
@@ -24,10 +35,20 @@ class HomePageView(TemplateView):
         return render(request, "warehouse/container.html", context=self.query_data())
 
 
+class ContainerAutocomplete(autocomplete.Select2QuerySetView):
+    def get_queryset(self):
+        qs = Container.objects.filter(  # pylint: disable=no-member
+            owner=get_current_authenticated_user().id
+        ).all()
+        if self.q:
+            qs = qs.filter(itemid__istartswith=self.q)
+        return qs
+
+
 class ContainerCreateView(LoginRequiredMixin, CreateView):
     model = Container
     form_class = ContainerForm
-    success_url = "/w"
+    success_url = "/w/container/list"
     template_name = "warehouse/form_create.html"
     title = "Container"
 
@@ -35,9 +56,20 @@ class ContainerCreateView(LoginRequiredMixin, CreateView):
         context = super().get_context_data(**kwargs)  # get the default context data
         context["title"] = self.title
         if self.kwargs:
+            if self.kwargs.get("parent") and self.kwargs.get("type"):
+                context["form"] = ContainerForm(
+                    initial={
+                        "parent": self.kwargs["parent"],
+                        "containertype": self.kwargs["type"],
+                    }
+                )
             if self.kwargs.get("parent"):
                 context["form"] = ContainerForm(
                     initial={"parent": self.kwargs["parent"]}
+                )
+            if self.kwargs.get("type"):
+                context["form"] = ContainerForm(
+                    initial={"containertype": self.kwargs["type"]}
                 )
 
         return context
@@ -263,13 +295,55 @@ class ItemStoreUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 class ItemStoreListView(LoginRequiredMixin, ListView):
     model = BLInventoryItem
     context_object_name = "items"
-    template_name = "warehouse/stored_items_list.html"
+    template_name = "warehouse/stored_item_list.html"
     paginate_by = 50
     ordering = ["item_id"]
 
     def get_queryset(self):
-        containers = Container.objects.filter(  # pylint: disable=no-member
+        items = BLInventoryItem.objects.filter(  # pylint: disable=no-member
             owner=get_current_authenticated_user().id
         ).all()
+        return items
 
-        return containers
+
+
+class SetPartoutListView(LoginRequiredMixin, ListView):
+    template_name = "warehouse/partout_item_list.html"
+    context_object_name = "items"
+
+    def get_queryset(self, **kwargs):
+        if not self.kwargs:
+            return
+        if not self.kwargs.get("itemid"):
+            return
+
+        setid = self.kwargs["itemid"]
+        if "-" in setid:
+            setid, subsetid = setid.split("-")
+        else:
+            subsetid = 1
+        items = part_out_set(
+            setid,
+            get_current_authenticated_user().id,
+            subset=subsetid,
+            auth=bl_auth(
+                Setting.objects.filter(  # pylint: disable=no-member
+                    owner=get_current_authenticated_user().id
+                ).first()
+            ),
+        )
+
+        return items
+
+
+class ImportInventory(LoginRequiredMixin, View):
+    def get(self, request):
+        imported_items = import_inventory(
+            get_current_authenticated_user().id,
+            auth=bl_auth(
+                Setting.objects.filter(  # pylint: disable=no-member
+                    owner=get_current_authenticated_user().id
+                ).first()
+            ),
+        )
+        return redirect("/w/item/list/")
