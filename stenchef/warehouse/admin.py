@@ -4,6 +4,8 @@ from .models import (
     Containertype,
     BLInventoryItem,
     Purchase,
+    Order,
+    OrderItem,
 )
 
 
@@ -11,5 +13,7 @@ from .models import (
 @admin.register(Containertype)
 @admin.register(BLInventoryItem)
 @admin.register(Purchase)
+@admin.register(Order)
+@admin.register(OrderItem)
 class AuthorAdmin(admin.ModelAdmin):
     pass

@@ -7,6 +7,7 @@ from django.views.generic import (
 )
 from django.core.paginator import Paginator
 from dal import autocomplete
+from pprint import pprint as pp
 
 
 def home(request):
@@ -26,8 +27,17 @@ class ItemListView(ListView):
     model = Item
     context_object_name = "items"
     template_name = "catalog/item_list.html"
-    paginate_by = 50
-    ordering = ["itemid"]
+    paginate_by = 200
+
+    def get_queryset(self):
+        query = self.request.GET.get("q")
+        if query:
+            object_list = self.model.objects.filter(  # pylint: disable=no-member
+                itemid__icontains=query
+            )
+        else:
+            object_list = self.model.objects.all()  # pylint: disable=no-member
+        return object_list.order_by("itemuid")
 
 
 class ItemDetailView(DetailView):
@@ -37,6 +47,9 @@ class ItemDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["item"] = self.get_object()
-
+        context[
+            "link"
+        ] = "https://www.bricklink.com/v2/catalog/catalogitem.page?{}={}".format(
+            context["item"].itemtype_id, context["item"].itemid
+        )
         return context
-

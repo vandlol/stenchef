@@ -1,0 +1,36 @@
+{% extends "warehouse/base.html" %}
+{% block content %}
+  <table class="table-auto">
+  <thead>
+    <tr>
+      <th class="px-4 py-2">Order ID</th>
+      <th class="px-4 py-2">Payment Status</th>
+      <th class="px-4 py-2">Buyer Name</th>
+      <th class="px-4 py-2">Payment Method</th>
+      <th class="px-4 py-2">Item Count</th>
+      <th class="px-4 py-2">Lot Count</th>
+      <th class="px-4 py-2">Item Cost</th>
+      <th class="px-4 py-2">Shipping Cost</th>
+      <th class="px-4 py-2">Total Cost</th>
+      <th class="px-4 py-2">Picklist</th>
+    </tr>
+  </thead>
+  <tbody>
+{% for order in orders %}
+    <tr>
+    <td class="px-4 py-2 border"><a href="https://www.bricklink.com/orderDetail.asp?ID={{ order.order_id }}" target="_blank">{{ order.order_id }}</a></td>
+    <td class="px-4 py-2 border">{{ order.status }}</td>
+    <td class="px-4 py-2 border"><a href="https://www.bricklink.com/feedback.asp?u={{ order.buyer_name }}" target="_blank">{{ order.buyer_name }}</a></td>
+    <td class="px-4 py-2 border">{{ order.payment.method }}</td>
+    <td class="px-4 py-2 border">{{ order.total_count }}</td>
+    <td class="px-4 py-2 border">{{ order.unique_count }}</td>
+    <td class="px-4 py-2 border">{{ order.disp_cost.subtotal }}</td>
+    <td class="px-4 py-2 border">{{ order.disp_cost.shipping }}</td>
+    <td class="px-4 py-2 border">{{ order.disp_cost.grand_total }}</td>
+    <td class="px-4 py-2 border"><a href="{% url 'warehouse:oilist' order.order_id %}" class="inline-block px-4 py-2 mt-4 text-sm leading-none text-white bg-teal-500 border border-white rounded hover:border-transparent hover:bg-teal-600 lg:mt-0" target="_blank">Picklist</a></td>
+    <td class="px-4 py-2 border"><a href="{% url 'warehouse:oicreate' order.order_id %}" class="inline-block px-4 py-2 mt-4 text-sm leading-none text-white bg-teal-500 border border-white rounded hover:border-transparent hover:bg-teal-600 lg:mt-0" target="_blank">Create Invoice</a></td>
+  </tr>
+{% endfor %}
+</tbody>
+</table>
+{% endblock content %}

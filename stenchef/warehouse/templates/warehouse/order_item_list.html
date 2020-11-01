@@ -1,0 +1,45 @@
+{% extends "warehouse/base.html" %}
+{% block content %}
+<a href="{% url 'warehouse:oicreate' order_id %}" class="inline-block px-4 py-2 mt-4 text-sm leading-none text-white bg-teal-500 border border-white rounded hover:border-transparent hover:bg-teal-600 lg:mt-0">Create Invoice</a>
+  <table class="table-auto">
+  <thead>
+    <tr>
+      <th class="px-4 py-2">Picture</th>
+      <th class="px-4 py-2">Item Number</th>
+      <th class="px-4 py-2">Color</th>
+      <th class="px-4 py-2">Condition</th>
+      <th class="px-4 py-2">Type</th>
+      <th class="px-4 py-2">Storage Count</th>
+      <th class="px-4 py-2">Remaining Count</th>
+      <th class="px-4 py-2">Container</th>
+      <th class="px-4 py-2">Order Count</th>
+      <th class="px-4 py-2">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+{% for item in items %}
+    <tr>
+    <td class="px-4 py-2 border"><a href="https://www.bricklink.com/v2/catalog/catalogitem.page?{{ item.type_short }}={{ item.item.no }}" target="_blank"><img class="object-contain object-center" alt="bricklink-picture" src="https://img.bricklink.com/{{ item.type_short }}/{{ item.color_id }}/{{ item.item.no }}.jpg"></a></td>
+    <td class="px-4 py-2 border">{{ item.item.no }}</td>
+    <td class="px-4 py-2 border">{{ item.color_name }}</td>
+    <td class="px-4 py-2 border">{{ item.new_or_used }}</td>
+    <td class="px-4 py-2 border">{{ item.item.type }}</td>
+    <td class="px-4 py-2 border">{{ item.storage_count }}</td>
+    <td class="px-4 py-2 border">{{ item.remaining_count }}</td>
+    <td class="px-4 py-2 border">{{ item.container }}</td>
+    <td class="px-4 py-2 border">{{ item.quantity }}</td>
+    {% if item.remaining_count == 0 %}
+    {% if item.show_delete == "y" %}
+    <td class="px-4 py-2 border"><a href="{% url 'warehouse:idelete' item.storedid item.noninteractive %}" class="inline-block px-4 py-2 mt-4 text-sm leading-none text-white bg-teal-500 border border-white rounded hover:border-transparent hover:bg-teal-600 lg:mt-0" target="_blank">Remove</a></td>
+    {% endif %}
+    {% else %}
+    <td class="px-4 py-2 border"></td>
+    {% endif %}
+    
+    </tr>
+{% endfor %}
+</tbody>
+</table>
+<a href="{% url 'warehouse:oicreate' order_id %}" class="inline-block px-4 py-2 mt-4 text-sm leading-none text-white bg-teal-500 border border-white rounded hover:border-transparent hover:bg-teal-600 lg:mt-0">Create Invoice</a>
+
+{% endblock content %}

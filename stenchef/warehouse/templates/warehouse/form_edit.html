@@ -1,13 +1,22 @@
 {% extends "warehouse/base.html" %}
-{% load tailwind_filters %}
-{% load crispy_forms_tags %}
 {% block content %}
+
 <div class="content-section">
     <form method="POST">
         {% csrf_token %}
         <fieldset class="form-group">
+            {% if title == "Stored Item" %}
+                {% if not object.inventory_id %}
+                <a href="{% url 'warehouse:iexport' object.pk %}" class="inline-block px-4 py-2 mt-4 text-sm leading-none text-white bg-teal-500 border border-white rounded hover:border-transparent hover:bg-teal-600 lg:mt-0">Export to Bricklink</a>
+                {% endif %}
+                {% if object.container %}
+                <a href="{% url 'warehouse:icedit' object.pk %}" class="inline-block text-sm px-4 py-2 leading-none border rounded bg-teal-500 text-white border-white hover:border-transparent hover:bg-teal-600 mt-4 lg:mt-0"  target="_blank">Change Container</a>
+                {% endif %}
+                <a href="{% url 'warehouse:idelete' object.pk %}" class="inline-block text-sm px-4 py-2 leading-none border rounded bg-teal-500 text-white border-white hover:border-transparent hover:bg-teal-600 mt-4 lg:mt-0">Delete Item</a>
+            {% endif %}
             <legend class="border-bottom mb-4">Edit {{ title }}: {{ object.name }}</legend>
-            {{ form|crispy }}
+            {{ form.as_p }}
+            {{ form.media }}
         </fieldset>
         <div class="form-group">
             <button class="btn btn-outline-info" type="submit">Save</button>

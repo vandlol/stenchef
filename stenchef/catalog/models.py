@@ -14,6 +14,11 @@ class Item(models.Model):
     itemtype = models.ForeignKey("meta.Itemtype", on_delete=models.CASCADE)
     itemyear = models.PositiveIntegerField(default=0)
 
+    class Meta:
+        indexes = [
+            models.indexes.Index(fields=['itemuid'])
+        ]
+
     def __str__(self):
         return self.itemuid
 

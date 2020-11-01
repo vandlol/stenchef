@@ -46,12 +46,18 @@ class Containertype(models.Model):
         help_text="Hierarchy works like this: Containers can also fit into Containers with a bigger number. Keep gaps between numbers. Containers of equal numbers will not fit in each other (except 0). (Min -99999, Max 99999) Will be ignored if set to 0.",
     )
     description = models.TextField(
-        blank=True, help_text="Write something helpful about this Type of Container",
+        blank=True,
+        help_text="Write something helpful about this Type of Container",
     )
     color = models.CharField(
         max_length=7,
         default="#fff",
         help_text="Every Container you Create from this type will be colored like this. https://www.w3schools.com/colors/colors_picker.asp Pick a Color and Copy the #Value.",
+    )
+    prefix = models.CharField(
+        max_length=4,
+        blank=True,
+        help_text="If you create a Container ...FIXME",
     )
 
     def __str__(self):
@@ -63,7 +69,10 @@ class Container(models.Model):
     name = models.CharField(
         max_length=100, help_text="Give your Container a Name. 100 Characters maximum."
     )
-    containertype = models.ForeignKey(Containertype, on_delete=models.CASCADE,)
+    containertype = models.ForeignKey(
+        Containertype,
+        on_delete=models.CASCADE,
+    )
     slug = models.SlugField(editable=False)
     date_added = models.DateTimeField(default=timezone.now, editable=False)
     owner = models.ForeignKey(
@@ -92,7 +101,7 @@ class Container(models.Model):
 
 class BLInventoryItem(models.Model):
     storedid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    container = models.ForeignKey(Container, on_delete=models.CASCADE)
+    container = models.ForeignKey(Container, on_delete=models.CASCADE, blank=True)
     owner = models.ForeignKey(
         dmodels.User,
         on_delete=models.CASCADE,
@@ -124,11 +133,11 @@ class BLInventoryItem(models.Model):
     is_stock_room = models.BooleanField(default=False)
     sale_rate = IntegerRangeField(min_value=-1000, max_value=99, default=0)
     tier_quantity1 = models.PositiveIntegerField(default=0)
-    tier_price1 = models.DecimalField(default=1.0000, max_digits=20, decimal_places=4)
+    tier_price1 = models.DecimalField(default=0.0000, max_digits=20, decimal_places=4)
     tier_quantity2 = models.PositiveIntegerField(default=0)
-    tier_price2 = models.DecimalField(default=1.0000, max_digits=20, decimal_places=4)
+    tier_price2 = models.DecimalField(default=0.0000, max_digits=20, decimal_places=4)
     tier_quantity3 = models.PositiveIntegerField(default=0)
-    tier_price3 = models.DecimalField(default=1.0000, max_digits=20, decimal_places=4)
+    tier_price3 = models.DecimalField(default=0.0000, max_digits=20, decimal_places=4)
 
     def __str__(self):
         return str(self.item_id_id)  # pylint: disable=no-member
@@ -160,3 +169,51 @@ class Purchase(models.Model):
     def clean(self):
         if self.name == None and self.item_id is None:
             raise ValidationError("Field name or item are required.")
+
+
+class Order(models.Model):
+    orderuuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    order_id = models.PositiveIntegerField()
+    buyer_name = models.CharField(max_length=256, blank=True, default=None)
+    buyer_email = models.EmailField(max_length=1000, blank=True)
+    date_ordered = models.DateTimeField(auto_now=False, auto_now_add=False, blank=True)
+    total_price = models.DecimalField(default=1.0000, max_digits=20, decimal_places=4)
+    subtotal_price = models.DecimalField(
+        default=1.0000, max_digits=20, decimal_places=4
+    )
+    shipping_price = models.DecimalField(
+        default=1.0000, max_digits=20, decimal_places=4
+    )
+    payment_metod = models.CharField(max_length=256, blank=True, default=None)
+    payment_date = models.DateTimeField(auto_now=False, blank=True, auto_now_add=False)
+    shipping_state = models.CharField(max_length=256, blank=True, default=None)
+    shipping_country = models.CharField(max_length=256, blank=True, default=None)
+    shipping_date = models.DateTimeField(auto_now=False, blank=True, auto_now_add=False)
+    shipping_method = models.CharField(max_length=256, blank=True, default=None)
+    status = models.CharField(max_length=256, blank=True, default=None)
+    item_count = models.PositiveIntegerField(blank=True)
+    lot_count = models.PositiveIntegerField(blank=True)
+    weight = models.DecimalField(
+        default=1.0000, max_digits=20, decimal_places=2, blank=True
+    )
+    items = models.ManyToManyField("catalog.Item", through="OrderItem")
+
+    def __str__(self):
+        return str(self.order_id)
+
+
+class OrderItem(models.Model):
+    order = models.ForeignKey(Order, on_delete=models.CASCADE)
+    item = models.ForeignKey("catalog.Item", on_delete=models.CASCADE)
+    condition = models.ForeignKey("meta.Condition", on_delete=models.CASCADE)
+    color = models.ForeignKey("meta.Color", on_delete=models.CASCADE)
+    count = models.PositiveIntegerField()
+    unit_price = models.DecimalField(default=1.0000, max_digits=20, decimal_places=4)
+
+    def __str__(self):
+        return "{}-{}-{}-{}".format(
+            self.order,
+            self.item,
+            self.color,
+            self.condition,
+        )

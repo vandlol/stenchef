@@ -1,36 +1,51 @@
 {% extends "warehouse/base.html" %}
 {% block content %}
-  <div class="infinite-container">
-    <table class="table-auto">
-      <thead>
-        <tr>
-          <th class="px-4 py-2">ID</th>
-          <th class="px-4 py-2">Name</th>
-          <th class="px-4 py-2">Type</th>
-        </tr>
-      </thead>
-      <tbody>
-    {% for item in items %}
-        <tr class="infinite-item">
-          <td class="border px-4 py-2"><a class="text-blue-500" href="{% url 'catalog:idetail' item.itemuid %}">{{ item.itemid }}</a></td>
-          <td class="border px-4 py-2">{{ item.itemname }}</td>
-          <td class="border px-4 py-2">{{ item.itemtype}}</td>
-        </tr>
-    {% endfor %}
+<form method='GET'>
+  <input class="bg-white rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4" type='text' name='q' value='{{ request.GET.q }}'>
+  <input class="inline-block text-sm px-4 py-2 leading-none border rounded bg-teal-500 text-white border-white hover:border-transparent hover:bg-teal-600 mt-4 lg:mt-0" type='submit' value="Search">
+</form>
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th class="px-4 py-2">ID</th>
+        <th class="px-4 py-2">Name</th>
+        <th class="px-4 py-2">Type</th>
+        <th class="px-4 py-2">Action</th>
+      </tr>
+    </thead>
+    <tbody class="infinite-container">
+      {% for item in items %}
+      <tr class="infinite-item">
+        <td class="border px-4 py-2"><a class="text-blue-500"
+            href="{% url 'catalog:idetail' item.itemuid %}">{{ item.itemid }}</a></td>
+        <td class="border px-4 py-2">{{ item.itemname }}</td>
+        <td class="border px-4 py-2">{{ item.itemtype }}</td>
+        {% if item.itemtype_id == "S" %}
+        <td class="border px-4 py-2">
+            <a href="{% url 'warehouse:spartout' item.itemid %}" class="inline-block text-sm px-4 py-2 leading-none border rounded bg-teal-500 text-white border-white hover:border-transparent hover:bg-teal-600 mt-4 lg:mt-0" onclick="document.forms['multiform'].submit();">Partout</a>
+        </td>
+        {% else %}
+        <td class="border px-4 py-2">
+            <a href="{% url 'warehouse:iadd' item.itemuid %}" class="inline-block text-sm px-4 py-2 leading-none border rounded bg-teal-500 text-white border-white hover:border-transparent hover:bg-teal-600 mt-4 lg:mt-0" onclick="document.forms['multiform'].submit();">Store</a>
+        </td>
+        {% endif %}
+      </tr>
+      {% endfor %}
     </tbody>
-    </table>
-  </div>
+  </table>
+</div>
 
-  <div class="loading" style="display: none;">
-    <button type="button" class="bg-indigo-600 ..." disabled>
-      <svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
-      </svg>
-      Loading
-    </button>
-  </div>
+<div class="loading" style="display: none;">
+  <button type="button" class="bg-indigo-600 ..." disabled>
+    <svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
+    </svg>
+    Loading
+  </button>
+</div>
 
-  {% if page_obj.has_next %}
-    <a class="infinite-more-link" href="?page={{ items.next_page_number }}">More</a>
-  {% endif %}
+{% if page_obj.has_next %}
+<a class="infinite-more-link" href="?page={{ page_obj.next_page_number }}">More</a>
+{% endif %}
 
 {% endblock content %}

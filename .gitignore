@@ -10,5 +10,6 @@ test.py
 bricklink.json
 imported_list.txt
 fixtures/
-stenchef/warehouse/static_src/**
-stenchef/warehouse/static/css/**
+xx_stenchef/warehouse/static_src/**
+xx_stenchef/warehouse/static/css/**
+lexoffice_data.json

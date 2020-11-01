@@ -59,17 +59,17 @@
             {% endfor %}
         </ul>
 
-        <div class=""><h2 class="inline text-2xl font-medium text-gray-900 title-font">Items</h2><span class="float-right font-light text-gray-600"> add Item</span></div>
+         <div class=""><h2 class="inline text-2xl font-medium text-gray-900 title-font">Items</h2><span class="float-right font-light text-gray-600"> add Item</span></div>
 
-
+<!--
         <ul class="flex flex-row flex-wrap items-center m-4">
             {% for item in items %}
-            <!--TODO
+            TODO
             * oberer teil = bgfarbe von item
             * content: N items, N children
-            -->
+            
             <div class="px-4 py-2 m-2 overflow-hidden border rounded-lg xl:w-1/6 md:w-1/4" style="background-image: linear-gradient(#a6{{ rand|add:"12345abcdef"|make_list|random }}1ee 8%, white 8%);"><a href="{% url 'catalog:idetail' item.item_id.itemuid %}">
-            <!-- #fbc2eb 0%, #a6c1ee style="background-image: linear-gradient(to top, #{{ rand|add:"12345abcdef"|make_list|random }}bc2eb 0%, #a6{{ rand|add:"12345abcdef"|make_list|random }}1ee 100%);" -->
+             #fbc2eb 0%, #a6c1ee style="background-image: linear-gradient(to top, #{{ rand|add:"12345abcdef"|make_list|random }}bc2eb 0%, #a6{{ rand|add:"12345abcdef"|make_list|random }}1ee 100%);"
                 <li>
                 <h4 class="border-gray-500 border-solid border-b-1"><div class="icon baseline icon-folder"></div>{{ item.name }}</h4>
                 <ul>
@@ -84,7 +84,7 @@
                 </li>
             </a></div>
             {% endfor %}
-        </ul>
+        </ul> -->
 
         <div class="flex flex-wrap -m-4">
             {% for item in items %}
@@ -92,8 +92,10 @@
                 <div class="p-6 bg-gray-100 rounded-lg">
                     <h3 class="text-xs font-medium tracking-widest text-indigo-500 title-font">{{ item.item_id.itemname | truncatechars:30}}</h3>
                     <h2 class="mb-4 text-xl font-medium text-gray-900 title-font"><a href="{% url 'catalog:idetail' item.item_id.itemuid %}">{{ item.item_id }}</a></h2>
-                    <a href="{% url 'warehouse:iedit' item.storedid %}">Edit</a>
-
+                    <a href="{% url 'warehouse:iedit' item.storedid %}" class="inline-block text-sm px-4 py-2 leading-none border rounded bg-teal-500 text-white border-white hover:border-transparent hover:bg-teal-600 mt-4 lg:mt-0"  target="_blank">Edit</a>
+                    {% if item.container %}
+                    <a href="{% url 'warehouse:icedit' item.storedid %}" class="inline-block text-sm px-4 py-2 leading-none border rounded bg-teal-500 text-white border-white hover:border-transparent hover:bg-teal-600 mt-4 lg:mt-0"  target="_blank">Change Container</a>
+                    {% endif %}
                     <p class="text-base leading-relaxed">
                         Type: {{ item.item_id.itemtype }}
                         Condition: {{ item.condition }}<br/>

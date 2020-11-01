@@ -14,3 +14,5 @@ django-rgbfield==1.0
 django-querysetsequence==0.13
 django-select2==7.4.2
 django-autocomplete-light==3.5.1
+git+git://github.com/BrickBytes/bricklink_api.git@master
+django-extra-views==0.13.0

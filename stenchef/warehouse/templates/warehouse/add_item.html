@@ -1,0 +1,27 @@
+{% extends "warehouse/base.html" %}
+{% block content %}
+<h2 class="flex flex-row justify-center">Pick Color and Condition for {{ itemuid }}</h2><br>
+<div class="flex flex-row justify-center">
+<form method='GET' class="flex flex-col">
+  {% csrf_token %}
+  <formset>
+  <label>Color:
+    <select name="color">
+    {% for color in colors %}
+    <option>{{ color.colorname }}</option>
+    {% endfor %}
+    </select>
+  </label>
+  </formset>
+  <formset>
+  <label>Condition:
+    <select name="condition">
+    <option>Used</option>
+    <option>New</option>
+    </select>
+  </label>
+  </formset>
+  <input class="justify-end px-4 py-2 mt-4 text-sm leading-none text-white bg-teal-500 border border-white rounded hover:border-transparent hover:bg-teal-600 lg:mt-0" type='submit' namevalue="change">
+</form>
+</div>
+{% endblock content %}

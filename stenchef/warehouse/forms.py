@@ -14,6 +14,11 @@ class ContainerForm(forms.ModelForm):
             "parent",
             "description",
         ]
+        widgets = {
+            "parent": autocomplete.ModelSelect2(
+                url="warehouse:cauto",
+            ),
+        }
 
 
 class ContainerTypeForm(forms.ModelForm):
@@ -37,12 +42,29 @@ class StoreItemForm(forms.ModelForm):
         }
 
 
-class StoreItemContainerForm(forms.ModelForm):
+class StoreItemUpdateContainerForm(forms.ModelForm):
     class Meta:
         model = BLInventoryItem
         fields = ["container"]
         widgets = {
-            "container": autocomplete.ModelSelect2(
-                url="warehouse:cauto",
-            ),
+            "container": autocomplete.ModelSelect2(url="warehouse:cauto"),
         }
+        labels = {"container": ""}
+
+
+class StoreItemUpdateQuantityForm(forms.ModelForm):
+    class Meta:
+        model = BLInventoryItem
+        fields = ["count"]
+
+
+class SearchBarForm(forms.ModelForm):
+    class Meta:
+        model = BLInventoryItem
+        fields = ["item_id"]
+        widgets = {
+            "item_id": autocomplete.ModelSelect2(url="warehouse:iauto"),
+        }
+
+
+# StoreItemUpdateFormSet = forms.modelformset_factory(BLInventoryItem, form=StoreItemUpdateForm)

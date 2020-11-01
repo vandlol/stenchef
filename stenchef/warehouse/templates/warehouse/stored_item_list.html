@@ -1,23 +1,82 @@
 {% extends "warehouse/base.html" %}
 {% block content %}
-  <div class="infinite-container">
+<table class="table-auto">
+  <tr>
+  <td>
+  <form method='GET'>
+    {{ form.as_p }}
+    {{ form.media }}
+    {% comment %} <input class="bg-white rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4" type='text' name='q' value='{{ request.GET.q }}'>{% endcomment %}
+    <input class="inline-block text-sm px-4 py-2 leading-none border rounded bg-teal-500 text-white border-white hover:border-transparent hover:bg-teal-600 mt-4 lg:mt-0" type='submit' value="Search"> 
+  </form>
+  </td>
+  <td>
+    <a href="{% url 'warehouse:istore' %}" class="inline-block px-4 py-2 mt-4 text-sm leading-none text-white bg-teal-500 border border-white rounded hover:border-transparent hover:bg-teal-600 lg:mt-0">Store new Item</a>
+  </td>
+  <td>
+    <a href="{% url 'warehouse:iimport' %}" class="inline-block px-4 py-2 mt-4 text-sm leading-none text-white bg-teal-500 border border-white rounded hover:border-transparent hover:bg-teal-600 lg:mt-0">Import from Bricklink</a>
+  </td>
+  <td>
+    <a href="{% url 'warehouse:iexport' %}" class="inline-block px-4 py-2 mt-4 text-sm leading-none text-white bg-teal-500 border border-white rounded hover:border-transparent hover:bg-teal-600 lg:mt-0">Export to Bricklink</a>
+  </td>
+  </tr>
+</table>
+    <div class="infinite-container">
     <table class="table-auto">
       <thead>
         <tr>
+          <th class="px-4 py-2">Picture</th>
           <th class="px-4 py-2">ID</th>
           <th class="px-4 py-2">Name</th>
+          <th class="px-4 py-2">Color</th>
+          <th class="px-4 py-2">Condition</th>
           <th class="px-4 py-2">Container</th>
+          <th class="px-4 py-2">Change</th>
+          <th class="px-4 py-2">Quantity</th>
+          <th class="px-4 py-2">Add</th>
+          <th class="px-4 py-2">Price</th>
+          <th class="px-4 py-2">Change</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="infinite-item">
+      
     {% for item in items %}
-        <tr class="infinite-item">
-            <td class="border px-4 py-2"><a class="text-blue-500" href="{% url 'catalog:idetail' item.itemuid %}">{{ item.item_id }}</a></td>
-            <td class="border px-4 py-2">{{ item.name }}</td>
-            <td class="border px-4 py-2"><a class="text-blue-500" href="{% url 'warehouse:cdetail' item.container.containerid %}">{{ item.container.name }}</td>
+        <tr>
+            {% if item.item_id.itemtype == "P" %}
+            <td class="px-4 py-2 border"><a href="https://www.bricklink.com/v2/catalog/catalogitem.page?{{ item.item_id.itemtype_id }}={{ item.item_id.itemid }}" target="_blank"><img class="object-contain object-center" alt="bricklink-picture" src="https://img.bricklink.com/{{ item.item_id.itemtype_id }}/{{ item.item_id.color_id }}/{{ item.item_id.itemid }}.jpg"></a></td>
+            {% else %}
+            <td class="px-4 py-2 border"><a href="https://www.bricklink.com/v2/catalog/catalogitem.page?{{ item.item_id.itemtype_id }}={{ item.item_id.itemid }}" target="_blank"><img class="object-contain object-center" alt="bricklink-picture" src="https://img.bricklink.com/{{ item.item_id.itemtype_id }}/{{ item.item_id.itemid }}.jpg"></a></td>
+            {% endif %}
+            <td class="px-4 py-2 border"><a class="text-blue-500" href="{% url 'warehouse:iedit' item.storedid %}">{{ item.item_id.itemid }}</a></td>
+            <td class="px-4 py-2 border">{{ item.item_id.itemname }}</td>
+            <td class="px-4 py-2 border">{{ item.color_id }}</td>
+            <td class="px-4 py-2 border">{{ item.condition.name }}</td>
+          
+            {% if item.container %}
+            <td class="px-4 py-2 border"><a class="text-blue-500" href="{% url 'warehouse:cdetail' item.container.containerid %}">{{ item.container.name }}</td>
+            {% else %}
+            <td class="px-4 py-2 border">None</td>
+            {% endif %}
+            <td class="px-4 py-2 border">
+            {% if title == "FWOC" %}
+            <a href="{% url 'warehouse:icwocedit' item.storedid %}" class="inline-block text-sm px-4 py-2 leading-none border rounded bg-teal-500 text-white border-white hover:border-transparent hover:bg-teal-600 mt-4 lg:mt-0"  target="_blank">Change</a>
+            {% else %}
+            <a href="{% url 'warehouse:icedit' item.storedid %}" class="inline-block text-sm px-4 py-2 leading-none border rounded bg-teal-500 text-white border-white hover:border-transparent hover:bg-teal-600 mt-4 lg:mt-0"  target="_blank">Change</a>
+            {% endif %}
+            </td>
+            <td class="px-4 py-2 border">{{ item.count }}</td>
+            <td class="px-4 py-2 border">
+              <a href="{% url 'warehouse:iqedit' item.storedid %}" class="inline-block text-sm px-4 py-2 leading-none border rounded bg-teal-500 text-white border-white hover:border-transparent hover:bg-teal-600 mt-4 lg:mt-0"  target="_blank">Add</a>
+            </td>
+            <td class="px-4 py-2 border">{{ item.unit_price }} EUR</td>
+            <td class="px-4 py-2 border">
+              <a href="{% url 'warehouse:ipedit' item.storedid %}" class="inline-block text-sm px-4 py-2 leading-none border rounded bg-teal-500 text-white border-white hover:border-transparent hover:bg-teal-600 mt-4 lg:mt-0"  target="_blank">Change</a>
+            </td>
         </tr>
     {% endfor %}
+    
     </tbody>
+    </form>
     </table>
   </div>
 
@@ -30,7 +89,7 @@
   </div>
 
   {% if page_obj.has_next %}
-    <a class="infinite-more-link" href="?page={{ items.next_page_number }}">More</a>
+    <a class="infinite-more-link" href="?page={{ page_obj.next_page_number }}">More</a>
   {% endif %}
 
 {% endblock content %}
