@@ -1,6 +1,6 @@
 from django.urls import path, include, register_converter
 from django.shortcuts import redirect
-from . import views
+from warehouse import views
 from .converts import FloatUrlParameterConverter
 
 register_converter(FloatUrlParameterConverter, "float")
