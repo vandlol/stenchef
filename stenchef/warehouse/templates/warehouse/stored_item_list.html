@@ -39,8 +39,7 @@
         </tr>
       </thead>
       <tbody class="infinite-item">
-<<<<<<< HEAD
-      
+
     {% for item in items %}
         <tr>
             {% if item.item_id.itemtype == "P" %}
@@ -52,7 +51,7 @@
             <td class="px-4 py-2 border">{{ item.item_id.itemname }}</td>
             <td class="px-4 py-2 border">{{ item.color_id }}</td>
             <td class="px-4 py-2 border">{{ item.condition.name }}</td>
-          
+
             {% if item.container %}
             <td class="px-4 py-2 border"><a class="text-blue-500" href="{% url 'warehouse:cdetail' item.container.containerid %}">{{ item.container.name }}</td>
             {% else %}
@@ -60,33 +59,22 @@
             {% endif %}
             <td class="px-4 py-2 border">
             {% if title == "FWOC" %}
-            <a href="{% url 'warehouse:icwocedit' item.storedid %}" class="inline-block text-sm px-4 py-2 leading-none border rounded bg-teal-500 text-white border-white hover:border-transparent hover:bg-teal-600 mt-4 lg:mt-0"  target="_blank">Change</a>
+            <a href="{% url 'warehouse:icwocedit' item.storedid %}" class="inline-block px-4 py-2 mt-4 text-sm leading-none text-white bg-teal-500 border border-white rounded hover:border-transparent hover:bg-teal-600 lg:mt-0"  target="_blank">Change</a>
             {% else %}
-            <a href="{% url 'warehouse:icedit' item.storedid %}" class="inline-block text-sm px-4 py-2 leading-none border rounded bg-teal-500 text-white border-white hover:border-transparent hover:bg-teal-600 mt-4 lg:mt-0"  target="_blank">Change</a>
+            <a href="{% url 'warehouse:icedit' item.storedid %}" class="inline-block px-4 py-2 mt-4 text-sm leading-none text-white bg-teal-500 border border-white rounded hover:border-transparent hover:bg-teal-600 lg:mt-0"  target="_blank">Change</a>
             {% endif %}
             </td>
             <td class="px-4 py-2 border">{{ item.count }}</td>
             <td class="px-4 py-2 border">
-              <a href="{% url 'warehouse:iqedit' item.storedid %}" class="inline-block text-sm px-4 py-2 leading-none border rounded bg-teal-500 text-white border-white hover:border-transparent hover:bg-teal-600 mt-4 lg:mt-0"  target="_blank">Add</a>
+              <a href="{% url 'warehouse:iqedit' item.storedid %}" class="inline-block px-4 py-2 mt-4 text-sm leading-none text-white bg-teal-500 border border-white rounded hover:border-transparent hover:bg-teal-600 lg:mt-0"  target="_blank">Add</a>
             </td>
             <td class="px-4 py-2 border">{{ item.unit_price }} EUR</td>
             <td class="px-4 py-2 border">
-              <a href="{% url 'warehouse:ipedit' item.storedid %}" class="inline-block text-sm px-4 py-2 leading-none border rounded bg-teal-500 text-white border-white hover:border-transparent hover:bg-teal-600 mt-4 lg:mt-0"  target="_blank">Change</a>
+              <a href="{% url 'warehouse:ipedit' item.storedid %}" class="inline-block px-4 py-2 mt-4 text-sm leading-none text-white bg-teal-500 border border-white rounded hover:border-transparent hover:bg-teal-600 lg:mt-0"  target="_blank">Change</a>
             </td>
-=======
-    {% for item in items %}
-        <tr>
-            <td class="px-4 py-2 border"><a class="text-blue-500" href="{% url 'catalog:idetail' item.item_id.itemuid %}">{{ item.item_id.itemid }}</a></td>
-            <td class="px-4 py-2 border">{{ item.item_id.itemname }}</td>
-            {% if item.container %}
-            <td class="px-4 py-2 border"><a class="text-blue-500" href="{% url 'warehouse:cdetail' item.container.containerid %}">{{ item.container.name }}</td>
-            {% else %}
-            <td class="px-4 py-2 border"><a class="text-blue-500" href="#">Add Container</td>
-            {% endif %}
->>>>>>> b364a182ea83fad7fdc6119c0b0084d8a44dfd29
         </tr>
     {% endfor %}
-    
+
     </tbody>
     </form>
     </table>
