@@ -10,13 +10,59 @@
                 <a href="{% url 'warehouse:iexport' object.pk %}" class="inline-block px-4 py-2 mt-4 text-sm leading-none text-white bg-teal-500 border border-white rounded hover:border-transparent hover:bg-teal-600 lg:mt-0">Export to Bricklink</a>
                 {% endif %}
                 {% if object.container %}
-                <a href="{% url 'warehouse:icedit' object.pk %}" class="inline-block text-sm px-4 py-2 leading-none border rounded bg-teal-500 text-white border-white hover:border-transparent hover:bg-teal-600 mt-4 lg:mt-0"  target="_blank">Change Container</a>
+                <a href="{% url 'warehouse:icedit' object.pk %}" class="inline-block px-4 py-2 mt-4 text-sm leading-none text-white bg-teal-500 border border-white rounded hover:border-transparent hover:bg-teal-600 lg:mt-0"  target="_blank">Change Container</a>
                 {% endif %}
-                <a href="{% url 'warehouse:idelete' object.pk %}" class="inline-block text-sm px-4 py-2 leading-none border rounded bg-teal-500 text-white border-white hover:border-transparent hover:bg-teal-600 mt-4 lg:mt-0">Delete Item</a>
+                <a href="{% url 'warehouse:idelete' object.pk %}" class="inline-block px-4 py-2 mt-4 text-sm leading-none text-white bg-teal-500 border border-white rounded hover:border-transparent hover:bg-teal-600 lg:mt-0">Delete Item</a>
             {% endif %}
-            <legend class="border-bottom mb-4">Edit {{ title }}: {{ object.name }}</legend>
+            <legend class="mb-4 border-bottom">Edit {{ title }}: {{ object.name }}</legend>
             {{ form.as_p }}
             {{ form.media }}
+            <hr />
+            {{ form.non_field_errors }}
+            <div class="border-b-2 border-orange-500 border-opacity-75 fieldWrapper">
+                {{ form.inventory_id.errors }}
+                <label for="{{ form.inventory_id.id_for_label }}">inventory_id:</label>
+                {{ form.inventory_id }}
+            </div>
+            {% comment %} <hr />
+            {% for hidden in form.hidden_fields %}
+            {{ hidden }}
+            {% endfor %}
+            {% for field in form %}
+                <div class="fieldWrapper">
+                    {% if field.errors %}
+                        <ol>
+                        {% for error in field.errors %}
+                            <li><strong>{{ error|escape }}</strong></li>
+                        {% endfor %}
+                        </ol>
+                    {% endif %}
+                    {{ field.label_tag }} {{ field }}
+                    {% if field.help_text %}
+                    <p class="help">{{ field.help_text|safe }}</p>
+                    {% endif %}
+                </div>
+            {% endfor %} {% endcomment %}
+            <!--
+                        "container",
+                        "inventory_id",
+                        "color",
+                        "count",
+                        "condition",
+                        "completeness",
+                        "unit_price",
+                        "description",
+                        "bulk",
+                        "is_retain",
+                        "is_stock_room",
+                        "sale_rate",
+                        "tier_quantity1",
+                        "tier_price1",
+                        "tier_quantity2",
+                        "tier_price2",
+                        "tier_quantity3",
+                        "tier_price3",
+            -->
         </fieldset>
         <div class="form-group">
             <button class="btn btn-outline-info" type="submit">Save</button>

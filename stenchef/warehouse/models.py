@@ -156,9 +156,8 @@ class Purchase(models.Model):
     )
     seller = models.CharField(max_length=256, blank=True, default=None)
     url = models.URLField(max_length=1000, blank=True, default=None)
-    invoice = models.FileField(
-        upload_to="invoice/", max_length=254, blank=True, default=None
-    )
+    invoice = models.URLField(max_length=1000, blank=True, default=None)
+    # parts =
     owner = models.ForeignKey(
         dmodels.User,
         on_delete=models.CASCADE,
@@ -178,6 +177,7 @@ class Order(models.Model):
     buyer_email = models.EmailField(max_length=1000, blank=True)
     date_ordered = models.DateTimeField(auto_now=False, auto_now_add=False, blank=True)
     total_price = models.DecimalField(default=1.0000, max_digits=20, decimal_places=4)
+    handling_fee = models.DecimalField(default=1.0000, max_digits=20, decimal_places=4)
     subtotal_price = models.DecimalField(
         default=1.0000, max_digits=20, decimal_places=4
     )
@@ -196,13 +196,20 @@ class Order(models.Model):
     weight = models.DecimalField(
         default=1.0000, max_digits=20, decimal_places=2, blank=True
     )
-    items = models.ManyToManyField("catalog.Item", through="OrderItem")
+    items = models.ManyToManyField(
+        "catalog.Item",
+        through="OrderItem",
+        blank=True,
+    )
 
     def __str__(self):
         return str(self.order_id)
 
 
 class OrderItem(models.Model):
+    orderitemuuid = models.UUIDField(
+        primary_key=True, default=uuid.uuid4, editable=False
+    )
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
     item = models.ForeignKey("catalog.Item", on_delete=models.CASCADE)
     condition = models.ForeignKey("meta.Condition", on_delete=models.CASCADE)
@@ -217,3 +224,41 @@ class OrderItem(models.Model):
             self.color,
             self.condition,
         )
+
+
+class Set(models.Model):
+    set_id = models.CharField(max_length=256, blank=True, default=None)
+    partcount = models.PositiveIntegerField(blank=True)
+    items = models.ManyToManyField(
+        "catalog.Item",
+        through="SetItem",
+        blank=True,
+    )
+    condition = models.ForeignKey(
+        "meta.Condition",
+        on_delete=models.CASCADE,
+        default="N",
+        limit_choices_to={"subcondition": False},
+    )
+    completeness = models.ForeignKey(
+        "meta.Condition",
+        on_delete=models.CASCADE,
+        default="S",
+        related_name="+",
+        limit_choices_to={"subcondition": True},
+        blank=True,
+    )
+
+    def __str__(self):
+        return self.set_id
+
+
+class SetItem(models.Model):
+    set_id = models.ForeignKey(Set, on_delete=models.CASCADE)
+    item = models.ForeignKey("catalog.Item", on_delete=models.CASCADE)
+    color = models.ForeignKey("meta.Color", on_delete=models.CASCADE)
+    count = models.PositiveIntegerField()
+    unit_price = models.DecimalField(default=1.0000, max_digits=20, decimal_places=4)
+
+    def __str__(self):
+        return "{}-{}-{}".format(self.set_id, self.item, self.color)

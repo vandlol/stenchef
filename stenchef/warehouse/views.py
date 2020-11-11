@@ -47,6 +47,8 @@ from warehouse.bricklink_integration import (
     generate_picklist,
 )
 from warehouse.lexoffice_integration import create_invoice
+from operator import itemgetter
+from natsort import natsorted
 
 
 class HomePageView(TemplateView):
@@ -360,6 +362,7 @@ class ItemStoreUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         "tier_quantity3",
         "tier_price3",
     ]
+    error_css_class = "error border-b-2 border-orange-700 border-opacity-75"
 
     def form_valid(self, form):
         form.instance.owner = self.request.user
@@ -693,7 +696,7 @@ class SetPartoutListView(LoginRequiredMixin, ListView):
             setid, subsetid = setid.split("-")
         else:
             subsetid = 1
-        items = part_out_set(
+        items_u = part_out_set(
             setid,
             get_current_authenticated_user().id,
             subset=subsetid,
@@ -704,6 +707,7 @@ class SetPartoutListView(LoginRequiredMixin, ListView):
                 ).first()
             ),
         )
+        items = natsorted(items_u, key=itemgetter("color_id"))
         return items
 
 
@@ -795,7 +799,7 @@ class ItemListOrdersView(LoginRequiredMixin, View):
         )
         context = dict()
         context["order_id"] = order_id
-        context["items"] = list()
+        items_u = list()
         for elem in pick:
             for item in elem:
                 i = item
@@ -813,13 +817,14 @@ class ItemListOrdersView(LoginRequiredMixin, View):
                     i["show_delete"] = "y"
                 else:
                     i["type_short"] = None
-                    i["container"] = None
+                    i["container"] = "None"
                     i["storage_count"] = 0
                     i["storedid"] = None
                     i["noninteractive"] = "n"
                     i["remaining_count"] = 0
                     i["show_delete"] = "n"
-                context["items"].append(i)
+                items_u.append(i)
+        context["items"] = natsorted(items_u, key=itemgetter("container"))
         return render(request, "warehouse/order_item_list.html", context)
 
 

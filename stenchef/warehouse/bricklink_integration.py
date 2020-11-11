@@ -16,6 +16,7 @@ import json
 import pymongo
 import uuid
 from datetime import datetime, timedelta
+from dateutil import parser
 import redis
 
 typemap = {
@@ -61,6 +62,20 @@ def bl_auth_test():
     token_secret = data["bl_token_secret"]
     auth = oauth(consumer_key, consumer_secret, token_value, token_secret)
     return auth
+
+
+def get_color(color_id):
+    r = redis.Redis(host="localhost", port=6379, db=4)
+    found = r.get(color_id)
+    if found:
+        return found.decode("ascii")
+
+    client = pymongo.MongoClient("localhost", 27017)
+    db = client.stenchef
+    filter = {"color": str(color_id)}
+    sten_found = db.meta_color.find_one(filter)
+    r.set(color_id, sten_found["colorname"])
+    return sten_found["colorname"]
 
 
 def query_price(itemtype_id, itemid, color_id, condition, auth=None):
@@ -167,7 +182,7 @@ def export_inventory_full(owner, auth=bl_auth_test()):
     for local_inventory in local_inventories:
         if local_inventory.get("inventory_id"):
             continue
-        temp = _prep_data(local_inventory)
+        temp = _prep_inventory_data(local_inventory)
         create_list.append(temp)
     bui.create_inventories(create_list, auth=auth)
 
@@ -178,11 +193,11 @@ def export_inventory_single(owner, storedid, auth=bl_auth_test()):
     local_inventory = db.warehouse_blinventoryitem.find_one(
         {"owner_id": owner, "storedid": storedid}
     )
-    temp = _prep_data(local_inventory)
+    temp = _prep_inventory_data(local_inventory)
     bui.create_inventory(temp, auth=auth)
 
 
-def _prep_data(local_inventory):
+def _prep_inventory_data(local_inventory):
     temp = dict()
     temp["item"] = dict()
     temp["item"]["type"], temp["item"]["no"] = local_inventory["item_id_id"].split("_")
@@ -263,7 +278,6 @@ def update_price(owner, itemid, color_id, condition, price, auth=bl_auth_test())
 def known_colors(itemtype_id, itemid, auth=None):
     client = pymongo.MongoClient("localhost", 27017)
     db = client.colors
-    stenchef = client.stenchef
     datelimit = datetime.today() - timedelta(days=10)
     filter = {
         "itemtype_id": itemtype_id,
@@ -284,11 +298,11 @@ def known_colors(itemtype_id, itemid, auth=None):
         if not colors_q or (not colors_q.get("data")):
             return list()
         for color in colors_q["data"]:
-            color_obj = stenchef.meta_color.find_one({"color": str(color["color_id"])})
+            color_name = get_color(color["color_id"])
             colors.append(
                 {
                     "color_id": str(color["color_id"]),
-                    "colorname": color_obj["colorname"],
+                    "colorname": color_name,
                 }
             )
         filter["known_colors"] = colors
@@ -349,6 +363,7 @@ def part_out_set(set, owner, subset="1", multi=1, auth=None):
             "color_id": entry["color_id"],
             "quantity": int(entry["quantity"]) * int(multi),
             "item_uid": "{}_{}".format(entry["item"]["type"][:1], entry["item"]["no"]),
+            "item_name": entry["item"]["name"],
             "itemid": entry["item"]["no"],
             "itemtype": entry["item"]["type"][:1],
             "storedid": None,
@@ -374,6 +389,91 @@ def part_out_set(set, owner, subset="1", multi=1, auth=None):
     return parts
 
 
+def import_orders(auth=None):
+    orders = get_orders(auth=auth)
+    client = pymongo.MongoClient("localhost", 27017)
+    db = client.stenchef
+
+    if not orders.get("meta"):
+        return None
+
+    if not orders["meta"]["code"] == 200:
+        return None
+
+    for order in orders["data"]:
+        filter = {"order_id": order["order_id"]}
+        found = db.warehouse_order.find_one(filter)
+        if found:
+            if order["status"] == "COMPLETED":
+                continue
+            if found["status"] == order["status"]:
+                continue
+            found["status"] = order["status"]
+            if order["shipping"].get("date_shipped"):
+                found["shipping_date"] = parser.parse(
+                    order["shipping"].get("date_shipped")
+                )
+            if order["payment"].get("date_paid"):
+                found["payment_date"] = parser.parse(order["payment"].get("date_paid"))
+            db.warehouse_order.find_one_and_replace(filter, found)
+
+        if order["status"] == "CANCELLED":
+            continue
+
+        order_details = get_order(order["order_id"], auth=auth)
+        order_items = generate_picklist(order["order_id"], auth=auth)
+        order_data = _prep_order_data(order_details["data"])
+        db.warehouse_order.insert(order_data)
+        items = _prep_order_item_data(order_items, order_data["orderuuid"])
+        db.warehouse_orderitem.bulk_write(items)
+    return order_details
+
+
+def _prep_order_item_data(order_items, orderid):
+    items = list()
+    for order_item in order_items[0]:
+        data = dict()
+        data["orderitemuuid"] = uuid.uuid4()
+        data["order_id"] = orderid
+        data["item_id"] = "{}_{}".format(
+            order_item["item"]["type"][:1], order_item["item"]["no"]
+        )
+        data["condition_id"] = order_item["new_or_used"]
+        data["color_id"] = order_item["color_id"]
+        data["count"] = order_item["quantity"]
+        data["unit_price"] = order_item["disp_unit_price_final"]
+        items.append(pymongo.InsertOne(data))
+    return items
+
+
+def _prep_order_data(order_details):
+    data = dict()
+    data["orderuuid"] = uuid.uuid4()
+    data["order_id"] = order_details["order_id"]
+    data["buyer_name"] = order_details["buyer_name"]
+    data["buyer_email"] = order_details["buyer_email"]
+    data["date_ordered"] = parser.parse(order_details["date_ordered"])
+    data["total_price"] = order_details["disp_cost"]["grand_total"]
+    data["subtotal_price"] = order_details["disp_cost"]["subtotal"]
+    data["shipping_price"] = order_details["disp_cost"]["shipping"]
+    data["handling_fee"] = order_details["disp_cost"]["etc1"]
+    data["payment_metod"] = order_details["payment"]["method"]
+    if order_details["payment"].get("date_paid"):
+        data["payment_date"] = parser.parse(order_details["payment"].get("date_paid"))
+    data["shipping_state"] = order_details["shipping"]["address"]["state"]
+    data["shipping_country"] = order_details["shipping"]["address"]["country_code"]
+    if order_details["shipping"].get("date_shipped"):
+        data["shipping_date"] = parser.parse(
+            order_details["shipping"].get("date_shipped")
+        )
+    data["shipping_method"] = order_details["shipping"]["method"]
+    data["status"] = order_details["status"]
+    data["item_count"] = order_details["total_count"]
+    data["lot_count"] = order_details["unique_count"]
+    data["weight"] = order_details["total_weight"]
+    return data
+
+
 def orders_query(auth=None):
     orders = get_orders(auth=auth)
     if not orders.get("meta"):
@@ -384,7 +484,11 @@ def orders_query(auth=None):
 
     orders_comp = list()
     for order in orders["data"]:
-        if order["status"] == "COMPLETED" or order["status"] == "CANCELLED":
+        if (
+            order["status"] == "COMPLETED"
+            or order["status"] == "CANCELLED"
+            or order["status"] == "SHIPPED"
+        ):
             continue
         order_details = get_order(order["order_id"], auth=auth)
         orders_comp.append(order_details["data"])
@@ -435,4 +539,3 @@ def query_inventory_prices(owner, auth=None):
             auth=auth,
         )
         pp(item)
-        exit()

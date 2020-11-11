@@ -49,7 +49,7 @@
             {% endif %}
             <td class="px-4 py-2 border"><a class="text-blue-500" href="{% url 'warehouse:iedit' item.storedid %}">{{ item.item_id.itemid }}</a></td>
             <td class="px-4 py-2 border">{{ item.item_id.itemname }}</td>
-            <td class="px-4 py-2 border">{{ item.color_id }}</td>
+            <td class="px-4 py-2 border">{{ item.color }}</td>
             <td class="px-4 py-2 border">{{ item.condition.name }}</td>
 
             {% if item.container %}

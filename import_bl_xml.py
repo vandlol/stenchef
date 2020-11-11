@@ -85,8 +85,11 @@ def main():
 
     xml_files.remove("{}codes.xml".format(folder_download))
     xml_files.append("{}codes.xml".format(folder_download))
+    db["catalog_item"].drop()
     for file in xml_files:
         collection_name, file_data = convert(file, cmap=cmap)
+        if not collection_name == "catalog_item":
+            db[collection_name].drop()
         db[collection_name].bulk_write(file_data)
 
 

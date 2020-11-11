@@ -112,7 +112,7 @@ def fill_data(invoice_data, ordered_items, shipping_target=5):
         "introduction": "Deine bestellten Steinchen aus Bricklink Order #{} stellen wir dir hiermit in Rechnung.".format(
             invoice_data["order_id"]
         ),
-        "remark": "Vielen Dank für deinen Einkauf.\nBitte bewerte uns auf store.bricklink.com/StolperStein",
+        "remark": "Vielen Dank für deinen Einkauf.\nGgf. kann der angezeigte Rechnungsbetrag aufgrund von Rundungsdifferenzen abweichen. Der angezeigte Gesamtbetrag auf Bricklink.com ist maßgeblich.\nBitte bewerte uns auf store.bricklink.com/StolperStein",
     }
 
     return data
