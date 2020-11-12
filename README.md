@@ -6,7 +6,7 @@ contribute.
 
 ## setup dev environment
 
-- install mongodb
+- install mongodb, npm
 - start mongodb
   `../start_mongodb.sh`
 - install everything from the requirements.txt via your preferred mechanism
