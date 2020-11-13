@@ -16,3 +16,8 @@ django-select2==7.4.2
 django-autocomplete-light==3.5.1
 git+git://github.com/BrickBytes/bricklink_api.git@master
 django-extra-views==0.13.0
+redis==3.5.3
+natsort==7.0.1
+python-dateutil==2.7.3
+xmltodict==0.12.0
+pymongo==3.10.1

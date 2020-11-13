@@ -9,7 +9,13 @@ from bricklink_api.catalog_item import (
     get_item_image,
     get_known_colors,
 )
-from bricklink_api.order import get_orders, get_order, get_order_items
+from bricklink_api.order import (
+    get_orders,
+    get_order,
+    get_order_items,
+    Direction,
+    Status,
+)
 import bricklink_api.user_inventory as bui
 from pprint import pprint as pp
 import json
@@ -475,7 +481,12 @@ def _prep_order_data(order_details):
 
 
 def orders_query(auth=None):
-    orders = get_orders(auth=auth)
+    orders = get_orders(
+        auth=auth,
+        filed=False,
+        direction=Direction.IN,
+        status="-cancelled,-shipped,-completed,-received,-npb,-purged",
+    )
     if not orders.get("meta"):
         return None
 
@@ -484,12 +495,6 @@ def orders_query(auth=None):
 
     orders_comp = list()
     for order in orders["data"]:
-        if (
-            order["status"] == "COMPLETED"
-            or order["status"] == "CANCELLED"
-            or order["status"] == "SHIPPED"
-        ):
-            continue
         order_details = get_order(order["order_id"], auth=auth)
         orders_comp.append(order_details["data"])
     return orders_comp

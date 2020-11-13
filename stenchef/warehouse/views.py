@@ -782,7 +782,7 @@ class ListOrdersView(LoginRequiredMixin, View):
                 - float(order["disp_cost"]["subtotal"])
             )
         context = dict()
-        context["orders"] = orders
+        context["orders"] = natsorted(orders, key=itemgetter("order_id"), reverse=True)
         return render(request, "warehouse/order_list.html", context)
 
 
