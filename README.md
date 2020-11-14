@@ -6,15 +6,24 @@ contribute.
 
 ## setup dev environment
 
-- install mongodb, npm
-- start mongodb
-  `../start_mongodb.sh`
+- clone this repo
+  `git clone https://github.com/vandlol/stenchef`
+- install mongodb, npm, redis
+  `apt install mongodb npm redis`
+  (or whatever is the command to install software via your package manager)
+- start mongodb and redis
+  `systemctl start mongodb.service`
+  `systemctl start redis.service`
+- switch inside the repo folder
+  `cd stenchef`
 - install everything from the requirements.txt via your preferred mechanism
-  (e.g. `pip install -r requirements.txt`)
+  (e.g. `pip3 install -r requirements.txt`)
+- switch to the project directory within the repo folder
+  `cd stenchef`
 - fill the database with basics
   `python manage.py migrate`
-- create a superuser
-  `python manage.py createsuperuser`
+- import defaults into the Database
+  `python manage.py loaddata ../fixtures/fixture_defaults.json`
 - start the server
   `python manage.py runserver`
 - initiate and build css (tailwind)
