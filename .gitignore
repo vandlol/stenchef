@@ -1,5 +1,4 @@
 __pycache__/
-bricklink_data/
 .venv
 .vscode/
 *.list
@@ -9,7 +8,6 @@ django_secretkey.txt
 test.py
 bricklink.json
 imported_list.txt
-fixtures/
 xx_stenchef/warehouse/static_src/**
 xx_stenchef/warehouse/static/css/**
 lexoffice_data.json
