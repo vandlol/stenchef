@@ -125,6 +125,19 @@ def query_price(itemtype_id, itemid, color_id, condition, auth=None):
     return round(price_prop, 4)
 
 
+def sync_deleted_inventories(owner, auth=None):
+    inventory_json = bui.get_inventories(auth=auth)
+    client = pymongo.MongoClient("localhost", 27017)
+    db = client.stenchef
+    known_inventory_ids = list()
+    for inv in inventory_json["data"]:
+        known_inventory_ids.append(inv.get("inventory_id"))
+    known_inventory_ids.append(None)
+    db.warehouse_blinventoryitem.delete_many(
+        {"inventory_id": {"$nin": known_inventory_ids}}
+    )
+
+
 def import_inventory(owner, auth=None):
     inventory_json = bui.get_inventories(auth=auth)
     inventory_list = list()
