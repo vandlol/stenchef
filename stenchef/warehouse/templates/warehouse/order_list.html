@@ -1,12 +1,12 @@
 {% extends "warehouse/base.html" %}
 {% block content %}
-  <table class="table-auto">
+  <table table id="ordertable" class="table-auto">
   <thead>
     <tr>
       <th class="px-4 py-2">Order ID</th>
       <th class="px-4 py-2">Payment Status</th>
       <th class="px-4 py-2">Buyer Name</th>
-      <th class="px-4 py-2">Payment Method</th>
+      <th class="px-4 py-2">Full Name</th>
       <th class="px-4 py-2">Item Count</th>
       <th class="px-4 py-2">Lot Count</th>
       <th class="px-4 py-2">Item Cost</th>
@@ -21,7 +21,7 @@
     <td class="px-4 py-2 border"><a href="https://www.bricklink.com/orderDetail.asp?ID={{ order.order_id }}" target="_blank">{{ order.order_id }}</a></td>
     <td class="px-4 py-2 border">{{ order.status }}</td>
     <td class="px-4 py-2 border"><a href="https://www.bricklink.com/feedback.asp?u={{ order.buyer_name }}" target="_blank">{{ order.buyer_name }}</a></td>
-    <td class="px-4 py-2 border">{{ order.payment.method }}</td>
+    <td class="px-4 py-2 border">{{ order.shipping.address.name.full }}</td>
     <td class="px-4 py-2 border">{{ order.total_count }}</td>
     <td class="px-4 py-2 border">{{ order.unique_count }}</td>
     <td class="px-4 py-2 border">{{ order.disp_cost.subtotal }}</td>
@@ -33,4 +33,16 @@
 {% endfor %}
 </tbody>
 </table>
+
+<script type='text/javascript'>
+$(document).ready(function () {
+    $('#ordertable tr').click(function () {
+        $(this).toggleClass("active");
+    });
+});
+</script>
+
+<style type='text/css'>
+tr.active td { background-color: #756f6e;}
+</style>
 {% endblock content %}

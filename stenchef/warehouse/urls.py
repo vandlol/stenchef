@@ -163,6 +163,7 @@ urlpatterns = [
                 path("container/", include(container)),
                 path("item/", include(item)),
                 path("order/", include(order)),
+                path("close/", views.CloseWindow.as_view(), name="close"),
             ]
         ),
     ),

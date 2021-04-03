@@ -105,6 +105,7 @@ def query_price(itemtype_id, itemid, color_id, condition, auth=None):
             guide_type="sold",
             new_or_used=condition,
             region="europe",
+            country_code="DE",
             currency_code="EUR",
             auth=auth,
         )
@@ -202,8 +203,10 @@ def export_inventory_full(owner, auth=bl_auth_test()):
         if local_inventory.get("inventory_id"):
             continue
         temp = _prep_inventory_data(local_inventory)
-        create_list.append(temp)
-    bui.create_inventories(create_list, auth=auth)
+        bui.create_inventory(temp, auth=auth)
+        #pp(temp)
+        # create_list.append(temp)
+    # bui.create_inventories(create_list, auth=auth)
 
 
 def export_inventory_single(owner, storedid, auth=bl_auth_test()):
@@ -291,7 +294,37 @@ def update_price(owner, itemid, color_id, condition, price, auth=bl_auth_test())
 
     temp["unit_price"] = price
 
-    bui.update_inventory(local_inventory["inventory_id"], temp, auth=auth)
+    ret = bui.update_inventory(local_inventory["inventory_id"], temp, auth=auth)
+
+
+def update_all_prices(auth=bl_auth_test()):
+    inventory_json = bui.get_inventories(auth=auth)
+    client = pymongo.MongoClient("localhost", 27017)
+    db = client.stenchef
+    if not inventory_json.get("meta"):
+        return None
+
+    if not inventory_json["meta"]["code"] == 200:
+        return None
+
+    owner_id = db.auth_user.find_one({"username": "admin"})["id"]
+    for item in inventory_json["data"]:
+        itemtype_id = item["item"]["type"][:1]
+        itemid = item["item"]["no"]
+        color_id = item["color_id"]
+        condition = item["new_or_used"]
+        price_prop = query_price(itemtype_id, itemid, color_id, condition, auth=auth)
+        if price_prop == item["unit_price"]:
+            continue
+        if price_prop != 0.0:
+            update_price(
+                owner_id,
+                "{}_{}".format(itemtype_id, itemid),
+                str(color_id),
+                condition,
+                price_prop,
+                auth=auth,
+            )
 
 
 def known_colors(itemtype_id, itemid, auth=None):
@@ -338,26 +371,21 @@ def part_out_set(set, owner, subset="1", multi=1, auth=None):
     filter = {"setid": setid}
     found = db.partout.find_one(filter)
 
-    if found:
-        partout = found["items"]
-    else:
-        partout = get_subsets(
-            type,
-            setid,
-            instruction=True,
-            box=False,
-            break_minifigs=False,
-            break_subsets=True,
-            auth=auth,
-        )
-        if not partout.get("meta"):
-            return None
+    partout = get_subsets(
+        type,
+        setid,
+        instruction=True,
+        box=False,
+        break_minifigs=False,
+        break_subsets=True,
+        auth=auth,
+    )
+    if not partout.get("meta"):
+        return None
 
-        if not partout["meta"]["code"] == 200:
-            return None
-        partout = partout["data"]
-        filter["items"] = partout
-        db.partout.insert_one(filter)
+    if not partout["meta"]["code"] == 200:
+        return None
+    partout = partout["data"]
 
     parts = list()
     for item in partout:
@@ -408,18 +436,11 @@ def part_out_set(set, owner, subset="1", multi=1, auth=None):
     return parts
 
 
-def import_orders(auth=None):
-    orders = get_orders(auth=auth)
+def import_orders(orders, auth=None):
     client = pymongo.MongoClient("localhost", 27017)
     db = client.stenchef
 
-    if not orders.get("meta"):
-        return None
-
-    if not orders["meta"]["code"] == 200:
-        return None
-
-    for order in orders["data"]:
+    for order in orders:
         filter = {"order_id": order["order_id"]}
         found = db.warehouse_order.find_one(filter)
         if found:
@@ -428,10 +449,11 @@ def import_orders(auth=None):
             if found["status"] == order["status"]:
                 continue
             found["status"] = order["status"]
-            if order["shipping"].get("date_shipped"):
-                found["shipping_date"] = parser.parse(
-                    order["shipping"].get("date_shipped")
-                )
+            if order.get("shipping"):
+                if order["shipping"].get("date_shipped"):
+                    found["shipping_date"] = parser.parse(
+                        order["shipping"].get("date_shipped")
+                    )
             if order["payment"].get("date_paid"):
                 found["payment_date"] = parser.parse(order["payment"].get("date_paid"))
             db.warehouse_order.find_one_and_replace(filter, found)
@@ -445,7 +467,7 @@ def import_orders(auth=None):
         db.warehouse_order.insert(order_data)
         items = _prep_order_item_data(order_items, order_data["orderuuid"])
         db.warehouse_orderitem.bulk_write(items)
-    return order_details
+    return
 
 
 def _prep_order_item_data(order_items, orderid):
@@ -505,7 +527,7 @@ def orders_query(auth=None):
 
     if not orders["meta"]["code"] == 200:
         return None
-
+    import_orders(orders["data"], auth=auth)
     orders_comp = list()
     for order in orders["data"]:
         order_details = get_order(order["order_id"], auth=auth)

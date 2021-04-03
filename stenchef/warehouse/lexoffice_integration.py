@@ -80,6 +80,8 @@ def fill_data(invoice_data, ordered_items, shipping_target=5):
             },
         }
     )
+    if invoice_data["shipping"]["address"]["country_code"] == "UK":
+        invoice_data["shipping"]["address"]["country_code"] = "GB"
     data = {
         "archived": False,
         "voucherDate": re.sub(" .*", "T00:00:00.000+01:00", "{}".format(order_date)),
@@ -125,6 +127,7 @@ def create_invoice(invoice_data, ordered_items):
         "{}/invoices".format(base_url), data=json.dumps(data), headers=headers
     )
     if r.json():
+        print(r.json())
         return "https://app.lexoffice.de/vouchers#!/VoucherView/Invoice/{}".format(
             r.json()["id"]
         )

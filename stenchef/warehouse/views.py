@@ -323,7 +323,7 @@ class ItemStoreCreateView(LoginRequiredMixin, CreateView):
 
 class ItemStoreDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = BLInventoryItem
-    success_url = "/w/item/list"
+    success_url = "/w/close/"
     template_name = "warehouse/confirm_delete.html"
     title = "Stored Item"
 
@@ -777,9 +777,8 @@ class ListOrdersView(LoginRequiredMixin, View):
             ),
         )
         for order in orders:
-            order["disp_cost"]["shipping"] = "{:.2f}".format(
-                float(order["disp_cost"]["grand_total"])
-                - float(order["disp_cost"]["subtotal"])
+            order["disp_cost"]["shipping"] = order["disp_cost"]["shipping"].replace(
+                "00", ""
             )
         context = dict()
         context["orders"] = natsorted(orders, key=itemgetter("order_id"), reverse=True)
@@ -817,7 +816,14 @@ class ItemListOrdersView(LoginRequiredMixin, View):
                     i["show_delete"] = "y"
                 else:
                     i["type_short"] = None
-                    i["container"] = "None"
+                    i["container"] = (
+                        Container.objects.filter(
+                            owner=get_current_authenticated_user().id,
+                            containerid=item["remarks"],
+                        )
+                        .first()
+                        .name
+                    )
                     i["storage_count"] = 0
                     i["storedid"] = None
                     i["noninteractive"] = "n"
@@ -849,3 +855,8 @@ class CreateInvoice(LoginRequiredMixin, View):
         )
         create_invoice(order_details, ordered_items)
         return redirect("/w/order/item/list/{}".format(order_id))
+
+
+class CloseWindow(LoginRequiredMixin, View):
+    def get(self, request):
+        return render(request, "warehouse/close_window.html")

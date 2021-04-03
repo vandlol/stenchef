@@ -20,7 +20,11 @@
   <tbody>
 {% for item in items %}
     <tr>
+    {% if item.type_short == "P" %}
     <td class="px-4 py-2 border"><a href="https://www.bricklink.com/v2/catalog/catalogitem.page?{{ item.type_short }}={{ item.item.no }}" target="_blank"><img class="object-contain object-center" alt="bricklink-picture" src="https://img.bricklink.com/{{ item.type_short }}/{{ item.color_id }}/{{ item.item.no }}.jpg"></a></td>
+    {% else %}
+    <td class="px-4 py-2 border"><a href="https://www.bricklink.com/v2/catalog/catalogitem.page?{{ item.type_short }}={{ item.item.no }}" target="_blank"><img class="object-contain object-center" alt="bricklink-picture" src="https://img.bricklink.com/{{ item.type_short }}/{{ item.item.no }}.jpg"></a></td>
+    {% endif %}
     <td class="px-4 py-2 border">{{ item.item.name }}</td>
     <td class="px-4 py-2 border">{{ item.item.no }}</td>
     <td class="px-4 py-2 border">{{ item.color_name }}</td>

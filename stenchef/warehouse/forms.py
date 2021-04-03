@@ -14,6 +14,7 @@ class ContainerForm(forms.ModelForm):
             "parent",
             "description",
         ]
+
         widgets = {
             "parent": autocomplete.ModelSelect2(
                 url="warehouse:cauto",
