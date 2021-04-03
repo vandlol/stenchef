@@ -1,0 +1,60 @@
+{% extends "warehouse/base.html" %}
+{% block content %}
+<form method='GET'>
+  <input class="bg-white rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4" type='int' name='multi' value='{{ request.GET.multi }}'>
+  <input class="inline-block text-sm px-4 py-2 leading-none border rounded bg-teal-500 text-white border-white hover:border-transparent hover:bg-teal-600 mt-4 lg:mt-0" type='submit' value="Multiplier">
+</form>
+<table id="itemtable" class="table-auto">
+  <thead>
+    <tr>
+      <th class="px-4 py-2">Picture</th>
+      <th class="px-4 py-2">Item Name</th>
+      <th class="px-4 py-2">Item UID</th>
+      <th class="px-4 py-2">Color</th>
+      <th class="px-4 py-2">Quantity</th>
+      <th class="px-4 py-2">Price</th>
+      <th class="px-4 py-2">Container</th>
+      <th class="px-4 py-2">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+{% for item in items %}
+    <tr>
+        {% if item.itemtype == "P" %}
+        <td class="px-4 py-2 border"><a href="https://www.bricklink.com/v2/catalog/catalogitem.page?{{ item.itemtype }}={{ item.itemid }}" target="_blank"><img class="object-contain object-center" alt="bricklink-picture" src="https://img.bricklink.com/{{ item.itemtype }}/{{ item.color_id }}/{{ item.itemid }}.jpg"></a></td>
+        {% else %}
+        <td class="px-4 py-2 border"><a href="https://www.bricklink.com/v2/catalog/catalogitem.page?{{ item.itemtype }}={{ item.itemid }}" target="_blank"><img class="object-contain object-center" alt="bricklink-picture" src="https://img.bricklink.com/{{ item.itemtype }}/{{ item.itemid }}.jpg"></a></td>
+        {% endif %}
+        <td class="px-4 py-2 border">{{ item.item_name }}</td>
+        <td class="px-4 py-2 border">{{ item.item_uid }}</td>
+        <td class="px-4 py-2 border">{{ item.color_id }}</td>
+        <td class="px-4 py-2 border">{{ item.quantity }}</td>
+        <td class="px-4 py-2 border">{{ item.price_prop }} EUR</td>
+        {% if item.storedcontainer %}
+        <td class="px-4 py-2 border">{{ item.storedcount }} pcs in {{ item.storedcontainer.name }}</td>
+        <td class="px-4 py-2 border"><a href="{% url 'warehouse:iqedit' item.storedid item.quantity %}" class="inline-block px-4 py-2 mt-4 text-sm leading-none text-white bg-teal-500 border border-white rounded hover:border-transparent hover:bg-teal-600 lg:mt-0" target="_blank">Add</a></td>
+        {% else %}
+        <td class="px-4 py-2 border">None</td>
+        <td class="px-4 py-2 border"><a href="{% url 'warehouse:istore' item.item_uid item.color_id item.quantity item.condition item.price_prop %}" class="inline-block px-4 py-2 mt-4 text-sm leading-none text-white bg-teal-500 border border-white rounded hover:border-transparent hover:bg-teal-600 lg:mt-0" target="_blank">Store Item</a></td>
+        {% endif %}
+    </tr>
+
+{% endfor %}
+</tbody>
+</table>
+
+
+
+<script type='text/javascript'>
+$(document).ready(function () {
+    $('#itemtable tr').click(function () {
+        $(this).toggleClass("active");
+    });
+});
+</script>
+
+<style type='text/css'>
+tr.active td { background-color: #756f6e;}
+</style>
+
+{% endblock content %}

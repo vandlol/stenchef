@@ -1,0 +1,17 @@
+{% extends "warehouse/base.html" %}
+{% block content %}
+<section class="text-gray-700 body-font relative">
+    <div class="container px-5 py-24 mx-auto flex">
+            <div class="lg:w-1/3 md:w-1/2 bg-white rounded-lg p-8 flex flex-col md:ml-auto md:mr-auto w-full mt-12 md:mt-10 relative z-10">
+                <form id="login-form" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <button class="inline-block px-4 py-2 mt-4 text-sm leading-none text-white bg-teal-500 border border-white rounded hover:border-transparent hover:bg-teal-600 lg:mt-0" type="submit">Create</button>
+                    </div>
+                    {{ form.as_p }}
+                    {{ form.media }}
+                </form>
+            </div>
+    </div>
+</section>
+{% endblock content %}

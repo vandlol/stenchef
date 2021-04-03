@@ -1,0 +1,17 @@
+{% extends "warehouse/base.html" %}
+{% block content %}
+<div class="content-section">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="mx-3">Create {{ title }}</legend>
+            {{ form.as_p }}
+            {{ form.media }}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Create</button>
+        </div>
+    </form>
+    
+</div>
+{% endblock content %}

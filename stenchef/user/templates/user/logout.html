@@ -1,9 +1,13 @@
 {% extends "warehouse/base.html" %}
 {% block content %}
-<h2>You have been logged out</h2>
-    <div class="border-top pt-3">
-        <small class="text-muted">
-            <a href="{% url 'user:login' %}">Log In Again</a>
-        </small>
+<section class="text-gray-700 body-font">
+  <div class="container px-5 py-24 mx-auto">
+    <div class="lg:w-2/3 flex flex-col sm:flex-row sm:items-center items-start mx-auto">
+      <h1 class="flex-grow sm:pr-16 text-2xl font-medium title-font text-gray-900">You have been logged out.</br>Thank you for your visit.</h1>
+      <a href="{% url 'user:login' %}">
+      <button class="flex-shrink-0 text-white bg-teal-500 border-0 py-2 px-8 focus:outline-none hover:bg-teal-600 rounded text-lg mt-10 sm:mt-0">Log In Again</button>
+      </a>
     </div>
+  </div>
+</section>
 {% endblock content %}

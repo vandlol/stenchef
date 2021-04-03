@@ -1,21 +1,16 @@
 {% extends "warehouse/base.html" %}
-{% load crispy_forms_tags %}
 {% block content %}
-    <div class="content-section">
-        <form method="POST">
-            {% csrf_token %}
-            <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Log In</legend>
-                {{ form|crispy }}
-            </fieldset>
-            <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">Login</button>
+<section class="text-gray-700 body-font relative">
+    <div class="container px-5 py-24 mx-auto flex">
+            <div class="lg:w-1/3 md:w-1/2 bg-white rounded-lg p-8 flex flex-col md:ml-auto md:mr-auto w-full mt-12 md:mt-10 relative z-10">
+                <form id="login-form" method="post">
+                    {% csrf_token %}
+                    {{ form }}
+                    <button class="text-white bg-teal-500 border-0 py-2 px-6 focus:outline-none hover:bg-teal-600 rounded text-lg" type="submit">Login</button>
+                    <p class="text-s text-gray-500 mt-3">Don't have an Account yet? <a class="text-s text-gray-500 mt-3" href="{% url 'user:register' %}">Sign Up</a> </p> 
+                </form>
             </div>
-        </form>
-        <div class="border-top pt-3">
-            <small class="text-muted">
-                Don't Have An Account yet? <a class="ml-2" href="{% url 'user:register' %}">Sign Up</a>
-            </small>
-        </div>
     </div>
+</section>
 {% endblock content %}
+

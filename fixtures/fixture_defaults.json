@@ -1,0 +1,82 @@
+[
+    {
+        "fields": {
+            "name": "Used",
+            "subcondition": false
+        },
+        "model": "meta.condition",
+        "pk": "U"
+    },
+    {
+        "fields": {
+            "name": "New",
+            "subcondition": false
+        },
+        "model": "meta.condition",
+        "pk": "N"
+    },
+    {
+        "fields": {
+            "name": "Complete",
+            "subcondition": true
+        },
+        "model": "meta.condition",
+        "pk": "C"
+    },
+    {
+        "fields": {
+            "name": "Incomplete",
+            "subcondition": true
+        },
+        "model": "meta.condition",
+        "pk": "I"
+    },
+    {
+        "fields": {
+            "name": "Sealed",
+            "subcondition": true
+        },
+        "model": "meta.condition",
+        "pk": "S"
+    },
+    {
+        "fields": {
+            "name": "N/A",
+            "subcondition": false
+        },
+        "model": "meta.condition",
+        "pk": "X"
+    },
+    {
+        "fields": {
+            "name": "default",
+            "owner_id": 1,
+            "dimx": 0,
+            "dimy": 0,
+            "dimz": 0,
+            "containeremptyweight": 0,
+            "hierarchy_order_number": 0,
+            "color": "#fff"
+        },
+        "model": "warehouse.containertype",
+        "pk": "1dba3efc-1590-4768-aa7f-5ea21ca255f6"
+    },
+    {
+        "model": "auth.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$180000$lM1iCThQ0826$19YPkk+egoCernTxp5z58dAe4kEglx+JQlgPXTmX01w=",
+            "last_login": "2020-09-01T14:55:17.292Z",
+            "is_superuser": true,
+            "username": "admin",
+            "first_name": "",
+            "last_name": "",
+            "email": "foo@bar.org",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2020-09-01T14:54:44.083Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    }
+]

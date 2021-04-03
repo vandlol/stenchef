@@ -1,0 +1,21 @@
+{% extends "warehouse/base.html" %}
+{% block content %}
+{% if price_curr %}
+<p>Current Price: {{ price_curr }}</p>
+{% else %}
+<p>Current Price: None</p>
+{% endif %}
+<div class="flex flex-row justify-center">
+<form method='POST' class="flex flex-col">
+  {% csrf_token %}
+  <formset>Price:
+  {% if price_prop %}
+  <input class="bg-white rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4" type='number' step="0.001" name='change_price' value="{{ price_prop }}">
+  {% else %}
+  <input class="bg-white rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4" type='number' step="0.001" name='change_price'  value="0.0000">
+  {% endif %} EUR
+  </formset>
+  <input class="justify-end px-4 py-2 mt-4 text-sm leading-none text-white bg-teal-500 border border-white rounded hover:border-transparent hover:bg-teal-600 lg:mt-0" type='submit' namevalue="change">
+</form>
+</div>
+{% endblock content %}

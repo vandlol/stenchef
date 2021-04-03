@@ -2,20 +2,18 @@ from django.contrib import admin
 from .models import (
     Container,
     Containertype,
-    StoredItem,
-    MOC,
-    MOCContent,
     BLInventoryItem,
     Purchase,
+    Order,
+    OrderItem,
 )
 
 
 @admin.register(Container)
 @admin.register(Containertype)
-@admin.register(StoredItem)
-@admin.register(MOC)
-@admin.register(MOCContent)
 @admin.register(BLInventoryItem)
 @admin.register(Purchase)
+@admin.register(Order)
+@admin.register(OrderItem)
 class AuthorAdmin(admin.ModelAdmin):
     pass

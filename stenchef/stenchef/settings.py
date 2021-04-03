@@ -27,7 +27,7 @@ SECRET_KEY = django_secretkey
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -43,10 +43,15 @@ INSTALLED_APPS = [
     "catalog.apps.CatalogConfig",
     "meta.apps.MetaConfig",
     "user.apps.UserConfig",
+    "tailwind",
     "crispy_forms",
+    "crispy_tailwind",
+    "django_select2",
     "easy_select2",
     "dal",
     "dal_select2",
+    "dal_queryset_sequence",
+    "extra_views",
 ]
 
 MIDDLEWARE = [
@@ -89,7 +94,23 @@ DATABASES = {
 }
 
 
-# TODO Caching?
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/1",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        },
+    },
+    "select2": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/2",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        },
+    },
+}
+SELECT2_CACHE_BACKEND = "select2"
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -98,9 +119,15 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
     },
-    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",},
-    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",},
-    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",},
+    {
+        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
+    },
+    {
+        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
+    },
+    {
+        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
+    },
 ]
 
 
@@ -123,6 +150,9 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 FIXTURE_DIRS = "fixtures"
-CRISPY_TEMPLATE_PACK = "bootstrap4"
+CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
+CRISPY_TEMPLATE_PACK = "tailwind"
 ORGS_SLUGFIELD = "django_extensions.db.fields.AutoSlugField"
 LOGIN_REDIRECT_URL = "warehouse:home"
+
+TAILWIND_APP_NAME = "warehouse"

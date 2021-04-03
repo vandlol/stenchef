@@ -1,21 +1,15 @@
 {% extends "warehouse/base.html" %}
-{% load crispy_forms_tags %}
 {% block content %}
-    <div class="content-section">
-        <form method="POST">
-            {% csrf_token %}
-            <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Join Stenchef</legend>
-                {{ form|crispy }}
-            </fieldset>
-            <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">Sign Up</button>
+<section class="text-gray-700 body-font relative">
+    <div class="container px-5 py-24 mx-auto flex">
+            <div class="lg:w-8/12 md:w-6/12 w- bg-white rounded-lg p-8 flex flex-col md:ml-auto md:mr-auto w-full mt-12 md:mt-10 relative z-10">
+                <form id="login-form" method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button class="text-white bg-teal-500 border-0 py-2 px-6 focus:outline-none hover:bg-teal-600 rounded text-lg" type="submit">Register</button>
+                    <p class="text-s text-gray-500 mt-3">Already have An Account? <a class="text-s text-gray-500 mt-3" href="{% url 'user:login' %}">Login</a> </p> 
+                </form>
             </div>
-        </form>
-        <div class="border-top pt-3">
-            <small class="text-muted">
-                Already Have An Account? <a class="ml-2" href="{% url 'user:login' %}">Sign In</a>
-            </small>
-        </div>
     </div>
+</section>
 {% endblock content %}
