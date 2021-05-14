@@ -4,7 +4,7 @@ import pymongo
 import json
 from pprint import pprint as pp
 
-folder_download = "bricklink_data/"
+folder_download = "../bricklink_data/"
 translate_map = {
     "item": {"category": "category_id", "itemtype": "itemtype_id"},
     "code": {
@@ -76,7 +76,7 @@ def convert(file, cmap=None, filetype="meta", c_key="CATALOG", raw=False):
 
 def main():
     xml_files = sorted(glob("{}*.xml".format(folder_download)), reverse=True)
-    client = pymongo.MongoClient("localhost", 27017)
+    client = pymongo.MongoClient("mongodb", 27017)
     db = client.stenchef
     cn, colors = convert("{}colors.xml".format(folder_download), raw=True)
     cmap = dict()

@@ -74,12 +74,12 @@ def bl_auth_test():
 
 
 def get_color(color_id):
-    r = redis.Redis(host="localhost", port=6379, db=4)
+    r = redis.Redis(host="redis", port=6379, db=4)
     found = r.get(color_id)
     if found:
         return found.decode("ascii")
 
-    client = pymongo.MongoClient("localhost", 27017)
+    client = pymongo.MongoClient("mongodb", 27017)
     db = client.stenchef
     filter = {"color": str(color_id)}
     sten_found = db.meta_color.find_one(filter)
@@ -88,7 +88,7 @@ def get_color(color_id):
 
 
 def query_price(itemtype_id, itemid, color_id, condition, auth=None):
-    r = redis.Redis(host="localhost", port=6379, db=3)
+    r = redis.Redis(host="redis", port=6379, db=3)
     datelimit = datetime.today() - timedelta(days=30)
 
     filter = "{}-{}-{}-{}".format(itemtype_id, itemid, color_id, condition)
@@ -151,7 +151,7 @@ def query_price(itemtype_id, itemid, color_id, condition, auth=None):
 
 def sync_deleted_inventories(owner, auth=None):
     inventory_json = bui.get_inventories(auth=auth)
-    client = pymongo.MongoClient("localhost", 27017)
+    client = pymongo.MongoClient("mongodb", 27017)
     db = client.stenchef
     known_inventory_ids = list()
     for inv in inventory_json["data"]:
@@ -168,7 +168,7 @@ def import_inventory(owner, auth=None):
     if not inventory_json["meta"]["code"] == 200:
         # TODO add error handling
         return None
-    client = pymongo.MongoClient("localhost", 27017)
+    client = pymongo.MongoClient("mongodb", 27017)
     db = client.stenchef
     for item in inventory_json["data"]:
         item_dict = dict()
@@ -219,7 +219,7 @@ def import_inventory(owner, auth=None):
 
 
 def export_inventory_full(owner, auth=bl_auth_test()):
-    client = pymongo.MongoClient("localhost", 27017)
+    client = pymongo.MongoClient("mongodb", 27017)
     db = client.stenchef
     local_inventories = db.warehouse_blinventoryitem.find({"owner_id": owner})
     create_list = list()
@@ -234,7 +234,7 @@ def export_inventory_full(owner, auth=bl_auth_test()):
 
 
 def export_inventory_single(owner, storedid, auth=bl_auth_test()):
-    client = pymongo.MongoClient("localhost", 27017)
+    client = pymongo.MongoClient("mongodb", 27017)
     db = client.stenchef
     local_inventory = db.warehouse_blinventoryitem.find_one(
         {"owner_id": owner, "storedid": storedid}
@@ -278,7 +278,7 @@ def update_container(owner, inventory_id, container_id, auth=bl_auth_test()):
 def add_quantity(
     owner, itemid, color_id, condition, quantity: int, auth=bl_auth_test()
 ):
-    client = pymongo.MongoClient("localhost", 27017)
+    client = pymongo.MongoClient("mongodb", 27017)
     db = client.stenchef
     local_inventory = db.warehouse_blinventoryitem.find_one(
         {
@@ -300,7 +300,7 @@ def add_quantity(
 
 
 def update_price(owner, itemid, color_id, condition, price, auth=bl_auth_test()):
-    client = pymongo.MongoClient("localhost", 27017)
+    client = pymongo.MongoClient("mongodb", 27017)
     db = client.stenchef
     local_inventory = db.warehouse_blinventoryitem.find_one(
         {
@@ -326,7 +326,7 @@ def update_price(owner, itemid, color_id, condition, price, auth=bl_auth_test())
 
 def update_all_prices(auth=bl_auth_test()):
     inventory_json = bui.get_inventories(auth=auth)
-    client = pymongo.MongoClient("localhost", 27017)
+    client = pymongo.MongoClient("mongodb", 27017)
     db = client.stenchef
     if not inventory_json.get("meta"):
         return None
@@ -359,7 +359,7 @@ def update_all_prices(auth=bl_auth_test()):
 
 
 def known_colors(itemtype_id, itemid, auth=None):
-    client = pymongo.MongoClient("localhost", 27017)
+    client = pymongo.MongoClient("mongodb", 27017)
     db = client.colors
     datelimit = datetime.today() - timedelta(days=10)
     filter = {
@@ -397,7 +397,7 @@ def known_colors(itemtype_id, itemid, auth=None):
 def part_out_set(set, owner, subset="1", multi=1, auth=None):
     type = Type.SET
     setid = "{}-{}".format(set, subset)
-    client = pymongo.MongoClient("localhost", 27017)
+    client = pymongo.MongoClient("mongodb", 27017)
     db = client.stenchef
     filter = {"setid": setid}
     found = db.partout.find_one(filter)
@@ -468,7 +468,7 @@ def part_out_set(set, owner, subset="1", multi=1, auth=None):
 
 
 def import_orders(orders, auth=None):
-    client = pymongo.MongoClient("localhost", 27017)
+    client = pymongo.MongoClient("mongodb", 27017)
     db = client.stenchef
 
     for order in orders:
@@ -588,7 +588,7 @@ def generate_picklist(order_id, auth=None):
 
 
 def query_inventory_prices(owner, auth=None):
-    client = pymongo.MongoClient("localhost", 27017)
+    client = pymongo.MongoClient("mongodb", 27017)
     db = client.stenchef
     owner_id = db.auth_user.find_one({"username": owner})["id"]
     items = db.warehouse_blinventoryitem.find({"owner_id": owner_id})

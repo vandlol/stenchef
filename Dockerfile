@@ -1,6 +1,6 @@
 FROM python:3
 ENV PYTHONUNBUFFERED=1
 WORKDIR /stenchef
-COPY requirements.txt /stenchef/
+COPY . .
 RUN pip install -r requirements.txt
-COPY . /stenchef/
+WORKDIR /stenchef/stenchef

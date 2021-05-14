@@ -5,7 +5,7 @@ services:
         image : mongo
         container_name: mongodb
         volumes:
-            - ./data/db:/data/db
+            - /tmp/data/db:/data/db
         ports:
             - "27017:27017"
         restart: unless-stopped
@@ -18,16 +18,35 @@ services:
             - "6379:6379"
         volumes:
             - redis_data:/bitnami/redis/data
+    migration:
+        build: .
+        command: python manage.py migrate --noinput
+        depends_on:
+            - mongodb
+    init:
+        build: .
+        command: python manage.py loaddata ../fixtures/fixture_defaults.json
+        depends_on:
+            - migration
+            - mongodb
+    filldb:
+        build: .
+        command: python ../import_bl_xml.py
+        depends_on:
+            - migration
+            - mongodb
+            - init
     web:
         build: .
         command: python manage.py runserver 0.0.0.0:8000
-        volumes:
-            - .:/code
         ports:
             - "80:8000"
         depends_on:
             - mongodb
             - redis
+            - migration
+            - init
+            - filldb
 volumes:
     redis_data:
         driver: local
