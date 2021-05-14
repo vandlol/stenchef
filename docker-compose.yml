@@ -4,9 +4,6 @@ services:
     mongodb:
         image : mongo
         container_name: mongodb
-        environment:
-            - PUID=1000
-            - PGID=1000
         volumes:
             - ./data/db:/data/db
         ports:
@@ -22,15 +19,15 @@ services:
         volumes:
             - redis_data:/bitnami/redis/data
     web:
-      build: .
-      command: python manage.py runserver 0.0.0.0:8000
-      volumes:
-        - .:/code
-      ports:
-        - "80:8000"
-      depends_on:
-        - mongodb
-        - redis
+        build: .
+        command: python manage.py runserver 0.0.0.0:8000
+        volumes:
+            - .:/code
+        ports:
+            - "80:8000"
+        depends_on:
+            - mongodb
+            - redis
 volumes:
     redis_data:
         driver: local
