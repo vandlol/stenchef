@@ -8,8 +8,9 @@ django_secretkey.txt
 test.py
 bricklink.json
 imported_list.txt
-xx_stenchef/warehouse/static_src/**
-xx_stenchef/warehouse/static/css/**
+stenchef/warehouse/static_src/**
+stenchef/warehouse/static/css/**
 lexoffice_data.json
 sync_deleted.py
 update_all_prices.py
+*.pdf

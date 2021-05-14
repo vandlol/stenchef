@@ -21,9 +21,12 @@ from pprint import pprint as pp
 import json
 import pymongo
 import uuid
+import re
 from datetime import datetime, timedelta
 from dateutil import parser
 import redis
+import subprocess
+from warehouse.format_label import format_label as fl
 
 typemap = {
     "P": Type.PART,
@@ -89,7 +92,7 @@ def query_price(itemtype_id, itemid, color_id, condition, auth=None):
     datelimit = datetime.today() - timedelta(days=30)
 
     filter = "{}-{}-{}-{}".format(itemtype_id, itemid, color_id, condition)
-
+    do_not_store = True
     found = r.get(filter)
     price_prop = 0
     if found:
@@ -109,8 +112,27 @@ def query_price(itemtype_id, itemid, color_id, condition, auth=None):
             currency_code="EUR",
             auth=auth,
         )
+        if (
+            not price_guide_item
+            or (not price_guide_item.get("data"))
+            or (price_guide_item["data"].get("avg_price") == "0.0000")
+        ):
+            price_guide_item = get_price_guide(
+                typemap[itemtype_id],
+                itemid,
+                color_id,
+                guide_type="stock",
+                new_or_used=condition,
+                region="europe",
+                country_code="DE",
+                currency_code="EUR",
+                auth=auth,
+            )
+
         if not price_guide_item or (not price_guide_item.get("data")):
             return float(0.0000)
+        else:
+            do_not_store = True
         avg = float(price_guide_item["data"]["qty_avg_price"])
         perc = 0
         if condition == "U":
@@ -122,7 +144,8 @@ def query_price(itemtype_id, itemid, color_id, condition, auth=None):
             p_data = dict()
             p_data["price_prop"] = price_prop
             p_data["date"] = datetime.today().strftime("%d.%m.%y")
-            r.set(filter, json.dumps(p_data))
+            if not do_not_store:
+                r.set(filter, json.dumps(p_data))
     return round(price_prop, 4)
 
 
@@ -170,6 +193,7 @@ def import_inventory(owner, auth=None):
         item_dict["unit_price"] = item["unit_price"]
         item_dict["description"] = item["description"]
         if item.get("remarks"):
+            # if uuid.UUID(item["remarks"]):
             item_dict["container_id"] = uuid.UUID(item["remarks"])
         else:
             item_dict["container_id"] = None
@@ -204,7 +228,7 @@ def export_inventory_full(owner, auth=bl_auth_test()):
             continue
         temp = _prep_inventory_data(local_inventory)
         bui.create_inventory(temp, auth=auth)
-        #pp(temp)
+        # pp(temp)
         # create_list.append(temp)
     # bui.create_inventories(create_list, auth=auth)
 
@@ -288,6 +312,9 @@ def update_price(owner, itemid, color_id, condition, price, auth=bl_auth_test())
     )
 
     temp = dict()
+    if not local_inventory:
+        print("could not find {} {} in localdb".format(itemid, color_id))
+        return None
     if not local_inventory.get("inventory_id"):
         # TODO Error Handling
         return None
@@ -315,6 +342,7 @@ def update_all_prices(auth=bl_auth_test()):
         condition = item["new_or_used"]
         price_prop = query_price(itemtype_id, itemid, color_id, condition, auth=auth)
         if price_prop == item["unit_price"]:
+            print("Price Stable: {}".format(item["inventory_id"]))
             continue
         if price_prop != 0.0:
             update_price(
@@ -325,6 +353,9 @@ def update_all_prices(auth=bl_auth_test()):
                 price_prop,
                 auth=auth,
             )
+            print("Updated: {}".format(item["inventory_id"]))
+            continue
+        print("No Price found: {}".format(item["inventory_id"]))
 
 
 def known_colors(itemtype_id, itemid, auth=None):
@@ -579,3 +610,28 @@ def query_inventory_prices(owner, auth=None):
             auth=auth,
         )
         pp(item)
+
+
+def print_label(order_details):
+    name = order_details["shipping"]["address"]["name"]["full"].replace("\r", "")
+    address = order_details["shipping"]["address"]["address1"]
+    if order_details["shipping"]["address"]["address2"]:
+        address = address = "{}\n{}".format(
+            order_details["shipping"]["address"]["address1"],
+            order_details["shipping"]["address"]["address2"],
+        )
+    if re.match(r"^\d+$", order_details["shipping"]["address"]["address2"]):
+        address = "{} {}".format(
+            order_details["shipping"]["address"]["address1"],
+            order_details["shipping"]["address"]["address2"],
+        )
+    postal_city = "{} {}".format(
+        order_details["shipping"]["address"]["postal_code"],
+        order_details["shipping"]["address"]["city"],
+    )
+
+    fl("{}\n{}\n{}".format(name, address, postal_city))
+    bash_cmd1 = ["lpr -P LabelWriter-450-Turbo -o PageSize=h90.7w161.5 sender.pdf"]
+    bash_cmd2 = ["lpr -P LabelWriter-450-Turbo -o PageSize=h90.7w161.5 label.pdf"]
+    subprocess.Popen(bash_cmd1, stdout=subprocess.PIPE, shell=True)
+    subprocess.Popen(bash_cmd2, stdout=subprocess.PIPE, shell=True)

@@ -45,6 +45,7 @@ from warehouse.bricklink_integration import (
     orders_query,
     order_query,
     generate_picklist,
+    print_label,
 )
 from warehouse.lexoffice_integration import create_invoice
 from operator import itemgetter
@@ -303,7 +304,7 @@ class ItemStoreCreateView(LoginRequiredMixin, CreateView):
             and self.kwargs.get("colorid")
             and self.kwargs.get("quantity")
             and self.kwargs.get("condition")
-            and self.kwargs.get("price")
+            # and self.kwargs.get("price")
         ):
             context["form"] = StoreItemForm(
                 initial={
@@ -816,14 +817,20 @@ class ItemListOrdersView(LoginRequiredMixin, View):
                     i["show_delete"] = "y"
                 else:
                     i["type_short"] = None
-                    i["container"] = (
-                        Container.objects.filter(
-                            owner=get_current_authenticated_user().id,
-                            containerid=item["remarks"],
+                    if Container.objects.filter(
+                        owner=get_current_authenticated_user().id,
+                        containerid=item["remarks"],
+                    ):
+                        i["container"] = (
+                            Container.objects.filter(
+                                owner=get_current_authenticated_user().id,
+                                containerid=item["remarks"],
+                            )
+                            .first()
+                            .name
                         )
-                        .first()
-                        .name
-                    )
+                    else:
+                        i["container"] = None
                     i["storage_count"] = 0
                     i["storedid"] = None
                     i["noninteractive"] = "n"
@@ -854,6 +861,8 @@ class CreateInvoice(LoginRequiredMixin, View):
             ),
         )
         create_invoice(order_details, ordered_items)
+        print_label(order_details)
+
         return redirect("/w/order/item/list/{}".format(order_id))
 
 
