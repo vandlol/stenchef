@@ -1,0 +1,47 @@
+@tailwind base;
+
+@import "../../static_src/components/base.css"; /* this is not getting read... why?? */
+
+// h1 {
+//     @apply text-5xl block font-bold;
+// }
+
+// h2 {
+//     @apply text-4xl block font-bold;
+// }
+
+// h3 {
+//     @apply text-3xl block;
+// }
+
+// h4 {
+//     @apply block;
+// }
+
+@tailwind components;
+
+@import "../../static_src/components/buttons.css";
+
+@tailwind utilities;
+
+@import "../../static_src/components/icons.css";
+
+.border-b-1 {
+    border-bottom-width: 1px;
+}
+
+.border-t-1 {
+    border-top-width: 1px;
+}
+
+.border-r-1 {
+    border-right-width: 1px;
+}
+
+.border-l-1 {
+    border-left-width: 1px;
+}
+
+.link-default {
+    @apply text-blue-600 underline;
+}
