@@ -1,0 +1,36 @@
+version: "3.9"
+
+services:
+    mongodb:
+        image : mongo
+        container_name: mongodb
+        environment:
+            - PUID=1000
+            - PGID=1000
+        volumes:
+            - ./data/db:/data/db
+        ports:
+            - "27017:27017"
+        restart: unless-stopped
+    redis:
+        image: docker.io/bitnami/redis:6.2
+        environment:
+            - ALLOW_EMPTY_PASSWORD=yes
+            - REDIS_DISABLE_COMMANDS=FLUSHDB,FLUSHALL
+        ports:
+            - "6379:6379"
+        volumes:
+            - redis_data:/bitnami/redis/data
+    web:
+      build: .
+      command: python manage.py runserver 0.0.0.0:8000
+      volumes:
+        - .:/code
+      ports:
+        - "80:8000"
+      depends_on:
+        - mongodb
+        - redis
+volumes:
+    redis_data:
+        driver: local
