@@ -72,6 +72,12 @@ def bl_auth_test():
     auth = oauth(consumer_key, consumer_secret, token_value, token_secret)
     return auth
 
+def is_valid_uuid(val):
+    try:
+        uuid.UUID(str(val))
+        return True
+    except ValueError:
+        return False
 
 def get_color(color_id):
     r = redis.Redis(host="redis", port=6379, db=4)
@@ -162,6 +168,27 @@ def sync_deleted_inventories(owner, auth=None):
     )
 
 
+def get_or_create_container(owner, db, search):
+    default_containertype_id = "1dba3efc-1590-4768-aa7f-5ea21ca255f6"
+    found = db.warehouse_container.find_one({"name": search})
+    if found:
+        return found.get("containerid")
+    else:
+        new_id = uuid.uuid4()
+        container_data = {
+            "containerid" : new_id,
+            "name" : search,
+            "containertype_id" : uuid.UUID(default_containertype_id),
+            "slug" : search.lower(),
+            "date_added" : datetime.now().strftime('%Y-%m-%dT%H:%M:%S.%f%z'),
+            "owner_id" : owner,
+            "parent_id" : None,
+            "description" : "This Container has automatically been added with type: default"
+        }
+        db.warehouse_container.insert_one(container_data)
+        return(new_id)
+
+
 def import_inventory(owner, auth=None):
     inventory_json = bui.get_inventories(auth=auth)
     inventory_list = list()
@@ -193,8 +220,12 @@ def import_inventory(owner, auth=None):
         item_dict["unit_price"] = item["unit_price"]
         item_dict["description"] = item["description"]
         if item.get("remarks"):
-            # if uuid.UUID(item["remarks"]):
-            item_dict["container_id"] = uuid.UUID(item["remarks"])
+            if is_valid_uuid(item["remarks"]):
+                item_dict["container_id"] = uuid.UUID(item["remarks"])
+            else:
+                item_dict["container_id"] = get_or_create_container(owner, db, item["remarks"])
+                print(item_dict["container_id"])
+                exit()
         else:
             item_dict["container_id"] = None
         item_dict["bulk"] = item["bulk"]
@@ -214,7 +245,7 @@ def import_inventory(owner, auth=None):
             item_dict["storedid"] = uuid.uuid4()
             add_item = {**filter, **item_dict}
             inventory_list.append(pymongo.InsertOne(add_item))
-    db.warehouse_blinventoryitem.bulk_write(inventory_list)
+    # db.warehouse_blinventoryitem.bulk_write(inventory_list)
     return inventory_list
 
 
