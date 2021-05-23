@@ -73,6 +73,14 @@ def bl_auth_test():
     return auth
 
 
+def is_valid_uuid(val):
+    try:
+        uuid.UUID(str(val))
+        return True
+    except ValueError:
+        return False
+
+
 def get_color(color_id):
     r = redis.Redis(host="localhost", port=6379, db=4)
     found = r.get(color_id)
@@ -132,7 +140,7 @@ def query_price(itemtype_id, itemid, color_id, condition, auth=None):
         if not price_guide_item or (not price_guide_item.get("data")):
             return float(0.0000)
         else:
-            do_not_store = True
+            do_not_store = False
         avg = float(price_guide_item["data"]["qty_avg_price"])
         perc = 0
         if condition == "U":
@@ -160,6 +168,27 @@ def sync_deleted_inventories(owner, auth=None):
     db.warehouse_blinventoryitem.delete_many(
         {"inventory_id": {"$nin": known_inventory_ids}}
     )
+
+
+def get_or_create_container(owner, db, search):
+    default_containertype_id = "1dba3efc-1590-4768-aa7f-5ea21ca255f6"
+    found = db.warehouse_container.find_one({"name": search})
+    if found:
+        return found.get("containerid")
+    else:
+        new_id = uuid.uuid4()
+        container_data = {
+            "containerid": new_id,
+            "name": search,
+            "containertype_id": uuid.UUID(default_containertype_id),
+            "slug": search.lower(),
+            "date_added": datetime.now().strftime("%Y-%m-%dT%H:%M:%S.%f%z"),
+            "owner_id": owner,
+            "parent_id": None,
+            "description": "This Container has automatically been added with type: default",
+        }
+        db.warehouse_container.insert_one(container_data)
+        return new_id
 
 
 def import_inventory(owner, auth=None):
@@ -193,8 +222,12 @@ def import_inventory(owner, auth=None):
         item_dict["unit_price"] = item["unit_price"]
         item_dict["description"] = item["description"]
         if item.get("remarks"):
-            # if uuid.UUID(item["remarks"]):
-            item_dict["container_id"] = uuid.UUID(item["remarks"])
+            if is_valid_uuid(item["remarks"]):
+                item_dict["container_id"] = uuid.UUID(item["remarks"])
+            else:
+                item_dict["container_id"] = get_or_create_container(
+                    owner, db, item["remarks"]
+                )
         else:
             item_dict["container_id"] = None
         item_dict["bulk"] = item["bulk"]
@@ -218,6 +251,24 @@ def import_inventory(owner, auth=None):
     return inventory_list
 
 
+def update_all_remarks(owner, auth=bl_auth_test()):
+    client = pymongo.MongoClient("localhost", 27017)
+    db = client.stenchef
+    local_inventories = db.warehouse_blinventoryitem.find({"owner_id": owner})
+    for local_inventory in local_inventories:
+        found = db.warehouse_container.find_one(
+            {"containerid": local_inventory["container_id"]}
+        )
+        if not found:
+            pp(local_inventory)
+        temp = dict()
+        temp["remarks"] = found.get("name")
+        pp(local_inventory.get("inventory_id"))
+        pp(temp)
+        print("---")
+        bui.update_inventory(local_inventory.get("inventory_id"), temp, auth=auth)
+
+
 def export_inventory_full(owner, auth=bl_auth_test()):
     client = pymongo.MongoClient("localhost", 27017)
     db = client.stenchef
@@ -226,6 +277,10 @@ def export_inventory_full(owner, auth=bl_auth_test()):
     for local_inventory in local_inventories:
         if local_inventory.get("inventory_id"):
             continue
+        found = db.warehouse_container.find_one(
+            {"containerid": local_inventory["container_id"]}
+        )
+        local_inventory["container_id"] = found.get("name")
         temp = _prep_inventory_data(local_inventory)
         bui.create_inventory(temp, auth=auth)
         # pp(temp)
@@ -239,6 +294,10 @@ def export_inventory_single(owner, storedid, auth=bl_auth_test()):
     local_inventory = db.warehouse_blinventoryitem.find_one(
         {"owner_id": owner, "storedid": storedid}
     )
+    found = db.warehouse_container.find_one(
+        {"containerid": local_inventory["container_id"]}
+    )
+    local_inventory["container_id"] = found.get("name")
     temp = _prep_inventory_data(local_inventory)
     bui.create_inventory(temp, auth=auth)
 
@@ -270,8 +329,11 @@ def _prep_inventory_data(local_inventory):
 
 
 def update_container(owner, inventory_id, container_id, auth=bl_auth_test()):
+    client = pymongo.MongoClient("localhost", 27017)
+    db = client.stenchef
+    found = db.warehouse_container.find_one({"containerid": uuid.UUID(container_id)})
     temp = dict()
-    temp["remarks"] = str(container_id)
+    temp["remarks"] = found.get("name")
     bui.update_inventory(inventory_id, temp, auth=auth)
 
 

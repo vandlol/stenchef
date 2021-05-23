@@ -817,20 +817,20 @@ class ItemListOrdersView(LoginRequiredMixin, View):
                     i["show_delete"] = "y"
                 else:
                     i["type_short"] = None
-                    if Container.objects.filter(
-                        owner=get_current_authenticated_user().id,
-                        containerid=item["remarks"],
-                    ):
-                        i["container"] = (
-                            Container.objects.filter(
-                                owner=get_current_authenticated_user().id,
-                                containerid=item["remarks"],
-                            )
-                            .first()
-                            .name
-                        )
-                    else:
-                        i["container"] = None
+                    # if Container.objects.filter(
+                    #     owner=get_current_authenticated_user().id,
+                    #     name=item["remarks"],
+                    # ):
+                    #     i["container"] = (
+                    #         Container.objects.filter(
+                    #             owner=get_current_authenticated_user().id,
+                    #             name=item["remarks"],
+                    #         )
+                    #         .first()
+                    #         .name
+                    #     )
+                    # else:
+                    i["container"] = item["remarks"]
                     i["storage_count"] = 0
                     i["storedid"] = None
                     i["noninteractive"] = "n"
