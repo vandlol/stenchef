@@ -3,6 +3,7 @@ import django.contrib.auth.models as dmodels
 from django_currentuser.middleware import get_current_authenticated_user
 import uuid
 from django.core.validators import RegexValidator
+from .fields import IntegerRangeField
 
 
 class Setting(models.Model):
@@ -44,6 +45,18 @@ class Setting(models.Model):
                 "^[A-Z0-9]*$", "Only uppercase letters and underscores allowed."
             )
         ],
+    )
+    percentage_used = IntegerRangeField(
+        min_value=-100,
+        max_value=100000,
+        default=0,
+        help_text="Percentage you want to undercut or extend the Mean Price for USED Pieces. Use negative value for undercut.",
+    )
+    percentage_new = IntegerRangeField(
+        min_value=-100,
+        max_value=100000,
+        default=0,
+        help_text="Percentage you want to undercut or extend the Mean Price for NEW Pieces. Use negative value for undercut.",
     )
 
     def __str__(self):

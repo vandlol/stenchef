@@ -21,9 +21,9 @@
             href="{% url 'catalog:idetail' item.itemuid %}">{{ item.itemid }}</a></td>
         <td class="border px-4 py-2">{{ item.itemname }}</td>
         <td class="border px-4 py-2">{{ item.itemtype }}</td>
-        {% if item.itemtype_id == "S" %}
+        {% if item.itemtype_id == "S" or item.itemtype_id == "G" %}
         <td class="border px-4 py-2">
-            <a href="{% url 'warehouse:spartout' item.itemid %}" class="inline-block text-sm px-4 py-2 leading-none border rounded bg-teal-500 text-white border-white hover:border-transparent hover:bg-teal-600 mt-4 lg:mt-0" onclick="document.forms['multiform'].submit();">Partout</a>
+            <a href="{% url 'warehouse:spartout' item.itemid item.itemtype %}" class="inline-block text-sm px-4 py-2 leading-none border rounded bg-teal-500 text-white border-white hover:border-transparent hover:bg-teal-600 mt-4 lg:mt-0" onclick="document.forms['multiform'].submit();">Partout</a>
         </td>
         {% else %}
         <td class="border px-4 py-2">

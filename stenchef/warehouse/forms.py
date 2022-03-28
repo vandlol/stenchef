@@ -19,7 +19,19 @@ class ContainerForm(forms.ModelForm):
             "parent": autocomplete.ModelSelect2(
                 url="warehouse:cauto",
             ),
+            "name": forms.TextInput(attrs={"style": "text-transform:uppercase;"}),
         }
+
+
+class ContainerListForm(forms.Form):
+    name = forms.CharField(
+        widget=forms.Textarea(
+            attrs={"style": "text-transform:uppercase;", "rows": 30, "cols": 7}
+        ),
+    )
+    containertype = forms.ModelChoiceField(
+        queryset=Containertype.objects.all().order_by("name")
+    )
 
 
 class ContainerTypeForm(forms.ModelForm):

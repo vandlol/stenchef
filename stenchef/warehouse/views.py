@@ -17,6 +17,7 @@ from django.views.generic.list import ListView
 from django.views.generic.edit import ModelFormMixin, FormMixin
 from .forms import (
     ContainerForm,
+    ContainerListForm,
     ContainerTypeForm,
     StoreItemForm,
     StoreItemUpdateContainerForm,
@@ -46,10 +47,14 @@ from warehouse.bricklink_integration import (
     order_query,
     generate_picklist,
     print_label,
+    status_and_praise,
 )
 from warehouse.lexoffice_integration import create_invoice
 from operator import itemgetter
 from natsort import natsorted
+import sys
+import uuid
+import re
 
 
 class HomePageView(TemplateView):
@@ -116,6 +121,30 @@ class ContainerCreateView(LoginRequiredMixin, CreateView):
                 )
 
         return context
+
+    def save(self, *args, **kwargs):
+        self.name = self.name.upper()
+        return super(Container, self).save(*args, **kwargs)
+
+
+def containerlistcreateview(request):
+    if request.method == "POST":
+        form = ContainerListForm(request.POST)
+
+        if form.is_valid():
+            containertype, names = (
+                form.cleaned_data.get("containertype"),
+                form.cleaned_data.get("name").replace("\r", ""),
+            )
+            pattern = re.compile(r"[a-zA-Z]\d{1,6}|[a-zA-Z0-9]+\n")
+            for containername in re.findall(pattern, names):
+                Container.objects.get_or_create(
+                    name=containername.upper(),
+                    containertype=containertype,
+                )
+    else:
+        form = ContainerListForm()
+    return render(request, "warehouse/form_create.html", {"form": form})
 
 
 class ContainerListView(LoginRequiredMixin, ListView):
@@ -486,6 +515,8 @@ class ItemStoreUpdateQuantityView(LoginRequiredMixin, UserPassesTestMixin, Updat
         )
         item.count = item.count + quantity
         item.save()
+        if request.POST.get("switchcontainers"):
+            return redirect("/w/item/edit/container/{}".format(self.kwargs["pk"]))
         return render(request, "warehouse/close_window.html")
 
     def form_valid(self, form):
@@ -646,6 +677,7 @@ class AddPartView(LoginRequiredMixin, View):
 
             if found:
                 return redirect("/w/item/edit/quantity/{}".format(found.storedid))
+
             price_prop = float(
                 query_price(
                     itemtype,
@@ -692,16 +724,23 @@ class SetPartoutListView(LoginRequiredMixin, ListView):
             multi = self.request.GET["multi"]
         else:
             multi = 1
+        if self.request.GET.get("breakminifigs"):
+            break_minifigs = self.request.GET["breakminifigs"]
+        else:
+            break_minifigs = False
         setid = self.kwargs["itemid"]
+        itemtype = self.kwargs["itemtype"].upper()
         if "-" in setid:
             setid, subsetid = setid.split("-")
         else:
             subsetid = 1
-        items_u = part_out_set(
+        items_u, set_stats = part_out_set(
             setid,
             get_current_authenticated_user().id,
             subset=subsetid,
             multi=multi,
+            itemtype=itemtype,
+            break_minifigs=break_minifigs,
             auth=bl_auth(
                 Setting.objects.filter(  # pylint: disable=no-member
                     owner=get_current_authenticated_user().id
@@ -709,6 +748,7 @@ class SetPartoutListView(LoginRequiredMixin, ListView):
             ),
         )
         items = natsorted(items_u, key=itemgetter("color_id"))
+        items.insert(0, set_stats)
         return items
 
 
@@ -807,8 +847,11 @@ class ItemListOrdersView(LoginRequiredMixin, View):
                     owner=get_current_authenticated_user().id,
                     inventory_id=item["inventory_id"],
                 ).first()
-                if found:
-                    i["type_short"] = found.item_id.itemtype.itemtype
+                if found and found.container.name:
+                    try:
+                        i["type_short"] = found.item_id.itemtype.itemtype
+                    except:
+                        i["type_short"] = None
                     i["container"] = found.container.name
                     i["storage_count"] = found.count
                     i["storedid"] = str(found.storedid)
@@ -816,20 +859,6 @@ class ItemListOrdersView(LoginRequiredMixin, View):
                     i["remaining_count"] = found.count - i["quantity"]
                     i["show_delete"] = "y"
                 else:
-                    i["type_short"] = None
-                    # if Container.objects.filter(
-                    #     owner=get_current_authenticated_user().id,
-                    #     name=item["remarks"],
-                    # ):
-                    #     i["container"] = (
-                    #         Container.objects.filter(
-                    #             owner=get_current_authenticated_user().id,
-                    #             name=item["remarks"],
-                    #         )
-                    #         .first()
-                    #         .name
-                    #     )
-                    # else:
                     i["container"] = item["remarks"]
                     i["storage_count"] = 0
                     i["storedid"] = None
@@ -864,6 +893,21 @@ class CreateInvoice(LoginRequiredMixin, View):
         print_label(order_details)
 
         return redirect("/w/order/item/list/{}".format(order_id))
+
+
+class PackedandPraise(LoginRequiredMixin, View):
+    def get(self, request, **kwargs):
+        order_id = self.kwargs["order_id"]
+        status_and_praise(
+            order_id,
+            auth=bl_auth(
+                Setting.objects.filter(  # pylint: disable=no-member
+                    owner=get_current_authenticated_user().id
+                ).first()
+            ),
+        )
+
+        return redirect("/w/order/list/")
 
 
 class CloseWindow(LoginRequiredMixin, View):

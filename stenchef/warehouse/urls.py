@@ -20,6 +20,9 @@ order = [
     path(
         "invoice/create/<str:order_id>", views.CreateInvoice.as_view(), name="oicreate"
     ),
+    path(
+        "pacapraise/<str:order_id>", views.PackedandPraise.as_view(), name="ostatprai"
+    ),
 ]
 
 containertype = [
@@ -46,6 +49,11 @@ container = [
         "create/",
         views.ContainerCreateView.as_view(),
         name="ccreate",
+    ),
+    path(
+        "list/create/",
+        views.containerlistcreateview,
+        name="clcreate",
     ),
     path(
         "create/p<uuid:parent>",
@@ -131,7 +139,11 @@ item = [
         views.ItemStoreUpdatePriceView.as_view(),
         name="ipedit",
     ),
-    path("partout/<str:itemid>", views.SetPartoutListView.as_view(), name="spartout"),
+    path(
+        "partout/<str:itemid>/<str:itemtype>",
+        views.SetPartoutListView.as_view(),
+        name="spartout",
+    ),
     path(
         "list/",
         views.ItemStoreListView.as_view(),

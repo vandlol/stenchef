@@ -124,7 +124,9 @@ def create_invoice(invoice_data, ordered_items):
     data = fill_data(invoice_data, ordered_items)
     # r = requests.post('{}/invoices?finalize=true'.format(base_url), data=json.dumps(data), headers=headers)
     r = requests.post(
-        "{}/invoices".format(base_url), data=json.dumps(data), headers=headers
+        "{}/invoices?finalize=true".format(base_url),
+        data=json.dumps(data),
+        headers=headers,
     )
     if r.json():
         print(r.json())

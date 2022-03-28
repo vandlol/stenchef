@@ -1,3 +1,4 @@
+from telnetlib import STATUS
 from bricklink_api.auth import oauth
 from bricklink_api.catalog_item import (
     get_subsets,
@@ -15,7 +16,9 @@ from bricklink_api.order import (
     get_order_items,
     Direction,
     Status,
+    update_order_status,
 )
+from bricklink_api.feedback import post_feedback
 import bricklink_api.user_inventory as bui
 from pprint import pprint as pp
 import json
@@ -95,10 +98,11 @@ def get_color(color_id):
     return sten_found["colorname"]
 
 
-def query_price(itemtype_id, itemid, color_id, condition, auth=None):
+def query_price(itemtype_id, itemid, color_id, condition, settings, auth=None):
     r = redis.Redis(host="localhost", port=6379, db=3)
+    client = pymongo.MongoClient("localhost", 27017)
+    db = client.stenchef
     datelimit = datetime.today() - timedelta(days=30)
-
     filter = "{}-{}-{}-{}".format(itemtype_id, itemid, color_id, condition)
     do_not_store = True
     found = r.get(filter)
@@ -144,10 +148,14 @@ def query_price(itemtype_id, itemid, color_id, condition, auth=None):
         avg = float(price_guide_item["data"]["qty_avg_price"])
         perc = 0
         if condition == "U":
-            perc = 5
+            perc = settings.get("percentage_used")
         elif condition == "N":
-            perc = 2
-        price_prop = avg - ((avg / 100) * perc)
+            perc = settings.get("percentage_new")
+        if str(perc).startswith("-"):
+            perc = int(str(perc).replace("-", ""))
+            price_prop = avg - ((avg / 100) * perc)
+        else:
+            price_prop = avg + ((avg / 100) * perc)
         if not price_prop == 0.0:
             p_data = dict()
             p_data["price_prop"] = price_prop
@@ -172,14 +180,14 @@ def sync_deleted_inventories(owner, auth=None):
 
 def get_or_create_container(owner, db, search):
     default_containertype_id = "1dba3efc-1590-4768-aa7f-5ea21ca255f6"
-    found = db.warehouse_container.find_one({"name": search})
+    found = db.warehouse_container.find_one({"name": re.compile(search, re.IGNORECASE)})
     if found:
         return found.get("containerid")
     else:
         new_id = uuid.uuid4()
         container_data = {
             "containerid": new_id,
-            "name": search,
+            "name": search.upper(),
             "containertype_id": uuid.UUID(default_containertype_id),
             "slug": search.lower(),
             "date_added": datetime.now().strftime("%Y-%m-%dT%H:%M:%S.%f%z"),
@@ -390,6 +398,7 @@ def update_all_prices(auth=bl_auth_test()):
     inventory_json = bui.get_inventories(auth=auth)
     client = pymongo.MongoClient("localhost", 27017)
     db = client.stenchef
+
     if not inventory_json.get("meta"):
         return None
 
@@ -397,12 +406,15 @@ def update_all_prices(auth=bl_auth_test()):
         return None
 
     owner_id = db.auth_user.find_one({"username": "admin"})["id"]
+    settings = db.user_setting.find_one({"owner_id": owner_id})
     for item in inventory_json["data"]:
         itemtype_id = item["item"]["type"][:1]
         itemid = item["item"]["no"]
         color_id = item["color_id"]
         condition = item["new_or_used"]
-        price_prop = query_price(itemtype_id, itemid, color_id, condition, auth=auth)
+        price_prop = query_price(
+            itemtype_id, itemid, color_id, condition, settings, auth=auth
+        )
         if price_prop == item["unit_price"]:
             print("Price Stable: {}".format(item["inventory_id"]))
             continue
@@ -456,11 +468,19 @@ def known_colors(itemtype_id, itemid, auth=None):
     return sorted(colors, key=lambda i: i["colorname"])
 
 
-def part_out_set(set, owner, subset="1", multi=1, auth=None):
-    type = Type.SET
-    setid = "{}-{}".format(set, subset)
+def part_out_set(
+    set, owner, subset="1", multi=1, itemtype="SET", break_minifigs=False, auth=None
+):
+    if itemtype == "SET":
+        type = Type.SET
+        setid = "{}-{}".format(set, subset)
+    if itemtype == "GEAR":
+        type = Type.GEAR
+        setid = set
     client = pymongo.MongoClient("localhost", 27017)
     db = client.stenchef
+    settings = db.user_setting.find_one({"owner_id": owner})
+
     filter = {"setid": setid}
     found = db.partout.find_one(filter)
 
@@ -469,7 +489,7 @@ def part_out_set(set, owner, subset="1", multi=1, auth=None):
         setid,
         instruction=True,
         box=False,
-        break_minifigs=False,
+        break_minifigs=break_minifigs,
         break_subsets=True,
         auth=auth,
     )
@@ -480,6 +500,15 @@ def part_out_set(set, owner, subset="1", multi=1, auth=None):
         return None
     partout = partout["data"]
 
+    set_stats = {
+        "pieces": 0,
+        "new_pieces": 0,
+        "stored_pieces": 0,
+        "pov": 0,
+        "lots": 0,
+        "new_lots": 0,
+        "stored_lots": 0,
+    }
     parts = list()
     for item in partout:
         entry = None
@@ -515,18 +544,30 @@ def part_out_set(set, owner, subset="1", multi=1, auth=None):
                 entry["item"]["no"],
                 entry["color_id"],
                 "N",
+                settings,
                 auth=auth,
             ),
         }
+        set_stats["lots"] += 1
+        set_stats["pieces"] += int(entry["quantity"]) * int(multi)
+        set_stats["pov"] += float(
+            int(entry["quantity"]) * int(multi) * float(pai["price_prop"])
+        )
         if stored:
+            set_stats["stored_lots"] += 1
+            set_stats["stored_pieces"] += int(entry["quantity"]) * int(multi)
             pai["storedid"] = stored["storedid"]
             pai["storedcount"] = stored["count"]
             container = db.warehouse_container.find_one(
                 {"containerid": stored["container_id"]}
             )
             pai["storedcontainer"] = container
+        else:
+            set_stats["new_lots"] += 1
+            set_stats["new_pieces"] += int(entry["quantity"]) * int(multi)
         parts.append(pai)
-    return parts
+    set_stats["pov"] = round(set_stats["pov"], 2)
+    return parts, set_stats
 
 
 def import_orders(orders, auth=None):
@@ -560,6 +601,25 @@ def import_orders(orders, auth=None):
         db.warehouse_order.insert(order_data)
         items = _prep_order_item_data(order_items, order_data["orderuuid"])
         db.warehouse_orderitem.bulk_write(items)
+    return
+
+
+def status_and_praise(orderid, auth=None):
+    set_order_status_packed(orderid, auth=auth)
+    give_praise(orderid, auth=auth)
+    return
+
+
+def set_order_status_packed(orderid, auth=None):
+    update_order_status(orderid, Status.PACKED, auth=auth)
+    return
+
+
+def give_praise(orderid, auth=None):
+    rating = 0
+    comment = "Thank you for your purchase."
+    feedback_dict = {"order_id": orderid, "rating": rating, "comment": comment}
+    post_feedback(feedback_dict, auth=auth)
     return
 
 
@@ -653,13 +713,19 @@ def query_inventory_prices(owner, auth=None):
     client = pymongo.MongoClient("localhost", 27017)
     db = client.stenchef
     owner_id = db.auth_user.find_one({"username": owner})["id"]
+    settings = db.user_setting.find_one({"owner_id": owner_id})
     items = db.warehouse_blinventoryitem.find({"owner_id": owner_id})
     for item in items:
         if not item.get("inventory_id"):
             continue
         itemtype_id, itemid = item["item_id_id"].split("_")
         new_price = query_price(
-            itemtype_id, itemid, item["color_id"], item["condition_id"], auth=auth
+            itemtype_id,
+            itemid,
+            item["color_id"],
+            item["condition_id"],
+            settings,
+            auth=auth,
         )
         if new_price == 0.0:
             continue
@@ -671,7 +737,6 @@ def query_inventory_prices(owner, auth=None):
             new_price,
             auth=auth,
         )
-        pp(item)
 
 
 def print_label(order_details):
@@ -693,6 +758,14 @@ def print_label(order_details):
     )
 
     fl("{}\n{}\n{}".format(name, address, postal_city))
+    bash_cmd1 = ["lpr -P LabelWriter-450-Turbo -o PageSize=h90.7w161.5 sender.pdf"]
+    bash_cmd2 = ["lpr -P LabelWriter-450-Turbo -o PageSize=h90.7w161.5 label.pdf"]
+    subprocess.Popen(bash_cmd1, stdout=subprocess.PIPE, shell=True)
+    subprocess.Popen(bash_cmd2, stdout=subprocess.PIPE, shell=True)
+
+
+def custom_label(name, address, postal_code, city):
+    fl("{}\n{}\n{} {}".format(name, address, postal_code, city))
     bash_cmd1 = ["lpr -P LabelWriter-450-Turbo -o PageSize=h90.7w161.5 sender.pdf"]
     bash_cmd2 = ["lpr -P LabelWriter-450-Turbo -o PageSize=h90.7w161.5 label.pdf"]
     subprocess.Popen(bash_cmd1, stdout=subprocess.PIPE, shell=True)
