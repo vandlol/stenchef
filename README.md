@@ -4,6 +4,8 @@ Currently under heavy development. Please contact me if you'd like to
 contribute.
 
 
+# This is deprecated! needs to be updated, also needs to feature docker
+
 ## setup dev environment
 
 - clone this repo
