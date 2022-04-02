@@ -33,7 +33,7 @@ class ItemListView(ListView):
         query = self.request.GET.get("q")
         if query:
             object_list = self.model.objects.filter(  # pylint: disable=no-member
-                itemid__icontains=query
+                itemid__icontains=query.replace(" ", "")
             )
         else:
             object_list = self.model.objects.all()  # pylint: disable=no-member
